@@ -42,23 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseCache.cs" />
-    <Compile Include="BaseCell.cs" />
-    <Compile Include="BaseCellPanel.cs">
+    <Compile Include="Class\BaseCache.cs" />
+    <Compile Include="Class\BaseCell.cs" />
+    <Compile Include="BaseControl\BaseCellPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BaseCellPanel.Designer.cs">
+    <Compile Include="BaseControl\BaseCellPanel.Designer.cs">
       <DependentUpon>BaseCellPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseData.cs" />
-    <Compile Include="BaseDice.cs">
+    <Compile Include="Class\BaseData.cs" />
+    <Compile Include="BaseControl\BaseDice.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BaseDice.Designer.cs">
+    <Compile Include="BaseControl\BaseDice.Designer.cs">
       <DependentUpon>BaseDice.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseGame.cs" />
-    <Compile Include="BaserBoard.cs" />
+    <Compile Include="Class\BaseGame.cs" />
+    <Compile Include="Class\BaserBoard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -67,10 +67,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BaseCellPanel.resx">
+    <EmbeddedResource Include="BaseControl\BaseCellPanel.resx">
       <DependentUpon>BaseCellPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaseDice.resx">
+    <EmbeddedResource Include="BaseControl\BaseDice.resx">
       <DependentUpon>BaseDice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
