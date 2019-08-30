@@ -28,25 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.baseCellPanel1 = new Modules.BaseCellPanel();
             this.SuspendLayout();
-            // 
-            // baseCellPanel1
-            // 
-            this.baseCellPanel1.Cell_name = "An Nam";
-            this.baseCellPanel1.Cell_price = "3000";
-            this.baseCellPanel1.ForeColor = System.Drawing.Color.Red;
-            this.baseCellPanel1.Location = new System.Drawing.Point(122, 94);
-            this.baseCellPanel1.Name = "baseCellPanel1";
-            this.baseCellPanel1.Size = new System.Drawing.Size(72, 96);
-            this.baseCellPanel1.TabIndex = 0;
             // 
             // frmGamePlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 437);
-            this.Controls.Add(this.baseCellPanel1);
             this.Name = "frmGamePlay";
             this.Text = "frmGamePlay";
             this.Load += new System.EventHandler(this.frmGamePlay_Load);
@@ -55,7 +43,5 @@
         }
 
         #endregion
-
-        private Modules.BaseCellPanel baseCellPanel1;
     }
 }

@@ -16,7 +16,7 @@ namespace Main_Program
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEditor());
+            Application.Run(new frmDice());
         }
     }
 }
