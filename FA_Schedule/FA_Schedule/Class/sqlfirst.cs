@@ -15,10 +15,16 @@ namespace FA_Schedule
         NpgsqlConnection connection;
         public string server = "192.168.145.12";
         public string database = "usrdb";
+        public string user = "pqm";
+        public string pass = "dbuser";
         public string conString()
         {
-            return @"Server=" + server + "; Port=5432; User Id=pqm; Password=dbuser;"
-                        + "Database=" + database + "; CommandTimeout=50; Timeout=50;";
+            server = "localhost";
+            database = "diepdb";
+            user = "postgres";
+            pass = "12345";
+            return @"Server=" + server + "; Port=5432; User Id=" + user + "; Password=" + pass + ";"
+                              + "Database=" + database + "; CommandTimeout=50; Timeout=50;";
         }
 
         public void getComboBoxData(string sql, ref ComboBox cmb)
@@ -86,5 +92,24 @@ namespace FA_Schedule
                 connection.Close();
             }
         }
+
+        public void sqlExecuteNonQ(string sql)
+        {
+            try
+            {
+                connection = new NpgsqlConnection(conString());
+                connection.Open();
+                NpgsqlCommand command = new NpgsqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("SQL executeschalar moethod failed." + System.Environment.NewLine + ex.Message
+                                , "Database Responce", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                connection.Close();
+            }
+        }
+
     }
 }

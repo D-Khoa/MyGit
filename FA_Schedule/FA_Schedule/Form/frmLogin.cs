@@ -13,14 +13,12 @@ namespace FA_Schedule
     public partial class frmLogin : Form
     {
         sqlfirst sql = new sqlfirst();
-        string cmbsql = "select userid, passwd from usertbl";
+        //string cmbsql = "select user_name, pass, pic_id from m_user";
 
         public frmLogin()
         {
             InitializeComponent();
-            sql.server = "192.168.145.12";
-            sql.database = "usrdb";
-            sql.getComboBoxData(cmbsql, ref cmbUserID);
+            sql.getComboBoxData("select user_name from m_user", ref cmbUserID);
             cmbUserID.Focus();
         }
 
@@ -29,12 +27,17 @@ namespace FA_Schedule
             try
             {
                 string pass;
-                pass = sql.sqlExecuteScalarString("select passwd from usertbl where userid = '"
+                string id;
+                pass = sql.sqlExecuteScalarString("select pass from m_user where user_name = '"
+                    + cmbUserID.Text + "'");
+                id = sql.sqlExecuteScalarString("select pic_id from m_user where user_name = '"
                     + cmbUserID.Text + "'");
                 if (txtPass.Text == pass)
                 {
+                    Storage sto = Storage.getStorage();
+                    sto.name = cmbUserID.Text;
+                    sto.id = id;
                     frmJobList frmJob = new frmJobList();
-                    this.Hide();
                     frmJob.ShowDialog();
                 }
                 else

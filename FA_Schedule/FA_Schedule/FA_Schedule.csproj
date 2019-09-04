@@ -62,13 +62,38 @@
     <Compile Include="Form\frmJobList.Designer.cs">
       <DependentUpon>frmJobList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\frmCrePlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmCrePlan.Designer.cs">
+      <DependentUpon>frmCrePlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpPlan.Designer.cs">
+      <DependentUpon>frmUpPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Class\sqlfirst.cs" />
+    <Compile Include="Form\UserDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\UserDetail.Designer.cs">
+      <DependentUpon>UserDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Storage.cs" />
     <EmbeddedResource Include="Form\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmJobList.resx">
       <DependentUpon>frmJobList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmCrePlan.resx">
+      <DependentUpon>frmCrePlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpPlan.resx">
+      <DependentUpon>frmUpPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -79,6 +104,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form\UserDetail.resx">
+      <DependentUpon>UserDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

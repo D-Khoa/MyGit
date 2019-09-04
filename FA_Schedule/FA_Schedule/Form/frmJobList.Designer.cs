@@ -28,64 +28,82 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnCrePlan = new System.Windows.Forms.Button();
+            this.btnUpPlan = new System.Windows.Forms.Button();
+            this.btnCreItem = new System.Windows.Forms.Button();
+            this.btnUpItem = new System.Windows.Forms.Button();
+            this.userDetail1 = new FA_Schedule.UserDetail();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // btnCrePlan
             // 
-            this.groupBox1.Location = new System.Drawing.Point(0, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
+            this.btnCrePlan.Location = new System.Drawing.Point(43, 106);
+            this.btnCrePlan.Name = "btnCrePlan";
+            this.btnCrePlan.Size = new System.Drawing.Size(91, 23);
+            this.btnCrePlan.TabIndex = 5;
+            this.btnCrePlan.Text = "Tạo Plan";
+            this.btnCrePlan.UseVisualStyleBackColor = true;
+            this.btnCrePlan.Click += new System.EventHandler(this.btnCrePlan_Click);
             // 
-            // groupBox2
+            // btnUpPlan
             // 
-            this.groupBox2.Location = new System.Drawing.Point(206, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 100);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
+            this.btnUpPlan.Location = new System.Drawing.Point(43, 145);
+            this.btnUpPlan.Name = "btnUpPlan";
+            this.btnUpPlan.Size = new System.Drawing.Size(91, 23);
+            this.btnUpPlan.TabIndex = 6;
+            this.btnUpPlan.Text = "Cập nhật plan";
+            this.btnUpPlan.UseVisualStyleBackColor = true;
+            this.btnUpPlan.Click += new System.EventHandler(this.btnUpPlan_Click);
             // 
-            // groupBox3
+            // btnCreItem
             // 
-            this.groupBox3.Location = new System.Drawing.Point(0, 118);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 100);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
+            this.btnCreItem.Location = new System.Drawing.Point(43, 183);
+            this.btnCreItem.Name = "btnCreItem";
+            this.btnCreItem.Size = new System.Drawing.Size(91, 23);
+            this.btnCreItem.TabIndex = 7;
+            this.btnCreItem.Text = "Tạo Item";
+            this.btnCreItem.UseVisualStyleBackColor = true;
             // 
-            // groupBox4
+            // btnUpItem
             // 
-            this.groupBox4.Location = new System.Drawing.Point(206, 118);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 100);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
+            this.btnUpItem.Location = new System.Drawing.Point(43, 212);
+            this.btnUpItem.Name = "btnUpItem";
+            this.btnUpItem.Size = new System.Drawing.Size(91, 23);
+            this.btnUpItem.TabIndex = 8;
+            this.btnUpItem.Text = "Cập nhật Item";
+            this.btnUpItem.UseVisualStyleBackColor = true;
+            // 
+            // userDetail1
+            // 
+            this.userDetail1.BackColor = System.Drawing.SystemColors.Control;
+            this.userDetail1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userDetail1.Location = new System.Drawing.Point(0, 0);
+            this.userDetail1.Name = "userDetail1";
+            this.userDetail1.Size = new System.Drawing.Size(466, 73);
+            this.userDetail1.TabIndex = 4;
             // 
             // frmJobList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(466, 365);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnUpItem);
+            this.Controls.Add(this.btnCreItem);
+            this.Controls.Add(this.btnUpPlan);
+            this.Controls.Add(this.btnCrePlan);
+            this.Controls.Add(this.userDetail1);
             this.Name = "frmJobList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FA Job";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private UserDetail userDetail1;
+        private System.Windows.Forms.Button btnCrePlan;
+        private System.Windows.Forms.Button btnUpPlan;
+        private System.Windows.Forms.Button btnCreItem;
+        private System.Windows.Forms.Button btnUpItem;
     }
 }

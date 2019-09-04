@@ -17,8 +17,18 @@ namespace FA_Schedule
         public frmJobList()
         {
             InitializeComponent();
-            sql.server = "localhost";
-            sql.database = "diepdb";
+        }
+
+        private void btnCrePlan_Click(object sender, EventArgs e)
+        {
+            frmCrePlan fcre = new frmCrePlan();
+            fcre.ShowDialog();
+        }
+
+        private void btnUpPlan_Click(object sender, EventArgs e)
+        {
+            frmUpPlan fup = new frmUpPlan();
+            fup.ShowDialog();
         }
     }
 }
