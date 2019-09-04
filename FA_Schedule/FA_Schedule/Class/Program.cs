@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Main_Program
+namespace FA_Schedule
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Main_Program
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDice());
+            Application.Run(new frmLogin());
         }
     }
 }

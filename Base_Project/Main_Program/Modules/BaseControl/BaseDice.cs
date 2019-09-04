@@ -7,13 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Modules
 {
     public partial class BaseDice : UserControl
     {
         public static bool checkclick;
-        private Bitmap dices = (Bitmap)Image.FromFile(@"D:\GitHud\MyGit\Base_Project\Main_Program\Modules\Dices.png");
+        public static string path = @"D:\GIT\DangKhoa\MyGit\";
+        private Bitmap dices = (Bitmap)Image.FromFile(path + @"Base_Project\Main_Program\Modules\Dices.png");
         private Bitmap clone;
         private List<Rectangle> rec;
         private int dice1 = 1;
@@ -69,11 +71,20 @@ namespace Modules
 
         private void btnDice_Click(object sender, EventArgs e)
         {
-            Random ran = new Random();
-            dice1 = ran.Next(1, 7);
-            picDice1.Image = clones(dice1);
-            dice2 = ran.Next(1, 7);
-            picDice2.Image = clones(dice2);
+
+            Thread t = new Thread(dicing);
+            if (checkclick)
+            {
+                checkclick = false;
+                btnDice.Text = "Dice";
+            }
+            else
+            {
+                checkclick = true;
+                btnDice.Text = "Stop";
+                t.Start();
+            }
+
             if (dice1 == dice2)
             {
                 BaseData.GetData().duplicate = true;
@@ -81,7 +92,19 @@ namespace Modules
             }
             BaseData.GetData().sum_dice = dice1 + dice2;
             //MessageBox.Show("Sum = " + BaseData.GetData().sum_dice);
-            checkclick = true;
+        }
+
+        void dicing()
+        {
+            Random ran = new Random();
+            while (checkclick)
+            {
+                dice1 = ran.Next(1, 7);
+                picDice1.Image = clones(dice1);
+                dice2 = ran.Next(1, 7);
+                picDice2.Image = clones(dice2);
+                Thread.Sleep(100);
+            }
         }
     }
 }
