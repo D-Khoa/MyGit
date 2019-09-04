@@ -17,12 +17,14 @@ namespace Main_Program
             InitializeComponent();
         }
 
+        //Định vị groupbox Actors
         private void grActors_Paint(object sender, PaintEventArgs e)
         {
             int x = grGeneral.Location.X;
             grActors.Width = x;
         }
 
+        //Định vị groupbox Features
         private void grFeature_Paint(object sender, PaintEventArgs e)
         {
             int w = grGeneral.Width;
