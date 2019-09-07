@@ -17,7 +17,7 @@ namespace FA_Schedule
         {
             InitializeComponent();
             Storage sto = Storage.getStorage();
-            txtPIC.Text = sto.name;
+            txtPIC.Text = sto.id;
         }
 
         private void btnCancle_Click(object sender, EventArgs e)
@@ -30,16 +30,32 @@ namespace FA_Schedule
             string cmd;
             try
             {
-                cmd = "insert into public.m_schplan(sch_name, model, pic_id, date_create, date_original, stt_id, sch_cmt) values('"
-                    + txtSchName.Text + "','" + txtModel.Text + "','" + txtPIC.Text + "','" + dtCre.Text + "','"
-                    + dtOri.Text + "','" + numStt.Value.ToString() + "','" + txtCmt.Text + "')";
-                sql.sqlExecuteNonQ(cmd);
-                MessageBox.Show("Đã tạo plan thành công!!!");
+                if (txtPname.Text != "" && txtModel.Text != "")
+                {
+                    cmd = "insert into public.m_plan_created(plan_name, model, pic_id, date_create, date_original)"
+                        + " values('" + txtPname.Text + "','" + txtModel.Text + "','" + txtPIC.Text + "','"
+                        + dtCre.Text + "','" + dtOri.Text + "')";
+                    sql.sqlExecuteNonQ(cmd);
+                    MessageBox.Show("Đã tạo plan thành công!!!");
+                }
+                else
+                    MessageBox.Show("Tên và model không thể để trống!");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void dtCre_CloseUp(object sender, EventArgs e)
+        {
+            dtOri.Value = dtCre.Value.AddDays(30);
+        }
+
+        private void txtPIC_TextChanged(object sender, EventArgs e)
+        {
+            string cmd = "select user_name from public.m_user where pic_id ='" + txtPIC.Text + "'";
+            lbname.Text = sql.sqlExecuteScalarString(cmd);
         }
     }
 }

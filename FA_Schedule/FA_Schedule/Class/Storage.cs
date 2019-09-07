@@ -15,5 +15,8 @@ namespace FA_Schedule
         }
         public string name { get; set; }
         public string id { get; set; }
+        public string plan_name { get; set; }
+        public string plan_id { get; set; }
+        public string stt_tb { get; set; }
     }
 }

@@ -28,45 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pnlUser = new System.Windows.Forms.Panel();
-            this.lbID = new System.Windows.Forms.Label();
-            this.lbUsername = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lbID = new System.Windows.Forms.Label();
+            this.lbUsername = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1.SuspendLayout();
             this.pnlUser.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.pnlUser, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(683, 502);
+            this.tableLayoutPanel1.TabIndex = 1;
             // 
             // pnlUser
             // 
             this.pnlUser.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlUser.Controls.Add(this.label1);
             this.pnlUser.Controls.Add(this.label2);
             this.pnlUser.Controls.Add(this.lbID);
             this.pnlUser.Controls.Add(this.lbUsername);
             this.pnlUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlUser.Location = new System.Drawing.Point(0, 0);
+            this.pnlUser.Location = new System.Drawing.Point(4, 4);
             this.pnlUser.Name = "pnlUser";
-            this.pnlUser.Size = new System.Drawing.Size(146, 66);
-            this.pnlUser.TabIndex = 0;
-            // 
-            // lbID
-            // 
-            this.lbID.AutoSize = true;
-            this.lbID.Location = new System.Drawing.Point(67, 43);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(15, 13);
-            this.lbID.TabIndex = 1;
-            this.lbID.Text = "id";
-            // 
-            // lbUsername
-            // 
-            this.lbUsername.AutoSize = true;
-            this.lbUsername.Location = new System.Drawing.Point(67, 14);
-            this.lbUsername.Name = "lbUsername";
-            this.lbUsername.Size = new System.Drawing.Size(53, 13);
-            this.lbUsername.TabIndex = 0;
-            this.lbUsername.Text = "username";
+            this.pnlUser.Size = new System.Drawing.Size(144, 94);
+            this.pnlUser.TabIndex = 1;
             // 
             // label1
             // 
@@ -86,14 +85,33 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Username:";
             // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.Location = new System.Drawing.Point(67, 43);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(15, 13);
+            this.lbID.TabIndex = 1;
+            this.lbID.Text = "id";
+            // 
+            // lbUsername
+            // 
+            this.lbUsername.AutoSize = true;
+            this.lbUsername.Location = new System.Drawing.Point(67, 14);
+            this.lbUsername.Name = "lbUsername";
+            this.lbUsername.Size = new System.Drawing.Size(53, 13);
+            this.lbUsername.TabIndex = 0;
+            this.lbUsername.Text = "username";
+            // 
             // UserDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.pnlUser);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UserDetail";
-            this.Size = new System.Drawing.Size(146, 66);
+            this.Size = new System.Drawing.Size(683, 502);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.pnlUser.ResumeLayout(false);
             this.pnlUser.PerformLayout();
             this.ResumeLayout(false);
@@ -102,10 +120,11 @@
 
         #endregion
 
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel pnlUser;
-        private System.Windows.Forms.Label lbID;
-        private System.Windows.Forms.Label lbUsername;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbID;
+        private System.Windows.Forms.Label lbUsername;
     }
 }
