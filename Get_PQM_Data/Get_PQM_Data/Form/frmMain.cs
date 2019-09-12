@@ -48,10 +48,14 @@ namespace Get_PQM_Data
         {
             trInspect.Nodes.Clear();
             string model = cmbModel.Text;
-            datea = dtDatef.Value;
-            sernodb = model + datea.Year.ToString("0000") + datea.Month.ToString("00");
-            inspectdb = sernodb + "data";
             GetTreeview(model);
+        }
+
+        private void getTableName()
+        {
+            datea = dtDatef.Value;
+            sernodb = cmbModel.Text + datea.Year.ToString("0000") + datea.Month.ToString("00");
+            inspectdb = sernodb + "data";
         }
 
         void GetTreeview(string model)
@@ -167,23 +171,25 @@ namespace Get_PQM_Data
             string inspect = inspects();
             DataTable dts = new DataTable();
             DataTable dti = new DataTable();
-            string cmd;
-            string cmd2;
+            string cmd = "select serno, lot, model, site, factory, line, process, inspectdate from " 
+                       + sernodb + " where 1=1 ";
+            string cmd2 = "select serno, inspectdate, inspect, inspectdata from " + inspectdb + " where 1=1 ";
             if (serno != "")
             {
-                cmd = "select serno, lot, model, site, factory, line, process, inspectdate from " + sernodb + " where serno in(" + serno + ") order by inspectdate asc ";
-                cmd2 = "select serno, inspectdate, inspect, inspectdata from " + inspectdb + " where serno in(" + serno + ") and inspect in(" + inspect + ") order by inspect asc, inspectdate asc";
+                cmd += "and serno in(" + serno + ") order by inspectdate asc ";
+                cmd2 += "and serno in(" + serno + ") and inspect in(" + inspect + ") order by inspect asc, inspectdate asc";
             }
-            else if (serno == "" && datef != "" && datet != "")
+            else //if (serno == "" && datef != "" && datet != "")
             {
-                cmd = "select serno, lot, model, site, factory, line, process, inspectdate from " + sernodb + " where inspectdate > '" + datef + "' and inspectdate < '" + datet + "' order by inspectdate asc";
-                cmd2 = "select serno, inspectdate, inspect, inspectdata from " + inspectdb + " where inspect in(" + inspect + ") and inspectdate > '" + datef + "' and inspectdate < '" + datet + "' order by inspect asc, inspectdate asc";
+                cmd += "and inspectdate > '" + datef + "' and inspectdate < '" + datet 
+                    + "' order by inspectdate asc";
+                cmd2 += "and inspect in(" + inspect + ") and inspectdate > '" + datef + "' and inspectdate < '" + datet + "' order by inspect asc, inspectdate asc";
             }
-            else
-            {
-                cmd = "select serno, lot, model, site, factory, line, process, inspectdate from " + sernodb + "order by inspectdate asc";
-                cmd2 = "select serno, inspectdate, inspect, inspectdata from " + inspectdb + " where inspect in(" + inspect + ") order by inspect asc, inspectdate asc";
-            }
+            //else
+            //{
+            //    cmd = "select serno, lot, model, site, factory, line, process, inspectdate from " + sernodb + "order by inspectdate asc";
+            //    cmd2 = "select serno, inspectdate, inspect, inspectdata from " + inspectdb + " where inspect in(" + inspect + ") order by inspect asc, inspectdate asc";
+            //}
             sql.sqlDataAdapterFillDatatable(cmd, ref dts);
             sql.sqlDataAdapterFillDatatable(cmd2, ref dti);
             SQLLinQ lin = new SQLLinQ();
@@ -204,6 +210,7 @@ namespace Get_PQM_Data
                 c = 0;
                 ds.Clear();
                 dgvdt.Refresh();
+                getTableName();
                 datef = dtDatef.Text + " " + cmbHoursf.Text + ":" + cmbMinf.Text + ":00";
                 datet = dtDatet.Text + " " + cmbHourst.Text + ":" + cmbMint.Text + ":00";
                 selectnode(trInspect.Nodes);
@@ -239,6 +246,7 @@ namespace Get_PQM_Data
             {
                 c = 0;
                 ds.Clear();
+                getTableName();
                 datef = dtDatef.Text + " " + cmbHoursf.Text + ":" + cmbMinf.Text + ":00";
                 datet = dtDatet.Text + " " + cmbHourst.Text + ":" + cmbMint.Text + ":00";
                 selectnode(trInspect.Nodes);

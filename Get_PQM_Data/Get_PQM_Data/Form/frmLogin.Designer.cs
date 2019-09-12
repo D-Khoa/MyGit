@@ -66,7 +66,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.txtPass);
             this.splitContainer1.Size = new System.Drawing.Size(228, 177);
             this.splitContainer1.SplitterDistance = 53;
-            this.splitContainer1.TabIndex = 6;
+            this.splitContainer1.TabIndex = 0;
+            this.splitContainer1.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -149,6 +150,7 @@
             this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.frmLogin_Load);
