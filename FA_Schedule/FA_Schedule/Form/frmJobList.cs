@@ -13,9 +13,12 @@ namespace FA_Schedule
     public partial class frmJobList : Form
     {
         sqlfirst sql = new sqlfirst();
+        string plancre_tbl = "public.m_plan_created";
+        string planup_tbl = "public.m_plan_updated";
         Storage sto;
         DataTable dt;
-        DataTable dt2;
+        bool tab1_select = true;
+        bool tab2_select = false;
 
         public frmJobList()
         {
@@ -51,43 +54,34 @@ namespace FA_Schedule
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            getTable();
-        }
-
-        private void getTable()
-        {
-            string cmd;
-            string cmd2;
-            dt = new DataTable();
-            dt2 = new DataTable();
             dgvPlan.Refresh();
             dgvUpLog.Refresh();
-            if (txtPID.Text != "" && txtPName.Text != "")
+            if (tab1_select)
             {
-                cmd = "select * from public.m_plan_created where plan_id = '" + txtPID.Text + "' and "
-                    + "plan_name = '" + txtPName.Text + "'";
-                cmd2 = "select * from public.m_plan_updated where plan_id = '" + txtPID.Text + "' and "
-                    + "plan_name = '" + txtPName.Text + "'";
+                getTable(ref plancre_tbl, ref dt);
+                dgvPlan.DataSource = dt;
+
             }
-            else if (txtPID.Text != "")
+            if (tab2_select)
             {
-                cmd = "select * from public.m_plan_created where plan_id = '" + txtPID.Text + "'";
-                cmd2 = "select * from public.m_plan_updated where plan_id = '" + txtPID.Text + "'";
+                getTable(ref planup_tbl, ref dt);
+                dgvUpLog.DataSource = dt;
             }
-            else if (txtPName.Text != "")
+        }
+
+        private void getTable(ref string table, ref DataTable dtem)
+        {
+            dtem = new DataTable();
+            string cmd = "select * from " + table + " where 1=1 ";
+            if (txtPID.Text != "")
             {
-                cmd = "select * from public.m_plan_created where plan_name = '" + txtPName.Text + "'";
-                cmd2 = "select * from public.m_plan_updated where plan_name = '" + txtPName.Text + "'";
+                cmd += "and plan_id = '" + txtPID.Text + "'";
             }
-            else
+            if (txtPName.Text != "")
             {
-                cmd = "select * from public.m_plan_created";
-                cmd2 = "select * from public.m_plan_updated";
+                cmd += "and plan_name = '" + txtPName.Text + "'";
             }
-            sql.datatable(cmd, ref dt);
-            sql.datatable(cmd2, ref dt2);
-            dgvPlan.DataSource = dt;
-            dgvUpLog.DataSource = dt2;
+            sql.datatable(cmd, ref dtem);
         }
 
         private void dgvPlan_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -100,6 +94,11 @@ namespace FA_Schedule
         {
             txtPID.Text = "";
             txtPName.Text = "";
+            dt.Clear();
+            if (tab1_select)
+                dgvPlan.DataSource = dt;
+            if (tab2_select)
+                dgvUpLog.DataSource = dt;
         }
 
         private void btnPStt_Click(object sender, EventArgs e)
@@ -114,6 +113,20 @@ namespace FA_Schedule
             sto.stt_tb = "public.m_design_status";
             frmStt fs = new frmStt();
             fs.Show();
+        }
+
+        private void tabPage1_Enter(object sender, EventArgs e)
+        {
+            tab1_select = true;
+            tab2_select = false;
+            dgvPlan.Refresh();
+        }
+
+        private void tabPage2_Enter(object sender, EventArgs e)
+        {
+            tab1_select = false;
+            tab2_select = true;
+            dgvUpLog.Refresh();
         }
     }
 }

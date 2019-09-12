@@ -29,47 +29,47 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnPStt = new System.Windows.Forms.Button();
+            this.btnIStt = new System.Windows.Forms.Button();
             this.btnUpItem = new System.Windows.Forms.Button();
             this.btnCreItem = new System.Windows.Forms.Button();
             this.btnUpPlan = new System.Windows.Forms.Button();
             this.btnCrePlan = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.lbName = new System.Windows.Forms.Label();
-            this.lbID = new System.Windows.Forms.Label();
-            this.btnLogOut = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dgvPlan = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvUpLog = new System.Windows.Forms.DataGridView();
             this.pnlFin = new System.Windows.Forms.Panel();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPName = new System.Windows.Forms.TextBox();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.label3 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgvPlan = new System.Windows.Forms.DataGridView();
-            this.dgvUpLog = new System.Windows.Forms.DataGridView();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnIStt = new System.Windows.Forms.Button();
-            this.btnPStt = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogOut = new System.Windows.Forms.Button();
+            this.lbID = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUpLog)).BeginInit();
+            this.pnlFin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.pnlFin.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUpLog)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -88,6 +88,28 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(694, 60);
             this.tableLayoutPanel1.TabIndex = 20;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::FA_Schedule.Properties.Resources.LogoNidec;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(98, 54);
+            this.panel1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LimeGreen;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(107, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(584, 60);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "PLAN SCHEDULE MANAGEMENT";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // splitContainer1
             // 
@@ -113,6 +135,26 @@
             this.splitContainer1.Size = new System.Drawing.Size(691, 364);
             this.splitContainer1.SplitterDistance = 107;
             this.splitContainer1.TabIndex = 21;
+            // 
+            // btnPStt
+            // 
+            this.btnPStt.Location = new System.Drawing.Point(11, 132);
+            this.btnPStt.Name = "btnPStt";
+            this.btnPStt.Size = new System.Drawing.Size(91, 23);
+            this.btnPStt.TabIndex = 37;
+            this.btnPStt.Text = "Plan Status";
+            this.btnPStt.UseVisualStyleBackColor = true;
+            this.btnPStt.Click += new System.EventHandler(this.btnPStt_Click);
+            // 
+            // btnIStt
+            // 
+            this.btnIStt.Location = new System.Drawing.Point(11, 161);
+            this.btnIStt.Name = "btnIStt";
+            this.btnIStt.Size = new System.Drawing.Size(91, 23);
+            this.btnIStt.TabIndex = 36;
+            this.btnIStt.Text = "Item Status";
+            this.btnIStt.UseVisualStyleBackColor = true;
+            this.btnIStt.Click += new System.EventHandler(this.btnIStt_Click);
             // 
             // btnUpItem
             // 
@@ -152,71 +194,58 @@
             this.btnCrePlan.UseVisualStyleBackColor = true;
             this.btnCrePlan.Click += new System.EventHandler(this.btnCrePlan_Click);
             // 
-            // label1
+            // tabControl1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.LimeGreen;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(107, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(584, 60);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "PLAN SCHEDULE MANAGEMENT";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(3, 40);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(574, 321);
+            this.tabControl1.TabIndex = 35;
             // 
-            // splitContainer2
+            // tabPage1
             // 
-            this.splitContainer2.BackColor = System.Drawing.Color.Honeydew;
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 60);
-            this.splitContainer2.Name = "splitContainer2";
+            this.tabPage1.Controls.Add(this.dgvPlan);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(566, 295);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Plan Created";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Enter += new System.EventHandler(this.tabPage1_Enter);
             // 
-            // splitContainer2.Panel1
+            // dgvPlan
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.label3);
+            this.dgvPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPlan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPlan.Location = new System.Drawing.Point(3, 3);
+            this.dgvPlan.Name = "dgvPlan";
+            this.dgvPlan.Size = new System.Drawing.Size(560, 289);
+            this.dgvPlan.TabIndex = 46;
+            this.dgvPlan.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlan_CellDoubleClick);
             // 
-            // splitContainer2.Panel2
+            // tabPage2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.btnLogOut);
-            this.splitContainer2.Panel2.Controls.Add(this.lbID);
-            this.splitContainer2.Panel2.Controls.Add(this.lbName);
-            this.splitContainer2.Size = new System.Drawing.Size(694, 52);
-            this.splitContainer2.SplitterDistance = 399;
-            this.splitContainer2.TabIndex = 22;
+            this.tabPage2.Controls.Add(this.dgvUpLog);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(566, 295);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Update Logs";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
             // 
-            // lbName
+            // dgvUpLog
             // 
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(3, 12);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(71, 13);
-            this.lbName.TabIndex = 0;
-            this.lbName.Text = "Username: ";
-            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbID
-            // 
-            this.lbID.AutoSize = true;
-            this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(46, 25);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(28, 13);
-            this.lbID.TabIndex = 1;
-            this.lbID.Text = "ID: ";
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogOut.Location = new System.Drawing.Point(213, 12);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(75, 26);
-            this.btnLogOut.TabIndex = 2;
-            this.btnLogOut.Text = "Đăng xuất";
-            this.btnLogOut.UseVisualStyleBackColor = true;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            this.dgvUpLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUpLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUpLog.Location = new System.Drawing.Point(3, 3);
+            this.dgvUpLog.Name = "dgvUpLog";
+            this.dgvUpLog.Size = new System.Drawing.Size(560, 289);
+            this.dgvUpLog.TabIndex = 0;
             // 
             // pnlFin
             // 
@@ -231,6 +260,17 @@
             this.pnlFin.Name = "pnlFin";
             this.pnlFin.Size = new System.Drawing.Size(580, 39);
             this.pnlFin.TabIndex = 43;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.Location = new System.Drawing.Point(414, 5);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 29);
+            this.btnClear.TabIndex = 45;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnFind
             // 
@@ -275,6 +315,26 @@
             this.txtPName.Size = new System.Drawing.Size(100, 20);
             this.txtPName.TabIndex = 27;
             // 
+            // splitContainer2
+            // 
+            this.splitContainer2.BackColor = System.Drawing.Color.Honeydew;
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 60);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.label3);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.btnLogOut);
+            this.splitContainer2.Panel2.Controls.Add(this.lbID);
+            this.splitContainer2.Panel2.Controls.Add(this.lbName);
+            this.splitContainer2.Size = new System.Drawing.Size(694, 52);
+            this.splitContainer2.SplitterDistance = 399;
+            this.splitContainer2.TabIndex = 22;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -284,96 +344,38 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "label3";
             // 
-            // tabControl1
+            // btnLogOut
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(3, 40);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(574, 321);
-            this.tabControl1.TabIndex = 35;
+            this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogOut.Location = new System.Drawing.Point(213, 12);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(75, 26);
+            this.btnLogOut.TabIndex = 2;
+            this.btnLogOut.Text = "Đăng xuất";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // tabPage1
+            // lbID
             // 
-            this.tabPage1.Controls.Add(this.dgvPlan);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(566, 295);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Plan Created";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.lbID.AutoSize = true;
+            this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.Location = new System.Drawing.Point(46, 25);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(28, 13);
+            this.lbID.TabIndex = 1;
+            this.lbID.Text = "ID: ";
             // 
-            // tabPage2
+            // lbName
             // 
-            this.tabPage2.Controls.Add(this.dgvUpLog);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(566, 295);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Update Logs";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dgvPlan
-            // 
-            this.dgvPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPlan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPlan.Location = new System.Drawing.Point(3, 3);
-            this.dgvPlan.Name = "dgvPlan";
-            this.dgvPlan.Size = new System.Drawing.Size(560, 289);
-            this.dgvPlan.TabIndex = 46;
-            this.dgvPlan.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlan_CellDoubleClick);
-            // 
-            // dgvUpLog
-            // 
-            this.dgvUpLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUpLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvUpLog.Location = new System.Drawing.Point(3, 3);
-            this.dgvUpLog.Name = "dgvUpLog";
-            this.dgvUpLog.Size = new System.Drawing.Size(560, 289);
-            this.dgvUpLog.TabIndex = 0;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClear.Location = new System.Drawing.Point(414, 5);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 29);
-            this.btnClear.TabIndex = 45;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnIStt
-            // 
-            this.btnIStt.Location = new System.Drawing.Point(11, 161);
-            this.btnIStt.Name = "btnIStt";
-            this.btnIStt.Size = new System.Drawing.Size(91, 23);
-            this.btnIStt.TabIndex = 36;
-            this.btnIStt.Text = "Item Status";
-            this.btnIStt.UseVisualStyleBackColor = true;
-            this.btnIStt.Click += new System.EventHandler(this.btnIStt_Click);
-            // 
-            // btnPStt
-            // 
-            this.btnPStt.Location = new System.Drawing.Point(11, 132);
-            this.btnPStt.Name = "btnPStt";
-            this.btnPStt.Size = new System.Drawing.Size(91, 23);
-            this.btnPStt.TabIndex = 37;
-            this.btnPStt.Text = "Plan Status";
-            this.btnPStt.UseVisualStyleBackColor = true;
-            this.btnPStt.Click += new System.EventHandler(this.btnPStt_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::FA_Schedule.Properties.Resources.LogoNidec;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(98, 54);
-            this.panel1.TabIndex = 3;
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(3, 12);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(71, 13);
+            this.lbName.TabIndex = 0;
+            this.lbName.Text = "Username: ";
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmJobList
             // 
@@ -392,19 +394,19 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUpLog)).EndInit();
+            this.pnlFin.ResumeLayout(false);
+            this.pnlFin.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.pnlFin.ResumeLayout(false);
-            this.pnlFin.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUpLog)).EndInit();
             this.ResumeLayout(false);
 
         }

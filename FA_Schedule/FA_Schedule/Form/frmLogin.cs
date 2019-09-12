@@ -36,6 +36,7 @@ namespace FA_Schedule
                     Storage sto = Storage.getStorage();
                     sto.name = name;
                     sto.id = cmbUserID.Text;
+                    txtPass.Text = "";
                     frmJobList frmJob = new frmJobList();
                     frmJob.ShowDialog();
                 }

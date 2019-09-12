@@ -49,6 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Machine.cs" />
+    <Compile Include="Models\MachineType.cs" />
+    <Compile Include="Models\MachineWarranty.cs" />
+    <Compile Include="Models\OperatingSys.cs" />
+    <Compile Include="Models\SupportLog.cs" />
+    <Compile Include="Models\SupportTicket.cs" />
+    <Compile Include="Models\WarrantyProvider.cs" />
     <Compile Include="Form\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LogoNidec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
