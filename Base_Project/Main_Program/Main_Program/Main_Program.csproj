@@ -70,6 +70,12 @@
     <Compile Include="Form\frmGamePlay.Designer.cs">
       <DependentUpon>frmGamePlay.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMatrix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMatrix.Designer.cs">
+      <DependentUpon>frmMatrix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Class\RuleGame.cs" />
@@ -100,6 +106,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Form\TestGame.resx">
       <DependentUpon>TestGame.cs</DependentUpon>
@@ -122,6 +129,9 @@
       <Project>{98f8aac8-dc60-4b8b-819c-a426ede7620b}</Project>
       <Name>Modules</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\!Switch2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
