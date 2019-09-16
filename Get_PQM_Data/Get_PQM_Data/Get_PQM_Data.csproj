@@ -80,6 +80,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\BuildTreeView.cs" />
     <Compile Include="Class\CSVUtility.cs" />
     <Compile Include="Class\Program.cs" />
     <Compile Include="Class\Storage.cs" />

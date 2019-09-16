@@ -31,8 +31,10 @@ namespace Get_PQM_Data
         public frmMain()
         {
             InitializeComponent();
+            //Set database name for SQL connect
             Storage sto = Storage.getStorage();
             sto.name = "pqmdb";
+
             ds = new DataTable();
             temp = "";
             line = "";
@@ -40,15 +42,21 @@ namespace Get_PQM_Data
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            //Get model name into combobox
             sql = new TfSQL();
             sql.getComboBoxData("select distinct model from procinsplink", ref cmbModel);
         }
 
         private void cmbModel_TextChanged(object sender, EventArgs e)
         {
-            trInspect.Nodes.Clear();
             string model = cmbModel.Text;
-            GetTreeview(model);
+            //Renew treeview follow model
+            trInspect.Nodes.Clear();
+            //GetTreeview(model);
+            List<string> nodelist = new List<string>();
+            sql.getListString("select distinct inspect from procinsplink"
+                             + " where model = '" + model + "' order by inspect asc", ref nodelist);
+            trInspect.GetRoot(model, nodelist);
         }
 
         private void getTableName()
@@ -57,38 +65,55 @@ namespace Get_PQM_Data
             sernodb = cmbModel.Text + datea.Year.ToString("0000") + datea.Month.ToString("00");
             inspectdb = sernodb + "data";
         }
+        
+        //private List<string> GetListRoot(string model)
+        //{
+        //    List<string> rootlist = new List<string>();
+        //    sql.getListString("select distinct process from processtbl where model ='" + model 
+        //                    + "' order by process asc", ref rootlist);
+        //    return rootlist;
+        //}
 
-        void GetTreeview(string model)
-        {
-            if (model != "")
-            {
-                TreeNode root = new TreeNode(model);
-                trInspect.Nodes.Add(root);
-                dt = new DataTable();
-                sql.sqlDataAdapterFillDatatable("select distinct inspect from procinsplink"
-                                               + " where model = '" + model + "' order by inspect asc", ref dt);
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    root.Nodes.Add(dt.Rows[i]["inspect"].ToString());
-                }
-            }
-        }
+        //private List<string> GetListNodes(string Root)
+        //{
+        //    List<string> nodelist = new List<string>();
+        //    sql.getListString("select distinct inspect from procinsplink where process ='" + Root 
+        //                    + "' order by inspect asc", ref nodelist);
+        //    return nodelist;
+        //}
+
+        //void GetTreeview(string model)
+        //{
+        //    if (model != "")
+        //    {
+        //        TreeNode root = new TreeNode(model);
+        //        trInspect.Nodes.Add(root);
+        //        dt = new DataTable();
+        //        sql.sqlDataAdapterFillDatatable("select distinct inspect from procinsplink"
+        //                                       + " where model = '" + model + "' order by inspect asc", ref dt);
+        //        for (int i = 0; i < dt.Rows.Count; i++)
+        //        {
+        //            root.Nodes.Add(dt.Rows[i]["inspect"].ToString());
+        //        }
+        //    }
+        //}
 
         private void trInspect_AfterCheck(object sender, TreeViewEventArgs e)
         {
             inslist.Clear();
-            setchecknode(e.Node, e.Node.Checked);
+            //setchecknode(e.Node, e.Node.Checked);
+            e.Node.CheckedNode(e.Node.Checked);
             temp = sender.ToString();
         }
 
-        private void setchecknode(TreeNode node, bool check)
-        {
-            foreach (TreeNode child in node.Nodes)
-            {
-                if (child.Checked != check) child.Checked = check;
-                if (child.Nodes.Count > 0) setchecknode(child, check);
-            }
-        }
+        //private void setchecknode(TreeNode node, bool check)
+        //{
+        //    foreach (TreeNode child in node.Nodes)
+        //    {
+        //        if (child.Checked != check) child.Checked = check;
+        //        if (child.Nodes.Count > 0) setchecknode(child, check);
+        //    }
+        //}
 
         private void selectnode(TreeNodeCollection root)
         {
@@ -213,7 +238,8 @@ namespace Get_PQM_Data
                 getTableName();
                 datef = dtDatef.Text + " " + cmbHoursf.Text + ":" + cmbMinf.Text + ":00";
                 datet = dtDatet.Text + " " + cmbHourst.Text + ":" + cmbMint.Text + ":00";
-                selectnode(trInspect.Nodes);
+                trInspect.Nodes.SelectNodes(ref inslist);
+                //selectnode(trInspect.Nodes);
                 timer1.Enabled = true;
                 Thread tab = new Thread(gettable);
                 tab.Start();

@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using Npgsql;
+using System.Collections.Generic;
 
 namespace Get_PQM_Data
 {
@@ -38,6 +39,35 @@ namespace Get_PQM_Data
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
                     cmb.Items.Add(row[0].ToString());
+                }
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Database Responce", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                connection.Close();
+            }
+        }
+
+        public void getListString(string sql, ref List<string> list)
+        {
+            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
+            NpgsqlCommand command;
+            DataSet ds = new DataSet();
+            try
+            {
+                connection = new NpgsqlConnection(strConnection);
+                connection.Open();
+                command = new NpgsqlCommand(sql, connection);
+                adapter.SelectCommand = command;
+                adapter.Fill(ds);
+                adapter.Dispose();
+                command.Dispose();
+
+                list.Clear();
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    list.Add(row[0].ToString());
                 }
                 connection.Close();
             }
