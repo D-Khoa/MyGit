@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using System.Data;
 using System.Threading;
 using System.Windows.Forms;
-using System.IO;
-using System.Linq;
 
 namespace Get_PQM_Data
 {
     public partial class frmMain : Form
     {
-        TfSQL sql;
-        
+        //----------------------------------------------------------------------------------------------------------------//
+        //--------------------------------------------------VARIABLES FIELD-----------------------------------------------//
+        //----------------------------------------------------------------------------------------------------------------//
+        TfSQL sql;        
         public static string sernodb = "laa10_003201908";
         public static string inspectdb = sernodb + "data";
+        List<string> inslist = new List<string>();
+        List<string> serlist = new List<string>();
         DataTable ds;
         DateTime datea;
+        bool tabcomp = false;
         string datef;
         string datet;
         string savepath;
@@ -23,10 +26,9 @@ namespace Get_PQM_Data
         string temp;
         string line;
         int c;
-        bool tabcomp = false;
-        List<string> inslist = new List<string>();
-        List<string> serlist = new List<string>();
-
+        //----------------------------------------------------------------------------------------------------------------//
+        //----------------------------------------------LOAD FORM COMBOBOX MODEL------------------------------------------//
+        //----------------------------------------------------------------------------------------------------------------//
         public frmMain()
         {
             InitializeComponent();
@@ -45,7 +47,9 @@ namespace Get_PQM_Data
             sql = new TfSQL();
             sql.getComboBoxData("select distinct model from procinsplink order by model asc", ref cmbModel);
         }
-
+        //----------------------------------------------------------------------------------------------------------------//
+        //-----------------------------------------------GET TREEVIEW-----------------------------------------------------//
+        //----------------------------------------------------------------------------------------------------------------//
         private void cmbModel_TextChanged(object sender, EventArgs e)
         {
             string model = cmbModel.Text;
@@ -56,13 +60,6 @@ namespace Get_PQM_Data
             {
                 root.GetNodes(GetListNodes(root.Text));
             }
-        }
-
-        private void getTableName()
-        {
-            datea = dtDatef.Value;
-            sernodb = cmbModel.Text + datea.Year.ToString("0000") + datea.Month.ToString("00");
-            inspectdb = sernodb + "data";
         }
 
         private List<string> GetListRoot(string model)
@@ -80,14 +77,70 @@ namespace Get_PQM_Data
                             + "' order by inspect asc", ref nodelist);
             return nodelist;
         }
-
+        //----------------------------------------------------------------------------------------------------------------//
+        //----------------------------------------GET INSPECT LIST--------------------------------------------------------//
+        //----------------------------------------------------------------------------------------------------------------//
         private void trInspect_AfterCheck(object sender, TreeViewEventArgs e)
         {
             inslist.Clear();
             e.Node.CheckedNode(e.Node.Checked);
         }
 
-        //LOAD SERNO FROM FILE CSV
+        private string inspects(ref List<string> list)
+        {
+            try
+            {
+                string sum = "";
+                foreach (string line in GetListRoot(temp))
+                {
+                    if (list[0] == line)
+                        list.RemoveAt(0);
+                }
+                sum = "'" + list[0] + "'";
+                list.RemoveAt(0);
+                foreach (string str in list)
+                {
+                    sum += ",'" + str + "'";
+                }
+                return sum;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return "''";
+            }
+        }
+        //----------------------------------------------------------------------------------------------------------------//
+        //----------------------------------------GET SERNO LIST----------------------------------------------------------//
+        //----------------------------------------------------------------------------------------------------------------//
+        private void txtBarcode_TextChanged(object sender, EventArgs e)
+        {
+            for (int i = 1; i < txtBarcode.Lines.Length; i++)
+                serlist.Add(txtBarcode.Lines[i]);
+            lbSerrows.Text = txtBarcode.Lines.Length.ToString() + " rows";
+        }
+
+        private string multxt()
+        {
+            try
+            {
+                if (serlist.Count > 0)
+                {
+                    line = "";
+                    line = "'" + serlist[0] + "'";
+                    foreach (string r in serlist)
+                    {
+                        line += ",'" + r + "'";
+                    }
+                }
+                return line;
+            }
+            catch (Exception) { return "''"; }
+        }
+
+        //----------------------------------------------------------------------------------------------------------------//
+        //------------------------------------------LOAD SERNO FROM CSV---------------------------------------------------//
+        //----------------------------------------------------------------------------------------------------------------//
         private void btnBrower_Click(object sender, EventArgs e)
         {
             ofCSV = new OpenFileDialog();
@@ -115,49 +168,14 @@ namespace Get_PQM_Data
                 MessageBox.Show(ex.ToString());
             }
         }
-
-        //CREATE STRING TO FIND DATA
-        private string inspects(ref List<string> list)
+        //----------------------------------------------------------------------------------------------------------------//
+        //------------------------------------------GET TABLE FROM DATABASE-----------------------------------------------//
+        //----------------------------------------------------------------------------------------------------------------//
+        private void getTableName()
         {
-            try
-            {
-                string sum = "";
-                foreach (string line in GetListRoot(temp))
-                {
-                    if (list[0] == line)
-                        list.RemoveAt(0);
-                }
-                sum = "'" + list[0] + "'";
-                list.RemoveAt(0);
-                foreach (string str in list)
-                {
-                    sum += ",'" + str + "'";
-                }
-                return sum;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                return "''";
-            }
-        }
-
-        private string multxt()
-        {
-            try
-            {
-                if (serlist.Count > 0)
-                {
-                    line = "";
-                    line = "'" + serlist[0] + "'";
-                    foreach (string r in serlist)
-                    {
-                        line += ",'" + r + "'";
-                    }
-                }
-                return line;
-            }
-            catch (Exception) { return "''"; }
+            datea = dtDatef.Value;
+            sernodb = cmbModel.Text + datea.Year.ToString("0000") + datea.Month.ToString("00");
+            inspectdb = sernodb + "data";
         }
 
         public void gettable()
@@ -191,9 +209,9 @@ namespace Get_PQM_Data
             ds = dsum;
             tabcomp = true;
         }
-
-
-        //FIND DATA
+        //----------------------------------------------------------------------------------------------------------------//
+        //------------------------------------------SEARCH DATA-----------------------------------------------------------//
+        //----------------------------------------------------------------------------------------------------------------//
         private void btnSearch_Click(object sender, EventArgs e)
         {
             try
@@ -224,13 +242,15 @@ namespace Get_PQM_Data
             tsTime.Text = (c / 100).ToString() + "," + ((c % 100) / 10).ToString() + " s";
             if (tabcomp)
             {
+                tabcomp = false;
                 dgvdt.DataSource = ds;
                 tsProcessing.Text = dgvdt.Rows.Count.ToString() + " Rows";
                 timer1.Enabled = false;
             }
         }
-
-        //CREATE CSV FILE
+        //----------------------------------------------------------------------------------------------------------------//
+        //------------------------------------------EXPORT TO CSV---------------------------------------------------------//
+        //----------------------------------------------------------------------------------------------------------------//
         private void btnCSV_Click(object sender, EventArgs e)
         {
             try
@@ -242,12 +262,12 @@ namespace Get_PQM_Data
                 datet = dtDatet.Text + " " + cmbHourst.Text + ":" + cmbMint.Text + ":00";
                 trInspect.Nodes.SelectNodes(ref inslist);
                 timer2.Enabled = true;
-                File.Create("data.csv");
+                //File.Create("data.csv");
                 sfSaveCSV = new SaveFileDialog();
                 sfSaveCSV.RestoreDirectory = true;
                 sfSaveCSV.Title = "Save file...";
                 sfSaveCSV.Filter = "csv file(*.csv)|*.csv|text file(*.txt)|*.txt|All file(*.*)|*.*";
-                //if (sfSaveCSV.ShowDialog() == DialogResult.OK)
+                if (sfSaveCSV.ShowDialog() == DialogResult.OK)
                 {
                     savepath = sfSaveCSV.FileName;
 
@@ -269,17 +289,13 @@ namespace Get_PQM_Data
             tsTime.Text = (c / 100).ToString() + "," + ((c % 100) / 10).ToString() + " s";
             if (tabcomp)
             {
-                ds.ToCSV(@"D:\data.csv");
+                tabcomp = false;
+                //ds.ToCSV(@"D:\data.csv");
+                ds.ToCSV(savepath);
+                System.Diagnostics.Process.Start(savepath);
                 tsProcessing.Text = ds.Rows.Count + " Rows";
                 timer2.Enabled = false;
             }
-        }
-
-        private void txtBarcode_TextChanged(object sender, EventArgs e)
-        {
-            for (int i = 1; i < txtBarcode.Lines.Length; i++)
-                serlist.Add(txtBarcode.Lines[i]);
-            lbSerrows.Text = txtBarcode.Lines.Length.ToString() + " rows";
         }
     }
 }

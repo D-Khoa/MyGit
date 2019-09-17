@@ -1,4 +1,6 @@
-﻿namespace Get_PQM_Data
+﻿using System.Data;
+
+namespace Get_PQM_Data
 {
     class Storage
     {
@@ -9,8 +11,6 @@
         }
         public string name { get; set; }
         public string id { get; set; }
-        public string plan_name { get; set; }
-        public string plan_id { get; set; }
-        public string stt_tb { get; set; }
+        public DataTable table { get; set; }
     }
 }

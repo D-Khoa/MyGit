@@ -128,15 +128,15 @@
             // 
             this.tsProcessing.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
             this.tsProcessing.Name = "tsProcessing";
-            this.tsProcessing.Size = new System.Drawing.Size(38, 19);
-            this.tsProcessing.Text = "none";
+            this.tsProcessing.Size = new System.Drawing.Size(40, 19);
+            this.tsProcessing.Text = "None";
             // 
             // tsSpace
             // 
             this.tsSpace.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
             this.tsSpace.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsSpace.Name = "tsSpace";
-            this.tsSpace.Size = new System.Drawing.Size(615, 19);
+            this.tsSpace.Size = new System.Drawing.Size(613, 19);
             this.tsSpace.Spring = true;
             // 
             // tsTime
@@ -212,8 +212,9 @@
             this.cmbModel.FormattingEnabled = true;
             this.cmbModel.Location = new System.Drawing.Point(45, 23);
             this.cmbModel.Name = "cmbModel";
-            this.cmbModel.Size = new System.Drawing.Size(124, 21);
+            this.cmbModel.Size = new System.Drawing.Size(116, 21);
             this.cmbModel.TabIndex = 6;
+            this.cmbModel.Text = "-----Select Model-----";
             this.cmbModel.TextChanged += new System.EventHandler(this.cmbModel_TextChanged);
             // 
             // groupBox2
