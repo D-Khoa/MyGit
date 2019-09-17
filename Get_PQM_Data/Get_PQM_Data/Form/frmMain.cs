@@ -11,20 +11,19 @@ namespace Get_PQM_Data
         //----------------------------------------------------------------------------------------------------------------//
         //--------------------------------------------------VARIABLES FIELD-----------------------------------------------//
         //----------------------------------------------------------------------------------------------------------------//
-        TfSQL sql;        
-        public static string sernodb = "laa10_003201908";
-        public static string inspectdb = sernodb + "data";
+        TfSQL sql;
+        DataTable ds;
+
         List<string> inslist = new List<string>();
         List<string> serlist = new List<string>();
-        DataTable ds;
-        DateTime datea;
-        bool tabcomp = false;
-        string datef;
-        string datet;
+        List<string> sernodb;
         string savepath;
         string openpath;
+        string datef;
+        string datet;
         string temp;
         string line;
+        bool tabcomp = false;
         int c;
         //----------------------------------------------------------------------------------------------------------------//
         //----------------------------------------------LOAD FORM COMBOBOX MODEL------------------------------------------//
@@ -37,6 +36,7 @@ namespace Get_PQM_Data
             sto.name = "pqmdb";
 
             ds = new DataTable();
+            sernodb = new List<string>();
             temp = "";
             line = "";
         }
@@ -173,21 +173,22 @@ namespace Get_PQM_Data
         //----------------------------------------------------------------------------------------------------------------//
         private void getTableName()
         {
-            datea = dtDatef.Value;
-            sernodb = cmbModel.Text + datea.Year.ToString("0000") + datea.Month.ToString("00");
-            inspectdb = sernodb + "data";
+            string name ="";
+            for (int i = dtDatef.Value.Month; i <= dtDatet.Value.Month; i++)
+            {
+                name = cmbModel.Text + dtDatef.Value.Year.ToString("0000") + i.ToString("00");
+                sernodb.Add(name);
+            }
         }
 
-        public void gettable()
+        private void getdatatable(ref DataTable dt1, ref DataTable dt2, string tb1, string dfr, string dto)
         {
-            tabcomp = false;
             string serno = multxt();
             string inspect = inspects(ref inslist);
-            DataTable dts = new DataTable();
-            DataTable dti = new DataTable();
-            string cmd = "select serno, lot, model, site, factory, line, process, inspectdate from " 
-                       + sernodb + " where 1=1 ";
-            string cmd2 = "select serno, inspectdate, inspect, inspectdata from " + inspectdb + " where 1=1 ";
+            string tb2 = tb1 + "data";
+            string cmd = "select serno, lot, model, site, factory, line, process, inspectdate from "
+                       + tb1 + " where 1=1 ";
+            string cmd2 = "select serno, inspectdate, inspect, inspectdata from " + tb2 + " where 1=1 ";
             if (serno != "")
             {
                 cmd += "and serno in(" + serno + ") order by inspectdate asc ";
@@ -195,12 +196,31 @@ namespace Get_PQM_Data
             }
             else
             {
-                cmd += "and inspectdate > '" + datef + "' and inspectdate < '" + datet 
+                cmd += "and inspectdate > '" + dfr + "' and inspectdate < '" + dto
                     + "' order by inspectdate asc";
-                cmd2 += "and inspect in(" + inspect + ") and inspectdate > '" + datef + "' and inspectdate < '" + datet + "' order by inspect asc, inspectdate asc";
+                cmd2 += "and inspect in(" + inspect + ") and inspectdate > '" + dfr + "' and inspectdate < '" + dto + "' order by inspect asc, inspectdate asc";
             }
-            sql.sqlDataAdapterFillDatatable(cmd, ref dts);
-            sql.sqlDataAdapterFillDatatable(cmd2, ref dti);
+            sql.sqlDataAdapterFillDatatable(cmd, ref dt1);
+            sql.sqlDataAdapterFillDatatable(cmd2, ref dt2);
+        }
+
+        public void gettable()
+        {
+            DataTable dts = new DataTable();
+            DataTable dti = new DataTable();
+            if (dtDatet.Value.Month - dtDatef.Value.Month == 0)
+                getdatatable(ref dts, ref dti, sernodb[0], datef, datet);
+            else
+            {
+                DataTable temp1 = new DataTable();
+                DataTable temp2 = new DataTable();
+                foreach(string name in sernodb)
+                {
+                    getdatatable(ref temp1, ref temp2, name, datef, datet);
+                    dts.Merge(temp1);
+                    dti.Merge(temp2);
+                }
+            }
             SQLLinQ lin = new SQLLinQ();
             ds = lin.Pivot(dti, dti.Columns["inspect"], dti.Columns["inspectdata"]);
             DataTable dsum = new DataTable();
