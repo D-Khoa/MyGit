@@ -13,7 +13,6 @@ namespace Get_PQM_Data
         //----------------------------------------------------------------------------------------------------------------//
         TfSQL sql;
         DataTable ds;
-
         List<string> inslist = new List<string>();
         List<string> serlist = new List<string>();
         List<string> sernodb;
@@ -97,7 +96,6 @@ namespace Get_PQM_Data
                         list.RemoveAt(0);
                 }
                 sum = "'" + list[0] + "'";
-                list.RemoveAt(0);
                 foreach (string str in list)
                 {
                     sum += ",'" + str + "'";
@@ -174,6 +172,7 @@ namespace Get_PQM_Data
         private void getTableName()
         {
             string name ="";
+            sernodb.Clear();
             for (int i = dtDatef.Value.Month; i <= dtDatet.Value.Month; i++)
             {
                 name = cmbModel.Text + dtDatef.Value.Year.ToString("0000") + i.ToString("00");
@@ -183,6 +182,8 @@ namespace Get_PQM_Data
 
         private void getdatatable(ref DataTable dt1, ref DataTable dt2, string tb1, string dfr, string dto)
         {
+            dt1.Clear();
+            dt2.Clear();
             string serno = multxt();
             string inspect = inspects(ref inslist);
             string tb2 = tb1 + "data";
@@ -245,6 +246,7 @@ namespace Get_PQM_Data
                 trInspect.Nodes.SelectNodes(ref inslist);
                 temp = cmbModel.Text;
                 timer1.Enabled = true;
+                //CREATE THREAD TO RUN IN BACKGROUND
                 Thread tab = new Thread(gettable);
                 tab.Start();
                 tab.IsBackground = true;
@@ -290,7 +292,7 @@ namespace Get_PQM_Data
                 if (sfSaveCSV.ShowDialog() == DialogResult.OK)
                 {
                     savepath = sfSaveCSV.FileName;
-
+                    //CREATE THREAD TO RUN IN BACKGROUND
                     Thread tab = new Thread(gettable);
                     tab.Start();
                     tab.IsBackground = true;
@@ -315,6 +317,16 @@ namespace Get_PQM_Data
                 System.Diagnostics.Process.Start(savepath);
                 tsProcessing.Text = ds.Rows.Count + " Rows";
                 timer2.Enabled = false;
+            }
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormCollection fc = Application.OpenForms;
+            foreach(Form f in fc)
+            {
+                if (f.Name == "frmLogin")
+                    f.Show();
             }
         }
     }

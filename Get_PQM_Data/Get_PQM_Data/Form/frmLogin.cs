@@ -34,8 +34,9 @@ namespace Get_PQM_Data
                     cmbUserID.Focus();
                     Storage sto = Storage.getStorage();
                     sto.id = cmbUserID.Text;
-                    frmMain frmJob = new frmMain();
-                    frmJob.ShowDialog();
+                    frmMain fMain = new frmMain();
+                    fMain.Show();
+                    this.Hide();
                 }
                 else
                     MessageBox.Show("Sai password!!!");
@@ -45,6 +46,5 @@ namespace Get_PQM_Data
                 MessageBox.Show(ex.ToString());
             }
         }
-
     }
 }

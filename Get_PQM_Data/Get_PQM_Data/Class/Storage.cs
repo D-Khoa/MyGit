@@ -12,5 +12,6 @@ namespace Get_PQM_Data
         public string name { get; set; }
         public string id { get; set; }
         public DataTable table { get; set; }
+        public bool isClosed { get; set; }
     }
 }

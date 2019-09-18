@@ -42,7 +42,7 @@ namespace Get_PQM_Data
 
         public static void SelectNodes(this TreeNodeCollection RootName, ref List<string> ListNodes)
         {
-            ListNodes.Clear();
+            //ListNodes.Clear();
             foreach(TreeNode Node in RootName)
             {
                 if (Node.Checked)
