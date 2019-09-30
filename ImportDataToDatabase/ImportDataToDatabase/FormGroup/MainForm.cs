@@ -130,7 +130,7 @@ namespace ImportDataToDatabase.FormGroup
             {
                 foreach (string file in files)
                 {
-                    if (ReadCSV(file, 17, ref table))
+                    if (ReadCSV(file, 14, ref table))
                     {
                         ImportToDB(file);
                         table.Clear();

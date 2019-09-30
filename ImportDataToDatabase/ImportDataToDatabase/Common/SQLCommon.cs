@@ -19,20 +19,20 @@ namespace ImportDataToDatabase.Common
                                       Integrated Security = True");
         }
 
-        public void SQLExcuteNonQuery(string sql)
-        {
-            ConnectionDB = new SqlConnection(ConnectionString.ToString());
-            ConnectionDB.Open();
-            SqlCommand command = new SqlCommand(sql, ConnectionDB);
-            command.ExecuteNonQuery();
-            ConnectionDB.Close();
-        }
+        //public void SQLExcuteNonQuery(string sql)
+        //{
+        //    ConnectionDB = new SqlConnection(ConnectionString.ToString());
+        //    ConnectionDB.Open();
+        //    SqlCommand command = new SqlCommand(sql, ConnectionDB);
+        //    command.ExecuteNonQuery();
+        //    ConnectionDB.Close();
+        //}
 
         public void InsertDatatableToDB(ref DataTable dt)
         {
             ConnectionDB = new SqlConnection(ConnectionString.ToString());
             ConnectionDB.Open();
-            using (var adapte = new SqlDataAdapter("select * from techlinkdb", ConnectionDB))
+            using (var adapte = new SqlDataAdapter("select * from m_pqmdata", ConnectionDB))
             using (var builder = new SqlCommandBuilder(adapte))
             {
                 adapte.InsertCommand = builder.GetInsertCommand();
