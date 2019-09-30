@@ -147,6 +147,7 @@ namespace ImportDataToDatabase.FormGroup
             btnStart.Enabled = false;
             btnStop.Enabled = true;
             btnExit.Enabled = false;
+            numTimer.Enabled = false;
             c = (int)numTimer.Value;
             if (bwSendData.IsBusy) bwSendData.CancelAsync();
             else bwSendData.RunWorkerAsync();
@@ -188,7 +189,8 @@ namespace ImportDataToDatabase.FormGroup
             else
             {
                 tsStatus.Text = "Sending data...";
-                CompareFormat(filespath);
+                if (filespath != null)
+                    CompareFormat(filespath);
                 bwSendData.RunWorkerAsync();
             }
         }
@@ -201,6 +203,7 @@ namespace ImportDataToDatabase.FormGroup
                 btnStart.Enabled = true;
                 btnStop.Enabled = false;
                 btnExit.Enabled = true;
+                numTimer.Enabled = false;
                 bwSendData.CancelAsync();
             }
         }
