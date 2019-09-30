@@ -86,10 +86,21 @@ namespace ImportDataToDatabase.FormGroup
         {
             StreamReader reader = new StreamReader(pathfile, false);
             dt = new DataTable();
-            for (int i = 1; i <= numcol; i++)
-            {
-                dt.Columns.Add(i.ToString());
-            }
+            dt.Columns.Add("serno");
+            dt.Columns.Add("lot");
+            dt.Columns.Add("model");
+            dt.Columns.Add("site");
+            dt.Columns.Add("factory");
+            dt.Columns.Add("line");
+            dt.Columns.Add("process");
+            dt.Columns.Add("item");
+            dt.Columns.Add("inspectdate");
+            dt.Columns.Add("inspecttime");
+            dt.Columns.Add("data");
+            dt.Columns.Add("judge");
+            dt.Columns.Add("status");
+            dt.Columns.Add("remark");
+
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
