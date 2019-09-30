@@ -126,15 +126,18 @@ namespace ImportDataToDatabase.FormGroup
         //COMPARE FORMAT FILE
         private void CompareFormat(string[] files)
         {
-            foreach (string file in files)
+            if (files != null)
             {
-                if (ReadCSV(file, 17, ref table))
+                foreach (string file in files)
                 {
-                    ImportToDB(file);
-                    table.Clear();
-                    File.Delete(file);
+                    if (ReadCSV(file, 17, ref table))
+                    {
+                        ImportToDB(file);
+                        table.Clear();
+                        File.Delete(file);
+                    }
+                    else MoveToFolder(file);
                 }
-                else MoveToFolder(file);
             }
             CounterCSV(txtFolderSource.Text);
         }
@@ -189,8 +192,7 @@ namespace ImportDataToDatabase.FormGroup
             else
             {
                 tsStatus.Text = "Sending data...";
-                if (filespath != null)
-                    CompareFormat(filespath);
+                CompareFormat(filespath);
                 bwSendData.RunWorkerAsync();
             }
         }
@@ -227,7 +229,6 @@ namespace ImportDataToDatabase.FormGroup
                 sw.WriteLine("timer=" + numTimer.Text);
                 sw.Close();
             }
-            System.Diagnostics.Process.Start(setpath);
         }
         #endregion
     }
