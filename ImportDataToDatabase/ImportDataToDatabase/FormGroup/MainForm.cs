@@ -5,9 +5,8 @@ using System.Linq;
 using System.Threading;
 using System.IO;
 using System.Windows.Forms;
-using ImportDataToDatabase.Common;
 
-namespace ImportDataToDatabase.FormGroup
+namespace ImportDataToDatabase
 {
     public partial class MainForm : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace ImportDataToDatabase.FormGroup
+﻿namespace ImportDataToDatabase
 {
     partial class MainForm
     {
@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbNumCSV = new System.Windows.Forms.Label();
             this.txtFolderSource = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnFSource = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtFolderSave = new System.Windows.Forms.TextBox();
@@ -57,25 +55,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lbNumCSV);
             this.groupBox1.Controls.Add(this.txtFolderSource);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnFSource);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(260, 82);
+            this.groupBox1.Size = new System.Drawing.Size(260, 49);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Folder Source";
-            // 
-            // lbNumCSV
-            // 
-            this.lbNumCSV.AutoSize = true;
-            this.lbNumCSV.Location = new System.Drawing.Point(127, 55);
-            this.lbNumCSV.Name = "lbNumCSV";
-            this.lbNumCSV.Size = new System.Drawing.Size(13, 13);
-            this.lbNumCSV.TabIndex = 4;
-            this.lbNumCSV.Text = "0";
             // 
             // txtFolderSource
             // 
@@ -83,15 +70,6 @@
             this.txtFolderSource.Name = "txtFolderSource";
             this.txtFolderSource.Size = new System.Drawing.Size(167, 20);
             this.txtFolderSource.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Numbers of file .csv :";
             // 
             // btnFSource
             // 
@@ -107,7 +85,7 @@
             // 
             this.groupBox3.Controls.Add(this.txtFolderSave);
             this.groupBox3.Controls.Add(this.btnFSave);
-            this.groupBox3.Location = new System.Drawing.Point(12, 100);
+            this.groupBox3.Location = new System.Drawing.Point(12, 67);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(260, 53);
             this.groupBox3.TabIndex = 4;
@@ -138,7 +116,7 @@
             this.tsStatus,
             this.toolStripStatusLabel1,
             this.tsTimer});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 248);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 222);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(281, 24);
             this.statusStrip1.TabIndex = 5;
@@ -155,14 +133,14 @@
             // 
             this.tsStatus.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.tsStatus.Name = "tsStatus";
-            this.tsStatus.Size = new System.Drawing.Size(145, 19);
+            this.tsStatus.Size = new System.Drawing.Size(144, 19);
             this.tsStatus.Spring = true;
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(47, 19);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(48, 19);
             this.toolStripStatusLabel1.Text = "Timer :";
             // 
             // tsTimer
@@ -178,7 +156,7 @@
             this.groupBox2.Controls.Add(this.btnStop);
             this.groupBox2.Controls.Add(this.btnStart);
             this.groupBox2.Controls.Add(this.numTimer);
-            this.groupBox2.Location = new System.Drawing.Point(12, 159);
+            this.groupBox2.Location = new System.Drawing.Point(12, 126);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 84);
             this.groupBox2.TabIndex = 7;
@@ -229,7 +207,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(218, 180);
+            this.btnExit.Location = new System.Drawing.Point(218, 147);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(48, 47);
             this.btnExit.TabIndex = 8;
@@ -249,7 +227,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(281, 272);
+            this.ClientSize = new System.Drawing.Size(281, 246);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.statusStrip1);
@@ -295,8 +273,6 @@
         private System.Windows.Forms.NumericUpDown numTimer;
         private System.Windows.Forms.Button btnExit;
         private System.ComponentModel.BackgroundWorker bwSendData;
-        private System.Windows.Forms.Label lbNumCSV;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtFolderSave;
     }
 }
