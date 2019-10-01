@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.IO;
 using System.Windows.Forms;
@@ -54,17 +51,8 @@ namespace ImportDataToDatabase.FormGroup
             if (FSopen.ShowDialog() == DialogResult.OK)
             {
                 txtFolderSource.Text = Path.GetDirectoryName(FSopen.FileName) + @"\";
-                int num = CounterCSV(txtFolderSource.Text);
+                filespath = Directory.GetFiles(txtFolderSource.Text, "*.csv");
             }
-        }
-
-        //COUNTER NUMBER OF CSV FILES IN SOURCE FOLDER
-        private int CounterCSV(string path)
-        {
-            filespath = Directory.GetFiles(path, "*.csv");
-            int num = filespath.Count();
-            lbNumCSV.Text = num.ToString();
-            return num;
         }
 
         //SELECT FOLDER FOR SAVE WRONG FORMAT FILE
@@ -113,46 +101,36 @@ namespace ImportDataToDatabase.FormGroup
             else return true;
         }
 
-        //IMPORT DATA FROM CSV TO DB
-        private void ImportToDB(string file)
-        {
-            try
-            {
-                SQLCommon sql = new SQLCommon();
-                sql.InsertDatatableToDB(ref table);
-            }
-            catch
-            {
-                MoveToFolder(file);
-            }
-        }
-
-        //MOVE FILE WRONG FORMAT TO SAVE FOLER
-        private void MoveToFolder(string file)
-        {
-            string tofile = txtFolderSave.Text + Path.GetFileName(file);
-            File.Move(file, tofile);
-        }
-
-        //COMPARE FORMAT FILE
-        private void CompareFormat(string[] files)
+        //COMPARE FORMAT AND SEND FILE
+        private void CompareAndSend(string[] files)
         {
             if (files != null)
             {
                 foreach (string file in files)
                 {
-                    if (ReadCSV(file, 14, ref table))
+                    string tofile = txtFolderSave.Text + Path.GetFileName(file);
+                    try
                     {
-                        ImportToDB(file);
-                        table.Clear();
-                        File.Delete(file);
+                        if (ReadCSV(file, 14, ref table))
+                        {
+                            SQLCommon sql = new SQLCommon();
+                            sql.InsertDatatableToDB(ref table);
+                            table.Clear();
+                            File.Delete(file);
+                        }
+                        else
+                        {
+                            File.Move(file, tofile);
+                        }
                     }
-                    else MoveToFolder(file);
+                    catch
+                    {
+                        File.Move(file, tofile);
+                    }
                 }
             }
-            CounterCSV(txtFolderSource.Text);
+            filespath = Directory.GetFiles(txtFolderSource.Text, "*.csv");
         }
-
 
         #region SETTING TIMER FOR SEND DATA
         //BUTTON START FOR START COUNTING
@@ -167,7 +145,7 @@ namespace ImportDataToDatabase.FormGroup
             else bwSendData.RunWorkerAsync();
         }
 
-        //COUNTING....
+        //COUNTING 1S
         private void bwSendData_DoWork(object sender, DoWorkEventArgs e)
         {
             for (int i = c; i >= 0; i--)
@@ -183,14 +161,14 @@ namespace ImportDataToDatabase.FormGroup
             }
         }
 
-        //UPDATE COUNTER EACH 1S
+        //SHOW COUNTER EACH 1S
         private void bwSendData_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             tsStatus.Text = "Counting for send...";
             tsTimer.Text = e.ProgressPercentage.ToString() + " s";
         }
 
-        //UPDATE STATUS
+        //SEND FILE WHILE COUNTER = 0
         private void bwSendData_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             //IF CLICK BUTTON STOP
@@ -203,7 +181,7 @@ namespace ImportDataToDatabase.FormGroup
             else
             {
                 tsStatus.Text = "Sending data...";
-                CompareFormat(filespath);
+                CompareAndSend(filespath);
                 bwSendData.RunWorkerAsync();
             }
         }
