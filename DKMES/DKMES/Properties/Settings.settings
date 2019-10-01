@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DKMES.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PQMDB_CONNECTION" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Server=192.168.145.12; Port=5432; User Id=pqm; Password=dbuser; Database=pqmdb; CommandTimeout=100; Timeout=100;</Value>
+    </Setting>
+    <Setting Name="MESDB_CONNECTION" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Server=192.168.145.12; Port=5432; User Id=pqm; Password=dbuser; Database=mesdb; CommandTimeout=100; Timeout=100;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

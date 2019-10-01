@@ -283,7 +283,6 @@ namespace Get_PQM_Data
                 datef = dtDatef.Text + " " + cmbHoursf.Text + ":" + cmbMinf.Text + ":00";
                 datet = dtDatet.Text + " " + cmbHourst.Text + ":" + cmbMint.Text + ":00";
                 trInspect.Nodes.SelectNodes(ref inslist);
-                timer2.Enabled = true;
                 //File.Create("data.csv");
                 sfSaveCSV = new SaveFileDialog();
                 sfSaveCSV.RestoreDirectory = true;
@@ -291,6 +290,7 @@ namespace Get_PQM_Data
                 sfSaveCSV.Filter = "csv file(*.csv)|*.csv|text file(*.txt)|*.txt|All file(*.*)|*.*";
                 if (sfSaveCSV.ShowDialog() == DialogResult.OK)
                 {
+                    timer2.Enabled = true;
                     savepath = sfSaveCSV.FileName;
                     //CREATE THREAD TO RUN IN BACKGROUND
                     Thread tab = new Thread(gettable);
