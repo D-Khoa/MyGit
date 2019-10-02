@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using DKMES.Common;
+using System.Collections.Generic;
 
 namespace DKMES.FormSys
 {
@@ -35,12 +36,21 @@ namespace DKMES.FormSys
                 pass = encrypt.Encrypt(pass);
 
                 string usercd = cmbUserCD.Text;
-                string cmd = "select password from m_login_password where user_cd ='" + usercd +
+                string passcmd = "select password from m_login_password where user_cd ='" + usercd +
                              "' and password ='" + pass + "'";
-                if (!string.IsNullOrEmpty(SQL.sqlExecuteScalarString(cmd)))
+                if (!string.IsNullOrEmpty(SQL.sqlExecuteScalarString(passcmd)))
                 {
-                    DialogResult = DialogResult.OK;
                     this.Hide();
+                    txtPassword.Clear();
+                    string cmd = "select user_name from m_mes_user where user_cd = '" + usercd + "'";
+                    Userdata.GetData().userName = SQL.sqlExecuteScalarString(cmd);
+                    cmd = "select registration_user_cd from m_login_password where user_cd = '" + usercd + "'";
+                    Userdata.GetData().reg_user = SQL.sqlExecuteScalarString(cmd);
+                    cmd = "select factory_cd from m_login_password where user_cd = '" + usercd + "'";
+                    Userdata.GetData().factory = SQL.sqlExecuteScalarString(cmd);
+                    MainMenuForm mainform = new MainMenuForm();
+                    mainform.ShowDialog();
+                    this.Show();
                 }
                 else
                 {

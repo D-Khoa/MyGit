@@ -51,16 +51,53 @@
   <ItemGroup>
     <Compile Include="Common\EncryptDecrypt.cs" />
     <Compile Include="Common\TfSQL.cs" />
+    <Compile Include="Common\Userdata.cs" />
+    <Compile Include="FormSys\Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\Client.Designer.cs">
+      <DependentUpon>Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSys\CommonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\CommonForm.Designer.cs">
+      <DependentUpon>CommonForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSys\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSys\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSys\MainMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\MainMenuForm.Designer.cs">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSys\ServerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\ServerForm.Designer.cs">
+      <DependentUpon>ServerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormSys\Client.resx">
+      <DependentUpon>Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSys\CommonForm.resx">
+      <DependentUpon>CommonForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSys\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSys\MainMenuForm.resx">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSys\ServerForm.resx">
+      <DependentUpon>ServerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -70,6 +107,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,7 +122,33 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FormIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NG_BEAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OK_BEAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\STANDBY.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NIDEC_Logo_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NIDEC_Logo_small_1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
