@@ -15,12 +15,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
     public partial class PQMDataViewerForm : FormCommonNCVP
     {
         #region Variables
+        //CONNECT TO PQM DB
         public string connection = Properties.Settings.Default.PQM_CONNECTION_STRING;
+
         PQMDataViewerVo Vo = new PQMDataViewerVo();
         List<string> temp = new List<string>();
-        Thread GetTable;
 
+        //THREAD GET TABLE IN BACKGROUND
+        Thread GetTable;
         #endregion
+
         #region Setup and load form (LOAD COMBOBOX MODEL)
         public PQMDataViewerForm()
         {
@@ -45,6 +49,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             cmbModel.Text = null;
         }
         #endregion
+
         #region LOAD INSPECT TREEVIEW
         //****************************************************************************************************************//
         //                                            LOAD INSPECT TREEVIEW                                               //
@@ -87,6 +92,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             }
         }
         #endregion
+
         #region LOAD INSPECT LIST FOR SQL COMMAND
         //****************************************************************************************************************//
         //                                            LOAD INSPECT LIST                                                   //
@@ -114,6 +120,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             }
         }
         #endregion
+
         #region LOAD SERIAL NUMBER LIST FOR SQL COMMAND
         //****************************************************************************************************************//
         //                                    LOAD SERIAL NO FROM TEXTBOX TO LIST                                         //
@@ -129,6 +136,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             }
         }
         #endregion
+
         #region LOAD SERIAL NUMBER FROM CSV FILE TO LIST
         //****************************************************************************************************************//
         //                                     LOAD SERIAL NO FROM CSV TO LIST                                            //
@@ -147,24 +155,32 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            if (Vo.OpenPath.Length > 0)
+            try
             {
-                List<string> listserno = new List<string>();
-                string s_trim = "";
-                CSV_Class csv = new CSV_Class();
-                csv.ReadLineCSVtoList(Vo.OpenPath, ref listserno);
-                Vo.SernoList.Append("'" + listserno[0] + "'");
-                listserno.RemoveAt(0);
-                foreach (string s in listserno)
+                if (Vo.OpenPath.Length > 0)
                 {
-                    s_trim = s.Trim('\n');
-                    Vo.SernoList.Append(",'" + s_trim + "'");
+                    List<string> listserno = new List<string>();
+                    string s_trim = "";
+                    CSV_Class csv = new CSV_Class();
+                    csv.ReadLineCSVtoList(Vo.OpenPath, ref listserno);
+                    Vo.SernoList.Append("'" + listserno[0] + "'");
+                    listserno.RemoveAt(0);
+                    foreach (string s in listserno)
+                    {
+                        s_trim = s.Trim('\n');
+                        Vo.SernoList.Append(",'" + s_trim + "'");
+                    }
+                    tsSernoRows.Text = listserno.Count().ToString() + " rows";
                 }
-                tsSernoRows.Text = listserno.Count().ToString() + " rows";
+                else Vo.SernoList.Clear();
             }
-            else Vo.SernoList.Clear();
+            catch (Exception)
+            {
+                MessageBox.Show("Please choose serial number file before load this!");
+            }
         }
         #endregion
+
         #region GET DATA FROM SQL TO DATATABLE
         //****************************************************************************************************************//
         //                                            GET DATA TO TABLE                                                   //
@@ -222,12 +238,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 Vo.ThreadComplete = true;
                 GetTable.Abort();
             }
-            catch(Framework.SystemException ex)
+            catch (Framework.SystemException ex)
             {
-                MessageBox.Show(ex.GetMessageData().ToString());
+                MessageBox.Show("Please select model and inspect before search data!");
+                //MessageBox.Show(ex.GetMessageData().ToString());
             }
         }
         #endregion
+
         #region BUTTON CLICK TO SEARCH DATA
         //****************************************************************************************************************//
         //                                            SEARCH DATA                                                         //
@@ -264,6 +282,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             }
         }
         #endregion
+
         #region EXPORT DATA TO CSV FILE
         //*****************************************************************************************************************//
         //                                         EXPORT DATA TO CSV FILE                                                 //
@@ -273,24 +292,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             try
             {
                 RenewData();
-                sfSaveCSV = new SaveFileDialog();
-                sfSaveCSV.RestoreDirectory = true;
-                sfSaveCSV.Title = "Save file...";
-                sfSaveCSV.Filter = "csv file(*.csv)|*.csv|text file(*.txt)|*.txt|All file(*.*)|*.*";
-                if (sfSaveCSV.ShowDialog() == DialogResult.OK)
-                {
-                    Vo.SavePath = sfSaveCSV.FileName;
-                    timer2.Enabled = true;
-                    //CREATE THREAD TO RUN IN BACKGROUND
-                    GetTable = new Thread(GetDataToTable);
-                    GetTable.Start();
-                    GetTable.IsBackground = true;
-                    tsProcessing.Text = "processing...";
-                }
+                timer2.Enabled = true;
+                //CREATE THREAD TO RUN IN BACKGROUND
+                GetTable = new Thread(GetDataToTable);
+                GetTable.Start();
+                GetTable.IsBackground = true;
+                tsProcessing.Text = "processing...";
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "NoInspect", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "NoInspect", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -302,15 +313,21 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             if (Vo.ThreadComplete)
             {
                 Vo.ThreadComplete = false;
-                CSV_Class csv = new CSV_Class();
-                DataTable dt = new DataTable();
-                dt = Vo.JoinedTable;
-                csv.exportcsv(ref dt, Vo.SavePath);
                 tsProcessing.Text = Vo.JoinedTable.Rows.Count + " Rows";
+                sfSaveCSV = new SaveFileDialog();
+                sfSaveCSV.RestoreDirectory = true;
+                sfSaveCSV.Title = "Save file...";
+                sfSaveCSV.Filter = "csv file(*.csv)|*.csv|text file(*.txt)|*.txt|All file(*.*)|*.*";
+                if (sfSaveCSV.ShowDialog() == DialogResult.OK)
+                {
+                    Vo.SavePath = sfSaveCSV.FileName;
+                    Vo.JoinedTable.ToCSV(Vo.SavePath);
+                }
                 timer2.Enabled = false;
             }
         }
         #endregion
+
         #region RENEW DATA
         //*****************************************************************************************************************//
         //                                                  RENEW DATA                                                     //
@@ -320,8 +337,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             Vo.ThreadComplete = false;
             Vo.Timer_Counter = 0;
             Vo.InspectList.Clear();
+            Vo.JoinedTable = new DataTable();
             Vo.JoinedTable.Clear();
             dgvdt.Refresh();
+            temp.Clear();
             SelectedNode(trInspect.Nodes);
         }
 
@@ -338,6 +357,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 Vo.SernoList.Clear();
             }
             tsSernoRows.Text = Vo.SernoList.Length.ToString() + " rows";
+            MessageBox.Show("Clear all serial number list!");
         }
         #endregion
 

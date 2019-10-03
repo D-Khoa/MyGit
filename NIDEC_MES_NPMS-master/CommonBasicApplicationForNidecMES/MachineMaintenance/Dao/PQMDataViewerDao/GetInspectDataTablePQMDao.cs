@@ -23,7 +23,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             {
                 sql.Append("select serno, inspectdate, inspect, inspectdata from "
                             + table + "data where inspect in (" + InVo.InspectList.ToString() + ")");
-                if (InVo.SernoList != null)
+                if (InVo.SernoList.Length > 0)
                 {
                     sql.Append(" and serno in (" + InVo.SernoList.ToString() + ")");
                 }

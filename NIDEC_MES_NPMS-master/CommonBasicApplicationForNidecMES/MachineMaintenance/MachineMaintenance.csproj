@@ -355,11 +355,11 @@
     <Compile Include="Cbm\WorkingStatusCbm\CallPlanCbm.cs" />
     <Compile Include="Cbm\WorkingStatusCbm\AddPlanWorkingStatusCbm.cs" />
     <Compile Include="Common\CSV Class.cs" />
+    <Compile Include="Common\CSVUtility.cs" />
     <Compile Include="Common\ExcelClass_ProductionControl.cs" />
     <Compile Include="Common\Excel Class.cs" />
     <Compile Include="Common\LinQ_Class.cs" />
     <Compile Include="Common\ResetControlValues.cs" />
-    <Compile Include="Common\TfSQL.cs" />
     <Compile Include="Common\VBStrings.cs" />
     <Compile Include="Dao\AccountWhDao\AccountLocationDao\AddAccountLocationDao.cs" />
     <Compile Include="Dao\AccountWhDao\AccountLocationDao\CheckAccountLocationDao.cs" />
@@ -894,10 +894,10 @@
     <Compile Include="Form\PQMConnectForm\RateNG\RateNGForm.Designer.cs">
       <DependentUpon>RateNGForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\PQMDataViewerForm\PQMDataViewerForm.cs">
+    <Compile Include="Form\PQMDataViewer\PQMDataViewerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\PQMDataViewerForm\PQMDataViewerForm.Designer.cs">
+    <Compile Include="Form\PQMDataViewer\PQMDataViewerForm.Designer.cs">
       <DependentUpon>PQMDataViewerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\ProductionControllerForm\AddPersonForm.cs">
@@ -1197,7 +1197,7 @@
     <EmbeddedResource Include="Form\PQMConnectForm\RateNG\RateNGForm.resx">
       <DependentUpon>RateNGForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\PQMDataViewerForm\PQMDataViewerForm.resx">
+    <EmbeddedResource Include="Form\PQMDataViewer\PQMDataViewerForm.resx">
       <DependentUpon>PQMDataViewerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ProductionControllerForm\AddPersonForm.resx">
