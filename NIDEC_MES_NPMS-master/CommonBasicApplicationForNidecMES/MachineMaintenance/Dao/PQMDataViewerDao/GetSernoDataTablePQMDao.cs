@@ -22,7 +22,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 sql.Append("select serno, lot, model, site, factory, line, process, inspectdate from " + table + " where 1=1");
                 if (InVo.SernoList.Length > 0)
                 {
-                    sql.Append(" and serno in (" + InVo.SernoList.ToString() + ")");
+                    if (InVo.CheckLot)
+                        sql.Append(" and lot in (" + InVo.SernoList.ToString() + ")");
+                    else
+                        sql.Append(" and serno in (" + InVo.SernoList.ToString() + ")");
                 }
                 else
                 {

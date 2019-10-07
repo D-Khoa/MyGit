@@ -25,7 +25,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                             + table + "data where inspect in (" + InVo.InspectList.ToString() + ")");
                 if (InVo.SernoList.Length > 0)
                 {
-                    sql.Append(" and serno in (" + InVo.SernoList.ToString() + ")");
+                    if (InVo.CheckLot)
+                        sql.Append(" and lot in (" + InVo.SernoList.ToString() + ")");
+                    else
+                        sql.Append(" and serno in (" + InVo.SernoList.ToString() + ")");
                 }
                 else
                 {

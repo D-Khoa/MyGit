@@ -52,8 +52,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
             StreamReader rd = new StreamReader(path, false);
             while(!rd.EndOfStream)
             {
+                string[] value;
                 var line = rd.ReadLine();
-                var value = line.Split(',');
+                if (line.Contains(','))
+                    value = line.Split(',');
+                else
+                    value = line.Split('\n');
                 itemlist.Add(value[0]);
             }
             rd.Close();

@@ -27,6 +27,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public StringBuilder SernoList { get; set; }
         public int Timer_Counter { get; set; }
         public bool ThreadComplete { get; set; }
+        public bool CheckLot { get; set; }
         public List<PQMDataViewerVo> pqmdataviewervo = new List<PQMDataViewerVo>();
     }
 }

@@ -50,7 +50,6 @@
             this.trInspect = new Com.Nidec.Mes.Framework.TreeViewCommon();
             this.panelCommon1 = new Com.Nidec.Mes.Framework.PanelCommon();
             this.btnClear = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.labelCommon2 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.txtBarcode = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.cmbModel = new Com.Nidec.Mes.Framework.ComboBoxCommon();
@@ -65,6 +64,8 @@
             this.btnSearch = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.btnLoad = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.bgwGetData = new System.ComponentModel.BackgroundWorker();
+            this.btnByLot = new System.Windows.Forms.RadioButton();
+            this.btnBySerno = new System.Windows.Forms.RadioButton();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdt)).BeginInit();
             this.groupBoxCommon1.SuspendLayout();
@@ -226,8 +227,9 @@
             this.panelCommon1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCommon1.ControlId = null;
+            this.panelCommon1.Controls.Add(this.btnBySerno);
+            this.panelCommon1.Controls.Add(this.btnByLot);
             this.panelCommon1.Controls.Add(this.btnClear);
-            this.panelCommon1.Controls.Add(this.labelCommon2);
             this.panelCommon1.Controls.Add(this.txtBarcode);
             this.panelCommon1.Controls.Add(this.labelCommon1);
             this.panelCommon1.Controls.Add(this.cmbModel);
@@ -243,24 +245,13 @@
             this.btnClear.BackColor = System.Drawing.SystemColors.Control;
             this.btnClear.ControlId = null;
             this.btnClear.Font = new System.Drawing.Font("Arial", 9F);
-            this.btnClear.Location = new System.Drawing.Point(124, 45);
+            this.btnClear.Location = new System.Drawing.Point(124, 33);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(71, 27);
+            this.btnClear.Size = new System.Drawing.Size(71, 36);
             this.btnClear.TabIndex = 34;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // labelCommon2
-            // 
-            this.labelCommon2.AutoSize = true;
-            this.labelCommon2.ControlId = null;
-            this.labelCommon2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon2.Location = new System.Drawing.Point(3, 51);
-            this.labelCommon2.Name = "labelCommon2";
-            this.labelCommon2.Size = new System.Drawing.Size(53, 15);
-            this.labelCommon2.TabIndex = 3;
-            this.labelCommon2.Text = "Barcode";
             // 
             // txtBarcode
             // 
@@ -281,7 +272,7 @@
             this.labelCommon1.AutoSize = true;
             this.labelCommon1.ControlId = null;
             this.labelCommon1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon1.Location = new System.Drawing.Point(3, 22);
+            this.labelCommon1.Location = new System.Drawing.Point(3, 7);
             this.labelCommon1.Name = "labelCommon1";
             this.labelCommon1.Size = new System.Drawing.Size(40, 15);
             this.labelCommon1.TabIndex = 1;
@@ -294,7 +285,7 @@
             this.cmbModel.ControlId = null;
             this.cmbModel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbModel.FormattingEnabled = true;
-            this.cmbModel.Location = new System.Drawing.Point(49, 19);
+            this.cmbModel.Location = new System.Drawing.Point(49, 4);
             this.cmbModel.Name = "cmbModel";
             this.cmbModel.Size = new System.Drawing.Size(146, 23);
             this.cmbModel.TabIndex = 0;
@@ -426,6 +417,28 @@
             this.btnLoad.UseVisualStyleBackColor = false;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
+            // btnByLot
+            // 
+            this.btnByLot.AutoSize = true;
+            this.btnByLot.Location = new System.Drawing.Point(6, 33);
+            this.btnByLot.Name = "btnByLot";
+            this.btnByLot.Size = new System.Drawing.Size(58, 19);
+            this.btnByLot.TabIndex = 35;
+            this.btnByLot.Text = "By Lot";
+            this.btnByLot.UseVisualStyleBackColor = true;
+            // 
+            // btnBySerno
+            // 
+            this.btnBySerno.AutoSize = true;
+            this.btnBySerno.Checked = true;
+            this.btnBySerno.Location = new System.Drawing.Point(6, 53);
+            this.btnBySerno.Name = "btnBySerno";
+            this.btnBySerno.Size = new System.Drawing.Size(118, 19);
+            this.btnBySerno.TabIndex = 36;
+            this.btnBySerno.TabStop = true;
+            this.btnBySerno.Text = "By serial number";
+            this.btnBySerno.UseVisualStyleBackColor = true;
+            // 
             // PQMDataViewerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,7 +499,6 @@
         private Framework.GroupBoxCommon groupBoxCommon1;
         private Framework.TreeViewCommon trInspect;
         private Framework.PanelCommon panelCommon1;
-        private Framework.LabelCommon labelCommon2;
         private Framework.TextBoxCommon txtBarcode;
         private Framework.LabelCommon labelCommon1;
         private Framework.ComboBoxCommon cmbModel;
@@ -506,6 +518,8 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel tsSernoRows;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.RadioButton btnBySerno;
+        private System.Windows.Forms.RadioButton btnByLot;
     }
 }
 

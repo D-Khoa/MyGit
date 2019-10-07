@@ -34,6 +34,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             Vo.SernoList = new System.Text.StringBuilder();
             Vo.SernoDBList = new List<string>();
             Vo.ThreadComplete = false;
+            Vo.CheckLot = false;
         }
         //****************************************************************************************************************//
         //                                            LOAD COMBOBOX MODEL                                                 //
@@ -161,8 +162,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 {
                     List<string> listserno = new List<string>();
                     string s_trim = "";
-                    CSV_Class csv = new CSV_Class();
-                    csv.ReadLineCSVtoList(Vo.OpenPath, ref listserno);
+                    Vo.OpenPath.ReadCSVtoList(ref listserno);
                     Vo.SernoList.Append("'" + listserno[0] + "'");
                     listserno.RemoveAt(0);
                     foreach (string s in listserno)
@@ -174,9 +174,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
                 else Vo.SernoList.Clear();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("Please choose serial number file before load this!");
+                //MessageBox.Show(ex.Message);
             }
         }
         #endregion
@@ -215,7 +216,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         InspectList = Vo.InspectList,
                         SernoList = Vo.SernoList,
                         DateTimeFrom = Vo.DateTimeFrom,
-                        DateTimeTo = Vo.DateTimeTo
+                        DateTimeTo = Vo.DateTimeTo,
+                        CheckLot = Vo.CheckLot
                     }
                     , connection);
                 PQMDataViewerVo sernotable = (PQMDataViewerVo)DefaultCbmInvoker
@@ -225,7 +227,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         SernoDBList = Vo.SernoDBList,
                         SernoList = Vo.SernoList,
                         DateTimeFrom = Vo.DateTimeFrom,
-                        DateTimeTo = Vo.DateTimeTo
+                        DateTimeTo = Vo.DateTimeTo,
+                        CheckLot = Vo.CheckLot
                     }
                     , connection);
                 Vo.InspectDataTable = inspectable.InspectDataTable;
@@ -334,6 +337,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         //*****************************************************************************************************************//
         private void RenewData()
         {
+            if (btnByLot.Checked)
+                Vo.CheckLot = true;
+            else
+                Vo.CheckLot = false;
             Vo.ThreadComplete = false;
             Vo.Timer_Counter = 0;
             Vo.InspectList.Clear();
@@ -360,6 +367,5 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             MessageBox.Show("Clear all serial number list!");
         }
         #endregion
-
     }
 }
