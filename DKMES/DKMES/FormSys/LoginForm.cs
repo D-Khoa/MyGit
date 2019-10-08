@@ -70,5 +70,10 @@ namespace DKMES.FormSys
         {
             if (e.KeyCode == Keys.Escape) this.Close();
         }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -33,9 +33,10 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnServer = new System.Windows.Forms.Button();
+            this.btnClient = new System.Windows.Forms.Button();
+            this.btnTrans = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnClient = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -68,6 +69,7 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnServer);
             this.flowLayoutPanel1.Controls.Add(this.btnClient);
+            this.flowLayoutPanel1.Controls.Add(this.btnTrans);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -83,6 +85,26 @@
             this.btnServer.Text = "Server";
             this.btnServer.UseVisualStyleBackColor = true;
             this.btnServer.Click += new System.EventHandler(this.btnServer_Click);
+            // 
+            // btnClient
+            // 
+            this.btnClient.Location = new System.Drawing.Point(84, 3);
+            this.btnClient.Name = "btnClient";
+            this.btnClient.Size = new System.Drawing.Size(75, 23);
+            this.btnClient.TabIndex = 1;
+            this.btnClient.Text = "Client";
+            this.btnClient.UseVisualStyleBackColor = true;
+            this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
+            // 
+            // btnTrans
+            // 
+            this.btnTrans.Location = new System.Drawing.Point(165, 3);
+            this.btnTrans.Name = "btnTrans";
+            this.btnTrans.Size = new System.Drawing.Size(75, 23);
+            this.btnTrans.TabIndex = 2;
+            this.btnTrans.Text = "TransText";
+            this.btnTrans.UseVisualStyleBackColor = true;
+            this.btnTrans.Click += new System.EventHandler(this.btnTrans_Click);
             // 
             // tabPage2
             // 
@@ -102,16 +124,6 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(664, 214);
             this.flowLayoutPanel2.TabIndex = 0;
-            // 
-            // btnClient
-            // 
-            this.btnClient.Location = new System.Drawing.Point(84, 3);
-            this.btnClient.Name = "btnClient";
-            this.btnClient.Size = new System.Drawing.Size(75, 23);
-            this.btnClient.TabIndex = 1;
-            this.btnClient.Text = "Client";
-            this.btnClient.UseVisualStyleBackColor = true;
-            this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
             // 
             // MainMenuForm
             // 
@@ -141,5 +153,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button btnClient;
+        private System.Windows.Forms.Button btnTrans;
     }
 }

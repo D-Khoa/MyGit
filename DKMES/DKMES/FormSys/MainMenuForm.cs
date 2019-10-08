@@ -28,5 +28,11 @@ namespace DKMES.FormSys
             ClientForm client = new ClientForm();
             client.Show();
         }
+
+        private void btnTrans_Click(object sender, EventArgs e)
+        {
+            TransmissionTextForm trans = new TransmissionTextForm();
+            trans.Show();
+        }
     }
 }
