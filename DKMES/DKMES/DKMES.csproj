@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormSys\CameraTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\CameraTestForm.Designer.cs">
+      <DependentUpon>CameraTestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Common\EncryptDecrypt.cs" />
     <Compile Include="Common\TfSQL.cs" />
     <Compile Include="Common\Userdata.cs" />
@@ -90,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormSys\CameraTestForm.resx">
+      <DependentUpon>CameraTestForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSys\Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +166,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\NIDEC_Logo_small_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WIA">
+      <Guid>{94A0E92D-43C0-494E-AC29-FD45948A5221}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
