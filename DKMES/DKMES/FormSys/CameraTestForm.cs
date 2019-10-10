@@ -1,21 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Dynamsoft.Core;
-using Dynamsoft.Common;
 using Dynamsoft.UVC;
 
 namespace DKMES.FormSys
 {
     public partial class CameraTestForm : Form
     {
+        #region VARIABLE
         CameraManager camman;
         ImageCore imagecore;
         Camera currcam;
@@ -24,8 +18,12 @@ namespace DKMES.FormSys
         int g = 0;
         int b = 0;
         int o = 100;
+        int X0, Y0, X1, Y1;
         bool btncheck = false;
+        bool drawrect = false;
+        #endregion
 
+        #region SETUP CAMERA
         public CameraTestForm()
         {
             InitializeComponent();
@@ -41,6 +39,7 @@ namespace DKMES.FormSys
                 {
                     cmbListDevice.Items.Add(name);
                 }
+                cmbListDevice.SelectedIndex = 0;
             }
         }
 
@@ -58,7 +57,9 @@ namespace DKMES.FormSys
                 currcam.OnFrameCaptrue += curcam_OnFramCapture;
             }
         }
+        #endregion
 
+        #region DRAW PICTURE ON FRAME
         private void SetPicture(Image img)
         {
             Bitmap temp = ((Bitmap)(img)).Clone(new Rectangle(0, 0, img.Width, img.Height), img.PixelFormat);
@@ -78,23 +79,43 @@ namespace DKMES.FormSys
 
         private void curcam_OnFramCapture(Bitmap bitmap)
         {
-            if (!btncheck)
+            if (btncheck)
             {
                 Thread.Sleep(50);
                 SetPicture(HueRGB(bitmap));
             }
-            else
+            //else
+            //{
+            //    Thread.Sleep(300);
+            //    SetPicture(ColorToGrayscale(bitmap));
+            //}
+            else //if(drawrect)
             {
-                Thread.Sleep(300);
-                SetPicture(ColorToGrayscale(bitmap));
+                //SetPicture(DrawRect(X0, Y0, X1, Y1, bitmap));
+                Rectangle rect = DrawRect(X0, Y0, X1, Y1);
+                SetPicture(HueRGB(bitmap, rect));
             }
+            //else
+            //{
+            //    SetPicture(bitmap);
+            //}
         }
+        #endregion
 
+        #region COLOR FIX
         private Image HueRGB(Image img)
         {
             Graphics gp = Graphics.FromImage(img);
             SolidBrush br = new SolidBrush(Color.FromArgb(o, r, g, b));
             gp.FillRectangle(br, new Rectangle(0, 0, img.Width, img.Height));
+            return img;
+        }
+
+        private Image HueRGB(Image img, Rectangle rect)
+        {
+            Graphics gp = Graphics.FromImage(img);
+            SolidBrush br = new SolidBrush(Color.FromArgb(o, r, g, b));
+            gp.FillRectangle(br, rect);
             return img;
         }
 
@@ -110,12 +131,14 @@ namespace DKMES.FormSys
                     g = (int)(c.G * 0.587);
                     b = (int)(c.B * 0.114);
                     o = r + g + b;
-                    bmp.SetPixel(x, y, Color.FromArgb(o,o,o));
+                    bmp.SetPixel(x, y, Color.FromArgb(o, o, o));
                 }
             }
             return bmp;
         }
+        #endregion
 
+        #region SETUP TRACKBAR AND NUMBERIC
         private void trackR_Scroll(object sender, EventArgs e)
         {
             numR.Value = trackR.Value;
@@ -159,13 +182,61 @@ namespace DKMES.FormSys
         {
             trackOpt.Value = (int)numOpt.Value;
         }
+        #endregion
 
-        private void button1_Click(object sender, EventArgs e)
+        #region DRAW RECT WITH MOUSE MOVER
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            X0 = e.X;
+            Y0 = e.Y;
+            X1 = X0;
+            Y1 = Y0;
+            drawrect = true;
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drawrect)
+            {
+                X1 = e.X;
+                Y1 = e.Y;
+            }
+        }
+
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            X1 = e.X;
+            Y1 = e.Y;
+            drawrect = false;
+        }
+
+        private Rectangle DrawRect(int x0, int y0, int x1, int y1)
+        {
+            int w = x1 - x0;
+            int h = y1 - y0;
+            Rectangle rect = new Rectangle(x0, y0, w, h);
+            //Graphics gp = Graphics.FromImage(img);
+            //Pen p = new Pen(Color.Red);
+            //gp.DrawRectangle(p, rect);
+            return rect;
+        }
+        #endregion
+
+        private void btnHue_Click(object sender, EventArgs e)
         {
             if (!btncheck)
+            {
                 btncheck = true;
+                groupBox1.Enabled = true;
+                btnHue.Text = "Normal";
+            }
             else
+            {
                 btncheck = false;
+                groupBox1.Enabled = false;
+                btnHue.Text = "Hue";
+            }
         }
+
     }
 }
