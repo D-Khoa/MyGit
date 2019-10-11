@@ -155,7 +155,8 @@ namespace DKMES.FormSys
             Bitmap bmp = new Bitmap(img);
             Bitmap32 bmp32 = new Bitmap32(bmp);
             bmp32.LockBitmap();
-            bmp32.ToGrayScale(o);
+            //bmp32.ToGrayScale(o);
+            bmp32.Robert(o);
             bmp32.UnlockBitmap();
             return bmp;
         }

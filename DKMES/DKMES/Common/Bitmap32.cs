@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 
@@ -106,5 +107,49 @@ namespace DKMES.Common
                 ImageBytes[i + 3] = opt;
             }
         }
+
+        public void Vector(byte opt)
+        {
+            int total_size = m_BitmapData.Stride * m_BitmapData.Height;
+            int line = m_BitmapData.Stride;
+            byte c;
+            byte t, l, r, b;
+            ToGrayScale(0);
+            for (int i = 4 + line; i < total_size - line - 4; i += 4)
+            {
+                c = (byte)(ImageBytes[i] * 0.11 + ImageBytes[i + 1] * 0.59 + ImageBytes[i + 2] * 0.3);
+                t = (byte)(ImageBytes[i - line] * 0.11 + ImageBytes[i + 1 - line] * 0.59 + ImageBytes[i + 2 - line] * 0.3);
+                b = (byte)(ImageBytes[i + line] * 0.11 + ImageBytes[i + 1 + line] * 0.59 + ImageBytes[i + 2 + line] * 0.3);
+                l = (byte)(ImageBytes[i - 4] * 0.11 + ImageBytes[i - 3] * 0.59 + ImageBytes[i - 2] * 0.3);
+                r = (byte)(ImageBytes[i + 4] * 0.11 + ImageBytes[i + 5] * 0.59 + ImageBytes[i + 6] * 0.3);
+                if (c > t && c > b && c > r && c > l)
+                {
+                    ImageBytes[i] = 0;
+                    ImageBytes[i + 1] = 0;
+                    ImageBytes[i + 2] = 255;
+                    ImageBytes[i + 3] = 255;
+                }
+            }
+        }
+
+        public void Robert(byte opt)
+        {
+            int total_size = m_BitmapData.Stride * m_BitmapData.Height;
+            int line = m_BitmapData.Stride;
+            byte c1, c2, c3, c4;
+            ToGrayScale(0);
+            for (int i = 0; i < total_size - line - 4; i += 4)
+            {
+                c1 = ImageBytes[i];
+                c2 = ImageBytes[i + 4];
+                c3 = ImageBytes[i + line];
+                c4 = ImageBytes[i + line + 4];
+                ImageBytes[i] = (byte)(Math.Abs(c1 - c4) + Math.Abs(c2 - c3));
+                ImageBytes[i + 1] = (byte)(Math.Abs(c1 - c4) + Math.Abs(c2 - c3));
+                ImageBytes[i + 2] = (byte)(Math.Abs(c1 - c4) + Math.Abs(c2 - c3));
+                ImageBytes[i + 3] = opt;
+            }
+        }
+
     }
 }

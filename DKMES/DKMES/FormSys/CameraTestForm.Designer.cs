@@ -348,14 +348,14 @@
             this.tsSizeForm});
             this.statusStrip1.Location = new System.Drawing.Point(0, 684);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1366, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(884, 22);
             this.statusStrip1.TabIndex = 20;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // tsSizeForm
             // 
             this.tsSizeForm.Name = "tsSizeForm";
-            this.tsSizeForm.Size = new System.Drawing.Size(1351, 17);
+            this.tsSizeForm.Size = new System.Drawing.Size(869, 17);
             this.tsSizeForm.Spring = true;
             this.tsSizeForm.Text = "None";
             // 
@@ -392,7 +392,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1366, 706);
+            this.ClientSize = new System.Drawing.Size(884, 706);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.pnPicBoxes);
             this.Controls.Add(this.btnCap);
