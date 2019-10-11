@@ -30,7 +30,6 @@
         {
             this.cmbListDevice = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnHue = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.numOpt = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,6 +44,20 @@
             this.trackG = new System.Windows.Forms.TrackBar();
             this.trackR = new System.Windows.Forms.TrackBar();
             this.label5 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnNormal = new System.Windows.Forms.Button();
+            this.btnGreen = new System.Windows.Forms.Button();
+            this.btnBlue = new System.Windows.Forms.Button();
+            this.btnRed = new System.Windows.Forms.Button();
+            this.btnGrayscale = new System.Windows.Forms.Button();
+            this.btnHue = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnRect = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tsSizeForm = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnCap = new System.Windows.Forms.Button();
+            this.pnPicBoxes = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numOpt)).BeginInit();
@@ -55,12 +68,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackR)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbListDevice
             // 
             this.cmbListDevice.FormattingEnabled = true;
-            this.cmbListDevice.Location = new System.Drawing.Point(55, 32);
+            this.cmbListDevice.Location = new System.Drawing.Point(55, 9);
             this.cmbListDevice.Name = "cmbListDevice";
             this.cmbListDevice.Size = new System.Drawing.Size(139, 21);
             this.cmbListDevice.TabIndex = 0;
@@ -68,28 +84,15 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Location = new System.Drawing.Point(215, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(532, 447);
+            this.pictureBox1.Size = new System.Drawing.Size(640, 480);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
-            // 
-            // btnHue
-            // 
-            this.btnHue.Location = new System.Drawing.Point(9, 294);
-            this.btnHue.Name = "btnHue";
-            this.btnHue.Size = new System.Drawing.Size(75, 23);
-            this.btnHue.TabIndex = 15;
-            this.btnHue.Text = "Hue";
-            this.btnHue.UseVisualStyleBackColor = true;
-            this.btnHue.Click += new System.EventHandler(this.btnHue_Click);
             // 
             // groupBox1
             // 
@@ -105,17 +108,16 @@
             this.groupBox1.Controls.Add(this.trackB);
             this.groupBox1.Controls.Add(this.trackG);
             this.groupBox1.Controls.Add(this.trackR);
-            this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(9, 59);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 229);
+            this.groupBox1.Size = new System.Drawing.Size(200, 221);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hue";
             // 
             // numOpt
             // 
-            this.numOpt.Location = new System.Drawing.Point(145, 17);
+            this.numOpt.Location = new System.Drawing.Point(145, 19);
             this.numOpt.Maximum = new decimal(new int[] {
             255,
             0,
@@ -137,7 +139,7 @@
             // 
             // trackOpt
             // 
-            this.trackOpt.Location = new System.Drawing.Point(35, 19);
+            this.trackOpt.Location = new System.Drawing.Point(35, 17);
             this.trackOpt.Maximum = 255;
             this.trackOpt.Name = "trackOpt";
             this.trackOpt.Size = new System.Drawing.Size(104, 45);
@@ -146,7 +148,7 @@
             // 
             // numB
             // 
-            this.numB.Location = new System.Drawing.Point(145, 170);
+            this.numB.Location = new System.Drawing.Point(145, 172);
             this.numB.Maximum = new decimal(new int[] {
             255,
             0,
@@ -159,7 +161,7 @@
             // 
             // numG
             // 
-            this.numG.Location = new System.Drawing.Point(145, 119);
+            this.numG.Location = new System.Drawing.Point(145, 121);
             this.numG.Maximum = new decimal(new int[] {
             255,
             0,
@@ -172,7 +174,7 @@
             // 
             // numR
             // 
-            this.numR.Location = new System.Drawing.Point(145, 68);
+            this.numR.Location = new System.Drawing.Point(145, 70);
             this.numR.Maximum = new decimal(new int[] {
             255,
             0,
@@ -212,7 +214,7 @@
             // 
             // trackB
             // 
-            this.trackB.Location = new System.Drawing.Point(35, 172);
+            this.trackB.Location = new System.Drawing.Point(35, 170);
             this.trackB.Maximum = 255;
             this.trackB.Name = "trackB";
             this.trackB.Size = new System.Drawing.Size(104, 45);
@@ -221,7 +223,7 @@
             // 
             // trackG
             // 
-            this.trackG.Location = new System.Drawing.Point(35, 121);
+            this.trackG.Location = new System.Drawing.Point(35, 119);
             this.trackG.Maximum = 255;
             this.trackG.Name = "trackG";
             this.trackG.Size = new System.Drawing.Size(104, 45);
@@ -230,7 +232,7 @@
             // 
             // trackR
             // 
-            this.trackR.Location = new System.Drawing.Point(35, 70);
+            this.trackR.Location = new System.Drawing.Point(35, 68);
             this.trackR.Maximum = 255;
             this.trackR.Name = "trackR";
             this.trackR.Size = new System.Drawing.Size(104, 45);
@@ -240,25 +242,172 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 35);
+            this.label5.Location = new System.Drawing.Point(6, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 17;
             this.label5.Text = "Camera";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnNormal);
+            this.groupBox2.Controls.Add(this.btnGreen);
+            this.groupBox2.Controls.Add(this.btnBlue);
+            this.groupBox2.Controls.Add(this.btnRed);
+            this.groupBox2.Controls.Add(this.btnGrayscale);
+            this.groupBox2.Controls.Add(this.btnHue);
+            this.groupBox2.Location = new System.Drawing.Point(9, 280);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 138);
+            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Color Setting";
+            // 
+            // btnNormal
+            // 
+            this.btnNormal.Location = new System.Drawing.Point(17, 19);
+            this.btnNormal.Name = "btnNormal";
+            this.btnNormal.Size = new System.Drawing.Size(75, 33);
+            this.btnNormal.TabIndex = 21;
+            this.btnNormal.Text = "Normal";
+            this.btnNormal.UseVisualStyleBackColor = true;
+            this.btnNormal.Click += new System.EventHandler(this.btnNormal_Click);
+            // 
+            // btnGreen
+            // 
+            this.btnGreen.Location = new System.Drawing.Point(110, 58);
+            this.btnGreen.Name = "btnGreen";
+            this.btnGreen.Size = new System.Drawing.Size(75, 33);
+            this.btnGreen.TabIndex = 20;
+            this.btnGreen.Text = "Green";
+            this.btnGreen.UseVisualStyleBackColor = true;
+            this.btnGreen.Click += new System.EventHandler(this.btnGreen_Click);
+            // 
+            // btnBlue
+            // 
+            this.btnBlue.Location = new System.Drawing.Point(110, 97);
+            this.btnBlue.Name = "btnBlue";
+            this.btnBlue.Size = new System.Drawing.Size(75, 33);
+            this.btnBlue.TabIndex = 19;
+            this.btnBlue.Text = "Blue";
+            this.btnBlue.UseVisualStyleBackColor = true;
+            this.btnBlue.Click += new System.EventHandler(this.btnBlue_Click);
+            // 
+            // btnRed
+            // 
+            this.btnRed.Location = new System.Drawing.Point(110, 19);
+            this.btnRed.Name = "btnRed";
+            this.btnRed.Size = new System.Drawing.Size(75, 33);
+            this.btnRed.TabIndex = 18;
+            this.btnRed.Text = "Red";
+            this.btnRed.UseVisualStyleBackColor = true;
+            this.btnRed.Click += new System.EventHandler(this.btnRed_Click);
+            // 
+            // btnGrayscale
+            // 
+            this.btnGrayscale.Location = new System.Drawing.Point(17, 97);
+            this.btnGrayscale.Name = "btnGrayscale";
+            this.btnGrayscale.Size = new System.Drawing.Size(75, 33);
+            this.btnGrayscale.TabIndex = 17;
+            this.btnGrayscale.Text = "Grayscale";
+            this.btnGrayscale.UseVisualStyleBackColor = true;
+            this.btnGrayscale.Click += new System.EventHandler(this.btnGrayscale_Click);
+            // 
+            // btnHue
+            // 
+            this.btnHue.Location = new System.Drawing.Point(17, 58);
+            this.btnHue.Name = "btnHue";
+            this.btnHue.Size = new System.Drawing.Size(75, 33);
+            this.btnHue.TabIndex = 16;
+            this.btnHue.Text = "Hue";
+            this.btnHue.UseVisualStyleBackColor = true;
+            this.btnHue.Click += new System.EventHandler(this.btnHue_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel1.Controls.Add(this.btnRect);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(9, 424);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 66);
+            this.flowLayoutPanel1.TabIndex = 19;
+            // 
+            // btnRect
+            // 
+            this.btnRect.Location = new System.Drawing.Point(3, 3);
+            this.btnRect.Name = "btnRect";
+            this.btnRect.Size = new System.Drawing.Size(75, 23);
+            this.btnRect.TabIndex = 0;
+            this.btnRect.Text = "Rectance";
+            this.btnRect.UseVisualStyleBackColor = true;
+            this.btnRect.Click += new System.EventHandler(this.btnRect_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsSizeForm});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 684);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1366, 22);
+            this.statusStrip1.TabIndex = 20;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tsSizeForm
+            // 
+            this.tsSizeForm.Name = "tsSizeForm";
+            this.tsSizeForm.Size = new System.Drawing.Size(1351, 17);
+            this.tsSizeForm.Spring = true;
+            this.tsSizeForm.Text = "None";
+            // 
+            // btnCap
+            // 
+            this.btnCap.Location = new System.Drawing.Point(27, 36);
+            this.btnCap.Name = "btnCap";
+            this.btnCap.Size = new System.Drawing.Size(75, 23);
+            this.btnCap.TabIndex = 22;
+            this.btnCap.Text = "Capture";
+            this.btnCap.UseVisualStyleBackColor = true;
+            this.btnCap.Click += new System.EventHandler(this.btnCap_Click);
+            // 
+            // pnPicBoxes
+            // 
+            this.pnPicBoxes.AutoScroll = true;
+            this.pnPicBoxes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnPicBoxes.Location = new System.Drawing.Point(9, 496);
+            this.pnPicBoxes.Name = "pnPicBoxes";
+            this.pnPicBoxes.Size = new System.Drawing.Size(846, 185);
+            this.pnPicBoxes.TabIndex = 23;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(119, 36);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 24;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // CameraTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 471);
+            this.ClientSize = new System.Drawing.Size(1366, 706);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.pnPicBoxes);
+            this.Controls.Add(this.btnCap);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnHue);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmbListDevice);
             this.Name = "CameraTestForm";
             this.Text = "CameraTestForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.CameraTestForm_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.CameraTestForm_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -270,6 +419,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackR)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,7 +432,6 @@
 
         private System.Windows.Forms.ComboBox cmbListDevice;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnHue;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.NumericUpDown numOpt;
         private System.Windows.Forms.Label label4;
@@ -294,5 +446,19 @@
         private System.Windows.Forms.TrackBar trackG;
         private System.Windows.Forms.TrackBar trackR;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnGreen;
+        private System.Windows.Forms.Button btnBlue;
+        private System.Windows.Forms.Button btnRed;
+        private System.Windows.Forms.Button btnGrayscale;
+        private System.Windows.Forms.Button btnHue;
+        private System.Windows.Forms.Button btnNormal;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnRect;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel tsSizeForm;
+        private System.Windows.Forms.Button btnCap;
+        private System.Windows.Forms.FlowLayoutPanel pnPicBoxes;
+        private System.Windows.Forms.Button btnClear;
     }
 }

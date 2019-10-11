@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Drawing;
-using System.Threading;
 using System.Windows.Forms;
 using Dynamsoft.Core;
 using Dynamsoft.UVC;
+using DKMES.Common;
 
 namespace DKMES.FormSys
 {
@@ -13,13 +13,14 @@ namespace DKMES.FormSys
         CameraManager camman;
         ImageCore imagecore;
         Camera currcam;
-        Color c;
-        int r = 0;
-        int g = 0;
-        int b = 0;
-        int o = 100;
+        PictureBox picbox = new PictureBox();
+        byte r = 0;
+        byte g = 0;
+        byte b = 0;
+        byte o = 100;
+        int key = 0;
+        int n = 0;
         int X0, Y0, X1, Y1;
-        bool btncheck = false;
         bool drawrect = false;
         #endregion
 
@@ -79,26 +80,56 @@ namespace DKMES.FormSys
 
         private void curcam_OnFramCapture(Bitmap bitmap)
         {
-            if (btncheck)
+            switch (key)
             {
-                Thread.Sleep(50);
-                SetPicture(HueRGB(bitmap));
+                case 0:
+                    SetPicture(bitmap);
+                    break;
+                case 1:
+                    SetPicture(HueRGB(bitmap));
+                    break;
+                case 2:
+                    SetPicture(ColorToGrayscale(bitmap));
+                    break;
+                case 3:
+                    SetPicture(RedFilter(bitmap));
+                    break;
+                case 4:
+                    SetPicture(GreenFilter(bitmap));
+                    break;
+                case 5:
+                    SetPicture(BlueFilter(bitmap));
+                    break;
+                case 6:
+                    Rectangle rect = DrawRect(X0, Y0, X1, Y1);
+                    SetPicture(HueRGB(bitmap, rect));
+                    break;
+                case 7:
+                    CapturePicture(pictureBox1.Image, picbox);
+                    key = 0;
+                    break;
             }
-            //else
-            //{
-            //    Thread.Sleep(300);
-            //    SetPicture(ColorToGrayscale(bitmap));
-            //}
-            else //if(drawrect)
+        }
+
+        private void CapturePicture(Image img, PictureBox pic)
+        {
+            Bitmap temp = new Bitmap(img, new Size(213, 160));
+            //Bitmap temp = ((Bitmap)(img)).Clone(new Rectangle(0, 0, img.Width, img.Height), img.PixelFormat);
+            temp.SetResolution(213, 160);
+            if (pic.InvokeRequired)
             {
-                //SetPicture(DrawRect(X0, Y0, X1, Y1, bitmap));
-                Rectangle rect = DrawRect(X0, Y0, X1, Y1);
-                SetPicture(HueRGB(bitmap, rect));
+                pic.BeginInvoke(new MethodInvoker(
+                    delegate ()
+                    {
+                        pic.Name = "pic_" + n;
+                        pic.Image = temp;
+                    }));
             }
-            //else
-            //{
-            //    SetPicture(bitmap);
-            //}
+            else
+            {
+                pic.Image = temp;
+                n++;
+            }
         }
         #endregion
 
@@ -122,18 +153,40 @@ namespace DKMES.FormSys
         private Image ColorToGrayscale(Image img)
         {
             Bitmap bmp = new Bitmap(img);
-            for (int x = 0; x < bmp.Width; x++)
-            {
-                for (int y = 0; y < bmp.Height; y++)
-                {
-                    c = bmp.GetPixel(x, y);
-                    r = (int)(c.R * 0.299);
-                    g = (int)(c.G * 0.587);
-                    b = (int)(c.B * 0.114);
-                    o = r + g + b;
-                    bmp.SetPixel(x, y, Color.FromArgb(o, o, o));
-                }
-            }
+            Bitmap32 bmp32 = new Bitmap32(bmp);
+            bmp32.LockBitmap();
+            bmp32.ToGrayScale(o);
+            bmp32.UnlockBitmap();
+            return bmp;
+        }
+
+        private Image RedFilter(Image img)
+        {
+            Bitmap bmp = new Bitmap(img);
+            Bitmap32 bmp32 = new Bitmap32(bmp);
+            bmp32.LockBitmap();
+            bmp32.GetRed(o);
+            bmp32.UnlockBitmap();
+            return bmp;
+        }
+
+        private Image GreenFilter(Image img)
+        {
+            Bitmap bmp = new Bitmap(img);
+            Bitmap32 bmp32 = new Bitmap32(bmp);
+            bmp32.LockBitmap();
+            bmp32.GetGreen(o);
+            bmp32.UnlockBitmap();
+            return bmp;
+        }
+
+        private Image BlueFilter(Image img)
+        {
+            Bitmap bmp = new Bitmap(img);
+            Bitmap32 bmp32 = new Bitmap32(bmp);
+            bmp32.LockBitmap();
+            bmp32.GetBlue(o);
+            bmp32.UnlockBitmap();
             return bmp;
         }
         #endregion
@@ -142,19 +195,19 @@ namespace DKMES.FormSys
         private void trackR_Scroll(object sender, EventArgs e)
         {
             numR.Value = trackR.Value;
-            r = trackR.Value;
+            r = (byte)trackR.Value;
         }
 
         private void trackG_Scroll(object sender, EventArgs e)
         {
             numG.Value = trackG.Value;
-            g = trackG.Value;
+            g = (byte)trackG.Value;
         }
 
         private void trackB_Scroll(object sender, EventArgs e)
         {
             numB.Value = trackB.Value;
-            b = trackB.Value;
+            b = (byte)trackB.Value;
         }
 
         private void numR_ValueChanged(object sender, EventArgs e)
@@ -175,7 +228,7 @@ namespace DKMES.FormSys
         private void trackOpt_Scroll(object sender, EventArgs e)
         {
             numOpt.Value = trackOpt.Value;
-            o = trackOpt.Value;
+            o = (byte)trackOpt.Value;
         }
 
         private void numOpt_ValueChanged(object sender, EventArgs e)
@@ -222,21 +275,64 @@ namespace DKMES.FormSys
         }
         #endregion
 
-        private void btnHue_Click(object sender, EventArgs e)
+        #region BUTTON SET KEY
+        private void btnNormal_Click(object sender, EventArgs e)
         {
-            if (!btncheck)
-            {
-                btncheck = true;
-                groupBox1.Enabled = true;
-                btnHue.Text = "Normal";
-            }
-            else
-            {
-                btncheck = false;
-                groupBox1.Enabled = false;
-                btnHue.Text = "Hue";
-            }
+            key = 0;
         }
 
+        private void btnHue_Click(object sender, EventArgs e)
+        {
+            key = 1;
+        }
+
+        private void btnGrayscale_Click(object sender, EventArgs e)
+        {
+            key = 2;
+        }
+
+        private void btnRed_Click(object sender, EventArgs e)
+        {
+            key = 3;
+        }
+
+        private void btnGreen_Click(object sender, EventArgs e)
+        {
+            key = 4;
+        }
+
+        private void btnBlue_Click(object sender, EventArgs e)
+        {
+            key = 5;
+        }
+
+        private void btnRect_Click(object sender, EventArgs e)
+        {
+            key = 6;
+        }
+
+        private void btnCap_Click(object sender, EventArgs e)
+        {
+            n++;
+            picbox = new PictureBox();
+            picbox.Name = "pic_" + n;
+            picbox.Width = 213;
+            picbox.Height = 160;
+            pnPicBoxes.Controls.Add(picbox);
+            key = 7;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            pnPicBoxes.Controls.Clear();
+        }
+        #endregion
+
+        private void CameraTestForm_Paint(object sender, PaintEventArgs e)
+        {
+            int w = this.Width;
+            int h = this.Height;
+            tsSizeForm.Text = w.ToString() + "X" + h.ToString();
+        }
     }
 }
