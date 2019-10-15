@@ -108,6 +108,29 @@ namespace DKMES.Common
             }
         }
 
+        public void ToBlackWhite(byte offset)
+        {
+            ToGrayScale(255);
+            int total_size = m_BitmapData.Stride * m_BitmapData.Height;
+            for (int i = 0; i < total_size - 4; i += 4)
+            {
+                if (ImageBytes[i] > offset)
+                {
+                    ImageBytes[i] = 255;
+                    ImageBytes[i + 1] = 255;
+                    ImageBytes[i + 2] = 255;
+                    ImageBytes[i + 3] = 255;
+                }
+                else
+                {
+                    ImageBytes[i] = 0;
+                    ImageBytes[i + 1] = 0;
+                    ImageBytes[i + 2] = 0;
+                    ImageBytes[i + 3] = 255;
+                }
+            }
+        }
+
         public void Vector(byte opt)
         {
             int total_size = m_BitmapData.Stride * m_BitmapData.Height;
@@ -132,24 +155,68 @@ namespace DKMES.Common
             }
         }
 
-        public void Robert(byte opt)
+        public void Robert(byte offset, byte red, byte green, byte blue)
         {
             int total_size = m_BitmapData.Stride * m_BitmapData.Height;
             int line = m_BitmapData.Stride;
-            byte c1, c2, c3, c4;
-            ToGrayScale(0);
+            byte c1, c2, c3, c4, c5, c6, c7, c8, c9, g;
+            ToGrayScale(255);
+            for (int i = 0; i < total_size - 2 * line - 8; i += 4)
+            {
+                c1 = ImageBytes[i];
+                c2 = ImageBytes[i + 4];
+                c3 = ImageBytes[i + 8];
+                c4 = ImageBytes[i + line];
+                c5 = ImageBytes[i + line + 4];
+                c6 = ImageBytes[i + line + 8];
+                c7 = ImageBytes[i + 2 * line];
+                c8 = ImageBytes[i + 2 * line + 4];
+                c9 = ImageBytes[i + 2 * line + 8];
+                g = (byte)(Math.Abs((c7 + 2 * c8 + c9) - (c1 + 2 * c2 + c3))
+                    + Math.Abs((c3 + 2 * c6 + c9) - (c1 + 2 * c4 + c7)));
+                if (g > offset)
+                {
+                    ImageBytes[i] = blue;
+                    ImageBytes[i + 1] = green;
+                    ImageBytes[i + 2] = red;
+                    ImageBytes[i + 3] = 255;
+                }
+            }
+        }
+
+        public void Gradient(byte opt)
+        {
+            int total_size = m_BitmapData.Stride * m_BitmapData.Height;
+            int line = m_BitmapData.Stride;
+            byte c1, c2, c3;
+            byte g;
             for (int i = 0; i < total_size - line - 4; i += 4)
             {
                 c1 = ImageBytes[i];
                 c2 = ImageBytes[i + 4];
                 c3 = ImageBytes[i + line];
-                c4 = ImageBytes[i + line + 4];
-                ImageBytes[i] = (byte)(Math.Abs(c1 - c4) + Math.Abs(c2 - c3));
-                ImageBytes[i + 1] = (byte)(Math.Abs(c1 - c4) + Math.Abs(c2 - c3));
-                ImageBytes[i + 2] = (byte)(Math.Abs(c1 - c4) + Math.Abs(c2 - c3));
-                ImageBytes[i + 3] = opt;
+                g = (byte)(Math.Abs(c2 - c1) + Math.Abs(c3 - c1));
+                if (g != 1 && g != 0)
+                {
+                    //ImageBytes[i] = c1; ;
+                    //ImageBytes[i + 1] = c1;
+                    ImageBytes[i + 2] = 255;
+                    ImageBytes[i + 3] = opt;
+                }
             }
         }
 
+        public int IntergnalImage(int x, int y)
+        {
+            int total_size = 4 * x * y;
+            int line = m_BitmapData.Stride;
+            int sum = 0;
+            ToGrayScale(255);
+            for(int i = 0; i < total_size - 4; i += 4)
+            {
+                sum += ImageBytes[i];
+            }
+            return sum;
+        }
     }
 }

@@ -1,9 +1,11 @@
 ﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using Dynamsoft.Core;
-using Dynamsoft.UVC;
 using DKMES.Common;
+using Dynamsoft.UVC;
+using System.Drawing;
+using Dynamsoft.Core;
+using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 
 namespace DKMES.FormSys
 {
@@ -14,6 +16,8 @@ namespace DKMES.FormSys
         ImageCore imagecore;
         Camera currcam;
         PictureBox picbox = new PictureBox();
+        Brush brushtext = Brushes.Orange;
+        PointF p = new PointF(0, 0);
         byte r = 0;
         byte g = 0;
         byte b = 0;
@@ -101,21 +105,23 @@ namespace DKMES.FormSys
                     SetPicture(BlueFilter(bitmap));
                     break;
                 case 6:
-                    Rectangle rect = DrawRect(X0, Y0, X1, Y1);
-                    SetPicture(HueRGB(bitmap, rect));
+                    SetPicture(HueRGBRect(bitmap));
                     break;
                 case 7:
                     CapturePicture(pictureBox1.Image, picbox);
                     key = 0;
+                    break;
+                case 8:
+                    //SetPicture(FrameDraw(bitmap));
+                    SetPicture(ColorToBinary(bitmap));
                     break;
             }
         }
 
         private void CapturePicture(Image img, PictureBox pic)
         {
+            img.Save(@"/pic_" + n + ".png");
             Bitmap temp = new Bitmap(img, new Size(213, 160));
-            //Bitmap temp = ((Bitmap)(img)).Clone(new Rectangle(0, 0, img.Width, img.Height), img.PixelFormat);
-            temp.SetResolution(213, 160);
             if (pic.InvokeRequired)
             {
                 pic.BeginInvoke(new MethodInvoker(
@@ -142,11 +148,29 @@ namespace DKMES.FormSys
             return img;
         }
 
-        private Image HueRGB(Image img, Rectangle rect)
+        private Image HueRGBRect(Image img)
         {
+            int w = Math.Abs(X1 - X0);
+            int h = Math.Abs(Y1 - Y0);
+            Rectangle rect = new Rectangle();
+            if (X0 < X1)
+            {
+                if(Y0 < Y1)
+                    rect = new Rectangle(X0, Y0, w, h);
+                else
+                    rect = new Rectangle(X0, Y1, w, h);
+            }
+            else
+            {
+                if (Y0 < Y1)
+                    rect = new Rectangle(X1, Y0, w, h);
+                else
+                    rect = new Rectangle(X1, Y1, w, h);
+            }
             Graphics gp = Graphics.FromImage(img);
             SolidBrush br = new SolidBrush(Color.FromArgb(o, r, g, b));
-            gp.FillRectangle(br, rect);
+            //gp.FillRectangle(br, rect);
+            gp.DrawRectangle(new Pen(Color.Red), rect);
             return img;
         }
 
@@ -155,8 +179,20 @@ namespace DKMES.FormSys
             Bitmap bmp = new Bitmap(img);
             Bitmap32 bmp32 = new Bitmap32(bmp);
             bmp32.LockBitmap();
-            //bmp32.ToGrayScale(o);
-            bmp32.Robert(o);
+            bmp32.ToGrayScale(o);
+            //bmp32.Robert(o, r, g, b);
+            //bmp32.ToBlackWhite(o);
+            //bmp32.Gradient(o);
+            bmp32.UnlockBitmap();
+            return bmp;
+        }
+
+        private Image ColorToBinary(Image img)
+        {
+            Bitmap bmp = new Bitmap(img);
+            Bitmap32 bmp32 = new Bitmap32(bmp);
+            bmp32.LockBitmap();
+            bmp32.ToBlackWhite(o);
             bmp32.UnlockBitmap();
             return bmp;
         }
@@ -189,6 +225,31 @@ namespace DKMES.FormSys
             bmp32.GetBlue(o);
             bmp32.UnlockBitmap();
             return bmp;
+        }
+
+        private Image FrameDraw(Image img)
+        {
+            int max = img.Height;
+            int min = img.Height / 8;
+            Graphics gp = Graphics.FromImage(img);
+            Bitmap bmp = new Bitmap(img);
+            System.Drawing.Imaging.PixelFormat Format = img.PixelFormat;
+            for (int i = max; i >= min; i = i / 2)
+            {
+                for (int x = 0; x < img.Width; x += i)
+                {
+                    for (int y = 0; y < max; y += i)
+                    {
+                        Rectangle rect = new Rectangle(0,0, i, i);
+                        Bitmap clone = bmp.Clone(rect, Format);
+                        Bitmap32 bmp32 = new Bitmap32(clone);
+                        bmp32.LockBitmap();
+                        bmp32.Robert(o, r, g, b);
+                        bmp32.UnlockBitmap();
+                    }
+                }
+            }
+            return img;
         }
         #endregion
 
@@ -263,17 +324,6 @@ namespace DKMES.FormSys
             Y1 = e.Y;
             drawrect = false;
         }
-
-        private Rectangle DrawRect(int x0, int y0, int x1, int y1)
-        {
-            int w = x1 - x0;
-            int h = y1 - y0;
-            Rectangle rect = new Rectangle(x0, y0, w, h);
-            //Graphics gp = Graphics.FromImage(img);
-            //Pen p = new Pen(Color.Red);
-            //gp.DrawRectangle(p, rect);
-            return rect;
-        }
         #endregion
 
         #region BUTTON SET KEY
@@ -320,7 +370,24 @@ namespace DKMES.FormSys
             picbox.Width = 213;
             picbox.Height = 160;
             pnPicBoxes.Controls.Add(picbox);
+            picbox.DoubleClick += Picbox_DoubleClick;
             key = 7;
+        }
+
+        private void Picbox_DoubleClick(object sender, EventArgs e)
+        {
+            SaveFileDialog sf = new SaveFileDialog();
+            sf.Filter = "Png image(*.png)|*.png|Jpg image(*.jpg)|*.jpg|Bitmap image(*.bmp)|*.bmp|All file(*.*)|*.*";
+            if(sf.ShowDialog() == DialogResult.OK)
+            {
+                Bitmap b = new Bitmap(picbox.Image, new Size(640,480));
+                b.Save(sf.FileName);
+            }
+        }
+
+        private void btnFrame_Click(object sender, EventArgs e)
+        {
+            key = 8;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -334,6 +401,13 @@ namespace DKMES.FormSys
             int w = this.Width;
             int h = this.Height;
             tsSizeForm.Text = w.ToString() + "X" + h.ToString();
+        }
+
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+            DateTime currentdate = DateTime.Now;
+            e.Graphics.DrawString(currentdate.ToString("yyyy-MM-dd"), DefaultFont, brushtext, p);
+            e.Graphics.DrawString(currentdate.ToString("HH:mm:ss"), DefaultFont, brushtext, p.X, p.Y + 20);
         }
     }
 }

@@ -58,6 +58,7 @@
             this.btnCap = new System.Windows.Forms.Button();
             this.pnPicBoxes = new System.Windows.Forms.FlowLayoutPanel();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnFrame = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numOpt)).BeginInit();
@@ -90,6 +91,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(640, 480);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
@@ -144,7 +146,7 @@
             this.trackOpt.Name = "trackOpt";
             this.trackOpt.Size = new System.Drawing.Size(104, 45);
             this.trackOpt.TabIndex = 24;
-            this.trackOpt.Scroll += new System.EventHandler(this.trackOpt_Scroll);
+            this.trackOpt.ValueChanged += new System.EventHandler(this.trackOpt_Scroll);
             // 
             // numB
             // 
@@ -219,7 +221,7 @@
             this.trackB.Name = "trackB";
             this.trackB.Size = new System.Drawing.Size(104, 45);
             this.trackB.TabIndex = 17;
-            this.trackB.Scroll += new System.EventHandler(this.trackB_Scroll);
+            this.trackB.ValueChanged += new System.EventHandler(this.trackB_Scroll);
             // 
             // trackG
             // 
@@ -228,7 +230,7 @@
             this.trackG.Name = "trackG";
             this.trackG.Size = new System.Drawing.Size(104, 45);
             this.trackG.TabIndex = 16;
-            this.trackG.Scroll += new System.EventHandler(this.trackG_Scroll);
+            this.trackG.ValueChanged += new System.EventHandler(this.trackG_Scroll);
             // 
             // trackR
             // 
@@ -237,7 +239,7 @@
             this.trackR.Name = "trackR";
             this.trackR.Size = new System.Drawing.Size(104, 45);
             this.trackR.TabIndex = 15;
-            this.trackR.Scroll += new System.EventHandler(this.trackR_Scroll);
+            this.trackR.ValueChanged += new System.EventHandler(this.trackR_Scroll);
             // 
             // label5
             // 
@@ -327,6 +329,7 @@
             // 
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Controls.Add(this.btnRect);
+            this.flowLayoutPanel1.Controls.Add(this.btnFrame);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(9, 424);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 66);
@@ -387,6 +390,16 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnFrame
+            // 
+            this.btnFrame.Location = new System.Drawing.Point(84, 3);
+            this.btnFrame.Name = "btnFrame";
+            this.btnFrame.Size = new System.Drawing.Size(75, 23);
+            this.btnFrame.TabIndex = 1;
+            this.btnFrame.Text = "Frame";
+            this.btnFrame.UseVisualStyleBackColor = true;
+            this.btnFrame.Click += new System.EventHandler(this.btnFrame_Click);
             // 
             // CameraTestForm
             // 
@@ -460,5 +473,6 @@
         private System.Windows.Forms.Button btnCap;
         private System.Windows.Forms.FlowLayoutPanel pnPicBoxes;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnFrame;
     }
 }
