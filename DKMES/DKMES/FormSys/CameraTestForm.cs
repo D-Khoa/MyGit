@@ -6,6 +6,10 @@ using Dynamsoft.Core;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Drawing.Drawing2D;
+using System.IO.Ports;
+using System.IO;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace DKMES.FormSys
 {
@@ -22,6 +26,7 @@ namespace DKMES.FormSys
         byte g = 0;
         byte b = 0;
         byte o = 100;
+        byte[] output;
         int key = 0;
         int n = 0;
         int X0, Y0, X1, Y1;
@@ -116,6 +121,17 @@ namespace DKMES.FormSys
                     SetPicture(ColorToBinary(bitmap));
                     break;
             }
+            ToHexArray(bitmap);
+            if (serialPort1.IsOpen)
+            {
+                if (!backgroundWorker1.IsBusy)
+                    backgroundWorker1.RunWorkerAsync();
+            }
+            else
+            {
+                if (backgroundWorker1.IsBusy)
+                    backgroundWorker1.CancelAsync();
+            }
         }
 
         private void CapturePicture(Image img, PictureBox pic)
@@ -155,7 +171,7 @@ namespace DKMES.FormSys
             Rectangle rect = new Rectangle();
             if (X0 < X1)
             {
-                if(Y0 < Y1)
+                if (Y0 < Y1)
                     rect = new Rectangle(X0, Y0, w, h);
                 else
                     rect = new Rectangle(X0, Y1, w, h);
@@ -180,9 +196,6 @@ namespace DKMES.FormSys
             Bitmap32 bmp32 = new Bitmap32(bmp);
             bmp32.LockBitmap();
             bmp32.ToGrayScale(o);
-            //bmp32.Robert(o, r, g, b);
-            //bmp32.ToBlackWhite(o);
-            //bmp32.Gradient(o);
             bmp32.UnlockBitmap();
             return bmp;
         }
@@ -193,6 +206,16 @@ namespace DKMES.FormSys
             Bitmap32 bmp32 = new Bitmap32(bmp);
             bmp32.LockBitmap();
             bmp32.ToBlackWhite(o);
+            bmp32.UnlockBitmap();
+            return bmp;
+        }
+
+        private Bitmap ToFloySteinberg(Image img)
+        {
+            Bitmap bmp = new Bitmap(img);
+            Bitmap32 bmp32 = new Bitmap32(bmp);
+            bmp32.LockBitmap();
+            bmp32.FloydSteinberg(o);
             bmp32.UnlockBitmap();
             return bmp;
         }
@@ -240,7 +263,7 @@ namespace DKMES.FormSys
                 {
                     for (int y = 0; y < max; y += i)
                     {
-                        Rectangle rect = new Rectangle(0,0, i, i);
+                        Rectangle rect = new Rectangle(0, 0, i, i);
                         Bitmap clone = bmp.Clone(rect, Format);
                         Bitmap32 bmp32 = new Bitmap32(clone);
                         bmp32.LockBitmap();
@@ -250,6 +273,22 @@ namespace DKMES.FormSys
                 }
             }
             return img;
+        }
+
+        private void ToHexArray(Image img)
+        {
+            Bitmap bmp = new Bitmap(img, new Size(128, 64));
+            bmp.SetResolution(128, 64);
+            Bitmap32 bmp32 = new Bitmap32(bmp);
+            bmp32.LockBitmap();
+            bmp32.ToGrayScale(255);
+            output = bmp32.ToHex(128,64);
+            bmp32.UnlockBitmap();
+            try
+            {
+                bmp.Save("/test.bmp");
+            }
+            catch { }
         }
         #endregion
 
@@ -378,9 +417,9 @@ namespace DKMES.FormSys
         {
             SaveFileDialog sf = new SaveFileDialog();
             sf.Filter = "Png image(*.png)|*.png|Jpg image(*.jpg)|*.jpg|Bitmap image(*.bmp)|*.bmp|All file(*.*)|*.*";
-            if(sf.ShowDialog() == DialogResult.OK)
+            if (sf.ShowDialog() == DialogResult.OK)
             {
-                Bitmap b = new Bitmap(picbox.Image, new Size(640,480));
+                Bitmap b = new Bitmap(picbox.Image, new Size(640, 480));
                 b.Save(sf.FileName);
             }
         }
@@ -388,6 +427,28 @@ namespace DKMES.FormSys
         private void btnFrame_Click(object sender, EventArgs e)
         {
             key = 8;
+        }
+
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!serialPort1.IsOpen)
+                {
+                    serialPort1.PortName = cmbSerial.Text;
+                    serialPort1.Open();
+                    btnConnect.Text = "Disconnect";
+                }
+                else
+                {
+                    serialPort1.Close();
+                    btnConnect.Text = "Connect";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -401,6 +462,7 @@ namespace DKMES.FormSys
             int w = this.Width;
             int h = this.Height;
             tsSizeForm.Text = w.ToString() + "X" + h.ToString();
+            cmbSerial.DataSource = SerialPort.GetPortNames();
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
@@ -408,6 +470,52 @@ namespace DKMES.FormSys
             DateTime currentdate = DateTime.Now;
             e.Graphics.DrawString(currentdate.ToString("yyyy-MM-dd"), DefaultFont, brushtext, p);
             e.Graphics.DrawString(currentdate.ToString("HH:mm:ss"), DefaultFont, brushtext, p.X, p.Y + 20);
+        }
+
+        private void Sendfile()
+        {
+            try
+            {
+                //Thread.Sleep(1000);
+                File.WriteAllBytes("/test.txt", output);
+                if (serialPort1.IsOpen)
+                    serialPort1.Write(output, 0, output.Length);
+                else
+                    serialPort1.DiscardOutBuffer();
+            }
+            catch (Exception ex)
+            {
+                //   MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Thread.Sleep(100);
+                backgroundWorker1.ReportProgress(i);
+                if (backgroundWorker1.CancellationPending)
+                {
+                    e.Cancel = true;
+                    backgroundWorker1.ReportProgress(0);
+                    return;
+                }
+            }
+            backgroundWorker1.ReportProgress(10);
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
+        {
+            Sendfile();
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            if (e.Cancelled)
+                serialPort1.Close();
+            else
+                backgroundWorker1.RunWorkerAsync();
         }
     }
 }

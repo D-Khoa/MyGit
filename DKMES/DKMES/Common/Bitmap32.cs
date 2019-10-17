@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace DKMES.Common
 {
@@ -131,6 +132,40 @@ namespace DKMES.Common
             }
         }
 
+        public void FloydSteinberg(byte offset)
+        {
+            ToGrayScale(255);
+            int total_size = m_BitmapData.Stride * m_BitmapData.Height;
+            int line = m_BitmapData.Stride;
+            byte c, c1, c2, c3, c4, cn;
+            int quant;
+            for (int i = 4; i < total_size - line - 4; i += 4)
+            {
+                c = ImageBytes[i];
+                cn = (byte)(Math.Round((double)(c / offset)) * 255);
+                quant = c - cn;
+                c1 = ImageBytes[i + 4];
+                c2 = ImageBytes[i + line - 4];
+                c3 = ImageBytes[i + line];
+                c4 = ImageBytes[i + line + 4];
+                ImageBytes[i] = cn;
+                ImageBytes[i + 1] = cn;
+                ImageBytes[i + 2] = cn;
+                ImageBytes[i + 4] = (byte)(c1 + quant * 7 / 16);
+                ImageBytes[i + 5] = (byte)(c1 + quant * 7 / 16);
+                ImageBytes[i + 6] = (byte)(c1 + quant * 7 / 16);
+                ImageBytes[i + line - 4] = (byte)(c2 + quant * 3 / 16);
+                ImageBytes[i + line - 3] = (byte)(c2 + quant * 3 / 16);
+                ImageBytes[i + line - 2] = (byte)(c2 + quant * 3 / 16);
+                ImageBytes[i + line] = (byte)(c3 + quant * 5 / 16);
+                ImageBytes[i + line + 1] = (byte)(c3 + quant * 5 / 16);
+                ImageBytes[i + line + 2] = (byte)(c3 + quant * 5 / 16);
+                ImageBytes[i + line + 4] = (byte)(c4 + quant * 1 / 16);
+                ImageBytes[i + line + 5] = (byte)(c4 + quant * 1 / 16);
+                ImageBytes[i + line + 6] = (byte)(c4 + quant * 1 / 16);
+            }
+        }
+
         public void Vector(byte opt)
         {
             int total_size = m_BitmapData.Stride * m_BitmapData.Height;
@@ -212,11 +247,27 @@ namespace DKMES.Common
             int line = m_BitmapData.Stride;
             int sum = 0;
             ToGrayScale(255);
-            for(int i = 0; i < total_size - 4; i += 4)
+            for (int i = 0; i < total_size - 4; i += 4)
             {
                 sum += ImageBytes[i];
             }
             return sum;
+        }
+
+        public byte[] ToHex(int x, int y)
+        {
+            ToGrayScale(255);
+            int total_size = m_BitmapData.Stride * m_BitmapData.Height;
+            int n = 0;
+            byte c;
+            byte[] h = new byte[x * y];
+            for (int i = 0; i < total_size - 4; i += 4)
+            {
+                c = ImageBytes[i];
+                h[n] = Encoding.ASCII.GetBytes(c.ToString("X"));
+                n++;
+            }
+            return h;
         }
     }
 }

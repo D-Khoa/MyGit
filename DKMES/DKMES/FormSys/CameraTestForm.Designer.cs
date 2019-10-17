@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cmbListDevice = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -53,12 +54,16 @@
             this.btnHue = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnRect = new System.Windows.Forms.Button();
+            this.btnFrame = new System.Windows.Forms.Button();
+            this.cmbSerial = new System.Windows.Forms.ComboBox();
+            this.btnConnect = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsSizeForm = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnCap = new System.Windows.Forms.Button();
             this.pnPicBoxes = new System.Windows.Forms.FlowLayoutPanel();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnFrame = new System.Windows.Forms.Button();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numOpt)).BeginInit();
@@ -330,6 +335,8 @@
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Controls.Add(this.btnRect);
             this.flowLayoutPanel1.Controls.Add(this.btnFrame);
+            this.flowLayoutPanel1.Controls.Add(this.cmbSerial);
+            this.flowLayoutPanel1.Controls.Add(this.btnConnect);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(9, 424);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 66);
@@ -345,20 +352,48 @@
             this.btnRect.UseVisualStyleBackColor = true;
             this.btnRect.Click += new System.EventHandler(this.btnRect_Click);
             // 
+            // btnFrame
+            // 
+            this.btnFrame.Location = new System.Drawing.Point(84, 3);
+            this.btnFrame.Name = "btnFrame";
+            this.btnFrame.Size = new System.Drawing.Size(75, 23);
+            this.btnFrame.TabIndex = 1;
+            this.btnFrame.Text = "Frame";
+            this.btnFrame.UseVisualStyleBackColor = true;
+            this.btnFrame.Click += new System.EventHandler(this.btnFrame_Click);
+            // 
+            // cmbSerial
+            // 
+            this.cmbSerial.FormattingEnabled = true;
+            this.cmbSerial.Location = new System.Drawing.Point(3, 32);
+            this.cmbSerial.Name = "cmbSerial";
+            this.cmbSerial.Size = new System.Drawing.Size(89, 21);
+            this.cmbSerial.TabIndex = 2;
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.Location = new System.Drawing.Point(98, 32);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(75, 23);
+            this.btnConnect.TabIndex = 3;
+            this.btnConnect.Text = "Connect";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsSizeForm});
             this.statusStrip1.Location = new System.Drawing.Point(0, 684);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(884, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(869, 22);
             this.statusStrip1.TabIndex = 20;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // tsSizeForm
             // 
             this.tsSizeForm.Name = "tsSizeForm";
-            this.tsSizeForm.Size = new System.Drawing.Size(869, 17);
+            this.tsSizeForm.Size = new System.Drawing.Size(854, 17);
             this.tsSizeForm.Spring = true;
             this.tsSizeForm.Text = "None";
             // 
@@ -391,21 +426,19 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // btnFrame
+            // backgroundWorker1
             // 
-            this.btnFrame.Location = new System.Drawing.Point(84, 3);
-            this.btnFrame.Name = "btnFrame";
-            this.btnFrame.Size = new System.Drawing.Size(75, 23);
-            this.btnFrame.TabIndex = 1;
-            this.btnFrame.Text = "Frame";
-            this.btnFrame.UseVisualStyleBackColor = true;
-            this.btnFrame.Click += new System.EventHandler(this.btnFrame_Click);
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // CameraTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 706);
+            this.ClientSize = new System.Drawing.Size(869, 706);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.pnPicBoxes);
             this.Controls.Add(this.btnCap);
@@ -474,5 +507,9 @@
         private System.Windows.Forms.FlowLayoutPanel pnPicBoxes;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnFrame;
+        private System.Windows.Forms.ComboBox cmbSerial;
+        private System.Windows.Forms.Button btnConnect;
+        private System.IO.Ports.SerialPort serialPort1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
