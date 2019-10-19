@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Bitmap32.cs" />
+    <Compile Include="Common\LoadCharCSV.cs" />
     <Compile Include="FormSys\CameraTestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,17 +73,17 @@
     <Compile Include="Common\EncryptDecrypt.cs" />
     <Compile Include="Common\TfSQL.cs" />
     <Compile Include="Common\Userdata.cs" />
-    <Compile Include="FormSys\Client.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormSys\Client.Designer.cs">
-      <DependentUpon>Client.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormSys\CommonForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSys\CommonForm.Designer.cs">
       <DependentUpon>CommonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSys\HandWrittenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\HandWrittenForm.Designer.cs">
+      <DependentUpon>HandWrittenForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSys\LoginForm.cs">
       <SubType>Form</SubType>
@@ -96,34 +97,22 @@
     <Compile Include="FormSys\MainMenuForm.Designer.cs">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSys\ServerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormSys\ServerForm.Designer.cs">
-      <DependentUpon>ServerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormSys\TransmissionTextForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSys\TransmissionTextForm.Designer.cs">
       <DependentUpon>TransmissionTextForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSys\WebCam.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormSys\WebCam.Designer.cs">
-      <DependentUpon>WebCam.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormSys\CameraTestForm.resx">
       <DependentUpon>CameraTestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSys\Client.resx">
-      <DependentUpon>Client.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormSys\CommonForm.resx">
       <DependentUpon>CommonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSys\HandWrittenForm.resx">
+      <DependentUpon>HandWrittenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSys\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -131,27 +120,24 @@
     <EmbeddedResource Include="FormSys\MainMenuForm.resx">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSys\ServerForm.resx">
-      <DependentUpon>ServerForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormSys\TransmissionTextForm.resx">
       <DependentUpon>TransmissionTextForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>

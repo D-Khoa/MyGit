@@ -19,14 +19,10 @@ namespace DKMES.FormSys
 
         private void btnServer_Click(object sender, EventArgs e)
         {
-            ServerForm server = new ServerForm();
-            server.Show();
         }
 
         private void btnClient_Click(object sender, EventArgs e)
         {
-            ClientForm client = new ClientForm();
-            client.Show();
         }
 
         private void btnTrans_Click(object sender, EventArgs e)

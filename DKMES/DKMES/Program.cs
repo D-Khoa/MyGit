@@ -17,7 +17,7 @@ namespace DKMES
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CameraTestForm());
+            Application.Run(new HandWrittenForm());
         }
     }
 }

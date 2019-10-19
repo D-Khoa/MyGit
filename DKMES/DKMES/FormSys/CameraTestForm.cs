@@ -10,6 +10,8 @@ using System.IO.Ports;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Drawing.Imaging;
+using System.Text;
 
 namespace DKMES.FormSys
 {
@@ -119,9 +121,9 @@ namespace DKMES.FormSys
                 case 8:
                     //SetPicture(FrameDraw(bitmap));
                     SetPicture(ColorToBinary(bitmap));
+                    ToHexArray(ColorToBinary(bitmap));
                     break;
             }
-            ToHexArray(bitmap);
             if (serialPort1.IsOpen)
             {
                 if (!backgroundWorker1.IsBusy)
@@ -207,6 +209,18 @@ namespace DKMES.FormSys
             bmp32.LockBitmap();
             bmp32.ToBlackWhite(o);
             bmp32.UnlockBitmap();
+            //float[][] TempMatrix = {
+            //          new float[] {.3f, .3f, .3f, 0, 0},
+            //           new float[] {.59f, .59f, .59f, 0, 0},
+            //           new float[] {.11f, .11f, .11f, 0, 0},
+            //           new float[] {0, 0, 0, 1, 0},
+            //           new float[] {0, 0, 0, 0, 1}
+            //};
+            //ColorMatrix cmatrix = new ColorMatrix(TempMatrix);
+            //Graphics gp = Graphics.FromImage(img);
+            //ImageAttributes imgAttri = new ImageAttributes();
+            //imgAttri.SetColorMatrix(cmatrix);
+            //gp.DrawImage(img, new Rectangle(0, 0, img.Width, img.Height), 0, 0, img.Width, img.Height, GraphicsUnit.Pixel, imgAttri);
             return bmp;
         }
 
@@ -281,8 +295,7 @@ namespace DKMES.FormSys
             bmp.SetResolution(128, 64);
             Bitmap32 bmp32 = new Bitmap32(bmp);
             bmp32.LockBitmap();
-            bmp32.ToGrayScale(255);
-            output = bmp32.ToHex(128,64);
+            output = bmp32.ToHex(128, 64);
             bmp32.UnlockBitmap();
             try
             {

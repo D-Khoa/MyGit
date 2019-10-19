@@ -101,7 +101,7 @@ namespace DKMES.Common
             byte c;
             for (int i = 0; i < total_size - 4; i += 4)
             {
-                c = (byte)(ImageBytes[i] * 0.11 + ImageBytes[i + 1] * 0.59 + ImageBytes[i + 2] * 0.3);
+                c = (byte)((ImageBytes[i] * 0.11 + ImageBytes[i + 1] * 0.59 + ImageBytes[i + 2] * 0.3) / 3);
                 ImageBytes[i] = c;
                 ImageBytes[i + 1] = c;
                 ImageBytes[i + 2] = c;
@@ -256,17 +256,19 @@ namespace DKMES.Common
 
         public byte[] ToHex(int x, int y)
         {
-            ToGrayScale(255);
+            ToBlackWhite(63);
             int total_size = m_BitmapData.Stride * m_BitmapData.Height;
             int n = 0;
             byte c;
-            byte[] h = new byte[x * y];
-            for (int i = 0; i < total_size - 4; i += 4)
+            byte[] h = new byte[8192];
+            //char[] hex = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
+            for (int i = 0; i < total_size - 4; i += 4, n++)
             {
                 c = ImageBytes[i];
-                h[n] = Encoding.ASCII.GetBytes(c.ToString("X"));
-                n++;
+                h[n] = c;
             }
+            //hex = BitConverter.ToString(h).Replace("-", string.Empty);
+            //h = (hex);
             return h;
         }
     }
