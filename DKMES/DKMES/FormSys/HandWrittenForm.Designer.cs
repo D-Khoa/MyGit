@@ -41,8 +41,10 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnSave = new System.Windows.Forms.Button();
+            this.picFitter = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picHandWritten)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFitter)).BeginInit();
             this.SuspendLayout();
             // 
             // picHandWritten
@@ -137,7 +139,7 @@
             this.tsStatus});
             this.statusStrip1.Location = new System.Drawing.Point(0, 226);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(426, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(598, 22);
             this.statusStrip1.TabIndex = 9;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -145,7 +147,7 @@
             // 
             this.tsStatus.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
             this.tsStatus.Name = "tsStatus";
-            this.tsStatus.Size = new System.Drawing.Size(411, 17);
+            this.tsStatus.Size = new System.Drawing.Size(583, 17);
             this.tsStatus.Spring = true;
             // 
             // btnSave
@@ -159,11 +161,20 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // picFitter
+            // 
+            this.picFitter.Location = new System.Drawing.Point(415, 37);
+            this.picFitter.Name = "picFitter";
+            this.picFitter.Size = new System.Drawing.Size(168, 168);
+            this.picFitter.TabIndex = 11;
+            this.picFitter.TabStop = false;
+            // 
             // HandWrittenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 248);
+            this.ClientSize = new System.Drawing.Size(598, 248);
+            this.Controls.Add(this.picFitter);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnSelect);
@@ -180,6 +191,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picHandWritten)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFitter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +212,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel tsStatus;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.PictureBox picFitter;
     }
 }

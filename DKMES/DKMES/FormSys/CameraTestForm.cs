@@ -207,7 +207,7 @@ namespace DKMES.FormSys
             Bitmap bmp = new Bitmap(img);
             Bitmap32 bmp32 = new Bitmap32(bmp);
             bmp32.LockBitmap();
-            bmp32.ToBlackWhite(o);
+            bmp32.ToBlackWhite();
             bmp32.UnlockBitmap();
             //float[][] TempMatrix = {
             //          new float[] {.3f, .3f, .3f, 0, 0},
@@ -281,7 +281,7 @@ namespace DKMES.FormSys
                         Bitmap clone = bmp.Clone(rect, Format);
                         Bitmap32 bmp32 = new Bitmap32(clone);
                         bmp32.LockBitmap();
-                        bmp32.Robert(o, r, g, b);
+                        bmp32.Robert(r, g, b);
                         bmp32.UnlockBitmap();
                     }
                 }
@@ -295,7 +295,7 @@ namespace DKMES.FormSys
             bmp.SetResolution(128, 64);
             Bitmap32 bmp32 = new Bitmap32(bmp);
             bmp32.LockBitmap();
-            output = bmp32.ToHex(128, 64);
+            output = bmp32.ToHex();
             bmp32.UnlockBitmap();
             try
             {
