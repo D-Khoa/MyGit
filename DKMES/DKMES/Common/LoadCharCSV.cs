@@ -10,18 +10,21 @@ namespace DKMES.Common
 {
     public class LoadCharCSV
     {
+        Char[] charList = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'V', 'U', 'W', 'X', 'Y', 'Z' };
+
         char loadchar;
-        string loadfile = @"D:\GIT\DangKhoa\Documents\HandwrittenData.csv";
+        string loadfile = @"..\..\..\..\..\Documents\HandwrittenData.csv";
 
         public LoadCharCSV(char inchar)
         {
             loadchar = inchar;
         }
 
-        public List<string> getChar(char inchar)
+        public List<string> getChar()
         {
+            int i = Array.FindIndex(charList, c => c.Equals(loadchar));
             List<string> listc = (from line in File.ReadLines(loadfile)
-                                  where line[0] == inchar
+                                  where (line[0] == loadchar || line[0].ToString() == i.ToString())
                                   select line.Substring(2)).ToList();
             return listc;
         }
