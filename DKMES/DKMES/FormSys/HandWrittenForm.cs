@@ -14,14 +14,14 @@ namespace DKMES.FormSys
 {
     public partial class HandWrittenForm : Form
     {
-        Char[] charList = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'V', 'U', 'W', 'X', 'Y', 'Z' };
+        Char[] character = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'V', 'U', 'W', 'X', 'Y', 'Z' };
         int index;
         List<string> CharList = new List<string>();
 
         public HandWrittenForm()
         {
             InitializeComponent();
-            cmbCharList.DataSource = charList;
+            cmbCharList.DataSource = character;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -49,15 +49,17 @@ namespace DKMES.FormSys
                 string[] CharLoad = CharList[int.Parse(txtNumChar.Text)].Split(',');
                 bmp32.LockBitmap();
                 int c = 0;
-                for (int i = 0; i < bmp32.ImageBytes.Count() - 4; i += 4)
+                List<int> il = new List<int>();
+                for (int y = 0; y < bmp.Height; y++)
                 {
-                    bmp32.ImageBytes[i] = byte.Parse(CharLoad[c]);
-                    bmp32.ImageBytes[i + 1] = byte.Parse(CharLoad[c]);
-                    bmp32.ImageBytes[i + 2] = byte.Parse(CharLoad[c]);
-                    bmp32.ImageBytes[i + 3] = 255;
-                    c++;
+                    for (int x = 0; x < bmp.Width; x++)
+                    {
+                        c = int.Parse(CharLoad[bmp.Width * y + x]);
+                        bmp32.SetPixel(x, y, Color.FromArgb(255, c, c, c));
+                    }
                 }
                 bmp32.UnlockBitmap();
+                cutChar(bmp);
                 bmp.SetResolution(168, 168);
                 Bitmap bmpnew = new Bitmap(bmp, new Size(168, 168));
                 picHandWritten.Image = bmpnew;
@@ -66,7 +68,7 @@ namespace DKMES.FormSys
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            LoadCharCSV saveCSV = new LoadCharCSV(charList[index]);
+            LoadCharCSV saveCSV = new LoadCharCSV(character[index]);
             saveCSV.saveChar(CharList);
         }
 
@@ -77,8 +79,8 @@ namespace DKMES.FormSys
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-                LoadCharCSV loadcsv = new LoadCharCSV(charList[index]);
-                CharList = loadcsv.getChar(charList[index]);
+            LoadCharCSV loadcsv = new LoadCharCSV(character[index]);
+            CharList = loadcsv.getChar(character[index]);
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -86,6 +88,34 @@ namespace DKMES.FormSys
             lbNumChar.Text = CharList.Count + " rows";
             tsStatus.Text = "Complete";
             btnSave.Enabled = true;
+        }
+
+        public void cutChar(Bitmap img)
+        {
+            Graphics gp = Graphics.FromImage(img);
+            Bitmap32 bmp32 = new Bitmap32(img);
+            System.Drawing.Imaging.PixelFormat format = new System.Drawing.Imaging.PixelFormat();
+            Point top, left, bot, right, prect;
+            bmp32.LockBitmap();
+            top = bmp32.TopPoint();
+            left = bmp32.LeftPoint();
+            bot = bmp32.BotPoint();
+            right = bmp32.RightPoint();
+            bmp32.Vector();
+            for (int y = 0; y < img.Height; y++)
+            {
+                for (int x = 0; x < img.Width; x++)
+                {
+
+                    bmp32.Compass(x, y);
+                }
+            }
+            bmp32.UnlockBitmap();
+            prect = new Point(left.X, top.Y);
+            Rectangle rect = new Rectangle(prect, new Size(right.X - left.X, bot.Y - top.Y));
+            Bitmap clone = img.Clone(rect, format);
+            gp.DrawRectangle(new Pen(Color.Green), rect);
+            picFitter.Image = clone;
         }
     }
 }
