@@ -207,7 +207,15 @@ namespace DKMES.FormSys
             Bitmap bmp = new Bitmap(img);
             Bitmap32 bmp32 = new Bitmap32(bmp);
             bmp32.LockBitmap();
-            bmp32.ToBlackWhite();
+            //bmp32.ToBlackWhite();
+            int of = bmp32.Offset();
+            for (int y = 0; y < img.Height; y++)
+            {
+                for (int x = 0; x < img.Width; x++)
+                {
+                    bmp32.DrawOutLine(x, y, of);
+                }
+            }
             bmp32.UnlockBitmap();
             //float[][] TempMatrix = {
             //          new float[] {.3f, .3f, .3f, 0, 0},

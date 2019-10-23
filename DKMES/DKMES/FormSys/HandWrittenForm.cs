@@ -80,7 +80,7 @@ namespace DKMES.FormSys
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             LoadCharCSV loadcsv = new LoadCharCSV(character[index]);
-            CharList = loadcsv.getChar(character[index]);
+            CharList = loadcsv.getChar();
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -101,13 +101,13 @@ namespace DKMES.FormSys
             left = bmp32.LeftPoint();
             bot = bmp32.BotPoint();
             right = bmp32.RightPoint();
-            bmp32.Vector();
+            //bmp32.Vector();
+            int of = bmp32.Offset();
             for (int y = 0; y < img.Height; y++)
             {
                 for (int x = 0; x < img.Width; x++)
                 {
-
-                    bmp32.Compass(x, y);
+                    bmp32.DrawOutLine(x, y, of);
                 }
             }
             bmp32.UnlockBitmap();

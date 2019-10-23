@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
@@ -110,7 +112,7 @@ namespace DKMES.Common
         public int Offset()
         {
             Color c = new Color();
-            byte sR, sG, sB, cR, cG, cB;
+            int sR, sG, sB, cR, cG, cB;
             int ofs, cou;
             sR = 0;
             sG = 0;
@@ -504,33 +506,36 @@ namespace DKMES.Common
             return p;
         }
 
-        public void Compass(int x, int y)
+        public void DrawOutLine(int x, int y, int ofs)
         {
-            Point curr = new Point(x, y);
-            Color c = GetPixel(curr.X, curr.Y);
-            Point[] p = {
-                new Point(x - 1, y - 1),
-                new Point(x, y - 1),
-                new Point(x + 1, y - 1),
-                new Point(x + 1, y),
-                new Point(x + 1, y + 1),
-                new Point(x, y + 1),
-                new Point(x - 1, y + 1),
-                new Point(x - 1, y)
-            };
-            if ((c.R == 0) && (curr.X < m_Bitmap.Width) && (curr.Y < m_Bitmap.Height) && (curr.X > 0) && (curr.Y > 0))
+            if ((x > 0) && (x < m_Bitmap.Width) && (y > 0) && (y < m_Bitmap.Height))
             {
-                SetPixel(x, y, Color.Yellow);
-                Compass(p[0].X, p[0].Y);
-                Compass(p[1].X, p[1].Y);
-                Compass(p[2].X, p[2].Y);
-                Compass(p[3].X, p[3].Y);
-                Compass(p[4].X, p[4].Y);
-                Compass(p[5].X, p[5].Y);
-                Compass(p[6].X, p[6].Y);
-                Compass(p[7].X, p[7].Y);
+                Color c0 = GetPixel(x, y);
+                Color c1 = GetPixel(x - 1, y - 1);
+                Color c2 = GetPixel(x, y - 1);
+                Color c3 = GetPixel(x + 1, y - 1);
+                Color c4 = GetPixel(x - 1, y);
+                Color c5 = GetPixel(x + 1, y);
+                Color c6 = GetPixel(x - 1, y + 1);
+                Color c7 = GetPixel(x, y + 1);
+                Color c8 = GetPixel(x + 1, y + 1);
+                //if ((c2.R < ofs || c4.R < ofs || c5.R < ofs || c7.R < ofs || c1.R < ofs || c3.R < ofs || c6.R < ofs || c8.R < ofs) && (c0.R > ofs))
+                if ((c2.R > ofs || c4.R > ofs || c5.R > ofs || c7.R > ofs || c1.R > ofs || c3.R > ofs || c6.R > ofs || c8.R > ofs) && (c0.R > ofs))
+                {
+                    SetPixel(x, y, Color.Red);
+                    //SetPixel(x - 1, y - 1, Color.Black);
+                    //SetPixel(x, y - 1, Color.Black);
+                    //SetPixel(x + 1, y - 1, Color.Black);
+                    //SetPixel(x - 1, y, Color.Black);
+                    //SetPixel(x + 1, y, Color.Black);
+                    //SetPixel(x - 1, y + 1, Color.Black);
+                    //SetPixel(x, y + 1, Color.Black);
+                    //SetPixel(x + 1, y + 1, Color.Black);
+                }
+                else
+                    SetPixel(x, y, Color.Black);
             }
         }
-        #endregion
     }
+    #endregion
 }
