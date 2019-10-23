@@ -8,23 +8,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GProject.Common;
+using System.Threading;
 
 namespace GProject
 {
     public partial class Test : Form
     {
-        BaseGraphics gp;
         Bitmap bmp;
-        int firstX, secondX, firstW;
+        BaseGraphics gp;
+        double oldw, oldh, neww, newh, dw, dh;
+        double cow, coh, cox, coy, cnw, cnh, cnx, cny;
+        List<Control> oldcon = new List<Control>();
+
         public Test()
         {
             InitializeComponent();
             gp = new BaseGraphics(Properties.Resources.aGOgp, 10, 1);
+            oldh = this.Height;
+            oldw = this.Width;
+            newh = this.Height;
+            neww = this.Width;
+            dw = neww - oldw;
+            dh = newh - oldh;
+            foreach (Control con in this.Controls)
+            {
+                oldcon.Add(con);
+            }
+            //bwClock.RunWorkerAsync();
             picboxsetup();
             drawdot();
-            firstX = button2.Location.X;
-            firstW = button2.Width;
-            secondX = this.Width - firstW - firstX;
         }
 
         private void drawdot()
@@ -66,10 +78,14 @@ namespace GProject
             pictureBox6.Location = new Point(pictureBox5.Location.X + w, pictureBox5.Location.Y);
             pictureBox7.Location = new Point(pictureBox6.Location.X + w, pictureBox6.Location.Y);
             pictureBox8.Location = new Point(pictureBox7.Location.X + w, pictureBox7.Location.Y);
-            //this.Width = 50 + 8 * w;
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Thread.Sleep(1000);
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             DateTime now = DateTime.Now;
 
@@ -119,33 +135,44 @@ namespace GProject
                 pictureBox3.Image = null;
                 pictureBox6.Image = null;
             }
+            //bwClock.RunWorkerAsync();
         }
 
-        int aX, bX;
+        private void Test_Resize(object sender, EventArgs e)
+        {
+            neww = this.Width;
+            newh = this.Height;
+            foreach (Control con in this.Controls)
+            {
+                int i = oldcon.IndexOf(con);
+                int x = con.Location.X - oldcon[i].Location.X;
+                int y = con.Location.Y - oldcon[i].Location.Y;
+            }
+        }
+
         private void Test_ResizeBegin(object sender, EventArgs e)
         {
-            bX = this.Width;
         }
 
         private void Test_ResizeEnd(object sender, EventArgs e)
         {
-            aX = this.Width;
-            int x = button1.Location.X + button1.Width;
-            if (button2.Location.X < firstX)
-            {
-                button2.Width = this.Width - secondX - button2.Location.X;
-                if (button2.Location.X < x)
-                    button2.Location = new Point(x, button2.Location.Y);
-            }
-            else
-            {
-                button2.Location = new Point(this.Width - secondX - firstW, button2.Location.Y);
-                button2.Width = firstW;
-            }
         }
 
         private void Test_Paint(object sender, PaintEventArgs e)
         {
+            //int x = button1.Location.X + button1.Width;
+            //if (button2.Location.X < x)
+            //{
+            //    button2.Width = this.Width - secondX - button2.Location.X;
+            //    button2.Location = new Point(x, button2.Location.Y);
+            //}
+            //else
+            //{
+            //    button2.Location = new Point(this.Width - secondX - firstW, button2.Location.Y);
+            //    button2.Width = firstW;
+            //}
+
         }
+
     }
 }
