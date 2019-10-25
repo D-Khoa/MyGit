@@ -16,25 +16,12 @@ namespace GProject
     {
         Bitmap bmp;
         BaseGraphics gp;
-        double oldw, oldh, neww, newh, dw, dh;
-        double cow, coh, cox, coy, cnw, cnh, cnx, cny;
-        List<Control> oldcon = new List<Control>();
 
         public Test()
         {
             InitializeComponent();
             gp = new BaseGraphics(Properties.Resources.aGOgp, 10, 1);
-            oldh = this.Height;
-            oldw = this.Width;
-            newh = this.Height;
-            neww = this.Width;
-            dw = neww - oldw;
-            dh = newh - oldh;
-            foreach (Control con in this.Controls)
-            {
-                oldcon.Add(con);
-            }
-            //bwClock.RunWorkerAsync();
+            bwClock.RunWorkerAsync();
             picboxsetup();
             drawdot();
         }
@@ -135,44 +122,27 @@ namespace GProject
                 pictureBox3.Image = null;
                 pictureBox6.Image = null;
             }
-            //bwClock.RunWorkerAsync();
+            bwClock.RunWorkerAsync();
         }
 
-        private void Test_Resize(object sender, EventArgs e)
-        {
-            neww = this.Width;
-            newh = this.Height;
-            foreach (Control con in this.Controls)
-            {
-                int i = oldcon.IndexOf(con);
-                int x = con.Location.X - oldcon[i].Location.X;
-                int y = con.Location.Y - oldcon[i].Location.Y;
-            }
-        }
-
-        private void Test_ResizeBegin(object sender, EventArgs e)
+        private void Test_Load(object sender, EventArgs e)
         {
         }
 
-        private void Test_ResizeEnd(object sender, EventArgs e)
+        ExcelClass ex = new ExcelClass(@"D:\test2.xls");
+
+        private void button1_Click(object sender, EventArgs e)
         {
+            ex.CreateWorkBook();
+            ex.AddRow(new string[] { "col1", "col2", "col3" });
+            ex.SaveAndExit();
         }
 
-        private void Test_Paint(object sender, PaintEventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            //int x = button1.Location.X + button1.Width;
-            //if (button2.Location.X < x)
-            //{
-            //    button2.Width = this.Width - secondX - button2.Location.X;
-            //    button2.Location = new Point(x, button2.Location.Y);
-            //}
-            //else
-            //{
-            //    button2.Location = new Point(this.Width - secondX - firstW, button2.Location.Y);
-            //    button2.Width = firstW;
-            //}
-
+            ex.OpenWorkBook(@"D:\test2.xls");
+            ex.AddRow(new string[] { "1", "2", "3" });
+            ex.SaveAndExit();
         }
-
     }
 }

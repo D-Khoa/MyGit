@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GProject.Common
+namespace DKMES.Common
 {
     public class BaseGraphics
     {
@@ -27,24 +27,25 @@ namespace GProject.Common
         //CHECK IMG CAN BECOME SPRITE
         public bool is_Sprite()
         {
-            if (total_frames > 0)
-                return ((width * height) % total_frames == 0);
-            else return false;
+            return ((width * height) % total_frames == 0);
         }
 
         //GET LIST FRAMES FROM SPRITE
         public void getFrames(int c, int r)
         {
-            if (is_Sprite())
+            if (total_frames > 0)
             {
-                //List<Rectangle> list_of_rects = new List<Rectangle>();
+                List<Rectangle> list_of_rects = new List<Rectangle>();
                 Frames = new List<Image>();
                 int w = width / c;
                 int h = height / r;
-                for (int i = 0; i < total_frames; i++)
+                if (is_Sprite())
                 {
-                    //list_of_rects.Add(new Rectangle((i % c) * w, (i / c) * h, w, h));
-                    Frames.Add(new Bitmap(img).Clone(new Rectangle((i % c) * w, (i / c) * h, w, h), img.PixelFormat));
+                    for (int i = 0; i < total_frames; i++)
+                    {
+                        list_of_rects.Add(new Rectangle((i % c) * w, (i / c) * h, w, h));
+                        Frames.Add(new Bitmap(img).Clone(list_of_rects[i], img.PixelFormat));
+                    }
                 }
             }
         }
