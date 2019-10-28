@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GProject.All_Form;
 
 namespace GProject
 {
@@ -16,7 +17,7 @@ namespace GProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Test());
+            Application.Run(new BrowerForm());
         }
     }
 }

@@ -16,5 +16,20 @@ namespace GProject.All_Form
         {
             InitializeComponent();
         }
+
+        private void btnSort_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab(tabSort);
+        }
+
+        private void btnArea_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab(tabArea);
+        }
+
+        private void btnAppearance_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab(tabAppear);
+        }
     }
 }
