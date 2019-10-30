@@ -28,38 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.picChart = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picChart)).BeginInit();
             this.SuspendLayout();
-            // 
-            // picChart
-            // 
-            this.picChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picChart.Location = new System.Drawing.Point(0, 0);
-            this.picChart.Name = "picChart";
-            this.picChart.Size = new System.Drawing.Size(284, 262);
-            this.picChart.TabIndex = 0;
-            this.picChart.TabStop = false;
-            this.picChart.Paint += new System.Windows.Forms.PaintEventHandler(this.picChart_Paint);
-            this.picChart.Resize += new System.EventHandler(this.picChart_Resize);
             // 
             // ChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.picChart);
+            this.ClientSize = new System.Drawing.Size(769, 452);
+            this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ChartForm";
             this.Text = "ChartForm";
-            ((System.ComponentModel.ISupportInitialize)(this.picChart)).EndInit();
+            this.SizeChanged += new System.EventHandler(this.ChartForm_SizeChanged);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.ChartForm_Paint);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox picChart;
     }
 }
