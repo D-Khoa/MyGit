@@ -690,12 +690,6 @@
     <Compile Include="Form\AccountWhForm\AccountMainForm\AccountMainForm.Designer.cs">
       <DependentUpon>AccountMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\Asset\NSTVAssetForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\AccountWhForm\Asset\NSTVAssetForm.Designer.cs">
-      <DependentUpon>NSTVAssetForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\AccountWhForm\DetailPositionForm\AddDetailPositionForm.cs">
       <SubType>Form</SubType>
     </Compile>
