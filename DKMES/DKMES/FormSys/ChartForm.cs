@@ -18,16 +18,20 @@ namespace DKMES.FormSys
         Pen pen2 = new Pen(Color.Blue);
         Brush brush1 = new SolidBrush(Color.Black);
         Brush brush2 = new SolidBrush(Color.Red);
+        int w;
+        int h;
 
         public ChartForm()
         {
             InitializeComponent();
+            w = this.Width;
+            h = this.Height;
         }
 
-        public void OxyScale(bool center)
+        public Image OxyScale(bool center)
         {
-            int w = picChart.Width;
-            int h = picChart.Height;
+            Bitmap bmp = new Bitmap(w, h);
+            Graphics drawOxy = Graphics.FromImage(bmp);
             if (center)
             {
                 O.X = w / 2;
@@ -38,20 +42,25 @@ namespace DKMES.FormSys
                 O.X = 50;
                 O.Y = h - 50;
             }
-        }
-
-        private void picChart_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.DrawLine(pen1, new Point(0, O.Y), new Point(picChart.Width, O.Y));
-            e.Graphics.DrawLine(pen1, new Point(O.X, 0), new Point(O.X, picChart.Height));
+            drawOxy.DrawLine(pen1, new Point(0, O.Y), new Point(w, O.Y));
+            drawOxy.DrawLine(pen1, new Point(O.X, 0), new Point(O.X, h));
             if (O.X != 0)
-                e.Graphics.DrawString("O", DefaultFont, brush1, O.X - 15, O.Y + 5);
+                drawOxy.DrawString("O", DefaultFont, brush1, O.X - 15, O.Y + 5);
             else
-                e.Graphics.DrawString("O", DefaultFont, brush1, 0, O.Y + 5);
+                drawOxy.DrawString("O", DefaultFont, brush1, 0, O.Y + 5);
+            return bmp;
         }
 
-        private void picChart_Resize(object sender, EventArgs e)
+        private void ChartForm_Paint(object sender, PaintEventArgs e)
         {
+            e.Graphics.DrawImage(OxyScale(true), 0, 0);
+        }
+
+        private void ChartForm_SizeChanged(object sender, EventArgs e)
+        {
+            w = this.Width;
+            h = this.Height;
+            Invalidate();
         }
     }
 }
