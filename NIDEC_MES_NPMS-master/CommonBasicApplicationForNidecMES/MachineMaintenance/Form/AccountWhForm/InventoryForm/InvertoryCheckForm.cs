@@ -62,8 +62,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.Inven
             {
                 ValueObjectList<InvertoryVo> listvo = (ValueObjectList<InvertoryVo>)DefaultCbmInvoker.Invoke(new SearchInvertoryCheckCbm(), inVo);
                 InvertoryCheck_dgv.DataSource = listvo.GetList();
-
-
             }
             catch (Framework.ApplicationException exception)
             {
