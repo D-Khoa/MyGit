@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,63 +16,75 @@ namespace UpdateNetValue
         TfSQL SQL;
         DataTable dt, dt2;
         StringBuilder cmd;
-        DateTime now;
-        DateTime start_depc, end_depc;
-        TimeSpan t;
-        double acq, monthly, current, accum, net;
+        double monthly, current, accum, net;
 
         public UpdateNetValueForm()
         {
             InitializeComponent();
             SQL = new TfSQL();
-            dt = new DataTable();
-            dt2 = new DataTable();
-            cmd = new StringBuilder();
+            lbMonth.Text = DateTime.Now.ToString("yyyy-MM");
         }
 
-        bool button = false;
+        public void GetTable()
+        {
+            dt = new DataTable();
+            cmd = new StringBuilder();
+            cmd.Clear();
+            cmd.Append("select a.asset_id, b.depreciation_start, b.depreciation_end, ");
+            cmd.Append("a.acquistion_cost, b.current_depreciation, b.monthly_depreciation, ");
+            cmd.Append("b.accum_depreciation_now, b.net_value ");
+            cmd.Append("from m_asset a ");
+            cmd.Append("left join t_account_main b on a.asset_id = b.asset_id");
+            SQL.sqlDataAdapterFillDatatable(cmd.ToString(), ref dt);
+        }
+
+        public void UpdateDepreciation(int i, string tbl)
+        {
+            cmd = new StringBuilder();
+            cmd.Clear();
+            cmd.Append("update ").Append(tbl).Append(" ");
+            cmd.Append("set current_depreciation = '").Append(current).Append("', ");
+            cmd.Append("accum_depreciation_now = '").Append(accum).Append("', ");
+            cmd.Append("net_value = '").Append(net).Append("' ");
+            cmd.Append("where asset_id = '").Append(dt2.Rows[i]["asset_id"]).Append("'");
+        }
+
+        public int MonthDiff(DateTime startDate, DateTime endDate)
+        {
+            return Math.Abs(12 * (endDate.Year - startDate.Year) + endDate.Month - startDate.Month);
+        }
+
+        public void CalcDepreciation(double acqCost, DateTime startDate, DateTime endDate)
+        {
+            DateTime now = DateTime.Now;
+            int totalMonth = MonthDiff(startDate, endDate);
+            int currentMonth = MonthDiff(startDate, now);
+            monthly = acqCost / totalMonth;
+            current = monthly * currentMonth;
+            accum = current + monthly;
+            net = acqCost - current;
+        }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (!button)
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+            dt2 = new DataTable();
+            GetTable();
+            dt2.Columns.Add("asset_id");
+            dt2.Columns.Add("monthly");
+            dt2.Columns.Add("current");
+            dt2.Columns.Add("accum");
+            dt2.Columns.Add("net");
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
-                button = true;
-                btnUpdate.Text = "Stop";
-                now = DateTime.Now;
-                //start_depc = new List<DateTime>();
-                //end_depc = new List<DateTime>();
-
-                cmd.Append("select a.asset_id, b.depreciation_start, b.depreciation_end, a.acquistion_cost, b.current_depreciation, b.monthly_depreciation, b.accum_depreciation_now, b.net_value ");
-                cmd.Append("from m_asset a");
-                cmd.Append(" left join t_account_main b on a.asset_id = b.asset_id");
-                SQL.sqlDataAdapterFillDatatable(cmd.ToString(), ref dt);
-                foreach (DataColumn c in dt.Columns)
-                {
-                    dt2.Columns.Add(c.ColumnName);
-                }
-                foreach (DataRow r in dt.Rows)
-                {
-                    start_depc = (DateTime)r["depreciation_start"];
-                    end_depc = (DateTime)r["depreciation_end"];
-                    acq = (double)r["acquistion_cost"];
-                    //t = end_depc - start_depc;
-                    //double diff = t.TotalDays / 30;
-                    if (end_depc.Month > start_depc.Month)
-                        double m = (double)((end_depc.Year - start_depc.Year) * 12 + (end_depc.Month - start_depc.Month));
-                    monthly = acq / (diff);
-                    t = now - start_depc;
-                    diff = t.TotalDays / 30;
-                    current = diff * monthly;
-                    accum = current + monthly;
-                    net = acq - current;
-                    dt2.Rows.Add(r["asset_id"], r["depreciation_start"], r["depreciation_end"], r["acquistion_cost"], current, monthly, accum, net);
-                }
-                dgvData.DataSource = dt2;
+                CalcDepreciation((double)dt.Rows[i]["acquistion_cost"], Convert.ToDateTime(dt.Rows[i]["depreciation_start"]), Convert.ToDateTime(dt.Rows[i]["depreciation_end"]));
+                dt2.Rows.Add(dt.Rows[i]["asset_id"], monthly, current, accum, net);
+                //UpdateDepreciation(i, "t_account_main");
             }
-            else
-            {
-                button = false;
-                btnUpdate.Text = "Update";
-            }
+            dgvData.DataSource = dt2;
+            timer.Stop();
+            tsStatus.Text = timer.Elapsed.ToString();
         }
     }
 }
