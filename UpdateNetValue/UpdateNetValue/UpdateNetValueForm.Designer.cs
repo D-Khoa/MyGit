@@ -34,8 +34,11 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.dgvDataDt = new System.Windows.Forms.DataGridView();
+            this.tsRows = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDataDt)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUpdate
@@ -72,7 +75,8 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsStatus});
+            this.tsStatus,
+            this.tsRows});
             this.statusStrip1.Location = new System.Drawing.Point(0, 404);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(659, 22);
@@ -82,38 +86,54 @@
             // tsStatus
             // 
             this.tsStatus.Name = "tsStatus";
-            this.tsStatus.Size = new System.Drawing.Size(644, 17);
+            this.tsStatus.Size = new System.Drawing.Size(577, 17);
             this.tsStatus.Spring = true;
             this.tsStatus.Text = "None";
             // 
             // dgvData
             // 
-            this.dgvData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.Location = new System.Drawing.Point(0, 167);
+            this.dgvData.Location = new System.Drawing.Point(149, 9);
             this.dgvData.Name = "dgvData";
-            this.dgvData.Size = new System.Drawing.Size(659, 234);
+            this.dgvData.Size = new System.Drawing.Size(498, 148);
             this.dgvData.TabIndex = 4;
+            // 
+            // dgvDataDt
+            // 
+            this.dgvDataDt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDataDt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDataDt.Location = new System.Drawing.Point(15, 163);
+            this.dgvDataDt.Name = "dgvDataDt";
+            this.dgvDataDt.Size = new System.Drawing.Size(632, 238);
+            this.dgvDataDt.TabIndex = 5;
+            // 
+            // tsRows
+            // 
+            this.tsRows.Name = "tsRows";
+            this.tsRows.Size = new System.Drawing.Size(36, 17);
+            this.tsRows.Text = "None";
             // 
             // UpdateNetValueForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(659, 426);
+            this.Controls.Add(this.dgvDataDt);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbMonth);
             this.Controls.Add(this.btnUpdate);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "UpdateNetValueForm";
             this.Text = "Update Net Value";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDataDt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,6 +147,8 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel tsStatus;
         private System.Windows.Forms.DataGridView dgvData;
+        private System.Windows.Forms.DataGridView dgvDataDt;
+        private System.Windows.Forms.ToolStripStatusLabel tsRows;
     }
 }
 
