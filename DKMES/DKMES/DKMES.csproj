@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\BaseCell.cs" />
     <Compile Include="Common\BaseGraphics.cs" />
     <Compile Include="Common\Bitmap32.cs" />
     <Compile Include="Common\LoadCharCSV.cs" />
@@ -104,6 +105,12 @@
     <Compile Include="FormSys\MainMenuForm.Designer.cs">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSys\MineGameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\MineGameForm.Designer.cs">
+      <DependentUpon>MineGameForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSys\TransmissionTextForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSys\MainMenuForm.resx">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSys\MineGameForm.resx">
+      <DependentUpon>MineGameForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSys\TransmissionTextForm.resx">
       <DependentUpon>TransmissionTextForm.cs</DependentUpon>
