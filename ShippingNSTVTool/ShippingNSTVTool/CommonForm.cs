@@ -22,5 +22,10 @@ namespace ShippingNSTVTool
             InitializeComponent();
         }
 
+        private void btnExit_Click(object sender, System.EventArgs e)
+        {
+            if (MessageBox.Show("Do you want exit?", "Waring", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                Application.Exit();
+        }
     }
 }

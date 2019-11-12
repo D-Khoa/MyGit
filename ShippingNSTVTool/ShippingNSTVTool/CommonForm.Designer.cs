@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnExit = new System.Windows.Forms.Button();
             this.lbTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -60,26 +61,34 @@
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.Green;
             this.splitContainer1.Panel1.BackgroundImage = global::ShippingNSTVTool.Properties.Resources.NIDEC_Logo_small_1;
             this.splitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.splitContainer1.Panel1.CausesValidation = false;
-            this.splitContainer1.Panel1.Enabled = false;
             this.splitContainer1.Panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.AccessibleName = "";
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.Green;
-            this.splitContainer1.Panel2.CausesValidation = false;
+            this.splitContainer1.Panel2.Controls.Add(this.btnExit);
             this.splitContainer1.Panel2.Controls.Add(this.lbTitle);
-            this.splitContainer1.Panel2.Enabled = false;
             this.splitContainer1.Size = new System.Drawing.Size(633, 75);
             this.splitContainer1.SplitterDistance = 144;
             this.splitContainer1.TabIndex = 0;
             this.splitContainer1.TabStop = false;
             // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.Location = new System.Drawing.Point(406, 46);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 26);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // lbTitle
             // 
             this.lbTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTitle.Enabled = false;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.Location = new System.Drawing.Point(0, 0);
             this.lbTitle.Name = "lbTitle";
@@ -92,6 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(633, 461);
             this.Controls.Add(this.panel1);
             this.Name = "CommonForm";
@@ -110,5 +120,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label lbTitle;
+        private System.Windows.Forms.Button btnExit;
     }
 }

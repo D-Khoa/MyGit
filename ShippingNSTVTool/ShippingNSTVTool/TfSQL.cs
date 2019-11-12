@@ -253,6 +253,46 @@ namespace ShippingNSTVTool
             }
         }
 
+        public int sqlExecuteNonQueryState(string sql, bool result_message_show)
+        {
+            try
+            {
+                connection = new NpgsqlConnection(strConnection);
+                connection.Open();
+                NpgsqlCommand command = new NpgsqlCommand(sql, connection);
+                int response = command.ExecuteNonQuery();
+                if (response >= 1)
+                {
+                    if (result_message_show) { MessageBox.Show("Successful!", "Database Responce", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                    connection.Close();
+                    return 1;
+                }
+                else
+                {
+                    if (result_message_show) { MessageBox.Show("Not successful!", "Database Responce", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+                    connection.Close();
+                    return 0;
+                }
+            }
+            catch (DuplicateWaitObjectException ex)
+            {
+                if (result_message_show)
+                {
+                    MessageBox.Show("Not successful!" + System.Environment.NewLine + ex.Message, "Database Responce", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                connection.Close();
+                return 2;
+            }
+            catch (Exception ex)
+            {
+                if (result_message_show)
+                {
+                    MessageBox.Show("Not successful!" + System.Environment.NewLine + ex.Message, "Database Responce", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                connection.Close();
+                return 3;
+            }
+        }
 
         public void sqlDataAdapterFillDatatable(string sql, ref DataTable dt)
         {
