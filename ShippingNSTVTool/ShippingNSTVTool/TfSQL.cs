@@ -8,15 +8,15 @@ namespace ShippingNSTVTool
 {
     public class TfSQL
     {
-        public  NpgsqlConnection connection;
+        public NpgsqlConnection connection;
         public string strConnection;
 
 
         public TfSQL()
         {
-            strConnection = "Server=192.168.145.12;Port=5432;UserId=mes;Password=dbuser;Database=mesdb;";
+            strConnection = "Server=192.168.145.12;Port=5432;UserId=pqm_ad;Password=dbuser;Database=nstvdb;";
         }
-    public void getComboBoxData(string sql, ref ComboBox cmb)
+        public void getComboBoxData(string sql, ref ComboBox cmb)
         {
             NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
             NpgsqlCommand command;
@@ -213,7 +213,8 @@ namespace ShippingNSTVTool
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Not successful!" + System.Environment.NewLine + ex.Message
+                if (result_message_show)
+                    MessageBox.Show("Not successful!" + System.Environment.NewLine + ex.Message
                                 , "Database Responce", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 connection.Close();
                 return false;
@@ -264,10 +265,10 @@ namespace ShippingNSTVTool
                 command.Connection = connection;
                 adapter.SelectCommand = command;
                 adapter.Fill(dt);
-             }
+            }
         }
 
-        public bool sqlMultipleInsertItem(string DrawingCd, ref DataTable dt,string UserId)
+        public bool sqlMultipleInsertItem(string DrawingCd, ref DataTable dt, string UserId)
         {
             int res1;
             bool res2 = false;
@@ -301,7 +302,7 @@ namespace ShippingNSTVTool
                 //command2.Parameters.Add(new NpgsqlParameter("registration_date_time", NpgsqlTypes.NpgsqlDbType.TimestampTZ));
 
                 int k = 1;
-                for (int i = 0; i < dt.Rows.Count ; i++)
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     command2.Parameters[0].Value = dt.Rows[i]["item_id"];
                     command2.Parameters[1].Value = dt.Rows[i]["dwr_id"];
@@ -418,7 +419,7 @@ namespace ShippingNSTVTool
                     if (res1 == -1) res2 = true;
                     k++;
                 }
-                
+
                 if (!res2)
                 {
                     transaction.Commit();

@@ -36,41 +36,50 @@ namespace ShippingNSTVTool
 
         void getModel()
         {
-            string sql = "select distinct model from t_model_nstv";
+            string sql = "select distinct model_name from t_model";
             SQL.getComboBoxData(sql, ref cmbModel);
+        }
+
+        private void cmbModel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sql = "select distinct model_line from t_model where model_name ='" + cmbModel.Text + "'";
+            SQL.getComboBoxData(sql, ref cmbLine);
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
             string checkdate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             cmd.Clear();
-            cmd.Append("insert into t_barcode_rec_nstv(barcode, model, line, lot, checkdate)");
+            cmd.Append("insert into t_barcode_rec(barcode, model, line, lot, rec_date) ");
             cmd.Append("values('").Append(txtBarcode.Text).Append("','");
-            cmd.Append(cmbModel.Text).Append("','").Append(txtLine.Text).Append("','");
-            cmd.Append(txtLot.Text).Append("','").Append(checkdate).Append("'");
+            cmd.Append(cmbModel.Text).Append("','").Append(cmbLine.Text).Append("','");
+            cmd.Append(txtLot.Text).Append("','").Append(checkdate).Append("')");
             if (SQL.sqlExecuteNonQuery(cmd.ToString(), false))
             {
                 counter++;
                 dt.Clear();
-                txtBarcode.Clear();
                 lbStatus.Text = "OK";
                 lbStatus.BackColor = Color.Green;
                 lbCounter.Text = counter.ToString();
                 DataRow dr = dt.NewRow();
                 dr[0] = txtBarcode.Text;
                 dr[1] = cmbModel.Text;
-                dr[2] = txtLine.Text;
+                dr[2] = cmbLine.Text;
                 dr[3] = txtLot.Text;
                 dr[4] = checkdate;
                 dt.Rows.Add(dr);
+                txtBarcode.Clear();
                 dgvData.Refresh();
                 dgvData.DataSource = dt;
             }
             else
             {
-                dgvData.Dispose();
                 lbStatus.Text = "DUPPLICATE";
-                pnlStatus.BackColor = Color.Red;
+                lbStatus.BackColor = Color.Red;
+                txtBarcode.Clear();
+                dt.Clear();
+                dgvData.Refresh();
+                dgvData.DataSource = dt;
             }
             txtBarcode.Focus();
         }
@@ -82,7 +91,7 @@ namespace ShippingNSTVTool
             txtBarcode.Focus();
             toDate = dtpTo.Value;
             fromDate = dtpFrom.Value;
-            cmd.Append("select * from t_barcode_rec_nstv where ");
+            cmd.Append("select * from t_barcode_rec where ");
             cmd.Append("checkdate > '").Append(fromDate.ToString("yyyy-MM-dd HH:mm:ss")).Append("' ");
             cmd.Append("and checkdate < '").Append(toDate.ToString("yyyy-MM-dd HH:mm:ss")).Append("'");
             SQL.sqlDataAdapterFillDatatable(cmd.ToString(), ref dt);

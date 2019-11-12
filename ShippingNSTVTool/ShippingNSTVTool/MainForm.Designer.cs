@@ -33,7 +33,6 @@
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtLot = new System.Windows.Forms.TextBox();
-            this.txtLine = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbModel = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,6 +59,7 @@
             this.txtURL = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbCounter = new System.Windows.Forms.Label();
+            this.cmbLine = new System.Windows.Forms.ComboBox();
             this.grInfo.SuspendLayout();
             this.pnlSetting.SuspendLayout();
             this.grSearch.SuspendLayout();
@@ -89,10 +89,10 @@
             // 
             // pnlSetting
             // 
+            this.pnlSetting.Controls.Add(this.cmbLine);
             this.pnlSetting.Controls.Add(this.txtCode);
             this.pnlSetting.Controls.Add(this.label9);
             this.pnlSetting.Controls.Add(this.txtLot);
-            this.pnlSetting.Controls.Add(this.txtLine);
             this.pnlSetting.Controls.Add(this.label2);
             this.pnlSetting.Controls.Add(this.cmbModel);
             this.pnlSetting.Controls.Add(this.label3);
@@ -121,17 +121,10 @@
             // 
             // txtLot
             // 
-            this.txtLot.Location = new System.Drawing.Point(58, 64);
+            this.txtLot.Location = new System.Drawing.Point(58, 62);
             this.txtLot.Name = "txtLot";
             this.txtLot.Size = new System.Drawing.Size(121, 20);
             this.txtLot.TabIndex = 16;
-            // 
-            // txtLine
-            // 
-            this.txtLine.Location = new System.Drawing.Point(58, 34);
-            this.txtLine.Name = "txtLine";
-            this.txtLine.Size = new System.Drawing.Size(121, 20);
-            this.txtLine.TabIndex = 14;
             // 
             // label2
             // 
@@ -149,6 +142,7 @@
             this.cmbModel.Name = "cmbModel";
             this.cmbModel.Size = new System.Drawing.Size(121, 21);
             this.cmbModel.TabIndex = 13;
+            this.cmbModel.SelectedIndexChanged += new System.EventHandler(this.cmbModel_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -390,6 +384,14 @@
             this.lbCounter.Text = "0";
             this.lbCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cmbLine
+            // 
+            this.cmbLine.FormattingEnabled = true;
+            this.cmbLine.Location = new System.Drawing.Point(58, 33);
+            this.cmbLine.Name = "cmbLine";
+            this.cmbLine.Size = new System.Drawing.Size(121, 21);
+            this.cmbLine.TabIndex = 14;
+            // 
             // MainForm
             // 
             this.AcceptButton = this.btnConfirm;
@@ -452,12 +454,12 @@
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtLot;
-        private System.Windows.Forms.TextBox txtLine;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbModel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBrowser;
+        private System.Windows.Forms.ComboBox cmbLine;
     }
 }
 
