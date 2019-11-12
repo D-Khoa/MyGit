@@ -6,89 +6,139 @@ using System.Windows.Forms;
 
 namespace ShippingNSTVTool
 {
-    public partial class MainForm : Form
+    public partial class MainForm : CommonForm
     {
         TfSQL SQL;
         DataTable dt;
         ExcelClass excel;
         StringBuilder cmd;
         DateTime fromDate, toDate;
+        int counter;
 
         public MainForm()
         {
             InitializeComponent();
             SQL = new TfSQL();
+            getModel();
+            counter = 0;
             dt = new DataTable();
             dt.Columns.Add("Barcode");
             dt.Columns.Add("Model");
             dt.Columns.Add("Line");
             dt.Columns.Add("Lot");
-            dt.Columns.Add("ShipDate");
+            dt.Columns.Add("checkdate");
             toDate = new DateTime();
             fromDate = new DateTime();
             cmd = new StringBuilder();
+            btnApply.Visible = false;
+            pnlSetting.Enabled = false;
+        }
+
+        void getModel()
+        {
+            string sql = "select distinct model from t_model_nstv";
+            SQL.getComboBoxData(sql, ref cmbModel);
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            string shipDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            string checkdate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             cmd.Clear();
-            cmd.Append("insert into t-shipping_nstv(barcode, model, line, lot, shipdate)");
+            cmd.Append("insert into t_barcode_rec_nstv(barcode, model, line, lot, checkdate)");
             cmd.Append("values('").Append(txtBarcode.Text).Append("','");
             cmd.Append(cmbModel.Text).Append("','").Append(txtLine.Text).Append("','");
-            cmd.Append(txtLot.Text).Append("','").Append(shipDate).Append("'");
+            cmd.Append(txtLot.Text).Append("','").Append(checkdate).Append("'");
             if (SQL.sqlExecuteNonQuery(cmd.ToString(), false))
             {
-                pnlStatus.BackColor = Color.Green;
-                lbStatus.Text = "OK";
+                counter++;
                 dt.Clear();
+                txtBarcode.Clear();
+                lbStatus.Text = "OK";
+                lbStatus.BackColor = Color.Green;
+                lbCounter.Text = counter.ToString();
                 DataRow dr = dt.NewRow();
                 dr[0] = txtBarcode.Text;
                 dr[1] = cmbModel.Text;
                 dr[2] = txtLine.Text;
                 dr[3] = txtLot.Text;
-                dr[4] = shipDate;
+                dr[4] = checkdate;
                 dt.Rows.Add(dr);
-                dgvData.DataSource = dt;
                 dgvData.Refresh();
-                txtBarcode.Clear();
+                dgvData.DataSource = dt;
             }
             else
             {
-                pnlStatus.BackColor = Color.Red;
-                lbStatus.Text = "DUPPLICATE";
                 dgvData.Dispose();
+                lbStatus.Text = "DUPPLICATE";
+                pnlStatus.BackColor = Color.Red;
             }
             txtBarcode.Focus();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            toDate = dtpTo.Value;
-            fromDate = dtpFrom.Value;
             dt.Clear();
             cmd.Clear();
-            cmd.Append("select * from t-shipping_nstv where ");
-            cmd.Append("shipdate > '").Append(fromDate.ToString("yyyy-MM-dd HH:mm:ss")).Append("' ");
-            cmd.Append("and shipdate < '").Append(toDate.ToString("yyyy-MM-dd HH:mm:ss")).Append("'");
-            SQL.sqlDataAdapterFillDatatable(cmd.ToString(), ref dt);
-            dgvData.DataSource = dt;
-            dgvData.Refresh();
             txtBarcode.Focus();
+            toDate = dtpTo.Value;
+            fromDate = dtpFrom.Value;
+            cmd.Append("select * from t_barcode_rec_nstv where ");
+            cmd.Append("checkdate > '").Append(fromDate.ToString("yyyy-MM-dd HH:mm:ss")).Append("' ");
+            cmd.Append("and checkdate < '").Append(toDate.ToString("yyyy-MM-dd HH:mm:ss")).Append("'");
+            SQL.sqlDataAdapterFillDatatable(cmd.ToString(), ref dt);
+            dgvData.Refresh();
+            dgvData.DataSource = dt;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Do you want exit?", "Waring", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                Application.Exit();
         }
 
-        private void btnBrowser_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            counter = 0;
+            txtBarcode.Clear();
+            txtBarcode.Focus();
+            lbCounter.Text = "0";
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            LockForm lockfrm = new LockForm("nstv1111");
+            if (lockfrm.ShowDialog() == DialogResult.OK)
+            {
+                btnApply.Visible = true;
+                pnlSetting.Enabled = true;
+            }
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            btnApply.Visible = false;
+            pnlSetting.Enabled = false;
+            txtBarcode.Focus();
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
         {
             excel = new ExcelClass(txtURL.Text);
             excel.CreateWorkBook();
             excel.AddDatatable(dt);
             excel.SaveAndExit();
             txtBarcode.Focus();
+        }
+
+        private void btnBrowser_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog savef = new SaveFileDialog();
+            savef.Filter = "Excel documents (*.xls)|*.xls|Excel 2007 documents (*.xlsc)|*.xlsc|All file (*.*)|*.*";
+            savef.AddExtension = true;
+            if (savef.ShowDialog() == DialogResult.OK)
+            {
+                txtURL.Text = savef.FileName;
+            }
         }
     }
 }
