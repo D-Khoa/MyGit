@@ -26,39 +26,46 @@ namespace ShippingNSTVTool
             ws = app.ActiveSheet;
         }
 
-        public void OpenWorkBook(string fileopen)
+        public bool OpenWorkBook(string fileopen)
         {
             if (File.Exists(fileopen))
             {
                 app = new cExcel.Application();
                 wb = app.Workbooks.Open(fileopen);
                 ws = app.ActiveSheet;
+                return true;
             }
             else
+            {
+                return false;
                 throw new Exception("File not exist!");
+            }
         }
 
         public void AddColumns(string[] cols)
         {
-            for (int i = 0; i < cols.Count(); i++)
+            //for (int i = 0; i < cols.Count(); i++)
+            //{
+            //    ws.Cells[1, i] = cols[i];
+            //}
+            cols.ToList().ForEach(s =>
             {
-                ws.Cells[1, i] = cols[i];
-            }
+                ws.Cells[1, cols.ToList().IndexOf(s) + 1] = s;
+            });
         }
 
         public void AddColumns(List<string> cols)
         {
-            foreach (string line in cols)
+            cols.ForEach(s =>
             {
-                ws.Cells[1, cols.IndexOf(line) + 1] = line;
-            }
+                ws.Cells[1, cols.IndexOf(s) + 1] = s;
+            });
         }
 
         public void AddRow(string[] row)
         {
-            int index = 1;
             cExcel.Range rng = ws.UsedRange;
-            index = rng.EntireRow.Count + 1;
+            int index = rng.EntireRow.Count + 1;
             for (int i = 0; i < row.Count(); i++)
             {
                 ws.Cells[index, i + 1] = row[i];
@@ -67,9 +74,8 @@ namespace ShippingNSTVTool
 
         public void AddMultiRow(List<string[]> row)
         {
-            int index = 1;
             cExcel.Range rng = ws.UsedRange;
-            index = rng.EntireRow.Count + 1;
+            int index = rng.EntireRow.Count + 1;
             for (int i = 0; i < row.Count(); i++)
             {
                 for (int j = 0; j < row[i].Count(); j++)
@@ -79,13 +85,17 @@ namespace ShippingNSTVTool
 
         public void AddDatatable(DataTable dt)
         {
-            int index = 1;
             cExcel.Range rng = ws.UsedRange;
-            index = rng.EntireRow.Count + 1;
+            int index = rng.EntireRow.Count + 1;
+            List<string> query = (from col in dt.Columns.Cast<DataColumn>()
+                                  select col.ColumnName).ToList();
+            AddColumns(query);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 for (int j = 0; j < dt.Columns.Count; j++)
+                {
                     ws.Cells[index + i, j + 1] = dt.Rows[i][j];
+                }
             }
         }
 
@@ -93,9 +103,9 @@ namespace ShippingNSTVTool
         {
             //app.Visible = true;
             if (File.Exists(filename))
-                wb.Save();
-            else
-                wb.SaveAs(filename);
+                app.DisplayAlerts = false;
+            wb.SaveAs(filename, cExcel.XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, false, false, cExcel.XlSaveAsAccessMode.xlNoChange, cExcel.XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
+            wb.Close();
             app.Quit();
         }
     }

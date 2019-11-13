@@ -79,7 +79,7 @@
             this.grInfo.Size = new System.Drawing.Size(433, 197);
             this.grInfo.TabIndex = 1;
             this.grInfo.TabStop = false;
-            this.grInfo.Text = "Infomation";
+            this.grInfo.Text = "Information";
             // 
             // pnlSetting
             // 

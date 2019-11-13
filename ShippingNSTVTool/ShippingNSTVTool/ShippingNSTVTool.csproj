@@ -49,7 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Bogo-D-Indigo-Barcode-Scanner.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Bogo-D-Indigo-Barcode-Scanner.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>45ACD4C9E4F001611192210CE5C348D4BEA2F60A</ManifestCertificateThumbprint>
@@ -61,7 +61,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
@@ -136,7 +136,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="ShippingNSTVTool_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -154,8 +153,7 @@
     <None Include="Resources\NIDEC_Logo_small_1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="%24this.Icon.ico" />
-    <Content Include="Bogo-D-Indigo-Barcode-Scanner.ico" />
+    <Content Include="Resources\Bogo-D-Indigo-Barcode-Scanner.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
