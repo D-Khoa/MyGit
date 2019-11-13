@@ -340,7 +340,6 @@
             this.AcceptButton = this.btnConfirm;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = null;
             this.ClientSize = new System.Drawing.Size(612, 507);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvData);
@@ -348,7 +347,8 @@
             this.Controls.Add(this.grInfo);
             this.Name = "MainForm";
             this.Text = "NSTV Barcode Record Tool";
-            this.TitleText = "Barcode Record Tool";
+            this.TitleText = "NSTV Barcode Record Tool";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Controls.SetChildIndex(this.grInfo, 0);
             this.Controls.SetChildIndex(this.pnlStatus, 0);
             this.Controls.SetChildIndex(this.dgvData, 0);

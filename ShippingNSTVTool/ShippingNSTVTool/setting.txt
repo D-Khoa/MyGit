@@ -1,0 +1,4 @@
+Model = VGL-H3990
+Line = 1
+Lot = 20191113
+Code = ABC

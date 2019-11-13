@@ -46,6 +46,14 @@ namespace ShippingNSTVTool
             }
         }
 
+        public void AddColumns(List<string> cols)
+        {
+            foreach (string line in cols)
+            {
+                ws.Cells[1, cols.IndexOf(line) + 1] = line;
+            }
+        }
+
         public void AddRow(string[] row)
         {
             int index = 1;
