@@ -14,6 +14,12 @@ namespace DemoWeb.Controllers
             return View();
         }
 
+        public ActionResult CreateStep()
+        {
+            return View();
+        }
+
+
         public string ChaoMung()
         {
             return "Chao mung den voi web";

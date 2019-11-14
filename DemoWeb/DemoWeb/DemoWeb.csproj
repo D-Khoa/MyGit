@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -170,13 +172,17 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LinkController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProcessStepsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ProcessStep.cs" />
+    <Compile Include="Models\StepDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -235,10 +241,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Demo\Index.cshtml" />
+    <Content Include="Views\Demo\CreateStep.cshtml" />
+    <Content Include="Views\Link\Create.cshtml" />
+    <Content Include="Views\Link\Delete.cshtml" />
+    <Content Include="Views\Link\Details.cshtml" />
+    <Content Include="Views\Link\Edit.cshtml" />
+    <Content Include="Views\Link\Index.cshtml" />
+    <Content Include="Views\ProcessSteps\Create.cshtml" />
+    <Content Include="Views\ProcessSteps\Delete.cshtml" />
+    <Content Include="Views\ProcessSteps\Details.cshtml" />
+    <Content Include="Views\ProcessSteps\Edit.cshtml" />
+    <Content Include="Views\ProcessSteps\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Demo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
