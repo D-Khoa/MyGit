@@ -30,7 +30,7 @@ namespace ShippingNSTVTool
         //Check format of barcode
         private bool CheckBarcode()
         {
-            if (txtBarcode.Text.Contains(txtCode.Text))
+            if (txtBarcode.Text.StartsWith(txtCode.Text))
                 return true;
             else
             {
@@ -167,18 +167,25 @@ namespace ShippingNSTVTool
         //Click Search button for search data from database
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //dt.Clear();
-            //cmd.Clear();
-            toDate = dtpTo.Value;
-            fromDate = dtpFrom.Value;
-            //cmd.Append("select * from t_barcode_rec where 1=1 ");
-            //if (txtBarcode.Text != "")
-            //    cmd.Append("and barcode like '").Append(txtBarcode.Text).Append("' ");
-            //cmd.Append("and rec_date >= '").Append(fromDate.ToString("yyyy-MM-dd HH:mm:ss")).Append("' ");
-            //cmd.Append("and rec_date <= '").Append(toDate.ToString("yyyy-MM-dd HH:mm:ss")).Append("'");
-            //SQL.sqlDataAdapterFillDatatable(cmd.ToString(), ref dt);
-            GetTable(true);
-            StatusState("Finish", 0);
+            try
+            {
+                //dt.Clear();
+                //cmd.Clear();
+                toDate = dtpTo.Value;
+                fromDate = dtpFrom.Value;
+                //cmd.Append("select * from t_barcode_rec where 1=1 ");
+                //if (txtBarcode.Text != "")
+                //    cmd.Append("and barcode like '").Append(txtBarcode.Text).Append("' ");
+                //cmd.Append("and rec_date >= '").Append(fromDate.ToString("yyyy-MM-dd HH:mm:ss")).Append("' ");
+                //cmd.Append("and rec_date <= '").Append(toDate.ToString("yyyy-MM-dd HH:mm:ss")).Append("'");
+                //SQL.sqlDataAdapterFillDatatable(cmd.ToString(), ref dt);
+                GetTable(true);
+                StatusState("Finish", 0);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warring!");
+            }
             txtBarcode.Focus();
         }
         #endregion
