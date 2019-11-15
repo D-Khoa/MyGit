@@ -1,4 +1,4 @@
-Model = VGL-H3990
+Model = B
 Line = 1
-Lot = 20191113
-Code = ABC
+Lot = 1
+Code = A

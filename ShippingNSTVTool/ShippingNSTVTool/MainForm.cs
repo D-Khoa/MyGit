@@ -70,6 +70,7 @@ namespace ShippingNSTVTool
                 cmd.Append("and barcode = '").Append(txtBarcode.Text).Append("' ");
             else
                 cmd.Append("and barcode like '").Append(txtCode.Text).Append("%' ");
+            cmd.Append("and model like'").Append(txtModel.Text).Append("%'");
             if (searchFlag)
             {
                 cmd.Append("and rec_date >= '").Append(fromDate.ToString("yyyy-MM-dd HH:mm:ss")).Append("' ");
@@ -96,6 +97,7 @@ namespace ShippingNSTVTool
         {
             SettingState(false);
             SettingFile(true);
+            MessageBox.Show("Successfully", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             txtBarcode.Focus();
         }
 
@@ -112,6 +114,7 @@ namespace ShippingNSTVTool
                 excel.AddDatatable(dt);
                 excel.SaveAndExit();
             }
+            MessageBox.Show("Export Successfully", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             txtBarcode.Focus();
         }
 
@@ -148,10 +151,12 @@ namespace ShippingNSTVTool
                             lbCounter.Text = counter.ToString();
                             break;
                         case 2:
-                            StatusState("Dupplicate", 1);
+                            StatusState("Duplicate", 1);
+                            MessageBox.Show("Barcode Duplicate", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             break;
                         case 3:
-                            StatusState("Error", 2);
+                            StatusState("Duplicate", 2);
+                            MessageBox.Show("Barcode Duplicate", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             break;
                     }
                 }
@@ -167,25 +172,28 @@ namespace ShippingNSTVTool
         //Click Search button for search data from database
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //dt.Clear();
-                //cmd.Clear();
-                toDate = dtpTo.Value;
-                fromDate = dtpFrom.Value;
-                //cmd.Append("select * from t_barcode_rec where 1=1 ");
-                //if (txtBarcode.Text != "")
-                //    cmd.Append("and barcode like '").Append(txtBarcode.Text).Append("' ");
-                //cmd.Append("and rec_date >= '").Append(fromDate.ToString("yyyy-MM-dd HH:mm:ss")).Append("' ");
-                //cmd.Append("and rec_date <= '").Append(toDate.ToString("yyyy-MM-dd HH:mm:ss")).Append("'");
-                //SQL.sqlDataAdapterFillDatatable(cmd.ToString(), ref dt);
-                GetTable(true);
-                StatusState("Finish", 0);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Warring!");
-            }
+            //dt.Clear();
+            //cmd.Clear();
+            //string sql1="";
+            //string sql2 = "";
+            //sql1 = "select * from t_barcode_rec where 1=1 ";
+            //if (txtModel.Text != "") //neu nhu chon vao txt_masv thi thuc hien duoi ngoac
+            //{
+            //    sql2 = " and  model = '" + txtModel.Text + "'";
+            //}
+            //TfSQL con = new TfSQL(); // tao moi
+            //con.sqlDataAdapterFillDatatable(sql1 + sql2 , ref dt);
+            toDate = dtpTo.Value;
+            fromDate = dtpFrom.Value;
+            
+            //cmd.Append("select * from t_barcode_rec where 1=1 ");
+            //if (txtBarcode.Text != "")
+            //    cmd.Append("and barcode like '").Append(txtBarcode.Text).Append("' ");
+            //cmd.Append("and rec_date >= '").Append(fromDate.ToString("yyyy-MM-dd HH:mm:ss")).Append("' ");
+            //cmd.Append("and rec_date <= '").Append(toDate.ToString("yyyy-MM-dd HH:mm:ss")).Append("'");
+            //SQL.sqlDataAdapterFillDatatable(cmd.ToString(), ref dt);
+            GetTable(true);
+            StatusState("Finish", 0);
             txtBarcode.Focus();
         }
         #endregion
@@ -264,7 +272,7 @@ namespace ShippingNSTVTool
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Do you want exit?", "Waring", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show("Do you want to exit?", "Waring", MessageBoxButtons.YesNo) == DialogResult.No)
                 e.Cancel = true;
         }
     }

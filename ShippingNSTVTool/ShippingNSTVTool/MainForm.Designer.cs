@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.grInfo = new System.Windows.Forms.GroupBox();
             this.pnlSetting = new System.Windows.Forms.Panel();
             this.txtLine = new System.Windows.Forms.TextBox();
@@ -55,6 +56,12 @@
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbCounter = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtcustomer = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtcodeasset = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtdate = new System.Windows.Forms.TextBox();
             this.grInfo.SuspendLayout();
             this.pnlSetting.SuspendLayout();
             this.grSearch.SuspendLayout();
@@ -71,18 +78,23 @@
             this.grInfo.Controls.Add(this.btnSetting);
             this.grInfo.Controls.Add(this.btnSearch);
             this.grInfo.Controls.Add(this.btnConfirm);
-            this.grInfo.Controls.Add(this.grSearch);
             this.grInfo.Controls.Add(this.label1);
             this.grInfo.Controls.Add(this.txtBarcode);
             this.grInfo.Location = new System.Drawing.Point(11, 82);
             this.grInfo.Name = "grInfo";
-            this.grInfo.Size = new System.Drawing.Size(433, 197);
+            this.grInfo.Size = new System.Drawing.Size(429, 266);
             this.grInfo.TabIndex = 1;
             this.grInfo.TabStop = false;
             this.grInfo.Text = "Information";
             // 
             // pnlSetting
             // 
+            this.pnlSetting.Controls.Add(this.txtdate);
+            this.pnlSetting.Controls.Add(this.label10);
+            this.pnlSetting.Controls.Add(this.txtcodeasset);
+            this.pnlSetting.Controls.Add(this.label8);
+            this.pnlSetting.Controls.Add(this.txtcustomer);
+            this.pnlSetting.Controls.Add(this.label5);
             this.pnlSetting.Controls.Add(this.txtLine);
             this.pnlSetting.Controls.Add(this.txtModel);
             this.pnlSetting.Controls.Add(this.txtCode);
@@ -94,7 +106,7 @@
             this.pnlSetting.Enabled = false;
             this.pnlSetting.Location = new System.Drawing.Point(6, 45);
             this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(167, 112);
+            this.pnlSetting.Size = new System.Drawing.Size(408, 135);
             this.pnlSetting.TabIndex = 3;
             // 
             // txtLine
@@ -123,9 +135,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(6, 91);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(32, 13);
+            this.label9.Size = new System.Drawing.Size(56, 13);
             this.label9.TabIndex = 20;
-            this.label9.Text = "Code";
+            this.label9.Text = "Plan Code";
             // 
             // txtLot
             // 
@@ -163,7 +175,7 @@
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(342, 139);
+            this.btnExport.Location = new System.Drawing.Point(305, 195);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(62, 46);
             this.btnExport.TabIndex = 15;
@@ -173,7 +185,7 @@
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(112, 159);
+            this.btnApply.Location = new System.Drawing.Point(77, 205);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(53, 26);
             this.btnApply.TabIndex = 9;
@@ -185,7 +197,7 @@
             // btnSetting
             // 
             this.btnSetting.Image = global::ShippingNSTVTool.Properties.Resources.settings;
-            this.btnSetting.Location = new System.Drawing.Point(15, 158);
+            this.btnSetting.Location = new System.Drawing.Point(15, 205);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(38, 27);
             this.btnSetting.TabIndex = 8;
@@ -194,7 +206,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(267, 139);
+            this.btnSearch.Location = new System.Drawing.Point(230, 195);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(62, 46);
             this.btnSearch.TabIndex = 14;
@@ -204,7 +216,7 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(192, 139);
+            this.btnConfirm.Location = new System.Drawing.Point(155, 195);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(62, 46);
             this.btnConfirm.TabIndex = 10;
@@ -218,7 +230,7 @@
             this.grSearch.Controls.Add(this.label6);
             this.grSearch.Controls.Add(this.dtpTo);
             this.grSearch.Controls.Add(this.dtpFrom);
-            this.grSearch.Location = new System.Drawing.Point(186, 50);
+            this.grSearch.Location = new System.Drawing.Point(461, 279);
             this.grSearch.Name = "grSearch";
             this.grSearch.Size = new System.Drawing.Size(218, 83);
             this.grSearch.TabIndex = 11;
@@ -287,7 +299,7 @@
             this.pnlStatus.Controls.Add(this.lbStatus);
             this.pnlStatus.Location = new System.Drawing.Point(461, 82);
             this.pnlStatus.Name = "pnlStatus";
-            this.pnlStatus.Size = new System.Drawing.Size(138, 142);
+            this.pnlStatus.Size = new System.Drawing.Size(242, 142);
             this.pnlStatus.TabIndex = 12;
             // 
             // lbStatus
@@ -296,7 +308,7 @@
             this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStatus.Location = new System.Drawing.Point(0, 0);
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(136, 140);
+            this.lbStatus.Size = new System.Drawing.Size(240, 140);
             this.lbStatus.TabIndex = 12;
             this.lbStatus.Text = "None";
             this.lbStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -307,9 +319,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.Location = new System.Drawing.Point(12, 285);
+            this.dgvData.Location = new System.Drawing.Point(12, 362);
             this.dgvData.Name = "dgvData";
-            this.dgvData.Size = new System.Drawing.Size(589, 210);
+            this.dgvData.Size = new System.Drawing.Size(693, 142);
             this.dgvData.TabIndex = 18;
             // 
             // groupBox2
@@ -319,7 +331,7 @@
             this.groupBox2.Controls.Add(this.lbCounter);
             this.groupBox2.Location = new System.Drawing.Point(461, 230);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(138, 49);
+            this.groupBox2.Size = new System.Drawing.Size(242, 49);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Counter";
@@ -330,25 +342,76 @@
             this.lbCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCounter.Location = new System.Drawing.Point(3, 16);
             this.lbCounter.Name = "lbCounter";
-            this.lbCounter.Size = new System.Drawing.Size(132, 30);
+            this.lbCounter.Size = new System.Drawing.Size(236, 30);
             this.lbCounter.TabIndex = 0;
             this.lbCounter.Text = "0";
             this.lbCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(186, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 13);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Customer";
+            // 
+            // txtcustomer
+            // 
+            this.txtcustomer.Location = new System.Drawing.Point(260, 7);
+            this.txtcustomer.Name = "txtcustomer";
+            this.txtcustomer.Size = new System.Drawing.Size(101, 20);
+            this.txtcustomer.TabIndex = 22;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(186, 37);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(61, 13);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Code Asset";
+            // 
+            // txtcodeasset
+            // 
+            this.txtcodeasset.Location = new System.Drawing.Point(260, 34);
+            this.txtcodeasset.Name = "txtcodeasset";
+            this.txtcodeasset.Size = new System.Drawing.Size(101, 20);
+            this.txtcodeasset.TabIndex = 24;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(186, 64);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(30, 13);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Date";
+            // 
+            // txtdate
+            // 
+            this.txtdate.Location = new System.Drawing.Point(260, 61);
+            this.txtdate.Name = "txtdate";
+            this.txtdate.Size = new System.Drawing.Size(101, 20);
+            this.txtdate.TabIndex = 26;
             // 
             // MainForm
             // 
             this.AcceptButton = this.btnConfirm;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 507);
+            this.ClientSize = new System.Drawing.Size(716, 516);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.pnlStatus);
             this.Controls.Add(this.grInfo);
+            this.Controls.Add(this.grSearch);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "NSTV Barcode Record Tool";
             this.TitleText = "NSTV Barcode Record Tool";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Controls.SetChildIndex(this.grSearch, 0);
             this.Controls.SetChildIndex(this.grInfo, 0);
             this.Controls.SetChildIndex(this.pnlStatus, 0);
             this.Controls.SetChildIndex(this.dgvData, 0);
@@ -394,6 +457,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtLine;
         private System.Windows.Forms.TextBox txtModel;
+        private System.Windows.Forms.TextBox txtdate;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtcodeasset;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtcustomer;
+        private System.Windows.Forms.Label label5;
     }
 }
 
