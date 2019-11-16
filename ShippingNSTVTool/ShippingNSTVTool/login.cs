@@ -37,9 +37,9 @@ namespace ShippingNSTVTool
                 if (con.sqlExecuteScalarString(sqlpass) == txtpass.Text)
                 {
                     Form lt = new MainForm();
-                    lt.Show();
                     this.Hide();
-
+                    lt.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
@@ -61,5 +61,7 @@ namespace ShippingNSTVTool
                 Application.Exit();
             }
         }
+
+
     }
 }

@@ -1,4 +1,8 @@
-Model = B
-Line = 1
-Lot = 1
-Code = A
+Model = R10
+Line = E
+Lot = 16
+Plan Code = 0VD
+Customer = 6901083002
+Code =0B
+Date =91B
+Line code = DA1

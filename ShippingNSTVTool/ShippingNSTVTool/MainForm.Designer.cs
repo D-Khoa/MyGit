@@ -31,6 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.grInfo = new System.Windows.Forms.GroupBox();
             this.pnlSetting = new System.Windows.Forms.Panel();
+            this.txtdate = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtcodeasset = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtcustomer = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtLine = new System.Windows.Forms.TextBox();
             this.txtModel = new System.Windows.Forms.TextBox();
             this.txtCode = new System.Windows.Forms.TextBox();
@@ -44,24 +50,20 @@
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBarcode = new System.Windows.Forms.TextBox();
             this.grSearch = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBarcode = new System.Windows.Forms.TextBox();
             this.pnlStatus = new System.Windows.Forms.Panel();
             this.lbStatus = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbCounter = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtcustomer = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtcodeasset = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtdate = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtlinecode = new System.Windows.Forms.TextBox();
             this.grInfo.SuspendLayout();
             this.pnlSetting.SuspendLayout();
             this.grSearch.SuspendLayout();
@@ -89,6 +91,8 @@
             // 
             // pnlSetting
             // 
+            this.pnlSetting.Controls.Add(this.txtlinecode);
+            this.pnlSetting.Controls.Add(this.label11);
             this.pnlSetting.Controls.Add(this.txtdate);
             this.pnlSetting.Controls.Add(this.label10);
             this.pnlSetting.Controls.Add(this.txtcodeasset);
@@ -108,6 +112,54 @@
             this.pnlSetting.Name = "pnlSetting";
             this.pnlSetting.Size = new System.Drawing.Size(408, 135);
             this.pnlSetting.TabIndex = 3;
+            // 
+            // txtdate
+            // 
+            this.txtdate.Location = new System.Drawing.Point(260, 61);
+            this.txtdate.Name = "txtdate";
+            this.txtdate.Size = new System.Drawing.Size(101, 20);
+            this.txtdate.TabIndex = 26;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(186, 64);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(30, 13);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Date";
+            // 
+            // txtcodeasset
+            // 
+            this.txtcodeasset.Location = new System.Drawing.Point(260, 34);
+            this.txtcodeasset.Name = "txtcodeasset";
+            this.txtcodeasset.Size = new System.Drawing.Size(101, 20);
+            this.txtcodeasset.TabIndex = 24;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(186, 37);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 13);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Code";
+            // 
+            // txtcustomer
+            // 
+            this.txtcustomer.Location = new System.Drawing.Point(260, 7);
+            this.txtcustomer.Name = "txtcustomer";
+            this.txtcustomer.Size = new System.Drawing.Size(101, 20);
+            this.txtcustomer.TabIndex = 22;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(186, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 13);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Customer";
             // 
             // txtLine
             // 
@@ -224,6 +276,22 @@
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Barcode";
+            // 
+            // txtBarcode
+            // 
+            this.txtBarcode.Location = new System.Drawing.Point(65, 26);
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.Size = new System.Drawing.Size(339, 20);
+            this.txtBarcode.TabIndex = 2;
+            // 
             // grSearch
             // 
             this.grSearch.Controls.Add(this.label7);
@@ -274,22 +342,6 @@
             this.dtpFrom.ShowUpDown = true;
             this.dtpFrom.Size = new System.Drawing.Size(139, 20);
             this.dtpFrom.TabIndex = 12;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Barcode";
-            // 
-            // txtBarcode
-            // 
-            this.txtBarcode.Location = new System.Drawing.Point(65, 26);
-            this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.Size = new System.Drawing.Size(339, 20);
-            this.txtBarcode.TabIndex = 2;
             // 
             // pnlStatus
             // 
@@ -347,53 +399,21 @@
             this.lbCounter.Text = "0";
             this.lbCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // label11
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(186, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 13);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Customer";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(186, 91);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 13);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Line Code";
             // 
-            // txtcustomer
+            // txtlinecode
             // 
-            this.txtcustomer.Location = new System.Drawing.Point(260, 7);
-            this.txtcustomer.Name = "txtcustomer";
-            this.txtcustomer.Size = new System.Drawing.Size(101, 20);
-            this.txtcustomer.TabIndex = 22;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(186, 37);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 13);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Code Asset";
-            // 
-            // txtcodeasset
-            // 
-            this.txtcodeasset.Location = new System.Drawing.Point(260, 34);
-            this.txtcodeasset.Name = "txtcodeasset";
-            this.txtcodeasset.Size = new System.Drawing.Size(101, 20);
-            this.txtcodeasset.TabIndex = 24;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(186, 64);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(30, 13);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "Date";
-            // 
-            // txtdate
-            // 
-            this.txtdate.Location = new System.Drawing.Point(260, 61);
-            this.txtdate.Name = "txtdate";
-            this.txtdate.Size = new System.Drawing.Size(101, 20);
-            this.txtdate.TabIndex = 26;
+            this.txtlinecode.Location = new System.Drawing.Point(260, 88);
+            this.txtlinecode.Name = "txtlinecode";
+            this.txtlinecode.Size = new System.Drawing.Size(101, 20);
+            this.txtlinecode.TabIndex = 28;
             // 
             // MainForm
             // 
@@ -463,6 +483,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtcustomer;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtlinecode;
+        private System.Windows.Forms.Label label11;
     }
 }
 

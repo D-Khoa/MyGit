@@ -23,21 +23,64 @@ namespace ShippingNSTVTool
             dt = new DataTable();
             SettingState(false);
             SettingFile(false);
-            //CreateTable();
         }
 
         #region CHECK DATA FORMAT
-        //Check format of barcode
+
         private bool CheckBarcode()
         {
-            if (txtBarcode.Text.StartsWith(txtCode.Text))
+            if (txtBarcode.Text.Length == 26)
+            {
+                if (txtBarcode.Text.StartsWith(txtCode.Text))
+                    return true;
+                else
+                {
+                    throw new Exception("Wrong barcode format!");
+                }
+            }
+            else
+                throw new Exception("Lenght barcode wrong!");
+        }
+        //Check customer asset
+        private bool checkcustomer()
+        {
+            if (txtBarcode.Text.Substring(3, 10)== txtcustomer.Text)
                 return true;
             else
             {
-                throw new Exception("Wrong barcode format!");
+                throw new Exception(" Wrong Customer Code");
             }
         }
-
+        //check code asset
+        private bool checkcodeasset()
+        {
+            if (txtBarcode.Text.Substring(13, 2) == txtcodeasset.Text)
+                return true;
+            else
+            {
+                throw new Exception("Wrong Code Format ");
+            }
+        }
+        // check date code
+        private bool checkdatecode()
+        {
+            if (txtBarcode.Text.Substring(15, 3)==txtdate.Text)
+                return true;
+            else
+            {
+                throw new Exception(" Wrong Date Code");
+            }
+        }
+        // check line code
+        private bool checklinecode()
+        {
+            if (txtBarcode.Text.Substring(23, 3)==txtlinecode.Text)
+                return true;
+            else
+            {
+                throw new Exception("Wrong Line Code Format");
+            }
+        }
         //Check textbox empty
         private bool CheckEmpty()
         {
@@ -97,7 +140,7 @@ namespace ShippingNSTVTool
         {
             SettingState(false);
             SettingFile(true);
-            MessageBox.Show("Successfully", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Save Successfully", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             txtBarcode.Focus();
         }
 
@@ -123,7 +166,7 @@ namespace ShippingNSTVTool
         {
             try
             {
-                if (CheckBarcode() && CheckEmpty())
+                if (CheckBarcode() && CheckEmpty() && checkcustomer() && checkcodeasset() && checkdatecode() && checklinecode())
                 {
                     string recDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                     dt.Clear();
@@ -138,13 +181,6 @@ namespace ShippingNSTVTool
                             StatusState("Fail", 2);
                             break;
                         case 1:
-                            //DataRow dr = dt.NewRow();
-                            //dr[0] = txtBarcode.Text;
-                            //dr[1] = txtModel.Text;
-                            //dr[2] = txtLine.Text;
-                            //dr[3] = txtLot.Text;
-                            //dr[4] = recDate;
-                            //dt.Rows.Add(dr);
                             counter++;
                             GetTable(false);
                             StatusState("OK", 0);
@@ -154,15 +190,12 @@ namespace ShippingNSTVTool
                             StatusState("Duplicate", 1);
                             MessageBox.Show("Barcode Duplicate", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             break;
-                        case 3:
-                            StatusState("Duplicate", 2);
-                            MessageBox.Show("Barcode Duplicate", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            break;
                     }
                 }
             }
             catch (Exception ex)
             {
+                StatusState(ex.Message, 2);
                 MessageBox.Show(ex.Message, "Warring");
             }
             txtBarcode.Clear();
@@ -172,26 +205,8 @@ namespace ShippingNSTVTool
         //Click Search button for search data from database
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //dt.Clear();
-            //cmd.Clear();
-            //string sql1="";
-            //string sql2 = "";
-            //sql1 = "select * from t_barcode_rec where 1=1 ";
-            //if (txtModel.Text != "") //neu nhu chon vao txt_masv thi thuc hien duoi ngoac
-            //{
-            //    sql2 = " and  model = '" + txtModel.Text + "'";
-            //}
-            //TfSQL con = new TfSQL(); // tao moi
-            //con.sqlDataAdapterFillDatatable(sql1 + sql2 , ref dt);
             toDate = dtpTo.Value;
             fromDate = dtpFrom.Value;
-            
-            //cmd.Append("select * from t_barcode_rec where 1=1 ");
-            //if (txtBarcode.Text != "")
-            //    cmd.Append("and barcode like '").Append(txtBarcode.Text).Append("' ");
-            //cmd.Append("and rec_date >= '").Append(fromDate.ToString("yyyy-MM-dd HH:mm:ss")).Append("' ");
-            //cmd.Append("and rec_date <= '").Append(toDate.ToString("yyyy-MM-dd HH:mm:ss")).Append("'");
-            //SQL.sqlDataAdapterFillDatatable(cmd.ToString(), ref dt);
             GetTable(true);
             StatusState("Finish", 0);
             txtBarcode.Focus();
@@ -242,7 +257,11 @@ namespace ShippingNSTVTool
                 setList.Add("Model = " + txtModel.Text);
                 setList.Add("Line = " + txtLine.Text);
                 setList.Add("Lot = " + txtLot.Text);
-                setList.Add("Code = " + txtCode.Text);
+                setList.Add("Plan Code = " + txtCode.Text);
+                setList.Add("Customer = " + txtcustomer.Text);
+                setList.Add("Code =" + txtcodeasset.Text);
+                setList.Add("Date =" + txtdate.Text);
+                setList.Add("Line code = " + txtlinecode.Text);
                 if (!File.Exists(@"../../setting.txt"))
                     File.Create(@"../../setting.txt");
                 File.WriteAllLines(@"../../setting.txt", setList);
@@ -263,7 +282,11 @@ namespace ShippingNSTVTool
                         txtModel.Text = setList[0].Remove(0, 8);
                         txtLine.Text = setList[1].Remove(0, 7);
                         txtLot.Text = setList[2].Remove(0, 6);
-                        txtCode.Text = setList[3].Remove(0, 7);
+                        txtCode.Text = setList[3].Remove(0, 12);
+                        txtcustomer.Text = setList[4].Remove(0, 11);
+                        txtcodeasset.Text = setList[5].Remove(0, 6);
+                        txtdate.Text = setList[6].Remove(0, 6);
+                        txtlinecode.Text = setList[7].Remove(0, 12);
                     }
                 }
             }

@@ -274,15 +274,6 @@ namespace ShippingNSTVTool
                     return 0;
                 }
             }
-            catch (DuplicateWaitObjectException ex)
-            {
-                if (result_message_show)
-                {
-                    MessageBox.Show("Not successful!" + System.Environment.NewLine + ex.Message, "Database Responce", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                connection.Close();
-                return 2;
-            }
             catch (Exception ex)
             {
                 if (result_message_show)
@@ -290,7 +281,7 @@ namespace ShippingNSTVTool
                     MessageBox.Show("Not successful!" + System.Environment.NewLine + ex.Message, "Database Responce", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 connection.Close();
-                return 3;
+                return 2;
             }
         }
 
