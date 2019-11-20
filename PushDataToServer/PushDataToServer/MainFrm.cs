@@ -20,7 +20,6 @@ namespace PushDataToServer
         public MainFrm()
         {
             InitializeComponent();
-
         }
 
         private string ChooseFolder()
@@ -63,8 +62,8 @@ namespace PushDataToServer
                     path = Path.GetFileName(file);
                     string text = File.ReadAllText(file);
                     text = text.Replace("", "\n\r");
-                    File.WriteAllText(txtTo.Text + @"\" + path, text);
-                    File.Move(file, txtTemp.Text + @"\" + path);
+                    File.WriteAllText(txtTo.Text + "\\" + path, text);
+                    File.Move(file, txtTemp.Text + "\\" + path);
                 }
             }
         }
