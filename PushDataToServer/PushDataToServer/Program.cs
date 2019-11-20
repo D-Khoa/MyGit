@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DKMES.FormSys;
 
-namespace DKMES
+namespace PushDataToServer
 {
     static class Program
     {
@@ -17,7 +16,7 @@ namespace DKMES
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ChangeEnterKey());
+            Application.Run(new MainFrm());
         }
     }
 }
