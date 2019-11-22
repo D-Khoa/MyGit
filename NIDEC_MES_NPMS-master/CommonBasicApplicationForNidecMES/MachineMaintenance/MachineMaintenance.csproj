@@ -220,12 +220,6 @@
     <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\GetProcessRangeLS12Cbm.cs" />
     <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\SearchRangeLS12Cbm.cs" />
     <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\UpdateRangeLS12Cbm.cs" />
-    <Compile Include="Cbm\OvenBarcodeTTBCbm\GetBarcodeCbm.cs" />
-    <Compile Include="Cbm\OvenBarcodeTTBCbm\GetLineCbm.cs" />
-    <Compile Include="Cbm\OvenBarcodeTTBCbm\GetModelCbm.cs" />
-    <Compile Include="Cbm\OvenBarcodeTTBCbm\GetProcessCbm.cs" />
-    <Compile Include="Cbm\OvenBarcodeTTBCbm\GetSpecCbm.cs" />
-    <Compile Include="Cbm\OvenBarcodeTTBCbm\SearchDataCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionRateNGRatioCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionItemCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionModelCbm.cs" />
@@ -509,12 +503,6 @@
     <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\GetProcessRangeLS12Dao.cs" />
     <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\SearchRangeLS12Dao.cs" />
     <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\UpdateRangeLS12Dao.cs" />
-    <Compile Include="Dao\OvenBarcodeTTBDao\GetBarcodeDao.cs" />
-    <Compile Include="Dao\OvenBarcodeTTBDao\GetLineDao.cs" />
-    <Compile Include="Dao\OvenBarcodeTTBDao\GetModelDao.cs" />
-    <Compile Include="Dao\OvenBarcodeTTBDao\GetProcessDao.cs" />
-    <Compile Include="Dao\OvenBarcodeTTBDao\GetSpecDao.cs" />
-    <Compile Include="Dao\OvenBarcodeTTBDao\SearchDataDao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionItemDao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionRateNGRatioDao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionModelDao.cs" />
@@ -888,12 +876,6 @@
     <Compile Include="Form\OvenBarcodeMachine\Range\RangeForm.Designer.cs">
       <DependentUpon>RangeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\OvenBarcodeTTBForm\OvenBarcodeTTBForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\OvenBarcodeTTBForm\OvenBarcodeTTBForm.Designer.cs">
-      <DependentUpon>OvenBarcodeTTBForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\PQMConnectForm\ProducionControllerGA1Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1206,9 +1188,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\OvenBarcodeMachine\Range\RangeForm.resx">
       <DependentUpon>RangeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\OvenBarcodeTTBForm\OvenBarcodeTTBForm.resx">
-      <DependentUpon>OvenBarcodeTTBForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\PQMConnectForm\ProducionControllerGA1Form.resx">
       <DependentUpon>ProducionControllerGA1Form.cs</DependentUpon>

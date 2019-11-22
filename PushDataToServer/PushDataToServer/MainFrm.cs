@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace PushDataToServer
@@ -14,12 +11,129 @@ namespace PushDataToServer
     public partial class MainFrm : Form
     {
         OpenFileDialog chooseFolder;
+        List<string> setString;
         string[] filePath;
+        string fromfolder, tofolder, tempfolder;
+        string settingfile;
         string path;
+        int c;
 
         public MainFrm()
         {
             InitializeComponent();
+            setString = new List<string>();
+            settingfile = @"D:\PushData\ini.txt";
+        }
+
+        private void MainFrm_Load(object sender, EventArgs e)
+        {
+            if (File.Exists(settingfile))
+            {
+                setString = File.ReadLines(settingfile).ToList();
+            }
+            txtFrom.Text = setString[0].Remove(0, 14);
+            txtTo.Text = setString[1].Remove(0, 12);
+            txtTemp.Text = setString[2].Remove(0, 14);
+        }
+
+        private void btnBTemp_Click(object sender, EventArgs e)
+        {
+            txtTemp.Text = ChooseFolder();
+        }
+
+        private void btnPush_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                fromfolder = txtFrom.Text;
+                tofolder = txtTo.Text;
+                tempfolder = txtTemp.Text;
+                if (!backgroundWorker1.IsBusy)
+                {
+                    btnPush.Enabled = false;
+                    btnStop.Enabled = true;
+                    txtFrom.ReadOnly = true;
+                    txtTo.ReadOnly = true;
+                    txtTemp.ReadOnly = true;
+                    backgroundWorker1.RunWorkerAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            if (backgroundWorker1.IsBusy)
+            {
+                btnPush.Enabled = true;
+                btnStop.Enabled = false;
+                txtFrom.ReadOnly = false;
+                txtTo.ReadOnly = false;
+                txtTemp.ReadOnly = false;
+                backgroundWorker1.CancelAsync();
+            }
+        }
+
+        private void MainFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (btnStop.Enabled)
+                e.Cancel = true;
+            setString.Add("From Folder = " + fromfolder);
+            setString.Add("To Folder = " + tofolder);
+            setString.Add("Temp Folder = " + tempfolder);
+            if (!Directory.Exists(Path.GetDirectoryName(settingfile)))
+                Directory.CreateDirectory(Path.GetDirectoryName(settingfile));
+            if (!File.Exists(settingfile))
+                File.Create(settingfile);
+            File.WriteAllLines(settingfile, setString);
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            c = (int)numTimer.Value;
+            for (int i = c; i >= 0; i--)
+            {
+                backgroundWorker1.ReportProgress(i);
+                if (backgroundWorker1.CancellationPending)
+                {
+                    e.Cancel = true;
+                    backgroundWorker1.ReportProgress(c);
+                    return;
+                }
+                Thread.Sleep(1000);
+            }
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            tsTimer.Text = e.ProgressPercentage.ToString() + " S";
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Cancelled)
+            {
+                MessageBox.Show("Stop transfer!!!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (e.Error != null)
+            {
+                MessageBox.Show(e.Error.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    EditAndSendFile();
+                    backgroundWorker1.RunWorkerAsync();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private string ChooseFolder()
@@ -37,40 +151,22 @@ namespace PushDataToServer
                 return "";
         }
 
-        private void btnBFrom_Click(object sender, EventArgs e)
+        private void EditAndSendFile()
         {
-            txtFrom.Text = ChooseFolder();
-        }
-
-        private void btnBTo_Click(object sender, EventArgs e)
-        {
-            txtTo.Text = ChooseFolder();
-        }
-
-        private void btnBTemp_Click(object sender, EventArgs e)
-        {
-            txtTemp.Text = ChooseFolder();
-        }
-
-        private void EditFile()
-        {
-            filePath = Directory.GetFiles(txtFrom.Text, " *.LA20_517ALA201NO1");
+            filePath = Directory.GetFiles(fromfolder, "*.LA20_517ALA201NO1");
             if (filePath != null)
             {
                 foreach (string file in filePath)
                 {
                     path = Path.GetFileName(file);
-                    string text = File.ReadAllText(file);
-                    text = text.Replace("", "\n\r");
-                    File.WriteAllText(txtTo.Text + "\\" + path, text);
-                    File.Move(file, txtTemp.Text + "\\" + path);
+                    string dataText = File.ReadAllText(file);
+                    dataText = dataText.Replace("", Environment.NewLine);
+                    File.WriteAllText(tofolder + "\\" + path, dataText);
+                    if (!string.IsNullOrEmpty(txtTemp.Text))
+                        File.Move(file, tempfolder + "\\" + path);
                 }
             }
         }
-
-        private void btnPush_Click(object sender, EventArgs e)
-        {
-            EditFile();
-        }
     }
+
 }

@@ -19,7 +19,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
 
-            sql.Append(@"select m.invertory_time_cd,  m.invertory_time_id,  k.unit_name, d.user_location_name,c.location_cd as before, j.location_cd as after, h.detail_postion_cd, g.warehouse_main_id,c.location_cd,e.asset_cd, e.asset_no, e.asset_name, e.asset_model, e.asset_serial, e.asset_supplier, e.asset_invoice, e.label_status, e.asset_po, g.qty, a.account_code_cd, b.account_location_cd, f.rank_cd, b.account_location_name, g.comment_data, e.asset_life, e.acquistion_date, e.acquistion_cost,e.asset_type, g.depreciation_start, g.depreciation_end, g.current_depreciation,g.monthly_depreciation, g.accum_depreciation_now, g.net_value, g.registration_date_time, g.registration_user_cd from t_warehouse_main g
+            sql.Append(@"select m.invertory_time_cd,  m.invertory_time_id,  k.unit_name, d.user_location_name,c.location_cd as before, j.location_cd as after, n.location_cd as nowlocation, h.detail_postion_cd, g.warehouse_main_id,c.location_cd,e.asset_cd, e.asset_no, e.asset_name, e.asset_model, e.asset_serial, e.asset_supplier, e.asset_invoice, e.label_status, e.asset_po, g.qty, a.account_code_cd, b.account_location_cd, f.rank_cd, b.account_location_name, g.comment_data, e.asset_life, e.acquistion_date, e.acquistion_cost,e.asset_type, g.depreciation_start, g.depreciation_end, g.current_depreciation,g.monthly_depreciation, g.accum_depreciation_now, g.net_value, g.registration_date_time, g.registration_user_cd from t_warehouse_main g
                            left join m_account_code a on a.account_code_id = g.account_code_id
                            left join m_account_location b on b.account_location_id = g.account_location_id
                             left join m_location c on c.location_id = g.before_location_id
@@ -31,6 +31,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                             left join m_unit k on k.unit_id = g.unit_id
                             left join t_invertory_equipments l on l.warehouse_main_id = g.warehouse_main_id
                             left join m_invertory_time m on m.invertory_time_id = l.invertory_time_id
+                            left join m_location n on n.location_id = l.location_id
                             where 1=1  ");
 
 
@@ -71,6 +72,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 sql.Append(" and j.location_cd =:location_cd");
                 sqlParameter.AddParameterString("location_cd", inVo.AfterLocationCd);
             }
+            if (!String.IsNullOrEmpty(inVo.NowLocation))
+            {
+                sql.Append(" and n.location_cd =:location_cd");
+                sqlParameter.AddParameterString("location_cd", inVo.NowLocation);
+            }
             if (!String.IsNullOrEmpty(inVo.DetailPositionCd))
             {
                 sql.Append(" and h.detail_postion_cd =:detail_postion_cd");
@@ -86,7 +92,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 sql.Append(" and e.asset_po =:asset_po");
                 sqlParameter.AddParameterString("asset_po", inVo.AssetPO);
             }
-        
+
             if (!String.IsNullOrEmpty(inVo.Net_Value))//search theo net value
             {
                 if (inVo.Net_Value == "0$")
@@ -146,7 +152,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                     InvertoryId = int.Parse(dataReader["invertory_time_id"].ToString()),
                     RegistrationDateTime = DateTime.Parse(dataReader["registration_date_time"].ToString()),
                     RegistrationUserCode = (dataReader["registration_user_cd"].ToString()),
-
+                    NowLocation = dataReader["nowlocation"].ToString()
 
                 };
                 voList.add(outVo);

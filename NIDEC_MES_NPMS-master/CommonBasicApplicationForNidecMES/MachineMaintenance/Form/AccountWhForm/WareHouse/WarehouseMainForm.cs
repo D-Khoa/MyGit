@@ -29,13 +29,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.WareH
             warehouse_main_dgv.Visible = true;
             GridBind();
             full_asset_Code_txt.Text = "";
-           // counter();
+            // counter();
             // updatedatatodatabase();
 
         }
         void counter()
         {
-            if (counter_dgv.RowCount >0)
+            if (counter_dgv.RowCount > 0)
             {
                 counter_dgv.Rows.RemoveAt(this.counter_dgv.Rows[0].Index);
             }
@@ -45,18 +45,18 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.WareH
             for (int i = 0; i < warehouse_main_dgv.RowCount; i++)
             {
                 AcquisitionCost += double.Parse(warehouse_main_dgv.Rows[i].Cells["colAcquisitionCost"].Value.ToString());
-                CurrentDepreciation +=double.Parse(warehouse_main_dgv.Rows[i].Cells["colCurrentDepreciation"].Value.ToString());
+                CurrentDepreciation += double.Parse(warehouse_main_dgv.Rows[i].Cells["colCurrentDepreciation"].Value.ToString());
                 MonthlyDepreciation += double.Parse(warehouse_main_dgv.Rows[i].Cells["colMonthlyDepreciation"].Value.ToString());
                 AccumDepreciation += double.Parse(warehouse_main_dgv.Rows[i].Cells["colAccumDepreciation"].Value.ToString());
                 NetValue += double.Parse(warehouse_main_dgv.Rows[i].Cells["colNetValue"].Value.ToString());
-                TotalMachine = i+1;
+                TotalMachine = i + 1;
                 if (warehouse_main_dgv.Rows[i].Cells["colIvertory"].Value.ToString() == invertory_cmb.Text)
                 {
-                    Inventory += j+1;
+                    Inventory += j + 1;
                 }
             }
-            
-            counter_dgv.Rows.Add(Math.Round( AcquisitionCost,2).ToString(), Math.Round(CurrentDepreciation).ToString(), Math.Round(MonthlyDepreciation).ToString(), Math.Round(AccumDepreciation).ToString(), Math.Round(NetValue).ToString(), Inventory.ToString(), TotalMachine.ToString());
+
+            counter_dgv.Rows.Add(Math.Round(AcquisitionCost, 2).ToString(), Math.Round(CurrentDepreciation).ToString(), Math.Round(MonthlyDepreciation).ToString(), Math.Round(AccumDepreciation).ToString(), Math.Round(NetValue).ToString(), Inventory.ToString(), TotalMachine.ToString());
         }
         void updatedatatodatabase()
         {
@@ -110,6 +110,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.WareH
                     LabelStatus = labelstatus_cmb.Text,
                     Net_Value = net_value_cmb.Text,
                     AssetPO = AssetPO_cmb.Text,
+                    NowLocation = inventoryLocation_cbm.Text,
                 };
                 if (checkdata())
                 {
@@ -122,6 +123,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.WareH
                     {
                         ValueObjectList<WareHouseMainVo> listvo = (ValueObjectList<WareHouseMainVo>)DefaultCbmInvoker.Invoke(new SearchListWareHouseMainCbm(), whvos);
                         warehouse_main_dgv.DataSource = listvo.GetList();
+                        foreach (DataGridViewRow dr in warehouse_main_dgv.Rows)
+                        {
+                            string after = (string)dr.Cells["colafterlocation"].Value;
+                            string nowloc = (string)dr.Cells["colnowlocation"].Value;
+                            if (after != nowloc)
+                            {
+                                dr.DefaultCellStyle.ForeColor = Color.Blue;
+                            }
+                        }
                         invertory_alarm();
                         counter();
                     }
@@ -267,6 +277,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.WareH
             location_cbm.DisplayMember = "LocationCode";
             location_cbm.DataSource = Locationvo.LocationListVo;
             location_cbm.Text = "";
+
+            LocationVo nowLocationvo = (LocationVo)DefaultCbmInvoker.Invoke(new GetLocationMasterMntCbm(), new LocationVo());
+            inventoryLocation_cbm.DisplayMember = "LocationCode";
+            inventoryLocation_cbm.DataSource = nowLocationvo.LocationListVo;
+            inventoryLocation_cbm.Text = "";
 
             ValueObjectList<InvertoryVo> invertory = (ValueObjectList<InvertoryVo>)DefaultCbmInvoker.Invoke(new GetInvertoryTimeCbm(), new InvertoryVo());
             invertory_cmb.DisplayMember = "InvertoryTimeCode";

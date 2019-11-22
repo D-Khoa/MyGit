@@ -34,11 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -47,6 +42,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Invoice_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.asset_Code_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.full_asset_Code_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
@@ -70,6 +70,7 @@
             this.Rank_Dep_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.depreciation_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.exportexcel1_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.linksave_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.browser_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.account_depreciation_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
@@ -88,6 +89,24 @@
             this.location_cbm = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.asset_name_cbm = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.warehouse_main_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
+            this.labelstatus_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.net_value_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.netvalue_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.labelstatus_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.AssetPO_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.AssetPO_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.invertory_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.invertory_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.counter_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
+            this.colAcquisitionCostCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCurrentDepreciationcount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMonthlyDepreciationcount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAccumDepreciationcount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNetValuecount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInventorycount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltotalcount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inventoryLocation_cbm = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.colAcountMainId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInvertoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAssetCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -108,6 +127,7 @@
             this.colRankcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colbeforelocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colafterlocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colnowlocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coldetailposition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAccountLocationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCommnetsData = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -122,23 +142,6 @@
             this.colNetValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAssetInvoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAssetPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelstatus_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.net_value_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.netvalue_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.labelstatus_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.AssetPO_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.AssetPO_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.invertory_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.invertory_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.counter_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
-            this.colAcquisitionCostCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCurrentDepreciationcount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMonthlyDepreciationcount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAccumDepreciationcount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNetValuecount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInventorycount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coltotalcount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.exportexcel1_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.setting_gbc.SuspendLayout();
             this.groupBoxCommon1.SuspendLayout();
             this.groupBoxCommon2.SuspendLayout();
@@ -188,9 +191,9 @@
             this.select_location_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.select_location_lbl.Location = new System.Drawing.Point(759, 117);
             this.select_location_lbl.Name = "select_location_lbl";
-            this.select_location_lbl.Size = new System.Drawing.Size(85, 15);
+            this.select_location_lbl.Size = new System.Drawing.Size(83, 15);
             this.select_location_lbl.TabIndex = 69;
-            this.select_location_lbl.Text = "Now Location:";
+            this.select_location_lbl.Text = "W/H Location:";
             // 
             // asset_model_lbl
             // 
@@ -441,6 +444,20 @@
             this.groupBoxCommon2.TabIndex = 76;
             this.groupBoxCommon2.TabStop = false;
             // 
+            // exportexcel1_btn
+            // 
+            this.exportexcel1_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.exportexcel1_btn.ControlId = null;
+            this.exportexcel1_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.exportexcel1_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.exportexcel1_btn.Location = new System.Drawing.Point(249, 42);
+            this.exportexcel1_btn.Name = "exportexcel1_btn";
+            this.exportexcel1_btn.Size = new System.Drawing.Size(82, 22);
+            this.exportexcel1_btn.TabIndex = 58;
+            this.exportexcel1_btn.Text = "Export Excel";
+            this.exportexcel1_btn.UseVisualStyleBackColor = false;
+            this.exportexcel1_btn.Click += new System.EventHandler(this.exportexcel1_btn_Click);
+            // 
             // linksave_txt
             // 
             this.linksave_txt.ControlId = null;
@@ -507,7 +524,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.account_depreciation_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.account_depreciation_dgv.Size = new System.Drawing.Size(1303, 410);
+            this.account_depreciation_dgv.Size = new System.Drawing.Size(1370, 410);
             this.account_depreciation_dgv.TabIndex = 77;
             // 
             // col_account_name
@@ -671,6 +688,7 @@
             this.colRankcode,
             this.colbeforelocation,
             this.colafterlocation,
+            this.colnowlocation,
             this.coldetailposition,
             this.colAccountLocationName,
             this.colCommnetsData,
@@ -694,7 +712,7 @@
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.warehouse_main_dgv.DefaultCellStyle = dataGridViewCellStyle10;
-            this.warehouse_main_dgv.Location = new System.Drawing.Point(0, 289);
+            this.warehouse_main_dgv.Location = new System.Drawing.Point(-3, 289);
             this.warehouse_main_dgv.Name = "warehouse_main_dgv";
             this.warehouse_main_dgv.ReadOnly = true;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -705,291 +723,8 @@
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.warehouse_main_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.warehouse_main_dgv.Size = new System.Drawing.Size(1303, 410);
+            this.warehouse_main_dgv.Size = new System.Drawing.Size(1370, 410);
             this.warehouse_main_dgv.TabIndex = 75;
-            // 
-            // colAcountMainId
-            // 
-            this.colAcountMainId.DataPropertyName = "WareHouseMainId";
-            this.colAcountMainId.HeaderText = "WareHosue Main Id";
-            this.colAcountMainId.Name = "colAcountMainId";
-            this.colAcountMainId.ReadOnly = true;
-            this.colAcountMainId.Visible = false;
-            this.colAcountMainId.Width = 140;
-            // 
-            // colInvertoryId
-            // 
-            this.colInvertoryId.DataPropertyName = "InvertoryId";
-            this.colInvertoryId.HeaderText = "InvertoryId";
-            this.colInvertoryId.Name = "colInvertoryId";
-            this.colInvertoryId.ReadOnly = true;
-            this.colInvertoryId.Visible = false;
-            this.colInvertoryId.Width = 87;
-            // 
-            // colAssetCode
-            // 
-            this.colAssetCode.DataPropertyName = "AssetCode";
-            this.colAssetCode.HeaderText = "Asset Code";
-            this.colAssetCode.Name = "colAssetCode";
-            this.colAssetCode.ReadOnly = true;
-            this.colAssetCode.Width = 96;
-            // 
-            // colAssetNo
-            // 
-            this.colAssetNo.DataPropertyName = "AssetNo";
-            this.colAssetNo.HeaderText = "Asset No";
-            this.colAssetNo.Name = "colAssetNo";
-            this.colAssetNo.ReadOnly = true;
-            this.colAssetNo.Width = 82;
-            // 
-            // colAssetName
-            // 
-            this.colAssetName.DataPropertyName = "AssetName";
-            this.colAssetName.HeaderText = "Asset Name";
-            this.colAssetName.Name = "colAssetName";
-            this.colAssetName.ReadOnly = true;
-            // 
-            // colAssetModel
-            // 
-            this.colAssetModel.DataPropertyName = "AssetModel";
-            this.colAssetModel.HeaderText = "Asset Model";
-            this.colAssetModel.Name = "colAssetModel";
-            this.colAssetModel.ReadOnly = true;
-            this.colAssetModel.Width = 99;
-            // 
-            // colAssetSerial
-            // 
-            this.colAssetSerial.DataPropertyName = "AssetSerial";
-            this.colAssetSerial.HeaderText = "Asset Serial";
-            this.colAssetSerial.Name = "colAssetSerial";
-            this.colAssetSerial.ReadOnly = true;
-            this.colAssetSerial.Width = 98;
-            // 
-            // colAssetSupplier
-            // 
-            this.colAssetSupplier.DataPropertyName = "AssetSupplier";
-            this.colAssetSupplier.HeaderText = "Asset Supplier ";
-            this.colAssetSupplier.Name = "colAssetSupplier";
-            this.colAssetSupplier.ReadOnly = true;
-            this.colAssetSupplier.Width = 115;
-            // 
-            // colLabelStatus
-            // 
-            this.colLabelStatus.DataPropertyName = "LabelStatus";
-            this.colLabelStatus.HeaderText = "Label";
-            this.colLabelStatus.Name = "colLabelStatus";
-            this.colLabelStatus.ReadOnly = true;
-            this.colLabelStatus.Width = 63;
-            // 
-            // colIvertory
-            // 
-            this.colIvertory.DataPropertyName = "Invertory";
-            this.colIvertory.HeaderText = "Invertory";
-            this.colIvertory.Name = "colIvertory";
-            this.colIvertory.ReadOnly = true;
-            this.colIvertory.Width = 77;
-            // 
-            // colQty
-            // 
-            this.colQty.DataPropertyName = "QTY";
-            this.colQty.HeaderText = "Qty";
-            this.colQty.Name = "colQty";
-            this.colQty.ReadOnly = true;
-            this.colQty.Width = 49;
-            // 
-            // colunit
-            // 
-            this.colunit.DataPropertyName = "UnitName";
-            this.colunit.HeaderText = "Unit";
-            this.colunit.Name = "colunit";
-            this.colunit.ReadOnly = true;
-            this.colunit.Width = 54;
-            // 
-            // colAssetType
-            // 
-            this.colAssetType.DataPropertyName = "AssetType";
-            this.colAssetType.HeaderText = "Asset Type";
-            this.colAssetType.Name = "colAssetType";
-            this.colAssetType.ReadOnly = true;
-            this.colAssetType.Width = 91;
-            // 
-            // coluserlocationname
-            // 
-            this.coluserlocationname.DataPropertyName = "UserLocationName";
-            this.coluserlocationname.HeaderText = "User Name";
-            this.coluserlocationname.Name = "coluserlocationname";
-            this.coluserlocationname.ReadOnly = true;
-            this.coluserlocationname.Width = 96;
-            // 
-            // colDatetime
-            // 
-            this.colDatetime.DataPropertyName = "RegistrationDateTime";
-            this.colDatetime.HeaderText = "Date Time";
-            this.colDatetime.Name = "colDatetime";
-            this.colDatetime.ReadOnly = true;
-            this.colDatetime.Width = 89;
-            // 
-            // colAccountCodeCode
-            // 
-            this.colAccountCodeCode.DataPropertyName = "AccountCodeCode";
-            this.colAccountCodeCode.HeaderText = "Account Code";
-            this.colAccountCodeCode.Name = "colAccountCodeCode";
-            this.colAccountCodeCode.ReadOnly = true;
-            this.colAccountCodeCode.Width = 108;
-            // 
-            // colAccountLocationCode
-            // 
-            this.colAccountLocationCode.DataPropertyName = "AccountLocationCode";
-            this.colAccountLocationCode.HeaderText = "Account Location";
-            this.colAccountLocationCode.Name = "colAccountLocationCode";
-            this.colAccountLocationCode.ReadOnly = true;
-            this.colAccountLocationCode.Width = 125;
-            // 
-            // colRankcode
-            // 
-            this.colRankcode.DataPropertyName = "RankCode";
-            this.colRankcode.HeaderText = "Rank Code";
-            this.colRankcode.Name = "colRankcode";
-            this.colRankcode.ReadOnly = true;
-            this.colRankcode.Width = 94;
-            // 
-            // colbeforelocation
-            // 
-            this.colbeforelocation.DataPropertyName = "BeforeLocationCd";
-            this.colbeforelocation.HeaderText = "Before Location";
-            this.colbeforelocation.Name = "colbeforelocation";
-            this.colbeforelocation.ReadOnly = true;
-            this.colbeforelocation.Width = 118;
-            // 
-            // colafterlocation
-            // 
-            this.colafterlocation.DataPropertyName = "AfterLocationCd";
-            this.colafterlocation.HeaderText = "After Location";
-            this.colafterlocation.Name = "colafterlocation";
-            this.colafterlocation.ReadOnly = true;
-            this.colafterlocation.Width = 106;
-            // 
-            // coldetailposition
-            // 
-            this.coldetailposition.DataPropertyName = "DetailPositionCd";
-            this.coldetailposition.HeaderText = "Detail Position";
-            this.coldetailposition.Name = "coldetailposition";
-            this.coldetailposition.ReadOnly = true;
-            this.coldetailposition.Width = 112;
-            // 
-            // colAccountLocationName
-            // 
-            this.colAccountLocationName.DataPropertyName = "AccountLocationName";
-            this.colAccountLocationName.HeaderText = "Account Location Name";
-            this.colAccountLocationName.Name = "colAccountLocationName";
-            this.colAccountLocationName.ReadOnly = true;
-            this.colAccountLocationName.Width = 162;
-            // 
-            // colCommnetsData
-            // 
-            this.colCommnetsData.DataPropertyName = "CommnetsData";
-            this.colCommnetsData.HeaderText = "Commnets Data";
-            this.colCommnetsData.Name = "colCommnetsData";
-            this.colCommnetsData.ReadOnly = true;
-            this.colCommnetsData.Width = 123;
-            // 
-            // colAssetLife
-            // 
-            this.colAssetLife.DataPropertyName = "AssetLife";
-            this.colAssetLife.HeaderText = "Asset Life";
-            this.colAssetLife.Name = "colAssetLife";
-            this.colAssetLife.ReadOnly = true;
-            this.colAssetLife.Width = 86;
-            // 
-            // colAcquisitionDate
-            // 
-            this.colAcquisitionDate.DataPropertyName = "AcquisitionDate";
-            this.colAcquisitionDate.HeaderText = "Acquisition Date";
-            this.colAcquisitionDate.Name = "colAcquisitionDate";
-            this.colAcquisitionDate.ReadOnly = true;
-            this.colAcquisitionDate.Width = 121;
-            // 
-            // colStartDepreciation
-            // 
-            this.colStartDepreciation.DataPropertyName = "StartDepreciation";
-            this.colStartDepreciation.HeaderText = "Start Depreciation";
-            this.colStartDepreciation.Name = "colStartDepreciation";
-            this.colStartDepreciation.ReadOnly = true;
-            this.colStartDepreciation.Width = 130;
-            // 
-            // colEndDepreciation
-            // 
-            this.colEndDepreciation.DataPropertyName = "EndDepreciation";
-            this.colEndDepreciation.HeaderText = "End Depreciation";
-            this.colEndDepreciation.Name = "colEndDepreciation";
-            this.colEndDepreciation.ReadOnly = true;
-            this.colEndDepreciation.Width = 127;
-            // 
-            // colAcquisitionCost
-            // 
-            this.colAcquisitionCost.DataPropertyName = "AcquisitionCost";
-            dataGridViewCellStyle5.Format = "#,###0.###";
-            this.colAcquisitionCost.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colAcquisitionCost.HeaderText = "Acquisition Cost ($)";
-            this.colAcquisitionCost.Name = "colAcquisitionCost";
-            this.colAcquisitionCost.ReadOnly = true;
-            this.colAcquisitionCost.Width = 139;
-            // 
-            // colCurrentDepreciation
-            // 
-            this.colCurrentDepreciation.DataPropertyName = "CurrentDepreciation";
-            dataGridViewCellStyle6.Format = "#,###0.###";
-            this.colCurrentDepreciation.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colCurrentDepreciation.HeaderText = "Current Depreciation ($)";
-            this.colCurrentDepreciation.Name = "colCurrentDepreciation";
-            this.colCurrentDepreciation.ReadOnly = true;
-            this.colCurrentDepreciation.Width = 164;
-            // 
-            // colMonthlyDepreciation
-            // 
-            this.colMonthlyDepreciation.DataPropertyName = "MonthlyDepreciation";
-            dataGridViewCellStyle7.Format = "#,###0.###";
-            this.colMonthlyDepreciation.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colMonthlyDepreciation.HeaderText = "Monthly Depreciation ($)";
-            this.colMonthlyDepreciation.Name = "colMonthlyDepreciation";
-            this.colMonthlyDepreciation.ReadOnly = true;
-            this.colMonthlyDepreciation.Width = 164;
-            // 
-            // colAccumDepreciation
-            // 
-            this.colAccumDepreciation.DataPropertyName = "AccumDepreciation";
-            dataGridViewCellStyle8.Format = "#,###0.###";
-            this.colAccumDepreciation.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colAccumDepreciation.HeaderText = "Accum Depreciation ($)";
-            this.colAccumDepreciation.Name = "colAccumDepreciation";
-            this.colAccumDepreciation.ReadOnly = true;
-            this.colAccumDepreciation.Width = 160;
-            // 
-            // colNetValue
-            // 
-            this.colNetValue.DataPropertyName = "NetValue";
-            dataGridViewCellStyle9.Format = "#,###0.###";
-            this.colNetValue.DefaultCellStyle = dataGridViewCellStyle9;
-            this.colNetValue.HeaderText = "Net Value ($)";
-            this.colNetValue.Name = "colNetValue";
-            this.colNetValue.ReadOnly = true;
-            this.colNetValue.Width = 102;
-            // 
-            // colAssetInvoice
-            // 
-            this.colAssetInvoice.DataPropertyName = "AssetInvoice";
-            this.colAssetInvoice.HeaderText = "Asset Invoice";
-            this.colAssetInvoice.Name = "colAssetInvoice";
-            this.colAssetInvoice.ReadOnly = true;
-            this.colAssetInvoice.Width = 104;
-            // 
-            // colAssetPO
-            // 
-            this.colAssetPO.DataPropertyName = "AssetPO";
-            this.colAssetPO.HeaderText = "PO";
-            this.colAssetPO.Name = "colAssetPO";
-            this.colAssetPO.ReadOnly = true;
-            this.colAssetPO.Width = 49;
             // 
             // labelstatus_cmb
             // 
@@ -1182,24 +917,325 @@
             this.coltotalcount.Name = "coltotalcount";
             this.coltotalcount.ReadOnly = true;
             // 
-            // exportexcel1_btn
+            // inventoryLocation_cbm
             // 
-            this.exportexcel1_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.exportexcel1_btn.ControlId = null;
-            this.exportexcel1_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.exportexcel1_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.exportexcel1_btn.Location = new System.Drawing.Point(249, 42);
-            this.exportexcel1_btn.Name = "exportexcel1_btn";
-            this.exportexcel1_btn.Size = new System.Drawing.Size(82, 22);
-            this.exportexcel1_btn.TabIndex = 58;
-            this.exportexcel1_btn.Text = "Export Excel";
-            this.exportexcel1_btn.UseVisualStyleBackColor = false;
-            this.exportexcel1_btn.Click += new System.EventHandler(this.exportexcel1_btn_Click);
+            this.inventoryLocation_cbm.ControlId = null;
+            this.inventoryLocation_cbm.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inventoryLocation_cbm.FormattingEnabled = true;
+            this.inventoryLocation_cbm.Location = new System.Drawing.Point(1109, 172);
+            this.inventoryLocation_cbm.Name = "inventoryLocation_cbm";
+            this.inventoryLocation_cbm.Size = new System.Drawing.Size(152, 23);
+            this.inventoryLocation_cbm.TabIndex = 93;
+            // 
+            // labelCommon1
+            // 
+            this.labelCommon1.AutoSize = true;
+            this.labelCommon1.ControlId = null;
+            this.labelCommon1.Font = new System.Drawing.Font("Arial", 9F);
+            this.labelCommon1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelCommon1.Location = new System.Drawing.Point(1001, 175);
+            this.labelCommon1.Name = "labelCommon1";
+            this.labelCommon1.Size = new System.Drawing.Size(108, 15);
+            this.labelCommon1.TabIndex = 92;
+            this.labelCommon1.Text = "Inventory Location:";
+            // 
+            // colAcountMainId
+            // 
+            this.colAcountMainId.DataPropertyName = "WareHouseMainId";
+            this.colAcountMainId.HeaderText = "WareHosue Main Id";
+            this.colAcountMainId.Name = "colAcountMainId";
+            this.colAcountMainId.ReadOnly = true;
+            this.colAcountMainId.Visible = false;
+            this.colAcountMainId.Width = 140;
+            // 
+            // colInvertoryId
+            // 
+            this.colInvertoryId.DataPropertyName = "InvertoryId";
+            this.colInvertoryId.HeaderText = "InvertoryId";
+            this.colInvertoryId.Name = "colInvertoryId";
+            this.colInvertoryId.ReadOnly = true;
+            this.colInvertoryId.Visible = false;
+            this.colInvertoryId.Width = 87;
+            // 
+            // colAssetCode
+            // 
+            this.colAssetCode.DataPropertyName = "AssetCode";
+            this.colAssetCode.HeaderText = "Asset Code";
+            this.colAssetCode.Name = "colAssetCode";
+            this.colAssetCode.ReadOnly = true;
+            this.colAssetCode.Width = 96;
+            // 
+            // colAssetNo
+            // 
+            this.colAssetNo.DataPropertyName = "AssetNo";
+            this.colAssetNo.HeaderText = "Asset No";
+            this.colAssetNo.Name = "colAssetNo";
+            this.colAssetNo.ReadOnly = true;
+            this.colAssetNo.Width = 82;
+            // 
+            // colAssetName
+            // 
+            this.colAssetName.DataPropertyName = "AssetName";
+            this.colAssetName.HeaderText = "Asset Name";
+            this.colAssetName.Name = "colAssetName";
+            this.colAssetName.ReadOnly = true;
+            // 
+            // colAssetModel
+            // 
+            this.colAssetModel.DataPropertyName = "AssetModel";
+            this.colAssetModel.HeaderText = "Asset Model";
+            this.colAssetModel.Name = "colAssetModel";
+            this.colAssetModel.ReadOnly = true;
+            this.colAssetModel.Width = 99;
+            // 
+            // colAssetSerial
+            // 
+            this.colAssetSerial.DataPropertyName = "AssetSerial";
+            this.colAssetSerial.HeaderText = "Asset Serial";
+            this.colAssetSerial.Name = "colAssetSerial";
+            this.colAssetSerial.ReadOnly = true;
+            this.colAssetSerial.Width = 98;
+            // 
+            // colAssetSupplier
+            // 
+            this.colAssetSupplier.DataPropertyName = "AssetSupplier";
+            this.colAssetSupplier.HeaderText = "Asset Supplier ";
+            this.colAssetSupplier.Name = "colAssetSupplier";
+            this.colAssetSupplier.ReadOnly = true;
+            this.colAssetSupplier.Width = 115;
+            // 
+            // colLabelStatus
+            // 
+            this.colLabelStatus.DataPropertyName = "LabelStatus";
+            this.colLabelStatus.HeaderText = "Label";
+            this.colLabelStatus.Name = "colLabelStatus";
+            this.colLabelStatus.ReadOnly = true;
+            this.colLabelStatus.Width = 63;
+            // 
+            // colIvertory
+            // 
+            this.colIvertory.DataPropertyName = "Invertory";
+            this.colIvertory.HeaderText = "Invertory";
+            this.colIvertory.Name = "colIvertory";
+            this.colIvertory.ReadOnly = true;
+            this.colIvertory.Width = 77;
+            // 
+            // colQty
+            // 
+            this.colQty.DataPropertyName = "QTY";
+            this.colQty.HeaderText = "Qty";
+            this.colQty.Name = "colQty";
+            this.colQty.ReadOnly = true;
+            this.colQty.Width = 49;
+            // 
+            // colunit
+            // 
+            this.colunit.DataPropertyName = "UnitName";
+            this.colunit.HeaderText = "Unit";
+            this.colunit.Name = "colunit";
+            this.colunit.ReadOnly = true;
+            this.colunit.Width = 54;
+            // 
+            // colAssetType
+            // 
+            this.colAssetType.DataPropertyName = "AssetType";
+            this.colAssetType.HeaderText = "Asset Type";
+            this.colAssetType.Name = "colAssetType";
+            this.colAssetType.ReadOnly = true;
+            this.colAssetType.Width = 91;
+            // 
+            // coluserlocationname
+            // 
+            this.coluserlocationname.DataPropertyName = "UserLocationName";
+            this.coluserlocationname.HeaderText = "User Name";
+            this.coluserlocationname.Name = "coluserlocationname";
+            this.coluserlocationname.ReadOnly = true;
+            this.coluserlocationname.Width = 96;
+            // 
+            // colDatetime
+            // 
+            this.colDatetime.DataPropertyName = "RegistrationDateTime";
+            this.colDatetime.HeaderText = "Date Time";
+            this.colDatetime.Name = "colDatetime";
+            this.colDatetime.ReadOnly = true;
+            this.colDatetime.Width = 89;
+            // 
+            // colAccountCodeCode
+            // 
+            this.colAccountCodeCode.DataPropertyName = "AccountCodeCode";
+            this.colAccountCodeCode.HeaderText = "Account Code";
+            this.colAccountCodeCode.Name = "colAccountCodeCode";
+            this.colAccountCodeCode.ReadOnly = true;
+            this.colAccountCodeCode.Width = 108;
+            // 
+            // colAccountLocationCode
+            // 
+            this.colAccountLocationCode.DataPropertyName = "AccountLocationCode";
+            this.colAccountLocationCode.HeaderText = "Account Location";
+            this.colAccountLocationCode.Name = "colAccountLocationCode";
+            this.colAccountLocationCode.ReadOnly = true;
+            this.colAccountLocationCode.Width = 125;
+            // 
+            // colRankcode
+            // 
+            this.colRankcode.DataPropertyName = "RankCode";
+            this.colRankcode.HeaderText = "Rank Code";
+            this.colRankcode.Name = "colRankcode";
+            this.colRankcode.ReadOnly = true;
+            this.colRankcode.Width = 94;
+            // 
+            // colbeforelocation
+            // 
+            this.colbeforelocation.DataPropertyName = "BeforeLocationCd";
+            this.colbeforelocation.HeaderText = "Before Location";
+            this.colbeforelocation.Name = "colbeforelocation";
+            this.colbeforelocation.ReadOnly = true;
+            this.colbeforelocation.Width = 118;
+            // 
+            // colafterlocation
+            // 
+            this.colafterlocation.DataPropertyName = "AfterLocationCd";
+            this.colafterlocation.HeaderText = "After Location";
+            this.colafterlocation.Name = "colafterlocation";
+            this.colafterlocation.ReadOnly = true;
+            this.colafterlocation.Width = 106;
+            // 
+            // colnowlocation
+            // 
+            this.colnowlocation.DataPropertyName = "NowLocation";
+            this.colnowlocation.HeaderText = "Now Location";
+            this.colnowlocation.Name = "colnowlocation";
+            this.colnowlocation.ReadOnly = true;
+            this.colnowlocation.Width = 107;
+            // 
+            // coldetailposition
+            // 
+            this.coldetailposition.DataPropertyName = "DetailPositionCd";
+            this.coldetailposition.HeaderText = "Detail Position";
+            this.coldetailposition.Name = "coldetailposition";
+            this.coldetailposition.ReadOnly = true;
+            this.coldetailposition.Width = 112;
+            // 
+            // colAccountLocationName
+            // 
+            this.colAccountLocationName.DataPropertyName = "AccountLocationName";
+            this.colAccountLocationName.HeaderText = "Account Location Name";
+            this.colAccountLocationName.Name = "colAccountLocationName";
+            this.colAccountLocationName.ReadOnly = true;
+            this.colAccountLocationName.Width = 162;
+            // 
+            // colCommnetsData
+            // 
+            this.colCommnetsData.DataPropertyName = "CommnetsData";
+            this.colCommnetsData.HeaderText = "Commnets Data";
+            this.colCommnetsData.Name = "colCommnetsData";
+            this.colCommnetsData.ReadOnly = true;
+            this.colCommnetsData.Width = 123;
+            // 
+            // colAssetLife
+            // 
+            this.colAssetLife.DataPropertyName = "AssetLife";
+            this.colAssetLife.HeaderText = "Asset Life";
+            this.colAssetLife.Name = "colAssetLife";
+            this.colAssetLife.ReadOnly = true;
+            this.colAssetLife.Width = 86;
+            // 
+            // colAcquisitionDate
+            // 
+            this.colAcquisitionDate.DataPropertyName = "AcquisitionDate";
+            this.colAcquisitionDate.HeaderText = "Acquisition Date";
+            this.colAcquisitionDate.Name = "colAcquisitionDate";
+            this.colAcquisitionDate.ReadOnly = true;
+            this.colAcquisitionDate.Width = 121;
+            // 
+            // colStartDepreciation
+            // 
+            this.colStartDepreciation.DataPropertyName = "StartDepreciation";
+            this.colStartDepreciation.HeaderText = "Start Depreciation";
+            this.colStartDepreciation.Name = "colStartDepreciation";
+            this.colStartDepreciation.ReadOnly = true;
+            this.colStartDepreciation.Width = 130;
+            // 
+            // colEndDepreciation
+            // 
+            this.colEndDepreciation.DataPropertyName = "EndDepreciation";
+            this.colEndDepreciation.HeaderText = "End Depreciation";
+            this.colEndDepreciation.Name = "colEndDepreciation";
+            this.colEndDepreciation.ReadOnly = true;
+            this.colEndDepreciation.Width = 127;
+            // 
+            // colAcquisitionCost
+            // 
+            this.colAcquisitionCost.DataPropertyName = "AcquisitionCost";
+            dataGridViewCellStyle5.Format = "#,###0.###";
+            this.colAcquisitionCost.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colAcquisitionCost.HeaderText = "Acquisition Cost ($)";
+            this.colAcquisitionCost.Name = "colAcquisitionCost";
+            this.colAcquisitionCost.ReadOnly = true;
+            this.colAcquisitionCost.Width = 139;
+            // 
+            // colCurrentDepreciation
+            // 
+            this.colCurrentDepreciation.DataPropertyName = "CurrentDepreciation";
+            dataGridViewCellStyle6.Format = "#,###0.###";
+            this.colCurrentDepreciation.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colCurrentDepreciation.HeaderText = "Current Depreciation ($)";
+            this.colCurrentDepreciation.Name = "colCurrentDepreciation";
+            this.colCurrentDepreciation.ReadOnly = true;
+            this.colCurrentDepreciation.Width = 164;
+            // 
+            // colMonthlyDepreciation
+            // 
+            this.colMonthlyDepreciation.DataPropertyName = "MonthlyDepreciation";
+            dataGridViewCellStyle7.Format = "#,###0.###";
+            this.colMonthlyDepreciation.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colMonthlyDepreciation.HeaderText = "Monthly Depreciation ($)";
+            this.colMonthlyDepreciation.Name = "colMonthlyDepreciation";
+            this.colMonthlyDepreciation.ReadOnly = true;
+            this.colMonthlyDepreciation.Width = 164;
+            // 
+            // colAccumDepreciation
+            // 
+            this.colAccumDepreciation.DataPropertyName = "AccumDepreciation";
+            dataGridViewCellStyle8.Format = "#,###0.###";
+            this.colAccumDepreciation.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colAccumDepreciation.HeaderText = "Accum Depreciation ($)";
+            this.colAccumDepreciation.Name = "colAccumDepreciation";
+            this.colAccumDepreciation.ReadOnly = true;
+            this.colAccumDepreciation.Width = 160;
+            // 
+            // colNetValue
+            // 
+            this.colNetValue.DataPropertyName = "NetValue";
+            dataGridViewCellStyle9.Format = "#,###0.###";
+            this.colNetValue.DefaultCellStyle = dataGridViewCellStyle9;
+            this.colNetValue.HeaderText = "Net Value ($)";
+            this.colNetValue.Name = "colNetValue";
+            this.colNetValue.ReadOnly = true;
+            this.colNetValue.Width = 102;
+            // 
+            // colAssetInvoice
+            // 
+            this.colAssetInvoice.DataPropertyName = "AssetInvoice";
+            this.colAssetInvoice.HeaderText = "Asset Invoice";
+            this.colAssetInvoice.Name = "colAssetInvoice";
+            this.colAssetInvoice.ReadOnly = true;
+            this.colAssetInvoice.Width = 104;
+            // 
+            // colAssetPO
+            // 
+            this.colAssetPO.DataPropertyName = "AssetPO";
+            this.colAssetPO.HeaderText = "PO";
+            this.colAssetPO.Name = "colAssetPO";
+            this.colAssetPO.ReadOnly = true;
+            this.colAssetPO.Width = 49;
             // 
             // WarehouseMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(1303, 699);
+            this.ClientSize = new System.Drawing.Size(1370, 699);
+            this.Controls.Add(this.inventoryLocation_cbm);
+            this.Controls.Add(this.labelCommon1);
             this.Controls.Add(this.counter_dgv);
             this.Controls.Add(this.invertory_cmb);
             this.Controls.Add(this.invertory_lbl);
@@ -1272,6 +1308,8 @@
             this.Controls.SetChildIndex(this.invertory_lbl, 0);
             this.Controls.SetChildIndex(this.invertory_cmb, 0);
             this.Controls.SetChildIndex(this.counter_dgv, 0);
+            this.Controls.SetChildIndex(this.labelCommon1, 0);
+            this.Controls.SetChildIndex(this.inventoryLocation_cbm, 0);
             this.setting_gbc.ResumeLayout(false);
             this.groupBoxCommon1.ResumeLayout(false);
             this.groupBoxCommon2.ResumeLayout(false);
@@ -1336,6 +1374,16 @@
         private Framework.ComboBoxCommon invertory_cmb;
         private Framework.LabelCommon invertory_lbl;
         private Framework.DataGridViewCommon counter_dgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAcquisitionCostCount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCurrentDepreciationcount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMonthlyDepreciationcount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAccumDepreciationcount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNetValuecount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInventorycount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coltotalcount;
+        private Framework.ButtonCommon exportexcel1_btn;
+        private Framework.ComboBoxCommon inventoryLocation_cbm;
+        private Framework.LabelCommon labelCommon1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAcountMainId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInvertoryId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetCode;
@@ -1356,6 +1404,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRankcode;
         private System.Windows.Forms.DataGridViewTextBoxColumn colbeforelocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn colafterlocation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colnowlocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn coldetailposition;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAccountLocationName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCommnetsData;
@@ -1370,13 +1419,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNetValue;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetInvoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetPO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAcquisitionCostCount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCurrentDepreciationcount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMonthlyDepreciationcount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAccumDepreciationcount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNetValuecount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInventorycount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coltotalcount;
-        private Framework.ButtonCommon exportexcel1_btn;
     }
 }

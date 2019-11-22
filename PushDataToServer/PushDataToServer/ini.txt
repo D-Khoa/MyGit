@@ -1,0 +1,6 @@
+From Folder = \\172.26.1.5\car$
+To Folder = \\192.168.193.1\car$
+Temp Folder = D:\09.Publish\Push Data NO1\Temp
+From Folder = \\172.26.1.5\car$
+To Folder = \\192.168.193.1\car$
+Temp Folder = D:\09.Publish\Push Data NO1\Temp
