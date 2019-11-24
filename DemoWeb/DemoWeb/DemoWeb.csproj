@@ -173,26 +173,195 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProcessStepsController.cs" />
+    <Compile Include="Controllers\UserProfilesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LoginDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginDB.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ProcessStep.cs" />
     <Compile Include="Models\StepDB.cs" />
+    <Compile Include="Models\UserProfile.cs">
+      <DependentUpon>LoginDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\Hydro\blog-detail.html" />
+    <Content Include="App_Themes\Hydro\css\bootstrap.min.css" />
+    <Content Include="App_Themes\Hydro\css\font-awesome.min.css" />
+    <Content Include="App_Themes\Hydro\css\magnific-popup.css" />
+    <Content Include="App_Themes\Hydro\css\templatemo-style.css" />
+    <Content Include="App_Themes\Hydro\fonts\fontawesome-webfont.svg" />
+    <Content Include="App_Themes\Hydro\images\about-image.jpg" />
+    <Content Include="App_Themes\Hydro\images\blog-detail-image.jpg" />
+    <Content Include="App_Themes\Hydro\images\blog-header-bg.jpg" />
+    <Content Include="App_Themes\Hydro\images\blog-image1.jpg" />
+    <Content Include="App_Themes\Hydro\images\blog-image2.jpg" />
+    <Content Include="App_Themes\Hydro\images\blog-image3.jpg" />
+    <Content Include="App_Themes\Hydro\images\blog-image4.jpg" />
+    <Content Include="App_Themes\Hydro\images\home-bg.jpg" />
+    <Content Include="App_Themes\Hydro\images\work-image1.jpg" />
+    <Content Include="App_Themes\Hydro\images\work-image2.jpg" />
+    <Content Include="App_Themes\Hydro\images\work-image3.jpg" />
+    <Content Include="App_Themes\Hydro\images\work-image4.jpg" />
+    <Content Include="App_Themes\Hydro\index.html" />
+    <Content Include="App_Themes\Hydro\js\bootstrap.min.js" />
+    <Content Include="App_Themes\Hydro\js\custom.js" />
+    <Content Include="App_Themes\Hydro\js\jquery.js" />
+    <Content Include="App_Themes\Hydro\js\jquery.magnific-popup.min.js" />
+    <Content Include="App_Themes\Hydro\js\jquery.stellar.min.js" />
+    <Content Include="App_Themes\Hydro\js\smoothscroll.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Login_v3\css\main.css" />
+    <Content Include="Login_v3\css\util.css" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Login_v3\fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="Login_v3\fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="Login_v3\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Login_v3\images\bg-01.jpg" />
+    <Content Include="Login_v3\images\icons\favicon.ico" />
+    <Content Include="Login_v3\js\main.js" />
+    <Content Include="Login_v3\vendor\animate\animate.css" />
+    <Content Include="Login_v3\vendor\animsition\css\animsition.css" />
+    <Content Include="Login_v3\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Login_v3\vendor\animsition\js\animsition.js" />
+    <Content Include="Login_v3\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Login_v3\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Login_v3\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Login_v3\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Login_v3\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Login_v3\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Login_v3\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Login_v3\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Login_v3\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Login_v3\vendor\bootstrap\js\popper.js" />
+    <Content Include="Login_v3\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Login_v3\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Login_v3\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Login_v3\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Login_v3\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Login_v3\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Login_v3\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Login_v3\vendor\daterangepicker\moment.js" />
+    <Content Include="Login_v3\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Login_v3\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Login_v3\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Login_v3\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Login_v3\vendor\select2\select2.css" />
+    <Content Include="Login_v3\vendor\select2\select2.js" />
+    <Content Include="Login_v3\vendor\select2\select2.min.css" />
+    <Content Include="Login_v3\vendor\select2\select2.min.js" />
+    <Content Include="Models\LoginDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LoginDB.edmx</DependentUpon>
+      <LastGenOutput>LoginDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\LoginDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LoginDB.edmx</DependentUpon>
+      <LastGenOutput>LoginDB.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\LoginDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LoginDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\LoginDB.edmx.diagram">
+      <DependentUpon>LoginDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Login_v3\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Login_v3\fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Login_v3\fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Login_v3\fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Login_v3\fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Login_v3\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Login_v3\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Login_v3\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Login_v3\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Login_v3\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Login_v3\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Login_v3\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="App_Themes\Hydro\fonts\fontawesome-webfont.eot" />
+    <Content Include="App_Themes\Hydro\fonts\fontawesome-webfont.ttf" />
+    <Content Include="App_Themes\Hydro\fonts\fontawesome-webfont.woff" />
+    <Content Include="App_Themes\Hydro\fonts\fontawesome-webfont.woff2" />
+    <Content Include="App_Themes\Hydro\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -244,9 +413,18 @@
     <Content Include="Views\ProcessSteps\Details.cshtml" />
     <Content Include="Views\ProcessSteps\Edit.cshtml" />
     <Content Include="Views\ProcessSteps\Index.cshtml" />
+    <Content Include="Views\UserProfiles\Create.cshtml" />
+    <Content Include="Views\UserProfiles\Delete.cshtml" />
+    <Content Include="Views\UserProfiles\Details.cshtml" />
+    <Content Include="Views\UserProfiles\Edit.cshtml" />
+    <Content Include="Views\UserProfiles\Index.cshtml" />
+    <Content Include="Views\UserProfiles\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="fonts\font-awesome-4.7.0\" />
+    <Folder Include="fonts\iconic\" />
+    <Folder Include="fonts\poppins\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -255,6 +433,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

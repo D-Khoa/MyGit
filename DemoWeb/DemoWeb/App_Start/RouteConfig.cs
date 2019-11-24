@@ -16,7 +16,7 @@ namespace DemoWeb
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "ProcessSteps", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "UserProfiles", action = "Login", id = UrlParameter.Optional }
             );
         }
     }
