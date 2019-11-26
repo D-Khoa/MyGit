@@ -642,118 +642,118 @@
     <Compile Include="Dao\WorkingStatusDao\SearchSTWorkingStatusDao.cs" />
     <Compile Include="Dao\WorkingStatusDao\AddPlanWorkingStatusDao.cs" />
     <Compile Include="Dao\WorkingStatusDao\CallPlanDao.cs" />
-    <Compile Include="Form\AccountWhForm\AccountCodeForm\AccountCodeForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\AccountCodeForm\AccountCodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\AccountCodeForm\AccountCodeForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\AccountCodeForm\AccountCodeForm.Designer.cs">
       <DependentUpon>AccountCodeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\AccountCodeForm\AddAccountCodeForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\AccountCodeForm\AddAccountCodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\AccountCodeForm\AddAccountCodeForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\AccountCodeForm\AddAccountCodeForm.Designer.cs">
       <DependentUpon>AddAccountCodeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\AccountMainForm\AddAcountMainForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\AccountMainForm\AddAcountMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\AccountMainForm\AddAcountMainForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\AccountMainForm\AddAcountMainForm.Designer.cs">
       <DependentUpon>AddAcountMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\AccountLocationForm\AccountLocationForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\AccountLocationForm\AccountLocationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\AccountLocationForm\AccountLocationForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\AccountLocationForm\AccountLocationForm.Designer.cs">
       <DependentUpon>AccountLocationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\AccountLocationForm\AddAccountLocationForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\AccountLocationForm\AddAccountLocationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\AccountLocationForm\AddAccountLocationForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\AccountLocationForm\AddAccountLocationForm.Designer.cs">
       <DependentUpon>AddAccountLocationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\Asset\AddAssetForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\Asset\AddAssetForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\Asset\AddAssetForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\Asset\AddAssetForm.Designer.cs">
       <DependentUpon>AddAssetForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\Asset\AssetForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\Asset\AssetForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\Asset\AssetForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\Asset\AssetForm.Designer.cs">
       <DependentUpon>AssetForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\AccountMainForm\AccountMainForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\AccountMainForm\AccountMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\AccountMainForm\AccountMainForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\AccountMainForm\AccountMainForm.Designer.cs">
       <DependentUpon>AccountMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\DetailPositionForm\AddDetailPositionForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\DetailPositionForm\AddDetailPositionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\DetailPositionForm\AddDetailPositionForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\DetailPositionForm\AddDetailPositionForm.Designer.cs">
       <DependentUpon>AddDetailPositionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\DetailPositionForm\DetailPositionForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\DetailPositionForm\DetailPositionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\DetailPositionForm\DetailPositionForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\DetailPositionForm\DetailPositionForm.Designer.cs">
       <DependentUpon>DetailPositionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\InventoryForm\AddInvertoryTimeForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\InventoryForm\AddInvertoryTimeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\InventoryForm\AddInvertoryTimeForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\InventoryForm\AddInvertoryTimeForm.Designer.cs">
       <DependentUpon>AddInvertoryTimeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\InventoryForm\InvertoryCheckForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\InventoryForm\InvertoryCheckForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\InventoryForm\InvertoryCheckForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\InventoryForm\InvertoryCheckForm.Designer.cs">
       <DependentUpon>InvertoryCheckForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\InventoryForm\InvertoryTimeForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\InventoryForm\InvertoryTimeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\InventoryForm\InvertoryTimeForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\InventoryForm\InvertoryTimeForm.Designer.cs">
       <DependentUpon>InvertoryTimeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\TranferForm\TranferRequestForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\TranferForm\TranferRequestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\TranferForm\TranferRequestForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\TranferForm\TranferRequestForm.Designer.cs">
       <DependentUpon>TranferRequestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\TranferForm\TranferInfoForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\TranferForm\TranferInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\TranferForm\TranferInfoForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\TranferForm\TranferInfoForm.Designer.cs">
       <DependentUpon>TranferInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\Units\AddUnitForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\Units\AddUnitForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\Units\AddUnitForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\Units\AddUnitForm.Designer.cs">
       <DependentUpon>AddUnitForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\Units\UnitForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\Units\UnitForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\Units\UnitForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\Units\UnitForm.Designer.cs">
       <DependentUpon>UnitForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\WareHouse\AddWareHouseMainForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\WareHouse\AddWareHouseMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\WareHouse\AddWareHouseMainForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\WareHouse\AddWareHouseMainForm.Designer.cs">
       <DependentUpon>AddWareHouseMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\WareHouse\WarehouseMainForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\WareHouse\WarehouseMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\WareHouse\WarehouseMainForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\WareHouse\WarehouseMainForm.Designer.cs">
       <DependentUpon>WarehouseMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\FormCommonNCVP.cs">
@@ -762,268 +762,268 @@
     <Compile Include="Form\FormCommonNCVP.Designer.cs">
       <DependentUpon>FormCommonNCVP.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ShippingForm\AddBoxID.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ShippingForm\AddBoxID.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ShippingForm\AddBoxID.Designer.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ShippingForm\AddBoxID.Designer.cs">
       <DependentUpon>AddBoxID.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ShippingForm\ReplaceSerialForm.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ShippingForm\ReplaceSerialForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ShippingForm\ReplaceSerialForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ShippingForm\ReplaceSerialForm.Designer.cs">
       <DependentUpon>ReplaceSerialForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ShippingForm\ShipmentHistoryForm.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ShippingForm\ShipmentHistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ShippingForm\ShipmentHistoryForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ShippingForm\ShipmentHistoryForm.Designer.cs">
       <DependentUpon>ShipmentHistoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ShippingForm\Shipping.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ShippingForm\Shipping.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ShippingForm\Shipping.Designer.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ShippingForm\Shipping.Designer.cs">
       <DependentUpon>Shipping.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\IPQCCheckForm.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\IPQCCheckForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\IPQCCheckForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\IPQCCheckForm.Designer.cs">
       <DependentUpon>IPQCCheckForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\NoiseChartForm.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\NoiseChartForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\NoiseChartForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\NoiseChartForm.Designer.cs">
       <DependentUpon>NoiseChartForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\PassForm.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\PassForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\PassForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\PassForm.Designer.cs">
       <DependentUpon>PassForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\NoiseCheckForm.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\NoiseCheckForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\NoiseCheckForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\NoiseCheckForm.Designer.cs">
       <DependentUpon>NoiseCheckForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\NGThurstForm.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\NGThurstForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\NGThurstForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\NGThurstForm.Designer.cs">
       <DependentUpon>NGThurstForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\ThurstCheckForm.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\ThurstCheckForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\ThurstCheckForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\ThurstCheckForm.Designer.cs">
       <DependentUpon>ThurstCheckForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\ThusrtChartForm.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\ThusrtChartForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\ThusrtChartForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\ThusrtChartForm.Designer.cs">
       <DependentUpon>ThusrtChartForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\Rank\AddRankForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\Rank\AddRankForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\Rank\AddRankForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\Rank\AddRankForm.Designer.cs">
       <DependentUpon>AddRankForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\Rank\RankForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\Rank\RankForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\Rank\RankForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\Rank\RankForm.Designer.cs">
       <DependentUpon>RankForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\OvenBarcodeLS12\OvenBarcodeLS12Form.cs">
+    <Compile Include="Form\NCVPForm\OvenBarcodeLS12\OvenBarcodeLS12Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\OvenBarcodeLS12\OvenBarcodeLS12Form.Designer.cs">
+    <Compile Include="Form\NCVPForm\OvenBarcodeLS12\OvenBarcodeLS12Form.Designer.cs">
       <DependentUpon>OvenBarcodeLS12Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\OvenBarcodeLS12\RangeLS12\AddRangeLS12Form.cs">
+    <Compile Include="Form\NCVPForm\OvenBarcodeLS12\RangeLS12\AddRangeLS12Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\OvenBarcodeLS12\RangeLS12\AddRangeLS12Form.Designer.cs">
+    <Compile Include="Form\NCVPForm\OvenBarcodeLS12\RangeLS12\AddRangeLS12Form.Designer.cs">
       <DependentUpon>AddRangeLS12Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\OvenBarcodeLS12\RangeLS12\RangeLS12Form.cs">
+    <Compile Include="Form\NCVPForm\OvenBarcodeLS12\RangeLS12\RangeLS12Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\OvenBarcodeLS12\RangeLS12\RangeLS12Form.Designer.cs">
+    <Compile Include="Form\NCVPForm\OvenBarcodeLS12\RangeLS12\RangeLS12Form.Designer.cs">
       <DependentUpon>RangeLS12Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\OvenBarcodeMachine\OvenBarcodeForm.cs">
+    <Compile Include="Form\NCVPForm\OvenBarcodeMachine\OvenBarcodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\OvenBarcodeMachine\OvenBarcodeForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\OvenBarcodeMachine\OvenBarcodeForm.Designer.cs">
       <DependentUpon>OvenBarcodeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\OvenBarcodeMachine\Range\AddRangeForm.cs">
+    <Compile Include="Form\NCVPForm\OvenBarcodeMachine\Range\AddRangeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\OvenBarcodeMachine\Range\AddRangeForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\OvenBarcodeMachine\Range\AddRangeForm.Designer.cs">
       <DependentUpon>AddRangeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\OvenBarcodeMachine\Range\RangeForm.cs">
+    <Compile Include="Form\NCVPForm\OvenBarcodeMachine\Range\RangeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\OvenBarcodeMachine\Range\RangeForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\OvenBarcodeMachine\Range\RangeForm.Designer.cs">
       <DependentUpon>RangeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\PQMConnectForm\ProducionControllerGA1Form.cs">
+    <Compile Include="Form\NCVPForm\PQMConnectForm\ProducionControllerGA1Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\PQMConnectForm\ProducionControllerGA1Form.Designer.cs">
+    <Compile Include="Form\NCVPForm\PQMConnectForm\ProducionControllerGA1Form.Designer.cs">
       <DependentUpon>ProducionControllerGA1Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\PQMConnectForm\RateNG\AddRateNGForm.cs">
+    <Compile Include="Form\NCVPForm\PQMConnectForm\RateNG\AddRateNGForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\PQMConnectForm\RateNG\AddRateNGForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\PQMConnectForm\RateNG\AddRateNGForm.Designer.cs">
       <DependentUpon>AddRateNGForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\PQMConnectForm\RateNG\RateNGForm.cs">
+    <Compile Include="Form\NCVPForm\PQMConnectForm\RateNG\RateNGForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\PQMConnectForm\RateNG\RateNGForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\PQMConnectForm\RateNG\RateNGForm.Designer.cs">
       <DependentUpon>RateNGForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\PQMDataViewer\PQMDataViewerForm.cs">
+    <Compile Include="Form\NCVPForm\PQMDataViewerForm\PQMDataViewerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\PQMDataViewer\PQMDataViewerForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\PQMDataViewerForm\PQMDataViewerForm.Designer.cs">
       <DependentUpon>PQMDataViewerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ProductionControllerForm\AddPersonForm.cs">
+    <Compile Include="Form\NCVPForm\ProductionControllerForm\AddPersonForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ProductionControllerForm\AddPersonForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\ProductionControllerForm\AddPersonForm.Designer.cs">
       <DependentUpon>AddPersonForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ProductionControllerForm\ProductionControllerChart_CForm.cs">
+    <Compile Include="Form\NCVPForm\ProductionControllerForm\ProductionControllerChart_CForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ProductionControllerForm\ProductionControllerChart_CForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\ProductionControllerForm\ProductionControllerChart_CForm.Designer.cs">
       <DependentUpon>ProductionControllerChart_CForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ProductionControllerForm\ProductionControllerDetailForm.cs">
+    <Compile Include="Form\NCVPForm\ProductionControllerForm\ProductionControllerDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ProductionControllerForm\ProductionControllerDetailForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\ProductionControllerForm\ProductionControllerDetailForm.Designer.cs">
       <DependentUpon>ProductionControllerDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ProductionControllerForm\ProductionControllerChartForm.cs">
+    <Compile Include="Form\NCVPForm\ProductionControllerForm\ProductionControllerChartForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ProductionControllerForm\ProductionControllerChartForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\ProductionControllerForm\ProductionControllerChartForm.Designer.cs">
       <DependentUpon>ProductionControllerChartForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ProductionControllerForm\PersonForm.cs">
+    <Compile Include="Form\NCVPForm\ProductionControllerForm\PersonForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ProductionControllerForm\PersonForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\ProductionControllerForm\PersonForm.Designer.cs">
       <DependentUpon>PersonForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ProductionControllerForm\ProductionControllerForm.cs">
+    <Compile Include="Form\NCVPForm\ProductionControllerForm\ProductionControllerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ProductionControllerForm\ProductionControllerForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\ProductionControllerForm\ProductionControllerForm.Designer.cs">
       <DependentUpon>ProductionControllerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ProductionControllerNCVCForm\AddPersonNCVCForm.cs">
+    <Compile Include="Form\NCVCForm\ProductionControllerNCVCForm\AddPersonNCVCForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ProductionControllerNCVCForm\AddPersonNCVCForm.Designer.cs">
+    <Compile Include="Form\NCVCForm\ProductionControllerNCVCForm\AddPersonNCVCForm.Designer.cs">
       <DependentUpon>AddPersonNCVCForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ProductionControllerNCVCForm\PersonNCVCForm.cs">
+    <Compile Include="Form\NCVCForm\ProductionControllerNCVCForm\PersonNCVCForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ProductionControllerNCVCForm\PersonNCVCForm.Designer.cs">
+    <Compile Include="Form\NCVCForm\ProductionControllerNCVCForm\PersonNCVCForm.Designer.cs">
       <DependentUpon>PersonNCVCForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ProductionControllerNCVCForm\ProductionControllerChartNCVCForm.cs">
+    <Compile Include="Form\NCVCForm\ProductionControllerNCVCForm\ProductionControllerChartNCVCForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ProductionControllerNCVCForm\ProductionControllerChartNCVCForm.Designer.cs">
+    <Compile Include="Form\NCVCForm\ProductionControllerNCVCForm\ProductionControllerChartNCVCForm.Designer.cs">
       <DependentUpon>ProductionControllerChartNCVCForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ProductionControllerNCVCForm\ProductionControllerChart_CNCVCForm.cs">
+    <Compile Include="Form\NCVCForm\ProductionControllerNCVCForm\ProductionControllerChart_CNCVCForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ProductionControllerNCVCForm\ProductionControllerChart_CNCVCForm.Designer.cs">
+    <Compile Include="Form\NCVCForm\ProductionControllerNCVCForm\ProductionControllerChart_CNCVCForm.Designer.cs">
       <DependentUpon>ProductionControllerChart_CNCVCForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ProductionControllerNCVCForm\ProductionControllerDetailNCVCForm.cs">
+    <Compile Include="Form\NCVCForm\ProductionControllerNCVCForm\ProductionControllerDetailNCVCForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ProductionControllerNCVCForm\ProductionControllerDetailNCVCForm.Designer.cs">
+    <Compile Include="Form\NCVCForm\ProductionControllerNCVCForm\ProductionControllerDetailNCVCForm.Designer.cs">
       <DependentUpon>ProductionControllerDetailNCVCForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ProductionControllerNCVCForm\ProductionControllerNCVCForm.cs">
+    <Compile Include="Form\NCVCForm\ProductionControllerNCVCForm\ProductionControllerNCVCForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ProductionControllerNCVCForm\ProductionControllerNCVCForm.Designer.cs">
+    <Compile Include="Form\NCVCForm\ProductionControllerNCVCForm\ProductionControllerNCVCForm.Designer.cs">
       <DependentUpon>ProductionControllerNCVCForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ReportDownTimeForm\AddUpdateReportDownTimeFrom.cs">
+    <Compile Include="Form\NCVPForm\ReportDownTimeForm\AddUpdateReportDownTimeFrom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ReportDownTimeForm\AddUpdateReportDownTimeFrom.Designer.cs">
+    <Compile Include="Form\NCVPForm\ReportDownTimeForm\AddUpdateReportDownTimeFrom.Designer.cs">
       <DependentUpon>AddUpdateReportDownTimeFrom.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ReportDownTimeForm\ProcessWork\AddProcessWForm.cs">
+    <Compile Include="Form\NCVPForm\ReportDownTimeForm\ProcessWork\AddProcessWForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ReportDownTimeForm\ProcessWork\AddProcessWForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\ReportDownTimeForm\ProcessWork\AddProcessWForm.Designer.cs">
       <DependentUpon>AddProcessWForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ReportDownTimeForm\ProcessWork\ProcessWForm.cs">
+    <Compile Include="Form\NCVPForm\ReportDownTimeForm\ProcessWork\ProcessWForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ReportDownTimeForm\ProcessWork\ProcessWForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\ReportDownTimeForm\ProcessWork\ProcessWForm.Designer.cs">
       <DependentUpon>ProcessWForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ReportDownTimeForm\ReportDownTimeForm.cs">
+    <Compile Include="Form\NCVPForm\ReportDownTimeForm\ReportDownTimeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ReportDownTimeForm\ReportDownTimeForm.Designer.cs">
+    <Compile Include="Form\NCVPForm\ReportDownTimeForm\ReportDownTimeForm.Designer.cs">
       <DependentUpon>ReportDownTimeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\UserLocation\AddUserLocationForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\UserLocation\AddUserLocationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\UserLocation\AddUserLocationForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\UserLocation\AddUserLocationForm.Designer.cs">
       <DependentUpon>AddUserLocationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AccountWhForm\UserLocation\UserLocationForm.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\UserLocation\UserLocationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AccountWhForm\UserLocation\UserLocationForm.Designer.cs">
+    <Compile Include="Form\MasterForm\AccountWhForm\UserLocation\UserLocationForm.Designer.cs">
       <DependentUpon>UserLocationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\WorkingStatus\AddMachineStatusForm.cs">
+    <Compile Include="Form\MasterForm\WorkingStatus\AddMachineStatusForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\WorkingStatus\AddMachineStatusForm.Designer.cs">
+    <Compile Include="Form\MasterForm\WorkingStatus\AddMachineStatusForm.Designer.cs">
       <DependentUpon>AddMachineStatusForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\WorkingStatus\AddPlanWorkingStatusForm.cs">
+    <Compile Include="Form\MasterForm\WorkingStatus\AddPlanWorkingStatusForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\WorkingStatus\AddPlanWorkingStatusForm.Designer.cs">
+    <Compile Include="Form\MasterForm\WorkingStatus\AddPlanWorkingStatusForm.Designer.cs">
       <DependentUpon>AddPlanWorkingStatusForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\WorkingStatus\WorkingStatusForm.cs">
+    <Compile Include="Form\MasterForm\WorkingStatus\WorkingStatusForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\WorkingStatus\WorkingStatusForm.Designer.cs">
+    <Compile Include="Form\MasterForm\WorkingStatus\WorkingStatusForm.Designer.cs">
       <DependentUpon>WorkingStatusForm.cs</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
@@ -1069,241 +1069,241 @@
     <Compile Include="Vo\AccountWhVo\WareHouseVo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form\AccountWhForm\AccountCodeForm\AccountCodeForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\AccountCodeForm\AccountCodeForm.resx">
       <DependentUpon>AccountCodeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\AccountCodeForm\AddAccountCodeForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\AccountCodeForm\AddAccountCodeForm.resx">
       <DependentUpon>AddAccountCodeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\AccountMainForm\AddAcountMainForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\AccountMainForm\AddAcountMainForm.resx">
       <DependentUpon>AddAcountMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\AccountLocationForm\AccountLocationForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\AccountLocationForm\AccountLocationForm.resx">
       <DependentUpon>AccountLocationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\AccountLocationForm\AddAccountLocationForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\AccountLocationForm\AddAccountLocationForm.resx">
       <DependentUpon>AddAccountLocationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\Asset\AddAssetForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\Asset\AddAssetForm.resx">
       <DependentUpon>AddAssetForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\Asset\AssetForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\Asset\AssetForm.resx">
       <DependentUpon>AssetForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\AccountMainForm\AccountMainForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\AccountMainForm\AccountMainForm.resx">
       <DependentUpon>AccountMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\DetailPositionForm\AddDetailPositionForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\DetailPositionForm\AddDetailPositionForm.resx">
       <DependentUpon>AddDetailPositionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\DetailPositionForm\DetailPositionForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\DetailPositionForm\DetailPositionForm.resx">
       <DependentUpon>DetailPositionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\InventoryForm\AddInvertoryTimeForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\InventoryForm\AddInvertoryTimeForm.resx">
       <DependentUpon>AddInvertoryTimeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\InventoryForm\InvertoryCheckForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\InventoryForm\InvertoryCheckForm.resx">
       <DependentUpon>InvertoryCheckForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\InventoryForm\InvertoryTimeForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\InventoryForm\InvertoryTimeForm.resx">
       <DependentUpon>InvertoryTimeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\TranferForm\TranferRequestForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\TranferForm\TranferRequestForm.resx">
       <DependentUpon>TranferRequestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\TranferForm\TranferInfoForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\TranferForm\TranferInfoForm.resx">
       <DependentUpon>TranferInfoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\Units\AddUnitForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\Units\AddUnitForm.resx">
       <DependentUpon>AddUnitForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\Units\UnitForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\Units\UnitForm.resx">
       <DependentUpon>UnitForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\WareHouse\AddWareHouseMainForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\WareHouse\AddWareHouseMainForm.resx">
       <DependentUpon>AddWareHouseMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\WareHouse\WarehouseMainForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\WareHouse\WarehouseMainForm.resx">
       <DependentUpon>WarehouseMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\GA1ModelForm\ShippingForm\AddBoxID.resx">
+    <EmbeddedResource Include="Form\NCVPForm\GA1ModelForm\ShippingForm\AddBoxID.resx">
       <DependentUpon>AddBoxID.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\GA1ModelForm\ShippingForm\ReplaceSerialForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\GA1ModelForm\ShippingForm\ReplaceSerialForm.resx">
       <DependentUpon>ReplaceSerialForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\GA1ModelForm\ShippingForm\ShipmentHistoryForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\GA1ModelForm\ShippingForm\ShipmentHistoryForm.resx">
       <DependentUpon>ShipmentHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\GA1ModelForm\ShippingForm\Shipping.resx">
+    <EmbeddedResource Include="Form\NCVPForm\GA1ModelForm\ShippingForm\Shipping.resx">
       <DependentUpon>Shipping.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\IPQCCheckForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\IPQCCheckForm.resx">
       <DependentUpon>IPQCCheckForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\NoiseChartForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\NoiseChartForm.resx">
       <DependentUpon>NoiseChartForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\PassForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\PassForm.resx">
       <DependentUpon>PassForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\NoiseCheckForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\NoiseCheckForm.resx">
       <DependentUpon>NoiseCheckForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\NGThurstForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\NGThurstForm.resx">
       <DependentUpon>NGThurstForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\ThurstCheckForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\ThurstCheckForm.resx">
       <DependentUpon>ThurstCheckForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\ThusrtChartForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\GA1ModelForm\ThurstCheckForm\ThusrtChartForm.resx">
       <DependentUpon>ThusrtChartForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\Rank\AddRankForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\Rank\AddRankForm.resx">
       <DependentUpon>AddRankForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\Rank\RankForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\Rank\RankForm.resx">
       <DependentUpon>RankForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\OvenBarcodeLS12\OvenBarcodeLS12Form.resx">
+    <EmbeddedResource Include="Form\NCVPForm\OvenBarcodeLS12\OvenBarcodeLS12Form.resx">
       <DependentUpon>OvenBarcodeLS12Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\OvenBarcodeLS12\OvenBarcodeLS12Form.vi.resx">
+    <EmbeddedResource Include="Form\NCVPForm\OvenBarcodeLS12\OvenBarcodeLS12Form.vi.resx">
       <DependentUpon>OvenBarcodeLS12Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\OvenBarcodeLS12\RangeLS12\AddRangeLS12Form.resx">
+    <EmbeddedResource Include="Form\NCVPForm\OvenBarcodeLS12\RangeLS12\AddRangeLS12Form.resx">
       <DependentUpon>AddRangeLS12Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\OvenBarcodeLS12\RangeLS12\RangeLS12Form.resx">
+    <EmbeddedResource Include="Form\NCVPForm\OvenBarcodeLS12\RangeLS12\RangeLS12Form.resx">
       <DependentUpon>RangeLS12Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\OvenBarcodeMachine\OvenBarcodeForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\OvenBarcodeMachine\OvenBarcodeForm.resx">
       <DependentUpon>OvenBarcodeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\OvenBarcodeMachine\OvenBarcodeForm.vi.resx">
+    <EmbeddedResource Include="Form\NCVPForm\OvenBarcodeMachine\OvenBarcodeForm.vi.resx">
       <DependentUpon>OvenBarcodeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\OvenBarcodeMachine\Range\AddRangeForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\OvenBarcodeMachine\Range\AddRangeForm.resx">
       <DependentUpon>AddRangeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\OvenBarcodeMachine\Range\RangeForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\OvenBarcodeMachine\Range\RangeForm.resx">
       <DependentUpon>RangeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\PQMConnectForm\ProducionControllerGA1Form.resx">
+    <EmbeddedResource Include="Form\NCVPForm\PQMConnectForm\ProducionControllerGA1Form.resx">
       <DependentUpon>ProducionControllerGA1Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\PQMConnectForm\RateNG\AddRateNGForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\PQMConnectForm\RateNG\AddRateNGForm.resx">
       <DependentUpon>AddRateNGForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\PQMConnectForm\RateNG\RateNGForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\PQMConnectForm\RateNG\RateNGForm.resx">
       <DependentUpon>RateNGForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\PQMDataViewer\PQMDataViewerForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\PQMDataViewerForm\PQMDataViewerForm.resx">
       <DependentUpon>PQMDataViewerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerForm\AddPersonForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ProductionControllerForm\AddPersonForm.resx">
       <DependentUpon>AddPersonForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerForm\AddPersonForm.vi.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ProductionControllerForm\AddPersonForm.vi.resx">
       <DependentUpon>AddPersonForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerForm\ProductionControllerChart_CForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ProductionControllerForm\ProductionControllerChart_CForm.resx">
       <DependentUpon>ProductionControllerChart_CForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerForm\ProductionControllerChart_CForm.vi.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ProductionControllerForm\ProductionControllerChart_CForm.vi.resx">
       <DependentUpon>ProductionControllerChart_CForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerForm\ProductionControllerDetailForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ProductionControllerForm\ProductionControllerDetailForm.resx">
       <DependentUpon>ProductionControllerDetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerForm\ProductionControllerDetailForm.vi.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ProductionControllerForm\ProductionControllerDetailForm.vi.resx">
       <DependentUpon>ProductionControllerDetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerForm\ProductionControllerChartForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ProductionControllerForm\ProductionControllerChartForm.resx">
       <DependentUpon>ProductionControllerChartForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerForm\ProductionControllerChartForm.vi.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ProductionControllerForm\ProductionControllerChartForm.vi.resx">
       <DependentUpon>ProductionControllerChartForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerForm\PersonForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ProductionControllerForm\PersonForm.resx">
       <DependentUpon>PersonForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerForm\PersonForm.vi.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ProductionControllerForm\PersonForm.vi.resx">
       <DependentUpon>PersonForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerForm\ProductionControllerForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ProductionControllerForm\ProductionControllerForm.resx">
       <DependentUpon>ProductionControllerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerForm\ProductionControllerForm.vi.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ProductionControllerForm\ProductionControllerForm.vi.resx">
       <DependentUpon>ProductionControllerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\AddPersonNCVCForm.resx">
+    <EmbeddedResource Include="Form\NCVCForm\ProductionControllerNCVCForm\AddPersonNCVCForm.resx">
       <DependentUpon>AddPersonNCVCForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\AddPersonNCVCForm.vi.resx">
+    <EmbeddedResource Include="Form\NCVCForm\ProductionControllerNCVCForm\AddPersonNCVCForm.vi.resx">
       <DependentUpon>AddPersonNCVCForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\PersonNCVCForm.resx">
+    <EmbeddedResource Include="Form\NCVCForm\ProductionControllerNCVCForm\PersonNCVCForm.resx">
       <DependentUpon>PersonNCVCForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\PersonNCVCForm.vi.resx">
+    <EmbeddedResource Include="Form\NCVCForm\ProductionControllerNCVCForm\PersonNCVCForm.vi.resx">
       <DependentUpon>PersonNCVCForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\ProductionControllerChartNCVCForm.resx">
+    <EmbeddedResource Include="Form\NCVCForm\ProductionControllerNCVCForm\ProductionControllerChartNCVCForm.resx">
       <DependentUpon>ProductionControllerChartNCVCForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\ProductionControllerChartNCVCForm.vi.resx">
+    <EmbeddedResource Include="Form\NCVCForm\ProductionControllerNCVCForm\ProductionControllerChartNCVCForm.vi.resx">
       <DependentUpon>ProductionControllerChartNCVCForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\ProductionControllerChart_CNCVCForm.resx">
+    <EmbeddedResource Include="Form\NCVCForm\ProductionControllerNCVCForm\ProductionControllerChart_CNCVCForm.resx">
       <DependentUpon>ProductionControllerChart_CNCVCForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\ProductionControllerChart_CNCVCForm.vi.resx">
+    <EmbeddedResource Include="Form\NCVCForm\ProductionControllerNCVCForm\ProductionControllerChart_CNCVCForm.vi.resx">
       <DependentUpon>ProductionControllerChart_CNCVCForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\ProductionControllerDetailNCVCForm.resx">
+    <EmbeddedResource Include="Form\NCVCForm\ProductionControllerNCVCForm\ProductionControllerDetailNCVCForm.resx">
       <DependentUpon>ProductionControllerDetailNCVCForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\ProductionControllerDetailNCVCForm.vi.resx">
+    <EmbeddedResource Include="Form\NCVCForm\ProductionControllerNCVCForm\ProductionControllerDetailNCVCForm.vi.resx">
       <DependentUpon>ProductionControllerDetailNCVCForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\ProductionControllerNCVCForm.resx">
+    <EmbeddedResource Include="Form\NCVCForm\ProductionControllerNCVCForm\ProductionControllerNCVCForm.resx">
       <DependentUpon>ProductionControllerNCVCForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\ProductionControllerNCVCForm.vi.resx">
+    <EmbeddedResource Include="Form\NCVCForm\ProductionControllerNCVCForm\ProductionControllerNCVCForm.vi.resx">
       <DependentUpon>ProductionControllerNCVCForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ReportDownTimeForm\AddUpdateReportDownTimeFrom.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ReportDownTimeForm\AddUpdateReportDownTimeFrom.resx">
       <DependentUpon>AddUpdateReportDownTimeFrom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ReportDownTimeForm\AddUpdateReportDownTimeFrom.vi.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ReportDownTimeForm\AddUpdateReportDownTimeFrom.vi.resx">
       <DependentUpon>AddUpdateReportDownTimeFrom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ReportDownTimeForm\ProcessWork\AddProcessWForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ReportDownTimeForm\ProcessWork\AddProcessWForm.resx">
       <DependentUpon>AddProcessWForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ReportDownTimeForm\ProcessWork\ProcessWForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ReportDownTimeForm\ProcessWork\ProcessWForm.resx">
       <DependentUpon>ProcessWForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ReportDownTimeForm\ReportDownTimeForm.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ReportDownTimeForm\ReportDownTimeForm.resx">
       <DependentUpon>ReportDownTimeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ReportDownTimeForm\ReportDownTimeForm.vi.resx">
+    <EmbeddedResource Include="Form\NCVPForm\ReportDownTimeForm\ReportDownTimeForm.vi.resx">
       <DependentUpon>ReportDownTimeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\UserLocation\AddUserLocationForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\UserLocation\AddUserLocationForm.resx">
       <DependentUpon>AddUserLocationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AccountWhForm\UserLocation\UserLocationForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\AccountWhForm\UserLocation\UserLocationForm.resx">
       <DependentUpon>UserLocationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\WorkingStatus\AddMachineStatusForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\WorkingStatus\AddMachineStatusForm.resx">
       <DependentUpon>AddMachineStatusForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\WorkingStatus\AddPlanWorkingStatusForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\WorkingStatus\AddPlanWorkingStatusForm.resx">
       <DependentUpon>AddPlanWorkingStatusForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\WorkingStatus\WorkingStatusForm.resx">
+    <EmbeddedResource Include="Form\MasterForm\WorkingStatus\WorkingStatusForm.resx">
       <DependentUpon>WorkingStatusForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

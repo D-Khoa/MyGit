@@ -66,7 +66,7 @@ namespace PushDataToServer
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            if (backgroundWorker1.IsBusy)
+            //if (backgroundWorker1.IsBusy)
             {
                 btnPush.Enabled = true;
                 btnStop.Enabled = false;

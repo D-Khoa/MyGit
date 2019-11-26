@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace DKMES
 {
     public partial class ChangeEnterKey : Form
     {
+        MySqlConnection conn = DBUtils.GetDBConnection();
         public ChangeEnterKey()
         {
             InitializeComponent();
@@ -19,12 +21,17 @@ namespace DKMES
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string outs = "";
-            foreach(char c in textBox1.Text)
+            try
             {
-                outs += string.Format("{0:X2}", (int)c);
+                conn.Open();
+                MessageBox.Show("Connected!");
             }
-            label1.Text = outs.Trim();
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
+
     }
 }

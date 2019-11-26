@@ -109,6 +109,8 @@
             this.btn_thurstcheck = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.GA1Chart_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.btn_noisecheck = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.btnDataViewer = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.labelCommon2 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.NCVP_Function_gr = new Com.Nidec.Mes.Framework.GroupBoxCommon();
             this.ChangePass_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
@@ -118,8 +120,6 @@
             this.NcvpMaster_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.SystemMaster_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.Menu_gpb = new Com.Nidec.Mes.Framework.GroupBoxCommon();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.btnDataViewer = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.NcvpMaster_gpb.SuspendLayout();
             this.Master_tab.SuspendLayout();
             this.Master.SuspendLayout();
@@ -141,20 +141,20 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.NCVP_Function_gr.SuspendLayout();
             this.groupBoxCommon7.SuspendLayout();
             this.groupBoxCommon1.SuspendLayout();
             this.Menu_gpb.SuspendLayout();
-            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // NcvpMaster_gpb
             // 
             this.NcvpMaster_gpb.ControlId = null;
-            this.NcvpMaster_gpb.Controls.Add(this.Master_tab);
             this.NcvpMaster_gpb.Controls.Add(this.labelCommon1);
+            this.NcvpMaster_gpb.Controls.Add(this.Master_tab);
             this.NcvpMaster_gpb.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.NcvpMaster_gpb.Location = new System.Drawing.Point(170, 106);
+            this.NcvpMaster_gpb.Location = new System.Drawing.Point(0, 0);
             this.NcvpMaster_gpb.Name = "NcvpMaster_gpb";
             this.NcvpMaster_gpb.Size = new System.Drawing.Size(697, 572);
             this.NcvpMaster_gpb.TabIndex = 52;
@@ -1289,6 +1289,32 @@
             this.btn_noisecheck.UseVisualStyleBackColor = true;
             this.btn_noisecheck.Click += new System.EventHandler(this.btn_noisecheck_Click);
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.btnDataViewer);
+            this.tabPage6.Location = new System.Drawing.Point(4, 24);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(679, 490);
+            this.tabPage6.TabIndex = 4;
+            this.tabPage6.Text = "PQM Database";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // btnDataViewer
+            // 
+            this.btnDataViewer.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDataViewer.ControlId = "cpmb010";
+            this.btnDataViewer.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnDataViewer.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnDataViewer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnDataViewer.Location = new System.Drawing.Point(19, 16);
+            this.btnDataViewer.Name = "btnDataViewer";
+            this.btnDataViewer.Size = new System.Drawing.Size(210, 64);
+            this.btnDataViewer.TabIndex = 1;
+            this.btnDataViewer.Text = "Data Viewer";
+            this.btnDataViewer.UseVisualStyleBackColor = false;
+            this.btnDataViewer.Click += new System.EventHandler(this.btnDataViewer_Click);
+            // 
             // labelCommon2
             // 
             this.labelCommon2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1309,6 +1335,7 @@
             this.NCVP_Function_gr.ControlId = null;
             this.NCVP_Function_gr.Controls.Add(this.labelCommon2);
             this.NCVP_Function_gr.Controls.Add(this.tabControlCommon1);
+            this.NCVP_Function_gr.Controls.Add(this.NcvpMaster_gpb);
             this.NCVP_Function_gr.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.NCVP_Function_gr.Location = new System.Drawing.Point(170, 106);
             this.NCVP_Function_gr.Name = "NCVP_Function_gr";
@@ -1416,32 +1443,6 @@
             this.Menu_gpb.TabStop = false;
             this.Menu_gpb.Text = "Menu";
             // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.btnDataViewer);
-            this.tabPage6.Location = new System.Drawing.Point(4, 24);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(679, 490);
-            this.tabPage6.TabIndex = 4;
-            this.tabPage6.Text = "PQM Database";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // btnDataViewer
-            // 
-            this.btnDataViewer.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDataViewer.ControlId = "cpmb010";
-            this.btnDataViewer.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnDataViewer.Font = new System.Drawing.Font("Arial", 9F);
-            this.btnDataViewer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnDataViewer.Location = new System.Drawing.Point(19, 16);
-            this.btnDataViewer.Name = "btnDataViewer";
-            this.btnDataViewer.Size = new System.Drawing.Size(210, 64);
-            this.btnDataViewer.TabIndex = 1;
-            this.btnDataViewer.Text = "Data Viewer";
-            this.btnDataViewer.UseVisualStyleBackColor = false;
-            this.btnDataViewer.Click += new System.EventHandler(this.btnDataViewer_Click);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1450,7 +1451,6 @@
             this.ControlId = "frm001";
             this.Controls.Add(this.Menu_gpb);
             this.Controls.Add(this.NCVP_Function_gr);
-            this.Controls.Add(this.NcvpMaster_gpb);
             this.Controls.Add(this.SystemMaster_gpb);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -1459,7 +1459,6 @@
             this.TitleText = "NCVP Master Maintance";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Controls.SetChildIndex(this.SystemMaster_gpb, 0);
-            this.Controls.SetChildIndex(this.NcvpMaster_gpb, 0);
             this.Controls.SetChildIndex(this.NCVP_Function_gr, 0);
             this.Controls.SetChildIndex(this.Menu_gpb, 0);
             this.NcvpMaster_gpb.ResumeLayout(false);
@@ -1483,11 +1482,11 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
             this.NCVP_Function_gr.ResumeLayout(false);
             this.groupBoxCommon7.ResumeLayout(false);
             this.groupBoxCommon1.ResumeLayout(false);
             this.Menu_gpb.ResumeLayout(false);
-            this.tabPage6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
