@@ -4,6 +4,7 @@ using Com.Nidec.Mes.Framework.Login;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance;
 //using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.IPQCForm;
+using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.AccountCodeForm;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.Asset;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.UserLocation;
@@ -487,6 +488,12 @@ namespace Com.Nidec.Mes.VCVP
         {
             PQMDataViewerForm dvf = new PQMDataViewerForm();
             dvf.ShowDialog();
+        }
+
+        private void buttonCommon1_Click_2(object sender, EventArgs e)
+        {
+            AssetMaster2019Form asf = new AssetMaster2019Form();
+            asf.ShowDialog();
         }
     }
 }
