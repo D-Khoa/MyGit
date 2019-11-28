@@ -16,7 +16,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
 {
     public partial class AddAssetForm : UpdateAssetForm
     {
-        public AddAssetForm()
+        public AddAssetForm(AssetInfoVo inVo)
         {
             InitializeComponent();
         }

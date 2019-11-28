@@ -195,6 +195,7 @@
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\DeleteAssetCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\GetAssetLifeCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\GetAssetTypeCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\UpdateAssetCbm.cs" />
     <Compile Include="Cbm\OvenBarcodeCbm\OvenBarcodeCbm\GetBarcodeOvenCbm.cs" />
     <Compile Include="Cbm\OvenBarcodeCbm\OvenBarcodeCbm\GetLineOvenCbm.cs" />
     <Compile Include="Cbm\OvenBarcodeCbm\OvenBarcodeCbm\GetLowerOvenCbm.cs" />
@@ -483,6 +484,7 @@
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\DeleteAssetDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\GetAssetLifeDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\GetAssetTypeDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\UpdateAssetDao.cs" />
     <Compile Include="Dao\OvenBarcodeDao\OvenBarcodeDao\GetBarcodeOvenDao.cs" />
     <Compile Include="Dao\OvenBarcodeDao\OvenBarcodeDao\GetLineOvenDao.cs" />
     <Compile Include="Dao\OvenBarcodeDao\OvenBarcodeDao\GetLowerOvenDao.cs" />
@@ -1077,6 +1079,7 @@
     <Compile Include="Vo\AccountWhVo\TransferVo.cs" />
     <Compile Include="Vo\AddMachineStatusVo.cs" />
     <Compile Include="Vo\GA1ModelVo.cs" />
+    <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\AssetManagerVo\AssetInfoVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\AssetManagerVo\AssetMaster2019Vo.cs" />
     <Compile Include="Vo\OvenBarcodeTTBVo\OvenBarcodeTTBVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\OvenBarcodeVo.cs" />

@@ -20,5 +20,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo.Nidec2019Vo
         public bool checkDateTo { get; set; }
         public string[] data_row { get; set; }
         public DataTable asset_data { get; set; }
+        public int executeInt { get; set; }
     }
 }

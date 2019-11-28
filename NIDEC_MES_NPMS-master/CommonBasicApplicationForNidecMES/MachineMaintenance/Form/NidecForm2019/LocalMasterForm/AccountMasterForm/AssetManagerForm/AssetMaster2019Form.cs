@@ -19,11 +19,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
         //CONNECT TO PQM DB
         public string connection = Properties.Settings.Default.CONNECTION_STRING;
         AssetMaster2019Vo vo;
+        AssetInfoVo voInfo;
 
         public AssetMaster2019Form()
         {
             InitializeComponent();
             vo = new AssetMaster2019Vo();
+            voInfo = new AssetInfoVo();
         }
 
         private void AssetMaster2019Form_Load(object sender, EventArgs e)
@@ -115,8 +117,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
         private void dgvAssetGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnUpdate.Enabled = btnDelete.Enabled = dgvAssetGrid.SelectedRows.Count > 0;
-            DataGridViewRow dr = dgvAssetGrid.Rows[e.RowIndex];
-            vo.data_row = dr.Cells.Cast<DataGridViewCell>().Select(c => c.Value.ToString()).ToArray();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -132,17 +132,37 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
 
         private void dgvAssetGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (dgvAssetGrid.SelectedRows.Count > 0)
+            {
+                CallUpdateForm();
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            CallUpdateForm();
         }
 
         private void CallUpdateForm()
         {
-            
+            #region GET DATA FROM DGV TO VOINFO
+            voInfo.asset_cd = dgvAssetGrid.SelectedRows[0].Cells["asset_cd"].Value.ToString();
+            voInfo.asset_no = (int)dgvAssetGrid.SelectedRows[0].Cells["asset_no"].Value;
+            voInfo.asset_name = dgvAssetGrid.SelectedRows[0].Cells["asset_name"].Value.ToString();
+            voInfo.asset_serial = dgvAssetGrid.SelectedRows[0].Cells["asset_serial"].Value.ToString();
+            voInfo.asset_model = dgvAssetGrid.SelectedRows[0].Cells["asset_model"].Value.ToString();
+            voInfo.asset_life = (double)dgvAssetGrid.SelectedRows[0].Cells["asset_life"].Value;
+            voInfo.acquistion_cost = (double)dgvAssetGrid.SelectedRows[0].Cells["acquistion_cost"].Value;
+            voInfo.acquistion_date = (DateTime)dgvAssetGrid.SelectedRows[0].Cells["acquistion_date"].Value;
+            voInfo.asset_invoice = dgvAssetGrid.SelectedRows[0].Cells["asset_invoice"].Value.ToString();
+            voInfo.asset_po = dgvAssetGrid.SelectedRows[0].Cells["asset_po"].Value.ToString();
+            voInfo.asset_type = dgvAssetGrid.SelectedRows[0].Cells["asset_type"].Value.ToString();
+            voInfo.factory_cd = dgvAssetGrid.SelectedRows[0].Cells["factory_cd"].Value.ToString();
+            voInfo.asset_supplier = dgvAssetGrid.SelectedRows[0].Cells["asset_supplier"].Value.ToString();
+            voInfo.label_status = dgvAssetGrid.SelectedRows[0].Cells["label_status"].Value.ToString();
+            #endregion
+            UpdateAssetForm upAssetFrm = new UpdateAssetForm(voInfo);
+            upAssetFrm.ShowDialog();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

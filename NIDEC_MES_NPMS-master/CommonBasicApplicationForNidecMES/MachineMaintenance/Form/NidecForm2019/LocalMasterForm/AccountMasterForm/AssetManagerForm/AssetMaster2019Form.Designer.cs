@@ -354,9 +354,11 @@
             this.dgvAssetGrid.AllowUserToAddRows = false;
             this.dgvAssetGrid.AllowUserToDeleteRows = false;
             this.dgvAssetGrid.AllowUserToOrderColumns = true;
+            this.dgvAssetGrid.AllowUserToResizeRows = false;
             this.dgvAssetGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvAssetGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -375,7 +377,9 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAssetGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAssetGrid.EnableHeadersVisualStyles = false;
             this.dgvAssetGrid.Location = new System.Drawing.Point(12, 268);
+            this.dgvAssetGrid.MultiSelect = false;
             this.dgvAssetGrid.Name = "dgvAssetGrid";
             this.dgvAssetGrid.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -386,6 +390,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAssetGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAssetGrid.RowHeadersVisible = false;
             this.dgvAssetGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAssetGrid.Size = new System.Drawing.Size(701, 185);
             this.dgvAssetGrid.TabIndex = 6;
@@ -444,8 +449,8 @@
         private System.Windows.Forms.StatusStrip sStrip;
         private System.Windows.Forms.ToolStripStatusLabel tsSpacer;
         private System.Windows.Forms.ToolStripStatusLabel tsNumberOfRow;
-        private Framework.DataGridViewCommon dgvAssetGrid;
         private Framework.ComboBoxCommon cmbLife;
         private Framework.ComboBoxCommon cmbAssetType;
+        internal Framework.DataGridViewCommon dgvAssetGrid;
     }
 }
