@@ -34,6 +34,9 @@ namespace PushDataToServer
             txtFrom.Text = setString[0].Remove(0, 14);
             txtTo.Text = setString[1].Remove(0, 12);
             txtTemp.Text = setString[2].Remove(0, 14);
+            fromfolder = txtFrom.Text;
+            tofolder = txtTo.Text;
+            tempfolder = txtTemp.Text;
         }
 
         private void btnBTemp_Click(object sender, EventArgs e)
@@ -45,9 +48,6 @@ namespace PushDataToServer
         {
             try
             {
-                fromfolder = txtFrom.Text;
-                tofolder = txtTo.Text;
-                tempfolder = txtTemp.Text;
                 if (!backgroundWorker1.IsBusy)
                 {
                     btnPush.Enabled = false;
@@ -66,29 +66,32 @@ namespace PushDataToServer
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            //if (backgroundWorker1.IsBusy)
-            {
-                btnPush.Enabled = true;
-                btnStop.Enabled = false;
-                txtFrom.ReadOnly = false;
-                txtTo.ReadOnly = false;
-                txtTemp.ReadOnly = false;
-                backgroundWorker1.CancelAsync();
-            }
+            btnPush.Enabled = true;
+            btnStop.Enabled = false;
+            txtFrom.ReadOnly = false;
+            txtTo.ReadOnly = false;
+            txtTemp.ReadOnly = false;
+            backgroundWorker1.CancelAsync();
         }
 
         private void MainFrm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (btnStop.Enabled)
-                e.Cancel = true;
-            setString.Add("From Folder = " + fromfolder);
-            setString.Add("To Folder = " + tofolder);
-            setString.Add("Temp Folder = " + tempfolder);
-            if (!Directory.Exists(Path.GetDirectoryName(settingfile)))
-                Directory.CreateDirectory(Path.GetDirectoryName(settingfile));
-            if (!File.Exists(settingfile))
-                File.Create(settingfile);
-            File.WriteAllLines(settingfile, setString);
+            try
+            {
+                if (btnStop.Enabled)
+                    e.Cancel = true;
+                setString.Clear();
+                setString.Add("From Folder = " + fromfolder);
+                setString.Add("To Folder = " + tofolder);
+                setString.Add("Temp Folder = " + tempfolder);
+                if (!Directory.Exists(Path.GetDirectoryName(settingfile)))
+                    Directory.CreateDirectory(Path.GetDirectoryName(settingfile));
+                File.WriteAllLines(settingfile, setString);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)

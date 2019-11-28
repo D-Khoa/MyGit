@@ -144,6 +144,7 @@
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -156,6 +157,7 @@
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSearch
             // 
@@ -384,6 +386,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAssetGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAssetGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAssetGrid.Size = new System.Drawing.Size(701, 185);
             this.dgvAssetGrid.TabIndex = 6;
             this.dgvAssetGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAssetGrid_CellClick);

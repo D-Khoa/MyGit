@@ -14,7 +14,7 @@ using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo.Nidec2019Vo;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
 {
-    public partial class AddAssetForm : FormCommonNCVP
+    public partial class AddAssetForm : UpdateAssetForm
     {
         public AddAssetForm()
         {

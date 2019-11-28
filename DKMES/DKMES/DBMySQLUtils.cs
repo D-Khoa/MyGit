@@ -15,8 +15,7 @@ namespace DKMES
         {
             // Connection String.
             String connString = "Server=" + host + ";Database=" + database
-                + ";port=" + port + ";User Id=" + username + ";password=" + password;
-
+                + ";Port=" + port + ";Uid=" + username + ";Pwd=" + password+ ";SslMode=Required;";
             MySqlConnection conn = new MySqlConnection(connString);
 
             return conn;

@@ -1334,6 +1334,9 @@
     <EmbeddedResource Include="Form\MasterForm\WorkingStatus\WorkingStatusForm.resx">
       <DependentUpon>WorkingStatusForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AssetManagerForm\AddAssetForm.resx">
+      <DependentUpon>AddAssetForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AssetManagerForm\AssetMaster2019Form.resx">
       <DependentUpon>AssetMaster2019Form.cs</DependentUpon>
     </EmbeddedResource>

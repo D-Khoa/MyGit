@@ -13,9 +13,9 @@ namespace DKMES
         {
             string host = "mysql06.dotvndns.vn";
             int port = 3306;
-            string database = "iottechn_webASP";
-            string username = "iottechn";
-            string password = "admin1@";
+            string database = "iottechn_asp";
+            string username = "iottechn_mod";
+            string password = "4865awds";
 
             return DBMySQLUtils.GetDBConnection(host, port, database, username, password);
         }

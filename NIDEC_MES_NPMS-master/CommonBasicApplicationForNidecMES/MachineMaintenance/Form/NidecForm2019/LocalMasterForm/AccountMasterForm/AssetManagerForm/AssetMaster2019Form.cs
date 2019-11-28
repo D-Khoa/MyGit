@@ -115,8 +115,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
         private void dgvAssetGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnUpdate.Enabled = btnDelete.Enabled = dgvAssetGrid.SelectedRows.Count > 0;
+            DataGridViewRow dr = dgvAssetGrid.Rows[e.RowIndex];
+            vo.data_row = dr.Cells.Cast<DataGridViewCell>().Select(c => c.Value.ToString()).ToArray();
         }
-
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -134,9 +135,25 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
 
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CallUpdateForm()
+        {
+            
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }
