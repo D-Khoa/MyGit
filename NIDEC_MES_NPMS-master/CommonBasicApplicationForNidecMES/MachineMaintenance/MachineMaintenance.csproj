@@ -60,6 +60,8 @@
     <Reference Include="npgsql">
       <HintPath>..\..\NidecMES-FW\Dll\npgsql.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -71,6 +73,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cbm\AccountWhCbm\AccountCodeCbm\AddAccountCodeCbm.cs" />
@@ -191,6 +194,7 @@
     <Compile Include="Cbm\GA1ModelCbm\UpdateGA1ModelShippingCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\UpdateGA1ModelOQCCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\UpdateGA1ModelNoiseCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\AddAssetCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\AssetMaster2019Cbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\DeleteAssetCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\GetAssetLifeCbm.cs" />
@@ -480,6 +484,7 @@
     <Compile Include="Dao\AccountWhDao\RankMasterDao\DeleteRankDao.cs" />
     <Compile Include="Dao\AccountWhDao\RankMasterDao\GetRankDao.cs" />
     <Compile Include="Dao\AccountWhDao\RankMasterDao\UpdateRankDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\AddAssetDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\AssetMaster2019Dao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\DeleteAssetDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\GetAssetLifeDao.cs" />
@@ -1037,12 +1042,6 @@
     <Compile Include="Form\MasterForm\WorkingStatus\WorkingStatusForm.Designer.cs">
       <DependentUpon>WorkingStatusForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AssetManagerForm\AddAssetForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AssetManagerForm\AddAssetForm.Designer.cs">
-      <DependentUpon>AddAssetForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AssetManagerForm\AssetMaster2019Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1336,9 +1335,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\MasterForm\WorkingStatus\WorkingStatusForm.resx">
       <DependentUpon>WorkingStatusForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AssetManagerForm\AddAssetForm.resx">
-      <DependentUpon>AddAssetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AssetManagerForm\AssetMaster2019Form.resx">
       <DependentUpon>AssetMaster2019Form.cs</DependentUpon>

@@ -17,20 +17,32 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
     public partial class UpdateAssetForm : FormCommonNCVP
     {
         AssetInfoVo voInfo = new AssetInfoVo();
+        List<AssetInfoVo> infoList = new List<AssetInfoVo>();
+        bool checkAddFrm = true;
+        string label;
 
         public UpdateAssetForm()
         {
             InitializeComponent();
         }
 
-        public UpdateAssetForm(AssetInfoVo inVo)
+        public UpdateAssetForm(AssetInfoVo inVo, bool addForm)
         {
             InitializeComponent();
+            checkAddFrm = addForm;
+            if (!addForm)
+            {
+                this.Width -= dgvAddAssetList.Width;
+                btnApply.Text = "Update Asset";
+            }
             voInfo = inVo;
         }
 
         private void UpdateAssetForm_Load(object sender, EventArgs e)
         {
+            dgvAddAssetList.Visible = checkAddFrm;
+            btnAddAsset.Visible = checkAddFrm;
+            btnImport.Visible = checkAddFrm;
             ValueObjectList<AssetMaster2019Vo> assetType = ((ValueObjectList<AssetMaster2019Vo>)DefaultCbmInvoker.Invoke(new GetAssetTypeCbm(), new AssetMaster2019Vo()));
             cmbAssetType.DisplayMember = "asset_type";
             cmbAssetType.DataSource = assetType.GetList();
@@ -66,18 +78,44 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             }
         }
 
-        private void btnApply_Click(object sender, EventArgs e)
+        private void UpdateAssetEvent()
         {
-            try
+            AssetMaster2019Vo updateVo = (AssetMaster2019Vo)DefaultCbmInvoker.Invoke(new UpdateAssetCbm(), new AssetInfoVo()
             {
-                string label;
-                if (rbtnPasted.Checked)
-                    label = "Pasted";
-                else if (rbtnNotPaste.Checked)
-                    label = "Not Paste";
-                else
-                    label = "Cant Paste";
-                AssetMaster2019Vo updateVo = (AssetMaster2019Vo)DefaultCbmInvoker.Invoke(new UpdateAssetCbm(), new AssetInfoVo()
+                acquistion_cost = double.Parse(txtAcqCost.Text),
+                acquistion_date = dtpAcqDate.Value,
+                asset_cd = txtAssetCode.Text,
+                asset_invoice = txtAssetInvoice.Text,
+                asset_life = (double)numLife.Value,
+                asset_model = txtAssetModel.Text,
+                asset_name = txtAssetName.Text,
+                asset_no = (int)numAssetNo.Value,
+                asset_po = txtAssetPO.Text,
+                asset_serial = txtAssetSerial.Text,
+                asset_supplier = txtSupplier.Text,
+                asset_type = cmbAssetType.Text,
+                factory_cd = txtFactory.Text,
+                label_status = label
+            });
+            MessageBox.Show("Update completed " + updateVo.executeInt + " rows data!!!");
+        }
+
+        private void AddAssetList()
+        {
+            bool checkEmpty = false;
+            foreach (Control x in grUpdate.Controls)
+            {
+                if (string.IsNullOrEmpty(x.Text) && !(x is Label) && (x.Name != txtAssetPO.Name))
+                {
+                    checkEmpty = true;
+                    break;
+                }
+            }
+            if (checkEmpty)
+                MessageBox.Show("Must fill all infomation before add!", "CAUTION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                voInfo = new AssetInfoVo
                 {
                     acquistion_cost = double.Parse(txtAcqCost.Text),
                     acquistion_date = dtpAcqDate.Value,
@@ -93,13 +131,74 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
                     asset_type = cmbAssetType.Text,
                     factory_cd = txtFactory.Text,
                     label_status = label
-                });
-                MessageBox.Show("Update completed " + updateVo.executeInt + " rows data!!!");
+                };
+                dgvAddAssetList.Rows.Add(voInfo.asset_cd, voInfo.asset_no, voInfo.asset_name, voInfo.asset_serial,
+                    voInfo.asset_model, voInfo.asset_life, voInfo.acquistion_cost, voInfo.acquistion_date, voInfo.asset_invoice,
+                    voInfo.asset_po, voInfo.asset_type, voInfo.factory_cd, voInfo.asset_supplier, voInfo.label_status);
+                infoList.Add(voInfo);
+                dgvAddAssetList.Refresh();
+                btnAddAsset.Enabled = infoList.Count > 0;
+                tsRowCount.Text = dgvAddAssetList.RowCount.ToString() + " rows";
+            }
+        }
+
+        private void dgvAddAssetList_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            infoList.RemoveAt(e.Row.Index);
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (rbtnPasted.Checked)
+                    label = "Pasted";
+                else if (rbtnNotPaste.Checked)
+                    label = "Not Paste";
+                else
+                    label = "Cant Paste";
+
+                if (!checkAddFrm)
+                    UpdateAssetEvent();
+                else
+                    AddAssetList();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openF = new OpenFileDialog();
+            openF.Filter = "Excel Documents (*.xlsx)|*.xlsx|Excel 97-2003 Documents (*.xls)|*.xls|All file (*.*)|*.*";
+            if (openF.ShowDialog() == DialogResult.OK)
+            {
+                ExcelClass2019 excel = new ExcelClass2019(openF.FileName);
+                excel.OpenWorkBook(openF.FileName);
+            }
+        }
+
+        private void btnAddAsset_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int i = 0;
+                foreach (AssetInfoVo inf in infoList)
+                {
+                    AssetMaster2019Vo addAsset = (AssetMaster2019Vo)DefaultCbmInvoker.Invoke(new AddAssetCbm(), inf);
+                    i += addAsset.executeInt;
+                }
+                MessageBox.Show("Total " + i + " rows have been add!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            infoList.Clear();
+            dgvAddAssetList.DataSource = null;
+            dgvAddAssetList.Refresh();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -111,6 +210,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
         {
             if (MessageBox.Show("Do you want exit anyway?", "Caution", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 e.Cancel = true;
+        }
+
+        private void txtAcqCost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+                MessageBox.Show("Please input numbers only!");
+            }
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
 
             //create command
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
+            sql.Clear();
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
@@ -33,6 +34,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
             sqlParameter.AddParameterString("registration_user_cd", UserData.GetUserData().UserCode);
             sqlParameter.AddParameterString("label_status", inVo.label_status);
             sqlParameter.AddParameterString("asset_po", inVo.asset_po);
+
             //execute SQL
             AssetMaster2019Vo outVo = new AssetMaster2019Vo()
             {

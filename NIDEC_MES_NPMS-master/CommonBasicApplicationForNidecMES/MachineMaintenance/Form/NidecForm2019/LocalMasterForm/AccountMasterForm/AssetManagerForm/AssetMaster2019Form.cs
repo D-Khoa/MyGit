@@ -161,13 +161,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             voInfo.asset_supplier = dgvAssetGrid.SelectedRows[0].Cells["asset_supplier"].Value.ToString();
             voInfo.label_status = dgvAssetGrid.SelectedRows[0].Cells["label_status"].Value.ToString();
             #endregion
-            UpdateAssetForm upAssetFrm = new UpdateAssetForm(voInfo);
+            UpdateAssetForm upAssetFrm = new UpdateAssetForm(voInfo, false);
             upAssetFrm.ShowDialog();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            UpdateAssetForm addAssetFrm = new UpdateAssetForm();
+            addAssetFrm.ShowDialog();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

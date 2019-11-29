@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.txtAssetCode = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.grUpdate = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.numAssetNo = new System.Windows.Forms.NumericUpDown();
             this.lbAssetType = new Com.Nidec.Mes.Framework.LabelCommon();
             this.labelCommon8 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.cmbAssetType = new Com.Nidec.Mes.Framework.ComboBoxCommon();
@@ -72,13 +76,34 @@
             this.labelCommon3 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.lbAssetCode = new Com.Nidec.Mes.Framework.LabelCommon();
             this.pnlButton = new Com.Nidec.Mes.Framework.PanelCommon();
+            this.btnAddAsset = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.btnImport = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.btnCancel = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.btnApply = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.numAssetNo = new System.Windows.Forms.NumericUpDown();
+            this.dgvAddAssetList = new Com.Nidec.Mes.Framework.DataGridViewCommon();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsRowCount = new System.Windows.Forms.ToolStripStatusLabel();
+            this.asset_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asset_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asset_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asset_serial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asset_model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asset_life = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acquistion_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acquistion_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asset_invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asset_po = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asset_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.factory_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asset_supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grUpdate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numAssetNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLife)).BeginInit();
             this.pnlButton.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numAssetNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddAssetList)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelCommon1
@@ -155,6 +180,13 @@
             this.grUpdate.TabIndex = 10;
             this.grUpdate.TabStop = false;
             // 
+            // numAssetNo
+            // 
+            this.numAssetNo.Location = new System.Drawing.Point(6, 145);
+            this.numAssetNo.Name = "numAssetNo";
+            this.numAssetNo.Size = new System.Drawing.Size(73, 21);
+            this.numAssetNo.TabIndex = 14;
+            // 
             // lbAssetType
             // 
             this.lbAssetType.AutoSize = true;
@@ -185,7 +217,7 @@
             this.cmbAssetType.Location = new System.Drawing.Point(199, 308);
             this.cmbAssetType.Name = "cmbAssetType";
             this.cmbAssetType.Size = new System.Drawing.Size(187, 23);
-            this.cmbAssetType.TabIndex = 39;
+            this.cmbAssetType.TabIndex = 22;
             // 
             // labelCommon2
             // 
@@ -236,7 +268,7 @@
             this.rbtnCntPaste.Location = new System.Drawing.Point(210, 394);
             this.rbtnCntPaste.Name = "rbtnCntPaste";
             this.rbtnCntPaste.Size = new System.Drawing.Size(107, 19);
-            this.rbtnCntPaste.TabIndex = 24;
+            this.rbtnCntPaste.TabIndex = 26;
             this.rbtnCntPaste.TabStop = true;
             this.rbtnCntPaste.Text = "Can\'t not paste";
             this.rbtnCntPaste.UseVisualStyleBackColor = false;
@@ -250,7 +282,7 @@
             this.rbtnNotPaste.Location = new System.Drawing.Point(126, 394);
             this.rbtnNotPaste.Name = "rbtnNotPaste";
             this.rbtnNotPaste.Size = new System.Drawing.Size(78, 19);
-            this.rbtnNotPaste.TabIndex = 23;
+            this.rbtnNotPaste.TabIndex = 25;
             this.rbtnNotPaste.TabStop = true;
             this.rbtnNotPaste.Text = "Not paste";
             this.rbtnNotPaste.UseVisualStyleBackColor = false;
@@ -264,7 +296,7 @@
             this.rbtnPasted.Location = new System.Drawing.Point(56, 394);
             this.rbtnPasted.Name = "rbtnPasted";
             this.rbtnPasted.Size = new System.Drawing.Size(64, 19);
-            this.rbtnPasted.TabIndex = 22;
+            this.rbtnPasted.TabIndex = 24;
             this.rbtnPasted.TabStop = true;
             this.rbtnPasted.Text = "Pasted";
             this.rbtnPasted.UseVisualStyleBackColor = false;
@@ -366,6 +398,7 @@
             this.txtAcqCost.Name = "txtAcqCost";
             this.txtAcqCost.Size = new System.Drawing.Size(187, 21);
             this.txtAcqCost.TabIndex = 19;
+            this.txtAcqCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAcqCost_KeyPress);
             // 
             // lbSupplier
             // 
@@ -430,7 +463,7 @@
             this.txtSupplier.Name = "txtSupplier";
             this.txtSupplier.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtSupplier.Size = new System.Drawing.Size(380, 21);
-            this.txtSupplier.TabIndex = 25;
+            this.txtSupplier.TabIndex = 23;
             // 
             // lbInvoice
             // 
@@ -596,13 +629,44 @@
             // pnlButton
             // 
             this.pnlButton.ControlId = null;
+            this.pnlButton.Controls.Add(this.btnAddAsset);
+            this.pnlButton.Controls.Add(this.btnImport);
             this.pnlButton.Controls.Add(this.btnCancel);
             this.pnlButton.Controls.Add(this.btnApply);
             this.pnlButton.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlButton.Location = new System.Drawing.Point(12, 542);
             this.pnlButton.Name = "pnlButton";
-            this.pnlButton.Size = new System.Drawing.Size(398, 47);
+            this.pnlButton.Size = new System.Drawing.Size(397, 47);
             this.pnlButton.TabIndex = 30;
+            // 
+            // btnAddAsset
+            // 
+            this.btnAddAsset.BackColor = System.Drawing.Color.Lime;
+            this.btnAddAsset.ControlId = null;
+            this.btnAddAsset.Enabled = false;
+            this.btnAddAsset.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnAddAsset.Location = new System.Drawing.Point(199, 8);
+            this.btnAddAsset.Name = "btnAddAsset";
+            this.btnAddAsset.Size = new System.Drawing.Size(80, 33);
+            this.btnAddAsset.TabIndex = 34;
+            this.btnAddAsset.Text = "Add Asset";
+            this.btnAddAsset.UseVisualStyleBackColor = false;
+            this.btnAddAsset.Visible = false;
+            this.btnAddAsset.Click += new System.EventHandler(this.btnAddAsset_Click);
+            // 
+            // btnImport
+            // 
+            this.btnImport.BackColor = System.Drawing.SystemColors.Control;
+            this.btnImport.ControlId = null;
+            this.btnImport.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnImport.Location = new System.Drawing.Point(113, 8);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(80, 33);
+            this.btnImport.TabIndex = 33;
+            this.btnImport.Text = "Import";
+            this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Visible = false;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnCancel
             // 
@@ -610,11 +674,11 @@
             this.btnCancel.ControlId = null;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 9F);
-            this.btnCancel.Location = new System.Drawing.Point(239, 3);
+            this.btnCancel.Location = new System.Drawing.Point(285, 8);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(80, 33);
             this.btnCancel.TabIndex = 32;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Close";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -623,20 +687,160 @@
             this.btnApply.BackColor = System.Drawing.SystemColors.Control;
             this.btnApply.ControlId = null;
             this.btnApply.Font = new System.Drawing.Font("Arial", 9F);
-            this.btnApply.Location = new System.Drawing.Point(70, 3);
+            this.btnApply.Location = new System.Drawing.Point(27, 8);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(80, 33);
             this.btnApply.TabIndex = 31;
-            this.btnApply.Text = "Apply";
+            this.btnApply.Text = "Insert";
             this.btnApply.UseVisualStyleBackColor = false;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
-            // numAssetNo
+            // dgvAddAssetList
             // 
-            this.numAssetNo.Location = new System.Drawing.Point(6, 145);
-            this.numAssetNo.Name = "numAssetNo";
-            this.numAssetNo.Size = new System.Drawing.Size(73, 21);
-            this.numAssetNo.TabIndex = 14;
+            this.dgvAddAssetList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAddAssetList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAddAssetList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAddAssetList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.asset_cd,
+            this.asset_no,
+            this.asset_name,
+            this.asset_serial,
+            this.asset_model,
+            this.asset_life,
+            this.acquistion_cost,
+            this.acquistion_date,
+            this.asset_invoice,
+            this.asset_po,
+            this.asset_type,
+            this.factory_cd,
+            this.asset_supplier,
+            this.label_status});
+            this.dgvAddAssetList.ControlId = null;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAddAssetList.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAddAssetList.Location = new System.Drawing.Point(415, 113);
+            this.dgvAddAssetList.Name = "dgvAddAssetList";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAddAssetList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAddAssetList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAddAssetList.Size = new System.Drawing.Size(340, 476);
+            this.dgvAddAssetList.TabIndex = 31;
+            this.dgvAddAssetList.Visible = false;
+            this.dgvAddAssetList.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvAddAssetList_UserDeletingRow);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.tsRowCount});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 594);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(767, 22);
+            this.statusStrip1.TabIndex = 32;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(716, 17);
+            this.toolStripStatusLabel1.Spring = true;
+            // 
+            // tsRowCount
+            // 
+            this.tsRowCount.Name = "tsRowCount";
+            this.tsRowCount.Size = new System.Drawing.Size(36, 17);
+            this.tsRowCount.Text = "None";
+            // 
+            // asset_cd
+            // 
+            this.asset_cd.HeaderText = "Asset Code";
+            this.asset_cd.Name = "asset_cd";
+            // 
+            // asset_no
+            // 
+            this.asset_no.HeaderText = "No";
+            this.asset_no.Name = "asset_no";
+            // 
+            // asset_name
+            // 
+            this.asset_name.HeaderText = "Asset Name";
+            this.asset_name.Name = "asset_name";
+            // 
+            // asset_serial
+            // 
+            this.asset_serial.HeaderText = "Asset Serial";
+            this.asset_serial.Name = "asset_serial";
+            // 
+            // asset_model
+            // 
+            this.asset_model.HeaderText = "Asset Model";
+            this.asset_model.Name = "asset_model";
+            // 
+            // asset_life
+            // 
+            this.asset_life.HeaderText = "Life";
+            this.asset_life.Name = "asset_life";
+            // 
+            // acquistion_cost
+            // 
+            this.acquistion_cost.HeaderText = "Acquisition Cost";
+            this.acquistion_cost.Name = "acquistion_cost";
+            // 
+            // acquistion_date
+            // 
+            this.acquistion_date.HeaderText = "Acquisition Date";
+            this.acquistion_date.Name = "acquistion_date";
+            // 
+            // asset_invoice
+            // 
+            this.asset_invoice.HeaderText = "Invoice";
+            this.asset_invoice.Name = "asset_invoice";
+            // 
+            // asset_po
+            // 
+            this.asset_po.HeaderText = "P/O";
+            this.asset_po.Name = "asset_po";
+            // 
+            // asset_type
+            // 
+            this.asset_type.HeaderText = "Type";
+            this.asset_type.Name = "asset_type";
+            // 
+            // factory_cd
+            // 
+            this.factory_cd.HeaderText = "Factory";
+            this.factory_cd.Name = "factory_cd";
+            // 
+            // asset_supplier
+            // 
+            this.asset_supplier.HeaderText = "Supplier";
+            this.asset_supplier.Name = "asset_supplier";
+            // 
+            // label_status
+            // 
+            this.label_status.HeaderText = "Label";
+            this.label_status.Name = "label_status";
             // 
             // UpdateAssetForm
             // 
@@ -644,7 +848,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(422, 595);
+            this.ClientSize = new System.Drawing.Size(767, 616);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.dgvAddAssetList);
             this.Controls.Add(this.pnlButton);
             this.Controls.Add(this.grUpdate);
             this.Name = "UpdateAssetForm";
@@ -654,12 +860,18 @@
             this.Load += new System.EventHandler(this.UpdateAssetForm_Load);
             this.Controls.SetChildIndex(this.grUpdate, 0);
             this.Controls.SetChildIndex(this.pnlButton, 0);
+            this.Controls.SetChildIndex(this.dgvAddAssetList, 0);
+            this.Controls.SetChildIndex(this.statusStrip1, 0);
             this.grUpdate.ResumeLayout(false);
             this.grUpdate.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numAssetNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLife)).EndInit();
             this.pnlButton.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numAssetNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddAssetList)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -712,5 +924,25 @@
         private Framework.LabelCommon labelCommon8;
         private Framework.ComboBoxCommon cmbAssetType;
         private System.Windows.Forms.NumericUpDown numAssetNo;
+        private Framework.DataGridViewCommon dgvAddAssetList;
+        private Framework.ButtonCommon btnAddAsset;
+        private Framework.ButtonCommon btnImport;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel tsRowCount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asset_cd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asset_no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asset_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asset_serial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asset_model;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asset_life;
+        private System.Windows.Forms.DataGridViewTextBoxColumn acquistion_cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn acquistion_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asset_invoice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asset_po;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asset_type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn factory_cd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asset_supplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn label_status;
     }
 }

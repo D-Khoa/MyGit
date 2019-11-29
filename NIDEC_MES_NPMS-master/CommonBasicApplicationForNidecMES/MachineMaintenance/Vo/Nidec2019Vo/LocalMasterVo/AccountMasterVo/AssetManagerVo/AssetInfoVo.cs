@@ -20,6 +20,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo.Nidec2019Vo
         public string factory_cd { get; set; }
         public string asset_supplier { get; set; }
         public string label_status { get; set; }
-        //public List<ValueObject> AssetInfoList = new List<ValueObject>();
+        public List<ValueObject> AssetInfoList = new List<ValueObject>();
     }
 }
