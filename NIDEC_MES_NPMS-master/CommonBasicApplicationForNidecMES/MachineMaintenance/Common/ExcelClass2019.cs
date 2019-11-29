@@ -7,26 +7,21 @@ using cExcel = Microsoft.Office.Interop.Excel;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
 {
-    public class ExcelClass2019
+    public static class ExcelClass2019
     {
-        public string filename { get; set; }
-        cExcel.Application app;
-        cExcel.Workbook wb;
-        cExcel.Worksheet ws;
+        public static string FileName { get; set; }
+        static cExcel.Application app;
+        static cExcel.Workbook wb;
+        static cExcel.Worksheet ws;
 
-        public ExcelClass2019(string inputfilename)
-        {
-            filename = inputfilename;
-        }
-
-        public void CreateWorkBook()
+        public static void CreateExcelWorkBook(this string filename)
         {
             app = new cExcel.Application();
             wb = app.Workbooks.Add();
             ws = app.ActiveSheet;
         }
 
-        public bool OpenWorkBook(string fileopen)
+        public static bool OpenExcelWorkBook(this string fileopen)
         {
             if (File.Exists(fileopen))
             {
@@ -38,23 +33,19 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
             else
             {
                 return false;
-                throw new Exception("File not exist!");
+                throw new Exception("File not exist or isn't Excel Document!");
             }
         }
 
-        public void AddColumns(string[] cols)
+        public static void AddColumnsForExcel(string[] cols)
         {
-            //for (int i = 0; i < cols.Count(); i++)
-            //{
-            //    ws.Cells[1, i] = cols[i];
-            //}
             cols.ToList().ForEach(s =>
             {
                 ws.Cells[1, cols.ToList().IndexOf(s) + 1] = s;
             });
         }
 
-        public void AddColumns(List<string> cols)
+        public static void AddColumnsForExcel(this List<string> cols)
         {
             cols.ForEach(s =>
             {
@@ -62,7 +53,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
             });
         }
 
-        public void AddRow(string[] row)
+        public static void AddRowToExcel(string[] row)
         {
             cExcel.Range rng = ws.UsedRange;
             int index = rng.EntireRow.Count + 1;
@@ -72,7 +63,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
             }
         }
 
-        public void AddMultiRow(List<string[]> row)
+        public static void AddMultiRowToExcel(this List<string[]> row)
         {
             cExcel.Range rng = ws.UsedRange;
             int index = rng.EntireRow.Count + 1;
@@ -83,13 +74,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
             }
         }
 
-        public void AddDatatable(DataTable dt)
+        public static void DatatableToExcel(this DataTable dt)
         {
             cExcel.Range rng = ws.UsedRange;
             int index = rng.EntireRow.Count + 1;
             List<string> query = (from col in dt.Columns.Cast<DataColumn>()
                                   select col.ColumnName).ToList();
-            AddColumns(query);
+            query.AddColumnsForExcel();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 for (int j = 0; j < dt.Columns.Count; j++)
@@ -99,9 +90,31 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
             }
         }
 
-        public void SaveAndExit()
+        public static void ImportTable(this DataTable table, bool header)
         {
-            //app.Visible = true;
+            cExcel.Range rng = ws.UsedRange;
+            int rowindex = rng.EntireRow.Count;
+            int colindex = rng.EntireColumn.Count;
+            int startRow = 1;
+            for (int col = 1; col <= colindex; col++)
+            {
+                table.Columns.Add(ws.Cells[1, col]);
+            }
+            if (header) startRow = 2;
+            for (int row = startRow; row <= rowindex; row++)
+            {
+                DataRow dr = table.NewRow();
+                for (int col = 1; col <= colindex; col++)
+                {
+                    dr[col] = ws.Cells[row, col];
+                }
+                table.Rows.Add(dr);
+            }
+        }
+
+        public static void SaveAndExit(this string filename, bool show)
+        {
+            app.Visible = show;
             if (File.Exists(filename))
                 app.DisplayAlerts = false;
             wb.SaveAs(filename, cExcel.XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, false, false, cExcel.XlSaveAsAccessMode.xlNoChange, cExcel.XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);

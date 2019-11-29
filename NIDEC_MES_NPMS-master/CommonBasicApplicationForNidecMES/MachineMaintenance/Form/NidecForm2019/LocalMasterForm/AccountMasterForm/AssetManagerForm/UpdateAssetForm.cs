@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections.Generic;
 using Com.Nidec.Mes.Framework;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm.Nidec2019Cbm;
@@ -18,6 +13,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
     {
         AssetInfoVo voInfo = new AssetInfoVo();
         List<AssetInfoVo> infoList = new List<AssetInfoVo>();
+        DataTable dataImport = new DataTable();
         bool checkAddFrm = true;
         string label;
 
@@ -165,18 +161,32 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "CAUTION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openF = new OpenFileDialog();
-            openF.Filter = "Excel Documents (*.xlsx)|*.xlsx|Excel 97-2003 Documents (*.xls)|*.xls|All file (*.*)|*.*";
-            if (openF.ShowDialog() == DialogResult.OK)
+            try
             {
-                ExcelClass2019 excel = new ExcelClass2019(openF.FileName);
-                excel.OpenWorkBook(openF.FileName);
+                OpenFileDialog openF = new OpenFileDialog();
+                openF.Filter = "Excel Documents (*.xlsx)|*.xlsx|Excel 97-2003 Documents (*.xls)|*.xls|All file (*.*)|*.*";
+                if (openF.ShowDialog() == DialogResult.OK)
+                {
+                    if (openF.FileName.OpenExcelWorkBook())
+                    {
+                        dataImport.ImportTable(true);
+                    }
+                }
+                foreach (DataRow dr in dataImport.Rows)
+                {
+                    dgvAddAssetList.Rows.Add(dr);
+                }
+                dgvAddAssetList.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "CAUTION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -194,10 +204,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "CAUTION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             infoList.Clear();
-            dgvAddAssetList.DataSource = null;
+            dgvAddAssetList.Rows.Clear();
             dgvAddAssetList.Refresh();
         }
 
@@ -208,16 +218,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
 
         private void UpdateAssetForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Do you want exit anyway?", "Caution", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+            if (MessageBox.Show("Do you want exit anyway?", "CAUTION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 e.Cancel = true;
         }
 
         private void txtAcqCost_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && (e.KeyChar != '.'))
             {
-                e.Handled = false;
-                MessageBox.Show("Please input numbers only!");
+                e.Handled = true;
+                MessageBox.Show("Please input numbers only!", "CAUTION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

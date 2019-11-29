@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.txtAssetCode = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.grUpdate = new Com.Nidec.Mes.Framework.GroupBoxCommon();
@@ -81,9 +81,6 @@
             this.btnCancel = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.btnApply = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.dgvAddAssetList = new Com.Nidec.Mes.Framework.DataGridViewCommon();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tsRowCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.asset_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asset_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asset_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,6 +95,9 @@
             this.factory_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asset_supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsRowCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.grUpdate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAssetNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLife)).BeginInit();
@@ -267,10 +267,10 @@
             this.rbtnCntPaste.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtnCntPaste.Location = new System.Drawing.Point(210, 394);
             this.rbtnCntPaste.Name = "rbtnCntPaste";
-            this.rbtnCntPaste.Size = new System.Drawing.Size(107, 19);
+            this.rbtnCntPaste.Size = new System.Drawing.Size(87, 19);
             this.rbtnCntPaste.TabIndex = 26;
             this.rbtnCntPaste.TabStop = true;
-            this.rbtnCntPaste.Text = "Can\'t not paste";
+            this.rbtnCntPaste.Text = "Can\'t paste";
             this.rbtnCntPaste.UseVisualStyleBackColor = false;
             // 
             // rbtnNotPaste
@@ -700,14 +700,14 @@
             this.dgvAddAssetList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAddAssetList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAddAssetList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAddAssetList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAddAssetList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.asset_cd,
@@ -725,52 +725,29 @@
             this.asset_supplier,
             this.label_status});
             this.dgvAddAssetList.ControlId = null;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAddAssetList.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAddAssetList.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAddAssetList.Location = new System.Drawing.Point(415, 113);
             this.dgvAddAssetList.Name = "dgvAddAssetList";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAddAssetList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAddAssetList.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvAddAssetList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAddAssetList.Size = new System.Drawing.Size(340, 476);
             this.dgvAddAssetList.TabIndex = 31;
             this.dgvAddAssetList.Visible = false;
             this.dgvAddAssetList.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvAddAssetList_UserDeletingRow);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.tsRowCount});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 594);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(767, 22);
-            this.statusStrip1.TabIndex = 32;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(716, 17);
-            this.toolStripStatusLabel1.Spring = true;
-            // 
-            // tsRowCount
-            // 
-            this.tsRowCount.Name = "tsRowCount";
-            this.tsRowCount.Size = new System.Drawing.Size(36, 17);
-            this.tsRowCount.Text = "None";
             // 
             // asset_cd
             // 
@@ -841,6 +818,29 @@
             // 
             this.label_status.HeaderText = "Label";
             this.label_status.Name = "label_status";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.tsRowCount});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 594);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(767, 22);
+            this.statusStrip1.TabIndex = 32;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(716, 17);
+            this.toolStripStatusLabel1.Spring = true;
+            // 
+            // tsRowCount
+            // 
+            this.tsRowCount.Name = "tsRowCount";
+            this.tsRowCount.Size = new System.Drawing.Size(36, 17);
+            this.tsRowCount.Text = "None";
             // 
             // UpdateAssetForm
             // 

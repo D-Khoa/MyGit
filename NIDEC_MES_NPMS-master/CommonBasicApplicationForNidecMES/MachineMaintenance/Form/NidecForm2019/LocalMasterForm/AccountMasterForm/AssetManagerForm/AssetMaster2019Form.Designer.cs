@@ -396,6 +396,7 @@
             this.dgvAssetGrid.TabIndex = 6;
             this.dgvAssetGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAssetGrid_CellClick);
             this.dgvAssetGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAssetGrid_CellDoubleClick);
+            this.dgvAssetGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvAssetGrid_CellFormatting);
             // 
             // AssetMaster2019Form
             // 

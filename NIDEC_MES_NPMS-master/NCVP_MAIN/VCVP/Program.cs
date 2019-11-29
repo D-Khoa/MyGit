@@ -25,11 +25,12 @@ namespace Com.Nidec.Mes.VCVP
                 {
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
-                    Application.Run(new LoginForm(
-                   
-                                                  Assembly.GetExecutingAssembly().ManifestModule.Name,
-                                                  Properties.Settings.Default.ApplicationTypeName,
-                                                  Assembly.GetExecutingAssembly().GetName().Name, true));
+                    //Application.Run(new LoginForm(
+
+                    //                              Assembly.GetExecutingAssembly().ManifestModule.Name,
+                    //                              Properties.Settings.Default.ApplicationTypeName,
+                    //                              Assembly.GetExecutingAssembly().GetName().Name, true));
+                    Application.Run(new FormMain2019());
                 }
             }
             catch(Exception EX)

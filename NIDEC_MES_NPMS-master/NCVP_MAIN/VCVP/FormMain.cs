@@ -1,9 +1,9 @@
 ﻿using Com.Nidec.Mes.GlobalMasterMaintenance;
 using System;
 using Com.Nidec.Mes.Framework.Login;
+using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance;
 //using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.IPQCForm;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.AccountCodeForm;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.Asset;
@@ -15,20 +15,14 @@ using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.WareHouse
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.DetailPositionForm;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.Units;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.InventoryForm;
-using Com.Nidec.Mes.Framework;
 
 namespace Com.Nidec.Mes.VCVP
 {
     public partial class FormMain : GlobalMasterMaintenance.FormCommonNCVP
     {
-        bool check1619 = false;
         public FormMain()
         {
             InitializeComponent();
-            if (UserData.GetUserData().UserCode == "1619")
-            {
-                check1619 = true;
-            }
         }
         /// <summary>
         /// Main form loading
@@ -40,7 +34,6 @@ namespace Com.Nidec.Mes.VCVP
             SystemMaster_gpb.Visible = false;
             NcvpMaster_gpb.Visible = false;
             NCVP_Function_gr.Visible = false;
-            LocalMaster2019_btn.Visible = check1619;
 
             //if (UserData.GetUserData().UserCode == "admin")
             //{
@@ -65,7 +58,7 @@ namespace Com.Nidec.Mes.VCVP
         /// <param name="e"></param>
         private void NcvpMaster_btn_Click(object sender, EventArgs e)
         {
-            NcvpMaster_gpb.Visible = true;
+            NcvpMaster_btn.Visible = true;
             SystemMaster_gpb.Visible = false;
             NCVP_Function_gr.Visible = false;
         }
@@ -497,25 +490,10 @@ namespace Com.Nidec.Mes.VCVP
             dvf.ShowDialog();
         }
 
-        private void LocalMaster2019_btn_Click(object sender, EventArgs e)
+        private void buttonCommon1_Click_2(object sender, EventArgs e)
         {
-            SystemMaster_gpb.Visible = false;
-            NcvpMaster_gpb.Visible = false;
-            NCVP_Function_gr.Visible = false;
-            LocalMaster2019_pnl.Visible = check1619;
-        }
-
-        private void AssetManager2019_btn_Click(object sender, EventArgs e)
-        {
-            AssetMaster2019Form ass = new AssetMaster2019Form();
-            this.Hide();
-            ass.ShowDialog();
-            this.Show();
-        }
-
-        private void Out_btn_Click(object sender, EventArgs e)
-        {
-            LocalMaster2019_pnl.Visible = false;
+            AssetMaster2019Form asf = new AssetMaster2019Form();
+            asf.ShowDialog();
         }
     }
 }
