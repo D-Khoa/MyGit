@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.NcvpMaster_gpb = new Com.Nidec.Mes.Framework.GroupBoxCommon();
-            this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.Master_tab = new Com.Nidec.Mes.Framework.TabControlCommon();
             this.Master = new System.Windows.Forms.TabPage();
             this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
@@ -74,6 +73,7 @@
             this.ovenrangetemp_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.rateng_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.SystemMaster_gpb = new Com.Nidec.Mes.Framework.GroupBoxCommon();
             this.PlaceMaster_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.RoleMaster_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
@@ -97,7 +97,6 @@
             this.production_controller_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.MachineWorkingStatus_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.buttonCommon1 = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.InvertoryCheck_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.WarehouseManagement_New_frm = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.account_equipments_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
@@ -155,27 +154,12 @@
             this.NcvpMaster_gpb.Controls.Add(this.Master_tab);
             this.NcvpMaster_gpb.Controls.Add(this.labelCommon1);
             this.NcvpMaster_gpb.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.NcvpMaster_gpb.Location = new System.Drawing.Point(0, 0);
+            this.NcvpMaster_gpb.Location = new System.Drawing.Point(170, 106);
             this.NcvpMaster_gpb.Name = "NcvpMaster_gpb";
             this.NcvpMaster_gpb.Size = new System.Drawing.Size(697, 572);
             this.NcvpMaster_gpb.TabIndex = 52;
             this.NcvpMaster_gpb.TabStop = false;
             this.NcvpMaster_gpb.Text = "Local Master";
-            // 
-            // labelCommon1
-            // 
-            this.labelCommon1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelCommon1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.labelCommon1.ControlId = null;
-            this.labelCommon1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.labelCommon1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelCommon1.Location = new System.Drawing.Point(6, 25);
-            this.labelCommon1.Name = "labelCommon1";
-            this.labelCommon1.Size = new System.Drawing.Size(691, 24);
-            this.labelCommon1.TabIndex = 46;
-            this.labelCommon1.Text = "Local Master";
-            this.labelCommon1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Master_tab
             // 
@@ -776,11 +760,24 @@
             this.rateng_btn.UseVisualStyleBackColor = false;
             this.rateng_btn.Click += new System.EventHandler(this.rateng_btn_Click);
             // 
+            // labelCommon1
+            // 
+            this.labelCommon1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelCommon1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.labelCommon1.ControlId = null;
+            this.labelCommon1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.labelCommon1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelCommon1.Location = new System.Drawing.Point(6, 25);
+            this.labelCommon1.Name = "labelCommon1";
+            this.labelCommon1.Size = new System.Drawing.Size(691, 24);
+            this.labelCommon1.TabIndex = 46;
+            this.labelCommon1.Text = "Local Master";
+            this.labelCommon1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // SystemMaster_gpb
             // 
             this.SystemMaster_gpb.ControlId = null;
-            this.SystemMaster_gpb.Controls.Add(this.NCVP_Function_gr);
-            this.SystemMaster_gpb.Controls.Add(this.NcvpMaster_gpb);
             this.SystemMaster_gpb.Controls.Add(this.PlaceMaster_lbl);
             this.SystemMaster_gpb.Controls.Add(this.RoleMaster_lbl);
             this.SystemMaster_gpb.Controls.Add(this.UserMaster_lbl);
@@ -1107,7 +1104,6 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.buttonCommon1);
             this.tabPage3.Controls.Add(this.InvertoryCheck_btn);
             this.tabPage3.Controls.Add(this.WarehouseManagement_New_frm);
             this.tabPage3.Controls.Add(this.account_equipments_btn);
@@ -1118,19 +1114,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Account - Equipments";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // buttonCommon1
-            // 
-            this.buttonCommon1.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonCommon1.ControlId = null;
-            this.buttonCommon1.Font = new System.Drawing.Font("Arial", 9F);
-            this.buttonCommon1.Location = new System.Drawing.Point(234, 231);
-            this.buttonCommon1.Name = "buttonCommon1";
-            this.buttonCommon1.Size = new System.Drawing.Size(80, 33);
-            this.buttonCommon1.TabIndex = 50;
-            this.buttonCommon1.Text = "buttonCommon1";
-            this.buttonCommon1.UseVisualStyleBackColor = false;
-            this.buttonCommon1.Click += new System.EventHandler(this.buttonCommon1_Click_2);
             // 
             // InvertoryCheck_btn
             // 
@@ -1350,11 +1333,10 @@
             // NCVP_Function_gr
             // 
             this.NCVP_Function_gr.ControlId = null;
-            //this.NCVP_Function_gr.Controls.Add(this.NcvpMaster_gpb);
             this.NCVP_Function_gr.Controls.Add(this.labelCommon2);
             this.NCVP_Function_gr.Controls.Add(this.tabControlCommon1);
             this.NCVP_Function_gr.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.NCVP_Function_gr.Location = new System.Drawing.Point(1, 0);
+            this.NCVP_Function_gr.Location = new System.Drawing.Point(170, 106);
             this.NCVP_Function_gr.Name = "NCVP_Function_gr";
             this.NCVP_Function_gr.Size = new System.Drawing.Size(697, 572);
             this.NCVP_Function_gr.TabIndex = 51;
@@ -1466,16 +1448,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(867, 679);
             this.ControlId = "frm001";
-            this.Controls.Add(this.Menu_gpb);
             this.Controls.Add(this.SystemMaster_gpb);
+            this.Controls.Add(this.Menu_gpb);
+            this.Controls.Add(this.NCVP_Function_gr);
+            this.Controls.Add(this.NcvpMaster_gpb);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Text = "NCVP Master Maintance";
             this.TitleText = "NCVP Master Maintance";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.Controls.SetChildIndex(this.SystemMaster_gpb, 0);
+            this.Controls.SetChildIndex(this.NcvpMaster_gpb, 0);
+            this.Controls.SetChildIndex(this.NCVP_Function_gr, 0);
             this.Controls.SetChildIndex(this.Menu_gpb, 0);
+            this.Controls.SetChildIndex(this.SystemMaster_gpb, 0);
             this.NcvpMaster_gpb.ResumeLayout(false);
             this.Master_tab.ResumeLayout(false);
             this.Master.ResumeLayout(false);
@@ -1598,6 +1584,5 @@
         private Framework.ButtonCommon btn_shippingcheck;
         private System.Windows.Forms.TabPage tabPage6;
         private Framework.ButtonCommon btnDataViewer;
-        private Framework.ButtonCommon buttonCommon1;
     }
 }

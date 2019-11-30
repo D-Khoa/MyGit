@@ -41,6 +41,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
                 string[] arrListStr = str.Split(',');
                 txtAssetCode.Text = arrListStr[0];
             }
+            vo.label_status = "'1'";
+            if (chkPasted.Checked)
+                vo.label_status += ",'Pasted'";
+            if (chkNotPaste.Checked)
+                vo.label_status += ",'Not Paste'";
+            if (chkCantPaste.Checked)
+                vo.label_status += ",'Cant Paste'";
             AssetMaster2019Vo searchVo = (AssetMaster2019Vo)DefaultCbmInvoker
                                          .Invoke(new AssetMaster2019Cbm(), new AssetMaster2019Vo()
                                          {
@@ -49,7 +56,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
                                              asset_type = cmbAssetType.Text,
                                              asset_life = cmbLife.Text,
                                              checkDateFrom = dtpDateFrom.Checked,
-                                             checkDateTo = dtpDateTo.Checked
+                                             checkDateTo = dtpDateTo.Checked,
+                                             label_status = vo.label_status
                                          });
             vo.asset_data = searchVo.asset_data;
             updateGrid();
@@ -186,6 +194,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AssetMaster2019Form_Resize(object sender, EventArgs e)
+        {
+            grbInfo.Location = new Point((this.Width / 2) - (grbInfo.Width / 2), grbInfo.Location.Y);
+            grbButtons.Location = new Point((this.Width / 2) - (grbButtons.Width / 2), grbButtons.Location.Y);
         }
     }
 }

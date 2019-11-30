@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Com.Nidec.Mes.Framework;
 using System.Data;
+using Com.Nidec.Mes.Framework;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo.Nidec2019Vo
 {
@@ -14,11 +10,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo.Nidec2019Vo
         public string asset_name { get; set; }
         public string asset_life { get; set; }
         public string asset_type { get; set; }
+        public string label_status { get; set; }
         public DateTime dateFrom { get; set; }
         public bool checkDateFrom { get; set; }
         public DateTime dateTo { get; set; }
         public bool checkDateTo { get; set; }
-        public string[] data_row { get; set; }
         public DataTable asset_data { get; set; }
         public int executeInt { get; set; }
     }

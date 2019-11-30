@@ -28,6 +28,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
                 sql.Append("and acquistion_date > '").Append(inVo.dateFrom.ToString("yyyy-MM-dd")).Append("' ");
             if (inVo.checkDateTo)
                 sql.Append("and acquistion_date < '").Append(inVo.dateTo.ToString("yyyy-MM-dd")).Append("' ");
+            if (inVo.label_status.Length > 3)
+                sql.Append("and label_status in (").Append(inVo.label_status).Append(") ");
             sql.Append("order by asset_cd");
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
             sql.Clear();

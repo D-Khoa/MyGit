@@ -118,7 +118,7 @@ namespace Com.Nidec.Mes.VCVP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-       
+
         /// <summary>
         /// Change Password
         /// </summary>
@@ -378,7 +378,7 @@ namespace Com.Nidec.Mes.VCVP
 
         private void Unit_btn_Click(object sender, EventArgs e)
         {
-            UnitForm unitform =new  UnitForm();
+            UnitForm unitform = new UnitForm();
             unitform.ShowDialog();
         }
 
@@ -405,7 +405,7 @@ namespace Com.Nidec.Mes.VCVP
         {
             InvertoryTimeForm invertimeform = new InvertoryTimeForm();
             invertimeform.ShowDialog();
-                
+
         }
 
         private void InvertoryCheck_btn_Click(object sender, EventArgs e)
@@ -488,12 +488,6 @@ namespace Com.Nidec.Mes.VCVP
         {
             PQMDataViewerForm dvf = new PQMDataViewerForm();
             dvf.ShowDialog();
-        }
-
-        private void buttonCommon1_Click_2(object sender, EventArgs e)
-        {
-            AssetMaster2019Form asf = new AssetMaster2019Form();
-            asf.ShowDialog();
         }
     }
 }
