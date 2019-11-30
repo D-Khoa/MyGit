@@ -25,7 +25,7 @@ namespace Com.Nidec.Mes.VCVP.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Com.Nidec.Mes.VCVP.FormMain")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Com.Nidec.Mes.VCVP.FormMain2019")]
         public string ApplicationTypeName {
             get {
                 return ((string)(this["ApplicationTypeName"]));

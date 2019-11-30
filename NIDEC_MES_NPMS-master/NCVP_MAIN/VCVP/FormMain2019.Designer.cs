@@ -39,6 +39,23 @@
             this.SystemMaster_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.MainMaster_grt = new Com.Nidec.Mes.Framework.TabControlCommon();
             this.SystemMaster_tab = new System.Windows.Forms.TabPage();
+            this.SystemMaster_grb = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.panelCommon3 = new Com.Nidec.Mes.Framework.PanelCommon();
+            this.Building_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.Location_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.labelCommon3 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.panelCommon2 = new Com.Nidec.Mes.Framework.PanelCommon();
+            this.UserRole_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.AuthController_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.RoleAuth_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.Role_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.labelCommon2 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.panelCommon1 = new Com.Nidec.Mes.Framework.PanelCommon();
+            this.UserFactory_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.Language_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.Factory_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.RegisterLocalUser_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.LocalMaster_tab = new System.Windows.Forms.TabPage();
             this.LocalFunctions_grt = new Com.Nidec.Mes.Framework.TabControlCommon();
             this.Account_tab = new System.Windows.Forms.TabPage();
@@ -47,35 +64,18 @@
             this.NCVP_tab = new System.Windows.Forms.TabPage();
             this.NCVC_tab = new System.Windows.Forms.TabPage();
             this.NSTV_tab = new System.Windows.Forms.TabPage();
-            this.SystemMaster_grb = new Com.Nidec.Mes.Framework.GroupBoxCommon();
-            this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.panelCommon1 = new Com.Nidec.Mes.Framework.PanelCommon();
-            this.RegisterLocalUser_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.Factory_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.Language_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.UserFactory_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.labelCommon2 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.panelCommon2 = new Com.Nidec.Mes.Framework.PanelCommon();
-            this.UserRole_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.AuthController_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.RoleAuth_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.Role_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.panelCommon3 = new Com.Nidec.Mes.Framework.PanelCommon();
-            this.Building_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.Location_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.labelCommon3 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.Menu_grb.SuspendLayout();
             this.Application_grb.SuspendLayout();
             this.MasterMaintance_grb.SuspendLayout();
             this.MainMaster_grt.SuspendLayout();
             this.SystemMaster_tab.SuspendLayout();
+            this.SystemMaster_grb.SuspendLayout();
+            this.panelCommon3.SuspendLayout();
+            this.panelCommon2.SuspendLayout();
+            this.panelCommon1.SuspendLayout();
             this.LocalMaster_tab.SuspendLayout();
             this.LocalFunctions_grt.SuspendLayout();
             this.Account_tab.SuspendLayout();
-            this.SystemMaster_grb.SuspendLayout();
-            this.panelCommon1.SuspendLayout();
-            this.panelCommon2.SuspendLayout();
-            this.panelCommon3.SuspendLayout();
             this.SuspendLayout();
             // 
             // Menu_grb
@@ -98,7 +98,7 @@
             // 
             this.ChangePass_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ChangePass_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.ChangePass_btn.ControlId = null;
+            this.ChangePass_btn.ControlId = "ffob012";
             this.ChangePass_btn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ChangePass_btn.Font = new System.Drawing.Font("Arial", 9F);
             this.ChangePass_btn.Location = new System.Drawing.Point(6, 305);
@@ -236,91 +236,6 @@
             this.SystemMaster_tab.Size = new System.Drawing.Size(684, 316);
             this.SystemMaster_tab.TabIndex = 0;
             // 
-            // LocalMaster_tab
-            // 
-            this.LocalMaster_tab.BackColor = System.Drawing.SystemColors.Control;
-            this.LocalMaster_tab.Controls.Add(this.LocalFunctions_grt);
-            this.LocalMaster_tab.Location = new System.Drawing.Point(4, 24);
-            this.LocalMaster_tab.Name = "LocalMaster_tab";
-            this.LocalMaster_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.LocalMaster_tab.Size = new System.Drawing.Size(684, 316);
-            this.LocalMaster_tab.TabIndex = 1;
-            // 
-            // LocalFunctions_grt
-            // 
-            this.LocalFunctions_grt.ControlId = null;
-            this.LocalFunctions_grt.Controls.Add(this.Account_tab);
-            this.LocalFunctions_grt.Controls.Add(this.tabPage2);
-            this.LocalFunctions_grt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LocalFunctions_grt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LocalFunctions_grt.Location = new System.Drawing.Point(3, 3);
-            this.LocalFunctions_grt.Name = "LocalFunctions_grt";
-            this.LocalFunctions_grt.SelectedIndex = 0;
-            this.LocalFunctions_grt.Size = new System.Drawing.Size(678, 310);
-            this.LocalFunctions_grt.TabIndex = 0;
-            // 
-            // Account_tab
-            // 
-            this.Account_tab.BackColor = System.Drawing.SystemColors.Control;
-            this.Account_tab.Controls.Add(this.AssetMaster_btn);
-            this.Account_tab.Location = new System.Drawing.Point(4, 24);
-            this.Account_tab.Name = "Account_tab";
-            this.Account_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.Account_tab.Size = new System.Drawing.Size(670, 282);
-            this.Account_tab.TabIndex = 0;
-            this.Account_tab.Text = "Account";
-            // 
-            // AssetMaster_btn
-            // 
-            this.AssetMaster_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.AssetMaster_btn.ControlId = null;
-            this.AssetMaster_btn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.AssetMaster_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.AssetMaster_btn.Location = new System.Drawing.Point(6, 6);
-            this.AssetMaster_btn.Name = "AssetMaster_btn";
-            this.AssetMaster_btn.Size = new System.Drawing.Size(92, 33);
-            this.AssetMaster_btn.TabIndex = 0;
-            this.AssetMaster_btn.Text = "Asset Master";
-            this.AssetMaster_btn.UseVisualStyleBackColor = false;
-            this.AssetMaster_btn.Click += new System.EventHandler(this.AssetMaster_btn_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(670, 294);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            // 
-            // NCVP_tab
-            // 
-            this.NCVP_tab.BackColor = System.Drawing.SystemColors.Control;
-            this.NCVP_tab.Location = new System.Drawing.Point(4, 24);
-            this.NCVP_tab.Name = "NCVP_tab";
-            this.NCVP_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.NCVP_tab.Size = new System.Drawing.Size(684, 316);
-            this.NCVP_tab.TabIndex = 2;
-            // 
-            // NCVC_tab
-            // 
-            this.NCVC_tab.BackColor = System.Drawing.SystemColors.Control;
-            this.NCVC_tab.Location = new System.Drawing.Point(4, 24);
-            this.NCVC_tab.Name = "NCVC_tab";
-            this.NCVC_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.NCVC_tab.Size = new System.Drawing.Size(684, 316);
-            this.NCVC_tab.TabIndex = 3;
-            // 
-            // NSTV_tab
-            // 
-            this.NSTV_tab.BackColor = System.Drawing.SystemColors.Control;
-            this.NSTV_tab.Location = new System.Drawing.Point(4, 24);
-            this.NSTV_tab.Name = "NSTV_tab";
-            this.NSTV_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.NSTV_tab.Size = new System.Drawing.Size(684, 316);
-            this.NSTV_tab.TabIndex = 4;
-            // 
             // SystemMaster_grb
             // 
             this.SystemMaster_grb.ControlId = null;
@@ -339,97 +254,56 @@
             this.SystemMaster_grb.TabStop = false;
             this.SystemMaster_grb.Text = "System Master";
             // 
-            // labelCommon1
+            // panelCommon3
             // 
-            this.labelCommon1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.labelCommon1.ControlId = null;
-            this.labelCommon1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelCommon1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon1.Location = new System.Drawing.Point(3, 28);
-            this.labelCommon1.Name = "labelCommon1";
-            this.labelCommon1.Size = new System.Drawing.Size(672, 23);
-            this.labelCommon1.TabIndex = 0;
-            this.labelCommon1.Text = "User Master";
-            this.labelCommon1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panelCommon3.ControlId = null;
+            this.panelCommon3.Controls.Add(this.Building_btn);
+            this.panelCommon3.Controls.Add(this.Location_btn);
+            this.panelCommon3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelCommon3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelCommon3.Location = new System.Drawing.Point(3, 225);
+            this.panelCommon3.Name = "panelCommon3";
+            this.panelCommon3.Size = new System.Drawing.Size(672, 64);
+            this.panelCommon3.TabIndex = 5;
             // 
-            // panelCommon1
+            // Building_btn
             // 
-            this.panelCommon1.ControlId = null;
-            this.panelCommon1.Controls.Add(this.UserFactory_btn);
-            this.panelCommon1.Controls.Add(this.Language_btn);
-            this.panelCommon1.Controls.Add(this.Factory_btn);
-            this.panelCommon1.Controls.Add(this.RegisterLocalUser_btn);
-            this.panelCommon1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCommon1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelCommon1.Location = new System.Drawing.Point(3, 51);
-            this.panelCommon1.Name = "panelCommon1";
-            this.panelCommon1.Size = new System.Drawing.Size(672, 64);
-            this.panelCommon1.TabIndex = 1;
+            this.Building_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.Building_btn.ControlId = "ffob011";
+            this.Building_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.Building_btn.Location = new System.Drawing.Point(180, 14);
+            this.Building_btn.Name = "Building_btn";
+            this.Building_btn.Size = new System.Drawing.Size(140, 33);
+            this.Building_btn.TabIndex = 2;
+            this.Building_btn.Text = "Building";
+            this.Building_btn.UseVisualStyleBackColor = false;
+            this.Building_btn.Click += new System.EventHandler(this.Building_btn_Click);
             // 
-            // RegisterLocalUser_btn
+            // Location_btn
             // 
-            this.RegisterLocalUser_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.RegisterLocalUser_btn.ControlId = "ffob002";
-            this.RegisterLocalUser_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.RegisterLocalUser_btn.Location = new System.Drawing.Point(15, 14);
-            this.RegisterLocalUser_btn.Name = "RegisterLocalUser_btn";
-            this.RegisterLocalUser_btn.Size = new System.Drawing.Size(140, 33);
-            this.RegisterLocalUser_btn.TabIndex = 0;
-            this.RegisterLocalUser_btn.Text = "Register Local User";
-            this.RegisterLocalUser_btn.UseVisualStyleBackColor = false;
-            this.RegisterLocalUser_btn.Click += new System.EventHandler(this.RegisterLocalUser_btn_Click);
+            this.Location_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.Location_btn.ControlId = "ffob010";
+            this.Location_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.Location_btn.Location = new System.Drawing.Point(15, 14);
+            this.Location_btn.Name = "Location_btn";
+            this.Location_btn.Size = new System.Drawing.Size(140, 33);
+            this.Location_btn.TabIndex = 0;
+            this.Location_btn.Text = "Location";
+            this.Location_btn.UseVisualStyleBackColor = false;
+            this.Location_btn.Click += new System.EventHandler(this.Location_btn_Click);
             // 
-            // Factory_btn
+            // labelCommon3
             // 
-            this.Factory_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.Factory_btn.ControlId = "ffob004";
-            this.Factory_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.Factory_btn.Location = new System.Drawing.Point(345, 14);
-            this.Factory_btn.Name = "Factory_btn";
-            this.Factory_btn.Size = new System.Drawing.Size(140, 33);
-            this.Factory_btn.TabIndex = 1;
-            this.Factory_btn.Text = "Factory";
-            this.Factory_btn.UseVisualStyleBackColor = false;
-            this.Factory_btn.Click += new System.EventHandler(this.Factory_btn_Click);
-            // 
-            // Language_btn
-            // 
-            this.Language_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.Language_btn.ControlId = "ffob006";
-            this.Language_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.Language_btn.Location = new System.Drawing.Point(180, 14);
-            this.Language_btn.Name = "Language_btn";
-            this.Language_btn.Size = new System.Drawing.Size(140, 33);
-            this.Language_btn.TabIndex = 2;
-            this.Language_btn.Text = "Language";
-            this.Language_btn.UseVisualStyleBackColor = false;
-            this.Language_btn.Click += new System.EventHandler(this.Language_btn_Click);
-            // 
-            // UserFactory_btn
-            // 
-            this.UserFactory_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.UserFactory_btn.ControlId = "ffob003";
-            this.UserFactory_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.UserFactory_btn.Location = new System.Drawing.Point(510, 14);
-            this.UserFactory_btn.Name = "UserFactory_btn";
-            this.UserFactory_btn.Size = new System.Drawing.Size(140, 33);
-            this.UserFactory_btn.TabIndex = 3;
-            this.UserFactory_btn.Text = "User Factory";
-            this.UserFactory_btn.UseVisualStyleBackColor = false;
-            this.UserFactory_btn.Click += new System.EventHandler(this.UserFactory_btn_Click);
-            // 
-            // labelCommon2
-            // 
-            this.labelCommon2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.labelCommon2.ControlId = null;
-            this.labelCommon2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelCommon2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon2.Location = new System.Drawing.Point(3, 115);
-            this.labelCommon2.Name = "labelCommon2";
-            this.labelCommon2.Size = new System.Drawing.Size(672, 23);
-            this.labelCommon2.TabIndex = 2;
-            this.labelCommon2.Text = "Role Master";
-            this.labelCommon2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelCommon3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.labelCommon3.ControlId = null;
+            this.labelCommon3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelCommon3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon3.Location = new System.Drawing.Point(3, 202);
+            this.labelCommon3.Name = "labelCommon3";
+            this.labelCommon3.Size = new System.Drawing.Size(672, 23);
+            this.labelCommon3.TabIndex = 4;
+            this.labelCommon3.Text = "Place Master";
+            this.labelCommon3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panelCommon2
             // 
@@ -497,62 +371,189 @@
             this.Role_btn.UseVisualStyleBackColor = false;
             this.Role_btn.Click += new System.EventHandler(this.Role_btn_Click);
             // 
-            // panelCommon3
+            // labelCommon2
             // 
-            this.panelCommon3.ControlId = null;
-            this.panelCommon3.Controls.Add(this.Building_btn);
-            this.panelCommon3.Controls.Add(this.Location_btn);
-            this.panelCommon3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCommon3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelCommon3.Location = new System.Drawing.Point(3, 225);
-            this.panelCommon3.Name = "panelCommon3";
-            this.panelCommon3.Size = new System.Drawing.Size(672, 64);
-            this.panelCommon3.TabIndex = 5;
+            this.labelCommon2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.labelCommon2.ControlId = null;
+            this.labelCommon2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelCommon2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon2.Location = new System.Drawing.Point(3, 115);
+            this.labelCommon2.Name = "labelCommon2";
+            this.labelCommon2.Size = new System.Drawing.Size(672, 23);
+            this.labelCommon2.TabIndex = 2;
+            this.labelCommon2.Text = "Role Master";
+            this.labelCommon2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Building_btn
+            // panelCommon1
             // 
-            this.Building_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.Building_btn.ControlId = "ffob011";
-            this.Building_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.Building_btn.Location = new System.Drawing.Point(180, 14);
-            this.Building_btn.Name = "Building_btn";
-            this.Building_btn.Size = new System.Drawing.Size(140, 33);
-            this.Building_btn.TabIndex = 2;
-            this.Building_btn.Text = "Building";
-            this.Building_btn.UseVisualStyleBackColor = false;
-            this.Building_btn.Click += new System.EventHandler(this.Building_btn_Click);
+            this.panelCommon1.ControlId = null;
+            this.panelCommon1.Controls.Add(this.UserFactory_btn);
+            this.panelCommon1.Controls.Add(this.Language_btn);
+            this.panelCommon1.Controls.Add(this.Factory_btn);
+            this.panelCommon1.Controls.Add(this.RegisterLocalUser_btn);
+            this.panelCommon1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelCommon1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelCommon1.Location = new System.Drawing.Point(3, 51);
+            this.panelCommon1.Name = "panelCommon1";
+            this.panelCommon1.Size = new System.Drawing.Size(672, 64);
+            this.panelCommon1.TabIndex = 1;
             // 
-            // Location_btn
+            // UserFactory_btn
             // 
-            this.Location_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.Location_btn.ControlId = "ffob010";
-            this.Location_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.Location_btn.Location = new System.Drawing.Point(15, 14);
-            this.Location_btn.Name = "Location_btn";
-            this.Location_btn.Size = new System.Drawing.Size(140, 33);
-            this.Location_btn.TabIndex = 0;
-            this.Location_btn.Text = "Location";
-            this.Location_btn.UseVisualStyleBackColor = false;
-            this.Location_btn.Click += new System.EventHandler(this.Location_btn_Click);
+            this.UserFactory_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.UserFactory_btn.ControlId = "ffob003";
+            this.UserFactory_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.UserFactory_btn.Location = new System.Drawing.Point(510, 14);
+            this.UserFactory_btn.Name = "UserFactory_btn";
+            this.UserFactory_btn.Size = new System.Drawing.Size(140, 33);
+            this.UserFactory_btn.TabIndex = 3;
+            this.UserFactory_btn.Text = "User Factory";
+            this.UserFactory_btn.UseVisualStyleBackColor = false;
+            this.UserFactory_btn.Click += new System.EventHandler(this.UserFactory_btn_Click);
             // 
-            // labelCommon3
+            // Language_btn
             // 
-            this.labelCommon3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.labelCommon3.ControlId = null;
-            this.labelCommon3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelCommon3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon3.Location = new System.Drawing.Point(3, 202);
-            this.labelCommon3.Name = "labelCommon3";
-            this.labelCommon3.Size = new System.Drawing.Size(672, 23);
-            this.labelCommon3.TabIndex = 4;
-            this.labelCommon3.Text = "Place Master";
-            this.labelCommon3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Language_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.Language_btn.ControlId = "ffob006";
+            this.Language_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.Language_btn.Location = new System.Drawing.Point(180, 14);
+            this.Language_btn.Name = "Language_btn";
+            this.Language_btn.Size = new System.Drawing.Size(140, 33);
+            this.Language_btn.TabIndex = 2;
+            this.Language_btn.Text = "Language";
+            this.Language_btn.UseVisualStyleBackColor = false;
+            this.Language_btn.Click += new System.EventHandler(this.Language_btn_Click);
+            // 
+            // Factory_btn
+            // 
+            this.Factory_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.Factory_btn.ControlId = "ffob004";
+            this.Factory_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.Factory_btn.Location = new System.Drawing.Point(345, 14);
+            this.Factory_btn.Name = "Factory_btn";
+            this.Factory_btn.Size = new System.Drawing.Size(140, 33);
+            this.Factory_btn.TabIndex = 1;
+            this.Factory_btn.Text = "Factory";
+            this.Factory_btn.UseVisualStyleBackColor = false;
+            this.Factory_btn.Click += new System.EventHandler(this.Factory_btn_Click);
+            // 
+            // RegisterLocalUser_btn
+            // 
+            this.RegisterLocalUser_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.RegisterLocalUser_btn.ControlId = "ffob002";
+            this.RegisterLocalUser_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.RegisterLocalUser_btn.Location = new System.Drawing.Point(15, 14);
+            this.RegisterLocalUser_btn.Name = "RegisterLocalUser_btn";
+            this.RegisterLocalUser_btn.Size = new System.Drawing.Size(140, 33);
+            this.RegisterLocalUser_btn.TabIndex = 0;
+            this.RegisterLocalUser_btn.Text = "Register Local User";
+            this.RegisterLocalUser_btn.UseVisualStyleBackColor = false;
+            this.RegisterLocalUser_btn.Click += new System.EventHandler(this.RegisterLocalUser_btn_Click);
+            // 
+            // labelCommon1
+            // 
+            this.labelCommon1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.labelCommon1.ControlId = null;
+            this.labelCommon1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelCommon1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon1.Location = new System.Drawing.Point(3, 28);
+            this.labelCommon1.Name = "labelCommon1";
+            this.labelCommon1.Size = new System.Drawing.Size(672, 23);
+            this.labelCommon1.TabIndex = 0;
+            this.labelCommon1.Text = "User Master";
+            this.labelCommon1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // LocalMaster_tab
+            // 
+            this.LocalMaster_tab.BackColor = System.Drawing.SystemColors.Control;
+            this.LocalMaster_tab.Controls.Add(this.LocalFunctions_grt);
+            this.LocalMaster_tab.Location = new System.Drawing.Point(4, 24);
+            this.LocalMaster_tab.Name = "LocalMaster_tab";
+            this.LocalMaster_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.LocalMaster_tab.Size = new System.Drawing.Size(684, 316);
+            this.LocalMaster_tab.TabIndex = 1;
+            // 
+            // LocalFunctions_grt
+            // 
+            this.LocalFunctions_grt.ControlId = null;
+            this.LocalFunctions_grt.Controls.Add(this.Account_tab);
+            this.LocalFunctions_grt.Controls.Add(this.tabPage2);
+            this.LocalFunctions_grt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LocalFunctions_grt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LocalFunctions_grt.Location = new System.Drawing.Point(3, 3);
+            this.LocalFunctions_grt.Name = "LocalFunctions_grt";
+            this.LocalFunctions_grt.SelectedIndex = 0;
+            this.LocalFunctions_grt.Size = new System.Drawing.Size(678, 310);
+            this.LocalFunctions_grt.TabIndex = 0;
+            // 
+            // Account_tab
+            // 
+            this.Account_tab.BackColor = System.Drawing.SystemColors.Control;
+            this.Account_tab.Controls.Add(this.AssetMaster_btn);
+            this.Account_tab.Location = new System.Drawing.Point(4, 24);
+            this.Account_tab.Name = "Account_tab";
+            this.Account_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.Account_tab.Size = new System.Drawing.Size(670, 282);
+            this.Account_tab.TabIndex = 0;
+            this.Account_tab.Text = "Account";
+            // 
+            // AssetMaster_btn
+            // 
+            this.AssetMaster_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.AssetMaster_btn.ControlId = null;
+            this.AssetMaster_btn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.AssetMaster_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.AssetMaster_btn.Location = new System.Drawing.Point(6, 6);
+            this.AssetMaster_btn.Name = "AssetMaster_btn";
+            this.AssetMaster_btn.Size = new System.Drawing.Size(92, 33);
+            this.AssetMaster_btn.TabIndex = 0;
+            this.AssetMaster_btn.Text = "Asset Master";
+            this.AssetMaster_btn.UseVisualStyleBackColor = false;
+            this.AssetMaster_btn.Click += new System.EventHandler(this.AssetMaster_btn_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(670, 282);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            // 
+            // NCVP_tab
+            // 
+            this.NCVP_tab.BackColor = System.Drawing.SystemColors.Control;
+            this.NCVP_tab.Location = new System.Drawing.Point(4, 24);
+            this.NCVP_tab.Name = "NCVP_tab";
+            this.NCVP_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.NCVP_tab.Size = new System.Drawing.Size(684, 316);
+            this.NCVP_tab.TabIndex = 2;
+            // 
+            // NCVC_tab
+            // 
+            this.NCVC_tab.BackColor = System.Drawing.SystemColors.Control;
+            this.NCVC_tab.Location = new System.Drawing.Point(4, 24);
+            this.NCVC_tab.Name = "NCVC_tab";
+            this.NCVC_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.NCVC_tab.Size = new System.Drawing.Size(684, 316);
+            this.NCVC_tab.TabIndex = 3;
+            // 
+            // NSTV_tab
+            // 
+            this.NSTV_tab.BackColor = System.Drawing.SystemColors.Control;
+            this.NSTV_tab.Location = new System.Drawing.Point(4, 24);
+            this.NSTV_tab.Name = "NSTV_tab";
+            this.NSTV_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.NSTV_tab.Size = new System.Drawing.Size(684, 316);
+            this.NSTV_tab.TabIndex = 4;
             // 
             // FormMain2019
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 451);
+            this.ControlId = "frm001";
             this.Controls.Add(this.MainMaster_grt);
             this.Controls.Add(this.Menu_grb);
             this.Name = "FormMain2019";
@@ -567,13 +568,13 @@
             this.MasterMaintance_grb.ResumeLayout(false);
             this.MainMaster_grt.ResumeLayout(false);
             this.SystemMaster_tab.ResumeLayout(false);
+            this.SystemMaster_grb.ResumeLayout(false);
+            this.panelCommon3.ResumeLayout(false);
+            this.panelCommon2.ResumeLayout(false);
+            this.panelCommon1.ResumeLayout(false);
             this.LocalMaster_tab.ResumeLayout(false);
             this.LocalFunctions_grt.ResumeLayout(false);
             this.Account_tab.ResumeLayout(false);
-            this.SystemMaster_grb.ResumeLayout(false);
-            this.panelCommon1.ResumeLayout(false);
-            this.panelCommon2.ResumeLayout(false);
-            this.panelCommon3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

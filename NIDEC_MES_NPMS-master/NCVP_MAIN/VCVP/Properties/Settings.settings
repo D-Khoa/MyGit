@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ApplicationTypeName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Com.Nidec.Mes.VCVP.FormMain</Value>
+      <Value Profile="(Default)">Com.Nidec.Mes.VCVP.FormMain2019</Value>
     </Setting>
     <Setting Name="AUTHENTIFICATE_FLAG" Type="System.String" Scope="User">
       <Value Profile="(Default)">2</Value>
