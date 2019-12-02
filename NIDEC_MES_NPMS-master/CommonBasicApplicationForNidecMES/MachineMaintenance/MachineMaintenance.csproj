@@ -1042,6 +1042,12 @@
     <Compile Include="Form\MasterForm\WorkingStatus\WorkingStatusForm.Designer.cs">
       <DependentUpon>WorkingStatusForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AccountManagerForm\AccountManager2019Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AccountManagerForm\AccountManager2019Form.Designer.cs">
+      <DependentUpon>AccountManager2019Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AssetManagerForm\AssetMaster2019Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1336,6 +1342,9 @@
     <EmbeddedResource Include="Form\MasterForm\WorkingStatus\WorkingStatusForm.resx">
       <DependentUpon>WorkingStatusForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AccountManagerForm\AccountManager2019Form.resx">
+      <DependentUpon>AccountManager2019Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AssetManagerForm\AssetMaster2019Form.resx">
       <DependentUpon>AssetMaster2019Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -1414,6 +1423,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\WareHouseForm\" />
+    <Folder Include="Form\NidecForm2019\LocalMasterForm\NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
