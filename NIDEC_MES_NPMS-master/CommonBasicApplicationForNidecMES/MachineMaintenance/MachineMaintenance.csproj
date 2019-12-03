@@ -1084,6 +1084,8 @@
     <Compile Include="Vo\AccountWhVo\TransferVo.cs" />
     <Compile Include="Vo\AddMachineStatusVo.cs" />
     <Compile Include="Vo\GA1ModelVo.cs" />
+    <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\AccountManagerVo\AccountInfoVo.cs" />
+    <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\AccountManagerVo\AccountManagerVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\AssetManagerVo\AssetInfoVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\AssetManagerVo\AssetMaster2019Vo.cs" />
     <Compile Include="Vo\OvenBarcodeTTBVo\OvenBarcodeTTBVo.cs" />
@@ -1423,6 +1425,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AccountManagerDao\" />
     <Folder Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\WareHouseForm\" />
     <Folder Include="Form\NidecForm2019\LocalMasterForm\NewFolder1\" />
   </ItemGroup>
