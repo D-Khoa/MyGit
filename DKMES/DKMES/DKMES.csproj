@@ -76,6 +76,9 @@
     <Reference Include="Dynamsoft.ImageCore">
       <HintPath>..\..\..\..\..\01. Visual Studio\WebcamDemoCode\WebcamDemoCode\Redistributable\Assembly\For .NETFramework 4.0\Dynamsoft.ImageCore.dll</HintPath>
     </Reference>
+    <Reference Include="Framework">
+      <HintPath>..\..\FW\NidecMES\Dll\Framework.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.10.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.6.10.9\lib\net452\MySql.Data.dll</HintPath>
       <Private>True</Private>

@@ -64,6 +64,7 @@
             this.NCVP_tab = new System.Windows.Forms.TabPage();
             this.NCVC_tab = new System.Windows.Forms.TabPage();
             this.NSTV_tab = new System.Windows.Forms.TabPage();
+            this.AccountManager_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.Menu_grb.SuspendLayout();
             this.Application_grb.SuspendLayout();
             this.MasterMaintance_grb.SuspendLayout();
@@ -489,6 +490,7 @@
             // Account_tab
             // 
             this.Account_tab.BackColor = System.Drawing.SystemColors.Control;
+            this.Account_tab.Controls.Add(this.AccountManager_btn);
             this.Account_tab.Controls.Add(this.AssetMaster_btn);
             this.Account_tab.Location = new System.Drawing.Point(4, 24);
             this.Account_tab.Name = "Account_tab";
@@ -505,7 +507,7 @@
             this.AssetMaster_btn.Font = new System.Drawing.Font("Arial", 9F);
             this.AssetMaster_btn.Location = new System.Drawing.Point(6, 6);
             this.AssetMaster_btn.Name = "AssetMaster_btn";
-            this.AssetMaster_btn.Size = new System.Drawing.Size(92, 33);
+            this.AssetMaster_btn.Size = new System.Drawing.Size(95, 40);
             this.AssetMaster_btn.TabIndex = 0;
             this.AssetMaster_btn.Text = "Asset Master";
             this.AssetMaster_btn.UseVisualStyleBackColor = false;
@@ -547,6 +549,20 @@
             this.NSTV_tab.Padding = new System.Windows.Forms.Padding(3);
             this.NSTV_tab.Size = new System.Drawing.Size(684, 316);
             this.NSTV_tab.TabIndex = 4;
+            // 
+            // AccountManager_btn
+            // 
+            this.AccountManager_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.AccountManager_btn.ControlId = null;
+            this.AccountManager_btn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.AccountManager_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.AccountManager_btn.Location = new System.Drawing.Point(104, 6);
+            this.AccountManager_btn.Name = "AccountManager_btn";
+            this.AccountManager_btn.Size = new System.Drawing.Size(95, 40);
+            this.AccountManager_btn.TabIndex = 1;
+            this.AccountManager_btn.Text = "Account Manager";
+            this.AccountManager_btn.UseVisualStyleBackColor = false;
+            this.AccountManager_btn.Click += new System.EventHandler(this.AccountManager_btn_Click);
             // 
             // FormMain2019
             // 
@@ -617,5 +633,6 @@
         private Framework.ButtonCommon Language_btn;
         private Framework.ButtonCommon Factory_btn;
         private Framework.ButtonCommon RegisterLocalUser_btn;
+        private Framework.ButtonCommon AccountManager_btn;
     }
 }

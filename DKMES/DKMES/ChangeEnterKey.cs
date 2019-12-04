@@ -24,6 +24,11 @@ namespace DKMES
             try
             {
                 conn.Open();
+                string sql = "select * from m_user";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.CommandTimeout = 60;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                dataGridViewCommon1.DataSource = reader;
                 MessageBox.Show("Connected!");
             }
             catch(Exception ex)

@@ -143,6 +143,15 @@ namespace Com.Nidec.Mes.VCVP
             assfrm.ShowDialog();
             this.Show();
         }
+
+        private void AccountManager_btn_Click(object sender, EventArgs e)
+        {
+            AccountManager2019Form accfrm = new AccountManager2019Form();
+            this.Hide();
+            accfrm.ShowDialog();
+            this.Show();
+        }
         #endregion
+
     }
 }
