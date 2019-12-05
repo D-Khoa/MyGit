@@ -26,8 +26,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
 
         private void AccountManager2019Form_Load(object sender, EventArgs e)
         {
+            #region GET NODES FROM DATABASE
             ValueObjectList<AssetInfoVo> assetInfo = (ValueObjectList<AssetInfoVo>)DefaultCbmInvoker
-                                                           .Invoke(new GetAssetInfoCbm(), new AssetInfoVo());
+                                                   .Invoke(new GetAssetInfoCbm(), new AssetInfoVo());
             foreach (string node in assetInfo.GetList().Select(x => x.asset_model).Distinct())
             {
                 trvAsset.Nodes["asset_model"].Nodes.Add(node);
@@ -45,23 +46,67 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
                 trvAsset.Nodes["label_status"].Nodes.Add(node);
             }
             ValueObjectList<AccountCodeVo> accountCode = (ValueObjectList<AccountCodeVo>)DefaultCbmInvoker
-                                               .Invoke(new GetAccountCodeCbm(), new AccountCodeVo());
+                                                       .Invoke(new GetAccountCodeCbm(), new AccountCodeVo());
             foreach (AccountCodeVo node in accountCode.GetList())
             {
-                trvOther.Nodes["account_code"].Nodes.Add(node.account_code_cd + " : " + node.account_code_name);
+                TreeNode nodename = new TreeNode();
+                nodename.Name = node.account_code_cd;
+                nodename.Text = node.account_code_cd + " : " + node.account_code_name;
+                trvOther.Nodes["account_cd"].Nodes.Add(nodename);
             }
             ValueObjectList<RankInfoVo> rankCode = (ValueObjectList<RankInfoVo>)DefaultCbmInvoker
-                                               .Invoke(new GetRankInfoCbm(), new RankInfoVo());
+                                                 .Invoke(new GetRankInfoCbm(), new RankInfoVo());
             foreach (RankInfoVo node in rankCode.GetList())
             {
-                trvOther.Nodes["rank_cd"].Nodes.Add(node.rank_cd + " : " + node.rank_name);
+                TreeNode nodename = new TreeNode();
+                nodename.Name = node.rank_cd;
+                nodename.Text = node.rank_cd + " : " + node.rank_name;
+                trvOther.Nodes["rank_cd"].Nodes.Add(nodename);
             }
+            ValueObjectList<AccountLocationVo> sectionCode = (ValueObjectList<AccountLocationVo>)DefaultCbmInvoker
+                                                           .Invoke(new GetAccountLocationCbm(), new AccountLocationVo());
+            foreach (AccountLocationVo node in sectionCode.GetList())
+            {
+                TreeNode nodename = new TreeNode();
+                nodename.Name = node.account_location_cd;
+                nodename.Text = node.account_location_cd + " : " + node.account_location_name;
+                trvOther.Nodes["account_location_cd"].Nodes.Add(nodename);
+            }
+            ValueObjectList<LocationInfoVo> locationCode = (ValueObjectList<LocationInfoVo>)DefaultCbmInvoker
+                                                         .Invoke(new GetLocationInfoCbm(), new LocationInfoVo());
+            foreach (LocationInfoVo node in locationCode.GetList())
+            {
+                TreeNode nodename = new TreeNode();
+                nodename.Name = node.location_id;
+                nodename.Text = node.location_name;
+                trvOther.Nodes["location_cd"].Nodes.Add(nodename);
+            }
+            ValueObjectList<InvertoryTimeVo> invertoryTime = (ValueObjectList<InvertoryTimeVo>)DefaultCbmInvoker
+                                                           .Invoke(new GetInvertoryTimeCbm(), new InvertoryTimeVo());
+            foreach (InvertoryTimeVo node in invertoryTime.GetList())
+            {
+                TreeNode nodename = new TreeNode();
+                nodename.Name = node.invertory_time_id;
+                nodename.Text = node.invertory_time_name;
+                trvOther.Nodes["invertory_time_cd"].Nodes.Add(nodename);
+            }
+            ValueObjectList<FactoryInfoVo> factoryCode = (ValueObjectList<FactoryInfoVo>)DefaultCbmInvoker
+                                                       .Invoke(new GetInvertoryTimeCbm(), new FactoryInfoVo());
+            foreach (FactoryInfoVo node in factoryCode.GetList())
+            {
+                TreeNode nodename = new TreeNode();
+                nodename.Name = node.factory_cd;
+                nodename.Text = node.factory_name;
+                trvOther.Nodes["invertory_time_cd"].Nodes.Add(nodename);
+            }
+            #endregion
         }
 
         #region BUTTONS
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            CheckTreeView(trvAsset);
+            CheckTreeView(trvOther);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -128,14 +173,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             }
         }
 
-        private void CheckList(TreeNode root, string list)
+        private string CheckList(TreeNode root)
         {
-            list = "'1'";
+            string list = "'1'";
             foreach (TreeNode node in root.Nodes)
             {
                 if (node.Checked)
-                    list += ",'" + node.Tag + "'";
+                    list += ",'" + node.Name + "'";
             }
+            return list;
         }
 
         private void CheckTreeView(TreeView tree)
@@ -143,25 +189,25 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             foreach (TreeNode root in tree.Nodes)
             {
                 if (root.Name == "asset_model")
-                    CheckList(root, Vo.list_asset_model);
+                    Vo.list_asset_model = CheckList(root);
                 if (root.Name == "asset_type")
-                    CheckList(root, Vo.list_asset_type);
+                    Vo.list_asset_type = CheckList(root);
                 if (root.Name == "asset_invoice")
-                    CheckList(root, Vo.list_asset_invoice);
+                    Vo.list_asset_invoice = CheckList(root);
                 if (root.Name == "asset_label")
-                    CheckList(root, Vo.list_asset_label);
+                    Vo.list_asset_label = CheckList(root);
                 if (root.Name == "account_cd")
-                    CheckList(root, Vo.list_account_cd);
-                if (root.Name == "account_location")
-                    CheckList(root, Vo.list_account_location);
-                if (root.Name == "location")
-                    CheckList(root, Vo.list_location);
-                if (root.Name == "invertory_times")
-                    CheckList(root, Vo.list_invertory_times);
-                if (root.Name == "rank")
-                    CheckList(root, Vo.list_rank);
-                if (root.Name == "factory")
-                    CheckList(root, Vo.list_factory);
+                    Vo.list_account_cd = CheckList(root);
+                if (root.Name == "account_location_cd")
+                    Vo.list_account_location = CheckList(root);
+                if (root.Name == "location_cd")
+                    Vo.list_location = CheckList(root);
+                if (root.Name == "invertory_times_cd")
+                    Vo.list_invertory_times = CheckList(root);
+                if (root.Name == "rank_cd")
+                    Vo.list_rank = CheckList(root);
+                if (root.Name == "factory_cd")
+                    Vo.list_factory = CheckList(root);
             }
         }
         #endregion

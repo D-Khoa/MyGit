@@ -192,7 +192,7 @@
             this.trvOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.trvOther.Location = new System.Drawing.Point(574, 3);
             this.trvOther.Name = "trvOther";
-            treeNode5.Name = "account_code";
+            treeNode5.Name = "account_cd";
             treeNode5.Text = "Account Code";
             treeNode6.Name = "rank_cd";
             treeNode6.Text = "Rank";
@@ -200,7 +200,7 @@
             treeNode7.Text = "Section";
             treeNode8.Name = "location_cd";
             treeNode8.Text = "Now Location";
-            treeNode9.Name = "invertory_time";
+            treeNode9.Name = "invertory_time_cd";
             treeNode9.Text = "Invertory Time";
             treeNode10.Name = "valid";
             treeNode10.Text = "Valid";
@@ -208,7 +208,7 @@
             treeNode11.Text = "Expired";
             treeNode12.Name = "net_value";
             treeNode12.Text = "Net Value";
-            treeNode13.Name = "factory";
+            treeNode13.Name = "factory_cd";
             treeNode13.Text = "Factory";
             this.trvOther.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode5,

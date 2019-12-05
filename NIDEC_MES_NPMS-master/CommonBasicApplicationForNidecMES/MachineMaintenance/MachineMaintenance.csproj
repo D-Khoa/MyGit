@@ -195,6 +195,7 @@
     <Compile Include="Cbm\GA1ModelCbm\UpdateGA1ModelOQCCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\UpdateGA1ModelNoiseCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AccountCodeCbm\GetAccountCodeCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AccountLocationCbm\GetAccountLocationCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\AddAssetCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\AssetMaster2019Cbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\DeleteAssetCbm.cs" />
@@ -202,6 +203,9 @@
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\GetAssetLifeCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\GetAssetTypeCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\UpdateAssetCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\FactoryInfoCbm\GetFactoryInfoCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\InvertoryInfoCbm\GetInvertoryTimeCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\LocationInfoCbm\GetLocationInfoCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\RankInfoCbm\GetRankInfoCbm.cs" />
     <Compile Include="Cbm\OvenBarcodeCbm\OvenBarcodeCbm\GetBarcodeOvenCbm.cs" />
     <Compile Include="Cbm\OvenBarcodeCbm\OvenBarcodeCbm\GetLineOvenCbm.cs" />
@@ -488,6 +492,8 @@
     <Compile Include="Dao\AccountWhDao\RankMasterDao\GetRankDao.cs" />
     <Compile Include="Dao\AccountWhDao\RankMasterDao\UpdateRankDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AccountCodeDao\GetAccountCodeDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AccountLocationDao\GetAccountLocationDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AccountManagerDao\GetAccountInfoDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\AddAssetDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\AssetMaster2019Dao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\DeleteAssetDao.cs" />
@@ -495,6 +501,9 @@
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\GetAssetLifeDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\GetAssetTypeDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\UpdateAssetDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\FactoryInfoDao\GetFactoryInfoDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\InvertoryInfoDao\GetInvertoryTimeDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\LocationInfoDao\GetLocationInfoDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\RankInfoDao\GetRankInfoDao.cs" />
     <Compile Include="Dao\OvenBarcodeDao\OvenBarcodeDao\GetBarcodeOvenDao.cs" />
     <Compile Include="Dao\OvenBarcodeDao\OvenBarcodeDao\GetLineOvenDao.cs" />
@@ -1091,10 +1100,14 @@
     <Compile Include="Vo\AddMachineStatusVo.cs" />
     <Compile Include="Vo\GA1ModelVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\AccountCodeVo\AccountCodeVo.cs" />
+    <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\AccountLocationVo\AccountLocationVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\AccountManagerVo\AccountInfoVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\AccountManagerVo\AccountManagerVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\AssetManagerVo\AssetInfoVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\AssetManagerVo\AssetMaster2019Vo.cs" />
+    <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\FactoryInfoVo\FactoryInfoVo.cs" />
+    <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\InvertoryInfoVo\InvertoryTimeVo.cs" />
+    <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\LocationInfoVo\LocationInfoVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\RankInfoVo\RankInfoVo.cs" />
     <Compile Include="Vo\OvenBarcodeTTBVo\OvenBarcodeTTBVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\OvenBarcodeVo.cs" />
@@ -1433,7 +1446,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
-    <Folder Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AccountManagerDao\" />
     <Folder Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\WareHouseForm\" />
     <Folder Include="Form\NidecForm2019\LocalMasterForm\NewFolder1\" />
   </ItemGroup>
