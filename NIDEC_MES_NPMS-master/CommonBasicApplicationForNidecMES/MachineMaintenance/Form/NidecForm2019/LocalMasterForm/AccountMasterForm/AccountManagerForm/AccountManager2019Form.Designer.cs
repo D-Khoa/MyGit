@@ -46,6 +46,7 @@
             treeNode10,
             treeNode11});
             System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Factory");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Unit");
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -125,8 +126,9 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAccountData.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvAccountData.Size = new System.Drawing.Size(835, 196);
+            this.dgvAccountData.Size = new System.Drawing.Size(835, 183);
             this.dgvAccountData.TabIndex = 21;
+            this.dgvAccountData.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvAccountData_CellFormatting);
             // 
             // grt_Option
             // 
@@ -137,10 +139,10 @@
             this.grt_Option.Controls.Add(this.tab_depreciation);
             this.grt_Option.Controls.Add(this.tab_TotalCost);
             this.grt_Option.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grt_Option.Location = new System.Drawing.Point(0, 107);
+            this.grt_Option.Location = new System.Drawing.Point(0, 110);
             this.grt_Option.Name = "grt_Option";
             this.grt_Option.SelectedIndex = 0;
-            this.grt_Option.Size = new System.Drawing.Size(839, 160);
+            this.grt_Option.Size = new System.Drawing.Size(839, 157);
             this.grt_Option.TabIndex = 22;
             // 
             // tab_Search
@@ -155,7 +157,7 @@
             this.tab_Search.Location = new System.Drawing.Point(4, 24);
             this.tab_Search.Name = "tab_Search";
             this.tab_Search.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Search.Size = new System.Drawing.Size(831, 132);
+            this.tab_Search.Size = new System.Drawing.Size(831, 129);
             this.tab_Search.TabIndex = 0;
             this.tab_Search.Text = "Search";
             // 
@@ -180,7 +182,7 @@
             treeNode2,
             treeNode3,
             treeNode4});
-            this.trvAsset.Size = new System.Drawing.Size(294, 126);
+            this.trvAsset.Size = new System.Drawing.Size(294, 123);
             this.trvAsset.TabIndex = 4;
             this.trvAsset.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.trvAsset_AfterCheck);
             // 
@@ -210,6 +212,8 @@
             treeNode12.Text = "Net Value";
             treeNode13.Name = "factory_cd";
             treeNode13.Text = "Factory";
+            treeNode14.Name = "unit_cd";
+            treeNode14.Text = "Unit";
             this.trvOther.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode5,
             treeNode6,
@@ -217,8 +221,9 @@
             treeNode8,
             treeNode9,
             treeNode12,
-            treeNode13});
-            this.trvOther.Size = new System.Drawing.Size(254, 126);
+            treeNode13,
+            treeNode14});
+            this.trvOther.Size = new System.Drawing.Size(254, 123);
             this.trvOther.TabIndex = 10;
             this.trvOther.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.trvOther_AfterCheck);
             // 
@@ -273,14 +278,12 @@
             this.tab_depreciation.Location = new System.Drawing.Point(4, 24);
             this.tab_depreciation.Name = "tab_depreciation";
             this.tab_depreciation.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_depreciation.Size = new System.Drawing.Size(831, 132);
+            this.tab_depreciation.Size = new System.Drawing.Size(831, 129);
             this.tab_depreciation.TabIndex = 1;
             this.tab_depreciation.Text = "Depreciation";
             // 
             // dgvAccountDep
             // 
-            this.dgvAccountDep.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -291,7 +294,8 @@
             this.dgvAccountDep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAccountDep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAccountDep.ControlId = null;
-            this.dgvAccountDep.Location = new System.Drawing.Point(413, 0);
+            this.dgvAccountDep.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dgvAccountDep.Location = new System.Drawing.Point(410, 3);
             this.dgvAccountDep.Name = "dgvAccountDep";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
@@ -301,13 +305,11 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAccountDep.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvAccountDep.Size = new System.Drawing.Size(418, 132);
+            this.dgvAccountDep.Size = new System.Drawing.Size(418, 123);
             this.dgvAccountDep.TabIndex = 1;
             // 
             // dgvRankDep
             // 
-            this.dgvRankDep.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -318,7 +320,8 @@
             this.dgvRankDep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvRankDep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRankDep.ControlId = null;
-            this.dgvRankDep.Location = new System.Drawing.Point(0, 0);
+            this.dgvRankDep.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dgvRankDep.Location = new System.Drawing.Point(3, 3);
             this.dgvRankDep.Name = "dgvRankDep";
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
@@ -328,7 +331,7 @@
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvRankDep.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvRankDep.Size = new System.Drawing.Size(407, 132);
+            this.dgvRankDep.Size = new System.Drawing.Size(407, 123);
             this.dgvRankDep.TabIndex = 0;
             // 
             // tab_TotalCost
@@ -337,7 +340,7 @@
             this.tab_TotalCost.Location = new System.Drawing.Point(4, 24);
             this.tab_TotalCost.Name = "tab_TotalCost";
             this.tab_TotalCost.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_TotalCost.Size = new System.Drawing.Size(831, 132);
+            this.tab_TotalCost.Size = new System.Drawing.Size(831, 129);
             this.tab_TotalCost.TabIndex = 2;
             this.tab_TotalCost.Text = "Total Cost";
             this.tab_TotalCost.UseVisualStyleBackColor = true;
@@ -365,7 +368,7 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAccCounter.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvAccCounter.Size = new System.Drawing.Size(825, 126);
+            this.dgvAccCounter.Size = new System.Drawing.Size(825, 123);
             this.dgvAccCounter.TabIndex = 0;
             // 
             // pnlButtons1
@@ -529,14 +532,14 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pnlButtons2);
             this.Controls.Add(this.pnlButtons1);
-            this.Controls.Add(this.grt_Option);
             this.Controls.Add(this.dgvAccountData);
+            this.Controls.Add(this.grt_Option);
             this.Name = "AccountManager2019Form";
             this.Text = "Account Manager";
             this.TitleText = "Account Manager";
             this.Load += new System.EventHandler(this.AccountManager2019Form_Load);
-            this.Controls.SetChildIndex(this.dgvAccountData, 0);
             this.Controls.SetChildIndex(this.grt_Option, 0);
+            this.Controls.SetChildIndex(this.dgvAccountData, 0);
             this.Controls.SetChildIndex(this.pnlButtons1, 0);
             this.Controls.SetChildIndex(this.pnlButtons2, 0);
             this.Controls.SetChildIndex(this.btnClose, 0);

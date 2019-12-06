@@ -196,6 +196,7 @@
     <Compile Include="Cbm\GA1ModelCbm\UpdateGA1ModelNoiseCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AccountCodeCbm\GetAccountCodeCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AccountLocationCbm\GetAccountLocationCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AccountManagerCbm\GetAccountInfoCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\AddAssetCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\AssetMaster2019Cbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\DeleteAssetCbm.cs" />
@@ -205,8 +206,10 @@
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\UpdateAssetCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\FactoryInfoCbm\GetFactoryInfoCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\InvertoryInfoCbm\GetInvertoryTimeCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\InvertoryInfoCbm\GetInvertoryTimeMaxCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\LocationInfoCbm\GetLocationInfoCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\RankInfoCbm\GetRankInfoCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\UnitInfoCbm\GetUnitInfoCbm.cs" />
     <Compile Include="Cbm\OvenBarcodeCbm\OvenBarcodeCbm\GetBarcodeOvenCbm.cs" />
     <Compile Include="Cbm\OvenBarcodeCbm\OvenBarcodeCbm\GetLineOvenCbm.cs" />
     <Compile Include="Cbm\OvenBarcodeCbm\OvenBarcodeCbm\GetLowerOvenCbm.cs" />
@@ -503,8 +506,10 @@
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\UpdateAssetDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\FactoryInfoDao\GetFactoryInfoDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\InvertoryInfoDao\GetInvertoryTimeDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\InvertoryInfoDao\GetInvertoryTimeMaxDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\LocationInfoDao\GetLocationInfoDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\RankInfoDao\GetRankInfoDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\UnitInfoDao\GetUnitInfoDao.cs" />
     <Compile Include="Dao\OvenBarcodeDao\OvenBarcodeDao\GetBarcodeOvenDao.cs" />
     <Compile Include="Dao\OvenBarcodeDao\OvenBarcodeDao\GetLineOvenDao.cs" />
     <Compile Include="Dao\OvenBarcodeDao\OvenBarcodeDao\GetLowerOvenDao.cs" />
@@ -1109,6 +1114,7 @@
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\InvertoryInfoVo\InvertoryTimeVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\LocationInfoVo\LocationInfoVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\RankInfoVo\RankInfoVo.cs" />
+    <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\UnitInfoVo\UnitInfoVo.cs" />
     <Compile Include="Vo\OvenBarcodeTTBVo\OvenBarcodeTTBVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\OvenBarcodeVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\RangeVo.cs" />

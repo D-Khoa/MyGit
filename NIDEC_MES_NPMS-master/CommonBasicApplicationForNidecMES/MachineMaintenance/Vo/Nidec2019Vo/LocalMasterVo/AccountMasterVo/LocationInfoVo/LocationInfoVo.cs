@@ -6,7 +6,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo.Nidec2019Vo
 {
     public class LocationInfoVo : ValueObject
     {
-        public string location_id { get; set; }
+        public int location_id { get; set; }
+        public string location_cd { get; set; }
         public string location_name { get; set; }
     }
 }

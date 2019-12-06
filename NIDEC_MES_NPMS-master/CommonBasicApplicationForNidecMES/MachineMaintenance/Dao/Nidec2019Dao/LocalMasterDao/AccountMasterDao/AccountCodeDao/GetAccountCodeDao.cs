@@ -14,7 +14,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
             //CREATE SQL ADAPTER AND PARAMETER LIST
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append("select distinct account_code_cd, account_code_name from m_account_code order by account_code_cd");
+            sql.Append("select account_code_id, account_code_cd, account_code_name from m_account_code order by account_code_id");
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
             sql.Clear();
             //EXECUTE READER FROM COMMAND
@@ -23,6 +23,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
             {
                 AccountCodeVo outVo = new AccountCodeVo
                 {
+                    account_code_id = (int)datareader["account_code_id"],
                     account_code_cd = datareader["account_code_cd"].ToString(),
                     account_code_name = datareader["account_code_name"].ToString()
                 };

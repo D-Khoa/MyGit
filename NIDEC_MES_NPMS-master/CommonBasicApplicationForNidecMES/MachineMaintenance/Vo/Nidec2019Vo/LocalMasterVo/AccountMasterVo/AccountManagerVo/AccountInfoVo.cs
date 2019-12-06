@@ -14,10 +14,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo.Nidec2019Vo
         public string asset_serial { get; set; }
         public string asset_supplier { get; set; }
         public string asset_type { get; set; }
-        public int account_Qty { get; set; }
+        public int qty { get; set; }
         public string unit_cd { get; set; }
-        public string rank_cd { get; set; }
-        public string account_Cd { get; set; }
+        public string rank_id { get; set; }
+        public string account_cd { get; set; }
         public string account_location_cd { get; set; }
         public string comment_data { get; set; }
         public double asset_life { get; set; }

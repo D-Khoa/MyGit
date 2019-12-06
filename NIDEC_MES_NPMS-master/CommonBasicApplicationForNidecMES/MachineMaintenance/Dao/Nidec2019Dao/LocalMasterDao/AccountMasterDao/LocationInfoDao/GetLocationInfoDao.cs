@@ -14,7 +14,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
             //CREATE SQL ADAPTER AND PARAMETER LIST
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append("select distinct location_id, location_name from m_location order by location_id");
+            sql.Append("select distinct location_id, location_cd, location_name from m_location order by location_id");
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
             sql.Clear();
             //EXECUTE READER FROM COMMAND
@@ -23,7 +23,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
             {
                 LocationInfoVo outVo = new LocationInfoVo
                 {
-                    location_id = datareader["location_id"].ToString(),
+                    location_id = (int)datareader["location_id"],
+                    location_cd = datareader["location_cd"].ToString(),
                     location_name = datareader["location_name"].ToString()
                 };
                 voList.add(outVo);

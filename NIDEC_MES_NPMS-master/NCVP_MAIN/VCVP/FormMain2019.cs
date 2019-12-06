@@ -38,32 +38,32 @@ namespace Com.Nidec.Mes.VCVP
         #region MAIN MENU
         private void SystemMaster_btn_Click(object sender, EventArgs e)
         {
-            MainMaster_grt.Visible = true;
             MainMaster_grt.SelectedTab = SystemMaster_tab;
+            MainMaster_grt.Visible = true;
         }
 
         private void LocalMaster_btn_Click(object sender, EventArgs e)
         {
-            MainMaster_grt.Visible = true;
             MainMaster_grt.SelectedTab = LocalMaster_tab;
+            MainMaster_grt.Visible = true;
         }
 
         private void NCVP_btn_Click(object sender, EventArgs e)
         {
-            MainMaster_grt.Visible = true;
             MainMaster_grt.SelectedTab = NCVC_tab;
+            MainMaster_grt.Visible = true;
         }
 
         private void NCVC_btn_Click(object sender, EventArgs e)
         {
-            MainMaster_grt.Visible = true;
             MainMaster_grt.SelectedTab = NCVC_tab;
+            MainMaster_grt.Visible = true;
         }
 
         private void NSTV_btn_Click(object sender, EventArgs e)
         {
-            MainMaster_grt.Visible = true;
             MainMaster_grt.SelectedTab = NSTV_tab;
+            MainMaster_grt.Visible = true;
         }
 
         private void ChangePass_btn_Click(object sender, EventArgs e)

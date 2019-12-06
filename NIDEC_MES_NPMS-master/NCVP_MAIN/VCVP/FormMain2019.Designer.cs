@@ -59,12 +59,12 @@
             this.LocalMaster_tab = new System.Windows.Forms.TabPage();
             this.LocalFunctions_grt = new Com.Nidec.Mes.Framework.TabControlCommon();
             this.Account_tab = new System.Windows.Forms.TabPage();
+            this.AccountManager_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.AssetMaster_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.NCVP_tab = new System.Windows.Forms.TabPage();
             this.NCVC_tab = new System.Windows.Forms.TabPage();
             this.NSTV_tab = new System.Windows.Forms.TabPage();
-            this.AccountManager_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.Menu_grb.SuspendLayout();
             this.Application_grb.SuspendLayout();
             this.MasterMaintance_grb.SuspendLayout();
@@ -211,6 +211,7 @@
             // 
             // MainMaster_grt
             // 
+            this.MainMaster_grt.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.MainMaster_grt.ControlId = null;
             this.MainMaster_grt.Controls.Add(this.SystemMaster_tab);
             this.MainMaster_grt.Controls.Add(this.LocalMaster_tab);
@@ -231,10 +232,10 @@
             // 
             this.SystemMaster_tab.BackColor = System.Drawing.SystemColors.Control;
             this.SystemMaster_tab.Controls.Add(this.SystemMaster_grb);
-            this.SystemMaster_tab.Location = new System.Drawing.Point(4, 24);
+            this.SystemMaster_tab.Location = new System.Drawing.Point(4, 27);
             this.SystemMaster_tab.Name = "SystemMaster_tab";
             this.SystemMaster_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.SystemMaster_tab.Size = new System.Drawing.Size(684, 316);
+            this.SystemMaster_tab.Size = new System.Drawing.Size(684, 313);
             this.SystemMaster_tab.TabIndex = 0;
             // 
             // SystemMaster_grb
@@ -250,7 +251,7 @@
             this.SystemMaster_grb.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SystemMaster_grb.Location = new System.Drawing.Point(3, 3);
             this.SystemMaster_grb.Name = "SystemMaster_grb";
-            this.SystemMaster_grb.Size = new System.Drawing.Size(678, 310);
+            this.SystemMaster_grb.Size = new System.Drawing.Size(678, 307);
             this.SystemMaster_grb.TabIndex = 0;
             this.SystemMaster_grb.TabStop = false;
             this.SystemMaster_grb.Text = "System Master";
@@ -468,10 +469,10 @@
             // 
             this.LocalMaster_tab.BackColor = System.Drawing.SystemColors.Control;
             this.LocalMaster_tab.Controls.Add(this.LocalFunctions_grt);
-            this.LocalMaster_tab.Location = new System.Drawing.Point(4, 24);
+            this.LocalMaster_tab.Location = new System.Drawing.Point(4, 27);
             this.LocalMaster_tab.Name = "LocalMaster_tab";
             this.LocalMaster_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.LocalMaster_tab.Size = new System.Drawing.Size(684, 316);
+            this.LocalMaster_tab.Size = new System.Drawing.Size(684, 313);
             this.LocalMaster_tab.TabIndex = 1;
             // 
             // LocalFunctions_grt
@@ -484,7 +485,7 @@
             this.LocalFunctions_grt.Location = new System.Drawing.Point(3, 3);
             this.LocalFunctions_grt.Name = "LocalFunctions_grt";
             this.LocalFunctions_grt.SelectedIndex = 0;
-            this.LocalFunctions_grt.Size = new System.Drawing.Size(678, 310);
+            this.LocalFunctions_grt.Size = new System.Drawing.Size(678, 307);
             this.LocalFunctions_grt.TabIndex = 0;
             // 
             // Account_tab
@@ -495,9 +496,23 @@
             this.Account_tab.Location = new System.Drawing.Point(4, 24);
             this.Account_tab.Name = "Account_tab";
             this.Account_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.Account_tab.Size = new System.Drawing.Size(670, 282);
+            this.Account_tab.Size = new System.Drawing.Size(670, 279);
             this.Account_tab.TabIndex = 0;
             this.Account_tab.Text = "Account";
+            // 
+            // AccountManager_btn
+            // 
+            this.AccountManager_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.AccountManager_btn.ControlId = null;
+            this.AccountManager_btn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.AccountManager_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.AccountManager_btn.Location = new System.Drawing.Point(104, 6);
+            this.AccountManager_btn.Name = "AccountManager_btn";
+            this.AccountManager_btn.Size = new System.Drawing.Size(95, 40);
+            this.AccountManager_btn.TabIndex = 1;
+            this.AccountManager_btn.Text = "Account Manager";
+            this.AccountManager_btn.UseVisualStyleBackColor = false;
+            this.AccountManager_btn.Click += new System.EventHandler(this.AccountManager_btn_Click);
             // 
             // AssetMaster_btn
             // 
@@ -526,43 +541,29 @@
             // NCVP_tab
             // 
             this.NCVP_tab.BackColor = System.Drawing.SystemColors.Control;
-            this.NCVP_tab.Location = new System.Drawing.Point(4, 24);
+            this.NCVP_tab.Location = new System.Drawing.Point(4, 27);
             this.NCVP_tab.Name = "NCVP_tab";
             this.NCVP_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.NCVP_tab.Size = new System.Drawing.Size(684, 316);
+            this.NCVP_tab.Size = new System.Drawing.Size(684, 313);
             this.NCVP_tab.TabIndex = 2;
             // 
             // NCVC_tab
             // 
             this.NCVC_tab.BackColor = System.Drawing.SystemColors.Control;
-            this.NCVC_tab.Location = new System.Drawing.Point(4, 24);
+            this.NCVC_tab.Location = new System.Drawing.Point(4, 27);
             this.NCVC_tab.Name = "NCVC_tab";
             this.NCVC_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.NCVC_tab.Size = new System.Drawing.Size(684, 316);
+            this.NCVC_tab.Size = new System.Drawing.Size(684, 313);
             this.NCVC_tab.TabIndex = 3;
             // 
             // NSTV_tab
             // 
             this.NSTV_tab.BackColor = System.Drawing.SystemColors.Control;
-            this.NSTV_tab.Location = new System.Drawing.Point(4, 24);
+            this.NSTV_tab.Location = new System.Drawing.Point(4, 27);
             this.NSTV_tab.Name = "NSTV_tab";
             this.NSTV_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.NSTV_tab.Size = new System.Drawing.Size(684, 316);
+            this.NSTV_tab.Size = new System.Drawing.Size(684, 313);
             this.NSTV_tab.TabIndex = 4;
-            // 
-            // AccountManager_btn
-            // 
-            this.AccountManager_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.AccountManager_btn.ControlId = null;
-            this.AccountManager_btn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.AccountManager_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.AccountManager_btn.Location = new System.Drawing.Point(104, 6);
-            this.AccountManager_btn.Name = "AccountManager_btn";
-            this.AccountManager_btn.Size = new System.Drawing.Size(95, 40);
-            this.AccountManager_btn.TabIndex = 1;
-            this.AccountManager_btn.Text = "Account Manager";
-            this.AccountManager_btn.UseVisualStyleBackColor = false;
-            this.AccountManager_btn.Click += new System.EventHandler(this.AccountManager_btn_Click);
             // 
             // FormMain2019
             // 
