@@ -59,13 +59,13 @@
             this.LocalMaster_tab = new System.Windows.Forms.TabPage();
             this.LocalFunctions_grt = new Com.Nidec.Mes.Framework.TabControlCommon();
             this.Account_tab = new System.Windows.Forms.TabPage();
+            this.btnwh = new System.Windows.Forms.Button();
             this.AccountManager_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.AssetMaster_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.NCVP_tab = new System.Windows.Forms.TabPage();
             this.NCVC_tab = new System.Windows.Forms.TabPage();
             this.NSTV_tab = new System.Windows.Forms.TabPage();
-            this.btnwh = new System.Windows.Forms.Button();
             this.Menu_grb.SuspendLayout();
             this.Application_grb.SuspendLayout();
             this.MasterMaintance_grb.SuspendLayout();
@@ -492,11 +492,8 @@
             // Account_tab
             // 
             this.Account_tab.BackColor = System.Drawing.SystemColors.Control;
-<<<<<<< HEAD
             this.Account_tab.Controls.Add(this.btnwh);
-=======
             this.Account_tab.Controls.Add(this.AccountManager_btn);
->>>>>>> 7697ef042b98549788b08687dea0f0a9aeb7b4bb
             this.Account_tab.Controls.Add(this.AssetMaster_btn);
             this.Account_tab.Location = new System.Drawing.Point(4, 24);
             this.Account_tab.Name = "Account_tab";
@@ -505,13 +502,23 @@
             this.Account_tab.TabIndex = 0;
             this.Account_tab.Text = "Account";
             // 
+            // btnwh
+            // 
+            this.btnwh.Location = new System.Drawing.Point(208, 6);
+            this.btnwh.Name = "btnwh";
+            this.btnwh.Size = new System.Drawing.Size(95, 40);
+            this.btnwh.TabIndex = 1;
+            this.btnwh.Text = "WH";
+            this.btnwh.UseVisualStyleBackColor = true;
+            this.btnwh.Click += new System.EventHandler(this.btnwh_Click);
+            // 
             // AccountManager_btn
             // 
             this.AccountManager_btn.BackColor = System.Drawing.SystemColors.Control;
             this.AccountManager_btn.ControlId = null;
             this.AccountManager_btn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.AccountManager_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.AccountManager_btn.Location = new System.Drawing.Point(104, 6);
+            this.AccountManager_btn.Location = new System.Drawing.Point(107, 6);
             this.AccountManager_btn.Name = "AccountManager_btn";
             this.AccountManager_btn.Size = new System.Drawing.Size(95, 40);
             this.AccountManager_btn.TabIndex = 1;
@@ -569,16 +576,6 @@
             this.NSTV_tab.Padding = new System.Windows.Forms.Padding(3);
             this.NSTV_tab.Size = new System.Drawing.Size(684, 313);
             this.NSTV_tab.TabIndex = 4;
-            // 
-            // btnwh
-            // 
-            this.btnwh.Location = new System.Drawing.Point(104, 6);
-            this.btnwh.Name = "btnwh";
-            this.btnwh.Size = new System.Drawing.Size(82, 33);
-            this.btnwh.TabIndex = 1;
-            this.btnwh.Text = "WH";
-            this.btnwh.UseVisualStyleBackColor = true;
-            this.btnwh.Click += new System.EventHandler(this.btnwh_Click);
             // 
             // FormMain2019
             // 
@@ -649,10 +646,7 @@
         private Framework.ButtonCommon Language_btn;
         private Framework.ButtonCommon Factory_btn;
         private Framework.ButtonCommon RegisterLocalUser_btn;
-<<<<<<< HEAD
         private System.Windows.Forms.Button btnwh;
-=======
         private Framework.ButtonCommon AccountManager_btn;
->>>>>>> 7697ef042b98549788b08687dea0f0a9aeb7b4bb
     }
 }

@@ -1,0 +1,286 @@
+﻿namespace TTBMES.Views
+{
+    partial class FinalCheckForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FinalCheckForm));
+            this.grInfo = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.btnApply = new System.Windows.Forms.Button();
+            this.btnSetting = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBarcode = new System.Windows.Forms.TextBox();
+            this.pnlStatus = new System.Windows.Forms.Panel();
+            this.lbStatus = new System.Windows.Forms.Label();
+            this.dgvData = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbCounter = new System.Windows.Forms.Label();
+            this.grInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.pnlStatus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // grInfo
+            // 
+            this.grInfo.Controls.Add(this.label2);
+            this.grInfo.Controls.Add(this.numericUpDown1);
+            this.grInfo.Controls.Add(this.treeView1);
+            this.grInfo.Controls.Add(this.btnExit);
+            this.grInfo.Controls.Add(this.btnExport);
+            this.grInfo.Controls.Add(this.btnApply);
+            this.grInfo.Controls.Add(this.btnSetting);
+            this.grInfo.Controls.Add(this.btnSearch);
+            this.grInfo.Controls.Add(this.btnConfirm);
+            this.grInfo.Controls.Add(this.label1);
+            this.grInfo.Controls.Add(this.txtBarcode);
+            this.grInfo.Location = new System.Drawing.Point(12, 99);
+            this.grInfo.Name = "grInfo";
+            this.grInfo.Size = new System.Drawing.Size(429, 256);
+            this.grInfo.TabIndex = 1;
+            this.grInfo.TabStop = false;
+            this.grInfo.Text = "Information";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Lenght";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(65, 52);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.TabIndex = 18;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(204, 52);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(200, 135);
+            this.treeView1.TabIndex = 17;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnExit.Location = new System.Drawing.Point(219, 203);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(62, 46);
+            this.btnExit.TabIndex = 16;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnExport
+            // 
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnExport.Location = new System.Drawing.Point(151, 203);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(62, 46);
+            this.btnExport.TabIndex = 15;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // btnApply
+            // 
+            this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnApply.Location = new System.Drawing.Point(65, 160);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(53, 26);
+            this.btnApply.TabIndex = 9;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Visible = false;
+            // 
+            // btnSetting
+            // 
+            this.btnSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSetting.Image = global::TTBMES.Properties.Resources.settings;
+            this.btnSetting.Location = new System.Drawing.Point(15, 160);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(38, 27);
+            this.btnSetting.TabIndex = 8;
+            this.btnSetting.UseVisualStyleBackColor = true;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSearch.Location = new System.Drawing.Point(83, 203);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(62, 46);
+            this.btnSearch.TabIndex = 14;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnConfirm.Location = new System.Drawing.Point(15, 203);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(62, 46);
+            this.btnConfirm.TabIndex = 10;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Barcode";
+            // 
+            // txtBarcode
+            // 
+            this.txtBarcode.Location = new System.Drawing.Point(65, 26);
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.Size = new System.Drawing.Size(339, 20);
+            this.txtBarcode.TabIndex = 2;
+            // 
+            // pnlStatus
+            // 
+            this.pnlStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlStatus.Controls.Add(this.lbStatus);
+            this.pnlStatus.Location = new System.Drawing.Point(460, 170);
+            this.pnlStatus.Name = "pnlStatus";
+            this.pnlStatus.Size = new System.Drawing.Size(244, 178);
+            this.pnlStatus.TabIndex = 12;
+            // 
+            // lbStatus
+            // 
+            this.lbStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatus.Location = new System.Drawing.Point(0, 0);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(242, 176);
+            this.lbStatus.TabIndex = 12;
+            this.lbStatus.Text = "None";
+            this.lbStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dgvData
+            // 
+            this.dgvData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.Location = new System.Drawing.Point(12, 361);
+            this.dgvData.Name = "dgvData";
+            this.dgvData.Size = new System.Drawing.Size(692, 158);
+            this.dgvData.TabIndex = 18;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.lbCounter);
+            this.groupBox2.Location = new System.Drawing.Point(460, 99);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(244, 65);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Counter";
+            // 
+            // lbCounter
+            // 
+            this.lbCounter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCounter.Location = new System.Drawing.Point(3, 16);
+            this.lbCounter.Name = "lbCounter";
+            this.lbCounter.Size = new System.Drawing.Size(238, 46);
+            this.lbCounter.TabIndex = 0;
+            this.lbCounter.Text = "0";
+            this.lbCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FinalCheckForm
+            // 
+            this.AcceptButton = this.btnConfirm;
+            this.AppName = "";
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(716, 531);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.dgvData);
+            this.Controls.Add(this.pnlStatus);
+            this.Controls.Add(this.grInfo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FinalCheckForm";
+            this.Text = "Final Check Tool";
+            this.TitleText = "Final Check Tool";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Controls.SetChildIndex(this.grInfo, 0);
+            this.Controls.SetChildIndex(this.pnlStatus, 0);
+            this.Controls.SetChildIndex(this.dgvData, 0);
+            this.Controls.SetChildIndex(this.groupBox2, 0);
+            this.grInfo.ResumeLayout(false);
+            this.grInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.pnlStatus.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+        private System.Windows.Forms.GroupBox grInfo;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Panel pnlStatus;
+        private System.Windows.Forms.Label lbStatus;
+        private System.Windows.Forms.DataGridView dgvData;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtBarcode;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lbCounter;
+        private System.Windows.Forms.Button btnSetting;
+        private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+    }
+}
+

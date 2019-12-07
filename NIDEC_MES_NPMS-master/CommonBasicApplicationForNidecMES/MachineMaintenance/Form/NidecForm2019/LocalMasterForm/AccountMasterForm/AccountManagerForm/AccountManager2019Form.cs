@@ -185,7 +185,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
 
         private void CounterCost()
         {
-            //InvertoryTimeVo maxInvertory = (InvertoryTimeVo)DefaultCbmInvoker.Invoke(new GetInvertoryTimeMaxCbm(), new InvertoryTimeVo());
+            InvertoryTimeVo maxInvertory = (InvertoryTimeVo)DefaultCbmInvoker.Invoke(new GetInvertoryTimeMaxCbm(), new InvertoryTimeVo());
+            
             object totalMachine = Vo.table.Compute("sum(Qty) - 1", "");
             object invertoryMachine = Vo.table.Compute("sum(Qty)", "");
             dgvAccCounter.Rows.Add(inventoried, totalMachine);
