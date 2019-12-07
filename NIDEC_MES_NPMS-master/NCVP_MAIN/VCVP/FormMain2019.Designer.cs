@@ -64,6 +64,7 @@
             this.NCVP_tab = new System.Windows.Forms.TabPage();
             this.NCVC_tab = new System.Windows.Forms.TabPage();
             this.NSTV_tab = new System.Windows.Forms.TabPage();
+            this.btnwh = new System.Windows.Forms.Button();
             this.Menu_grb.SuspendLayout();
             this.Application_grb.SuspendLayout();
             this.MasterMaintance_grb.SuspendLayout();
@@ -489,6 +490,7 @@
             // Account_tab
             // 
             this.Account_tab.BackColor = System.Drawing.SystemColors.Control;
+            this.Account_tab.Controls.Add(this.btnwh);
             this.Account_tab.Controls.Add(this.AssetMaster_btn);
             this.Account_tab.Location = new System.Drawing.Point(4, 24);
             this.Account_tab.Name = "Account_tab";
@@ -547,6 +549,16 @@
             this.NSTV_tab.Padding = new System.Windows.Forms.Padding(3);
             this.NSTV_tab.Size = new System.Drawing.Size(684, 316);
             this.NSTV_tab.TabIndex = 4;
+            // 
+            // btnwh
+            // 
+            this.btnwh.Location = new System.Drawing.Point(104, 6);
+            this.btnwh.Name = "btnwh";
+            this.btnwh.Size = new System.Drawing.Size(82, 33);
+            this.btnwh.TabIndex = 1;
+            this.btnwh.Text = "WH";
+            this.btnwh.UseVisualStyleBackColor = true;
+            this.btnwh.Click += new System.EventHandler(this.btnwh_Click);
             // 
             // FormMain2019
             // 
@@ -617,5 +629,6 @@
         private Framework.ButtonCommon Language_btn;
         private Framework.ButtonCommon Factory_btn;
         private Framework.ButtonCommon RegisterLocalUser_btn;
+        private System.Windows.Forms.Button btnwh;
     }
 }

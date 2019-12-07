@@ -290,6 +290,7 @@
             this.cmbLife.Name = "cmbLife";
             this.cmbLife.Size = new System.Drawing.Size(130, 23);
             this.cmbLife.TabIndex = 14;
+            this.cmbLife.SelectedIndexChanged += new System.EventHandler(this.cmbLife_SelectedIndexChanged);
             // 
             // cmbAssetType
             // 
@@ -308,7 +309,7 @@
             this.labelCommon6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCommon6.Location = new System.Drawing.Point(523, 63);
             this.labelCommon6.Name = "labelCommon6";
-            this.labelCommon6.Size = new System.Drawing.Size(49, 15);
+            this.labelCommon6.Size = new System.Drawing.Size(50, 15);
             this.labelCommon6.TabIndex = 11;
             this.labelCommon6.Text = "Date To";
             // 
@@ -367,7 +368,7 @@
             this.labelCommon3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCommon3.Location = new System.Drawing.Point(289, 19);
             this.labelCommon3.Name = "labelCommon3";
-            this.labelCommon3.Size = new System.Drawing.Size(66, 15);
+            this.labelCommon3.Size = new System.Drawing.Size(67, 15);
             this.labelCommon3.TabIndex = 5;
             this.labelCommon3.Text = "Asset Type";
             // 

@@ -200,6 +200,14 @@
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\GetAssetLifeCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\GetAssetTypeCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\UpdateAssetCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\WareHouseCbm\GetAssetNameWHCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\WareHouseCbm\GetAssetTypeWHCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\WareHouseCbm\GetInventoryTimeWHCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\WareHouseCbm\GetInvoiceWHCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\WareHouseCbm\GetLabelStatusWHCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\WareHouseCbm\GetLocationWHCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\WareHouseCbm\GetRankCdWHCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\WareHouseCbm\SearchWareHouseCbm.cs" />
     <Compile Include="Cbm\OvenBarcodeCbm\OvenBarcodeCbm\GetBarcodeOvenCbm.cs" />
     <Compile Include="Cbm\OvenBarcodeCbm\OvenBarcodeCbm\GetLineOvenCbm.cs" />
     <Compile Include="Cbm\OvenBarcodeCbm\OvenBarcodeCbm\GetLowerOvenCbm.cs" />
@@ -490,6 +498,14 @@
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\GetAssetLifeDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\GetAssetTypeDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\UpdateAssetDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\WareHouseDao\GetAssetNameDaoWH.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\WareHouseDao\GetAssetTypeDaoWH.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\WareHouseDao\GetInventoryTimeDaoWH.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\WareHouseDao\GetInvoiceDaoWH.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\WareHouseDao\GetLabelStatusDaoWH.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\WareHouseDao\GetLocationcdDaoWH.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\WareHouseDao\GetRankCdDaoWH.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\WareHouseDao\SearchWareHouseDao.cs" />
     <Compile Include="Dao\OvenBarcodeDao\OvenBarcodeDao\GetBarcodeOvenDao.cs" />
     <Compile Include="Dao\OvenBarcodeDao\OvenBarcodeDao\GetLineOvenDao.cs" />
     <Compile Include="Dao\OvenBarcodeDao\OvenBarcodeDao\GetLowerOvenDao.cs" />
@@ -1060,6 +1076,12 @@
     <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AssetManagerForm\UpdateAssetForm.Designer.cs">
       <DependentUpon>UpdateAssetForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\WareHouseForm\WareHouseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\WareHouseForm\WareHouseForm.Designer.cs">
+      <DependentUpon>WareHouseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
@@ -1086,6 +1108,7 @@
     <Compile Include="Vo\GA1ModelVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\AssetManagerVo\AssetInfoVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\AssetManagerVo\AssetMaster2019Vo.cs" />
+    <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\WareHouseVo\WareHouseVo.cs" />
     <Compile Include="Vo\OvenBarcodeTTBVo\OvenBarcodeTTBVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\OvenBarcodeVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\RangeVo.cs" />
@@ -1351,6 +1374,9 @@
     <EmbeddedResource Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AssetManagerForm\UpdateAssetForm.resx">
       <DependentUpon>UpdateAssetForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\WareHouseForm\WareHouseForm.resx">
+      <DependentUpon>WareHouseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -1423,7 +1449,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
-    <Folder Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\WareHouseForm\" />
     <Folder Include="Form\NidecForm2019\LocalMasterForm\NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -115,15 +115,16 @@
             this.NCVP_Function_gr = new Com.Nidec.Mes.Framework.GroupBoxCommon();
             this.ChangePass_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.groupBoxCommon7 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.LocalMaster2019_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.ncvp_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.groupBoxCommon1 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
             this.NcvpMaster_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.SystemMaster_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.Menu_gpb = new Com.Nidec.Mes.Framework.GroupBoxCommon();
-            this.LocalMaster2019_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.LocalMaster2019_pnl = new Com.Nidec.Mes.Framework.PanelCommon();
-            this.AssetManager2019_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.Out_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.AssetManager2019_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.button1 = new System.Windows.Forms.Button();
             this.NcvpMaster_gpb.SuspendLayout();
             this.Master_tab.SuspendLayout();
             this.Master.SuspendLayout();
@@ -1338,7 +1339,6 @@
             // NCVP_Function_gr
             // 
             this.NCVP_Function_gr.ControlId = null;
-            //this.NCVP_Function_gr.Controls.Add(this.LocalMaster2019_pnl);
             this.NCVP_Function_gr.Controls.Add(this.labelCommon2);
             this.NCVP_Function_gr.Controls.Add(this.tabControlCommon1);
             this.NCVP_Function_gr.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
@@ -1376,6 +1376,21 @@
             this.groupBoxCommon7.TabIndex = 2;
             this.groupBoxCommon7.TabStop = false;
             this.groupBoxCommon7.Text = "Application";
+            // 
+            // LocalMaster2019_btn
+            // 
+            this.LocalMaster2019_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.LocalMaster2019_btn.ControlId = "";
+            this.LocalMaster2019_btn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.LocalMaster2019_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.LocalMaster2019_btn.Location = new System.Drawing.Point(6, 62);
+            this.LocalMaster2019_btn.Name = "LocalMaster2019_btn";
+            this.LocalMaster2019_btn.Size = new System.Drawing.Size(149, 39);
+            this.LocalMaster2019_btn.TabIndex = 1;
+            this.LocalMaster2019_btn.Text = "NCVP Master";
+            this.LocalMaster2019_btn.UseVisualStyleBackColor = false;
+            this.LocalMaster2019_btn.Visible = false;
+            this.LocalMaster2019_btn.Click += new System.EventHandler(this.LocalMaster2019_btn_Click);
             // 
             // ncvp_btn
             // 
@@ -1449,24 +1464,10 @@
             this.Menu_gpb.TabStop = false;
             this.Menu_gpb.Text = "Menu";
             // 
-            // LocalMaster2019_btn
-            // 
-            this.LocalMaster2019_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.LocalMaster2019_btn.ControlId = "";
-            this.LocalMaster2019_btn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.LocalMaster2019_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.LocalMaster2019_btn.Location = new System.Drawing.Point(6, 62);
-            this.LocalMaster2019_btn.Name = "LocalMaster2019_btn";
-            this.LocalMaster2019_btn.Size = new System.Drawing.Size(149, 39);
-            this.LocalMaster2019_btn.TabIndex = 1;
-            this.LocalMaster2019_btn.Text = "NCVP Master";
-            this.LocalMaster2019_btn.UseVisualStyleBackColor = false;
-            this.LocalMaster2019_btn.Visible = false;
-            this.LocalMaster2019_btn.Click += new System.EventHandler(this.LocalMaster2019_btn_Click);
-            // 
             // LocalMaster2019_pnl
             // 
             this.LocalMaster2019_pnl.ControlId = null;
+            this.LocalMaster2019_pnl.Controls.Add(this.button1);
             this.LocalMaster2019_pnl.Controls.Add(this.Out_btn);
             this.LocalMaster2019_pnl.Controls.Add(this.AssetManager2019_btn);
             this.LocalMaster2019_pnl.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1475,20 +1476,6 @@
             this.LocalMaster2019_pnl.Size = new System.Drawing.Size(697, 567);
             this.LocalMaster2019_pnl.TabIndex = 53;
             this.LocalMaster2019_pnl.Visible = false;
-            // 
-            // AssetManager2019_btn
-            // 
-            this.AssetManager2019_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.AssetManager2019_btn.ControlId = null;
-            this.AssetManager2019_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.AssetManager2019_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.AssetManager2019_btn.Location = new System.Drawing.Point(7, 7);
-            this.AssetManager2019_btn.Name = "AssetManager2019_btn";
-            this.AssetManager2019_btn.Size = new System.Drawing.Size(138, 62);
-            this.AssetManager2019_btn.TabIndex = 0;
-            this.AssetManager2019_btn.Text = "Asset Masnager";
-            this.AssetManager2019_btn.UseVisualStyleBackColor = false;
-            this.AssetManager2019_btn.Click += new System.EventHandler(this.AssetManager2019_btn_Click);
             // 
             // Out_btn
             // 
@@ -1504,17 +1491,41 @@
             this.Out_btn.UseVisualStyleBackColor = false;
             this.Out_btn.Click += new System.EventHandler(this.Out_btn_Click);
             // 
+            // AssetManager2019_btn
+            // 
+            this.AssetManager2019_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.AssetManager2019_btn.ControlId = null;
+            this.AssetManager2019_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AssetManager2019_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.AssetManager2019_btn.Location = new System.Drawing.Point(7, 7);
+            this.AssetManager2019_btn.Name = "AssetManager2019_btn";
+            this.AssetManager2019_btn.Size = new System.Drawing.Size(138, 62);
+            this.AssetManager2019_btn.TabIndex = 0;
+            this.AssetManager2019_btn.Text = "Asset Masnager";
+            this.AssetManager2019_btn.UseVisualStyleBackColor = false;
+            this.AssetManager2019_btn.Click += new System.EventHandler(this.AssetManager2019_btn_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(30, 114);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 33);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(867, 679);
             this.ControlId = "frm001";
+            this.Controls.Add(this.LocalMaster2019_pnl);
             this.Controls.Add(this.Menu_gpb);
             this.Controls.Add(this.NCVP_Function_gr);
             this.Controls.Add(this.NcvpMaster_gpb);
             this.Controls.Add(this.SystemMaster_gpb);
-            this.Controls.Add(this.LocalMaster2019_pnl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormMain";
@@ -1653,5 +1664,6 @@
         private Framework.PanelCommon LocalMaster2019_pnl;
         private Framework.ButtonCommon AssetManager2019_btn;
         private Framework.ButtonCommon Out_btn;
+        private System.Windows.Forms.Button button1;
     }
 }

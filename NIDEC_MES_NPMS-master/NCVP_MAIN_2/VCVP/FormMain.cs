@@ -517,5 +517,10 @@ namespace Com.Nidec.Mes.VCVP
         {
             LocalMaster2019_pnl.Visible = false;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Ware
+        }
     }
 }

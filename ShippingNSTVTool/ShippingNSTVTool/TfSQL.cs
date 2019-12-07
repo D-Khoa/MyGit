@@ -14,7 +14,7 @@ namespace ShippingNSTVTool
 
         public TfSQL()
         {
-            strConnection = "Server=192.168.145.12;Port=5432;UserId=pqm_ad;Password=dbuser;Database=nstvdb;";
+            strConnection = "Server=192.168.145.12;Port=5432;UserId=pqm;Password=dbuser;Database=nstvdb;";
         }
         public void getComboBoxData(string sql, ref ComboBox cmb)
         {

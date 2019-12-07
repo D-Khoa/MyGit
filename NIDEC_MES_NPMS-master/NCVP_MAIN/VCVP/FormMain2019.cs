@@ -144,5 +144,13 @@ namespace Com.Nidec.Mes.VCVP
             this.Show();
         }
         #endregion
+
+        private void btnwh_Click(object sender, EventArgs e)
+        {
+            WareHouseForm whfrm = new WareHouseForm();
+            this.Hide();
+            whfrm.ShowDialog();
+            this.Show();
+        }
     }
 }
