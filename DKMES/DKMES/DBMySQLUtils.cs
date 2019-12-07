@@ -14,8 +14,9 @@ namespace DKMES
                  GetDBConnection(string host, int port, string database, string username, string password)
         {
             // Connection String.
-            String connString = "Server=" + host + ";Database=" + database
-                + ";Port=" + port + ";Uid=" + username + ";Pwd=" + password+ ";SslMode=Required;";
+            //String connString = "Server=" + host + ";Database=" + database
+            //    + ";Port=" + port + ";Uid=" + username + ";Pwd=" + password+ ";SslMode=Required;";
+            string connString = "datasource=ns8926.dotvndns.vn;port=3306;username=iottechn;password=admin1@;database=iottechn_asp";
             MySqlConnection conn = new MySqlConnection(connString);
 
             return conn;

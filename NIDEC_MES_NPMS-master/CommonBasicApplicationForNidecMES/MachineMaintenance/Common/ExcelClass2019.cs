@@ -39,10 +39,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
 
         public static void AddColumnsForExcel(string[] cols)
         {
-            cols.ToList().ForEach(s =>
-            {
-                ws.Cells[1, cols.ToList().IndexOf(s) + 1] = s;
-            });
+            //cols.ToList().ForEach(s =>
+            //{
+            //    ws.Cells[1, cols.ToList().IndexOf(s) + 1] = s;
+            //});
+            cExcel.Range rang = ws.Range[ws.Cells[1,1], ws.Cells[2,cols.Count()]];
+            rang.Value = cols;
         }
 
         public static void AddColumnsForExcel(this List<string> cols)
@@ -53,14 +55,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
             });
         }
 
-        public static void AddRowToExcel(string[] row)
+        public static void AddRowToExcel(string[] col)
         {
             cExcel.Range rng = ws.UsedRange;
             int index = rng.EntireRow.Count + 1;
-            for (int i = 0; i < row.Count(); i++)
-            {
-                ws.Cells[index, i + 1] = row[i];
-            }
+            var startcell = ws.Cells[index, 1];
+            var endcell = ws.Cells[index + 1, col.Count()];
+            cExcel.Range rang = ws.Range[startcell, endcell];
+            rang.Value = col;
         }
 
         public static void AddMultiRowToExcel(this List<string[]> row)
@@ -76,21 +78,25 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
 
         public static void DatatableToExcel(this DataTable dt)
         {
-            cExcel.Range rng = ws.UsedRange;
-            int index = rng.EntireRow.Count + 1;
+            //cExcel.Range rng = ws.UsedRange;
+            //int index = rng.EntireRow.Count + 1;
             List<string> query = (from col in dt.Columns.Cast<DataColumn>()
                                   select col.ColumnName).ToList();
             query.AddColumnsForExcel();
-            for (int i = 0; i < dt.Rows.Count; i++)
+            ////for (int i = 0; i < dt.Rows.Count; i++)
+            ////{
+            ////    //for (int j = 0; j < dt.Columns.Count; j++)
+            ////    //{
+            ////    //    ws.Cells[index + i, j + 1] = dt.Rows[i][j];
+            ////    //}
+            ////}
+            foreach (DataRow dr in dt.Rows)
             {
-                for (int j = 0; j < dt.Columns.Count; j++)
-                {
-                    ws.Cells[index + i, j + 1] = dt.Rows[i][j];
-                }
+                AddRowToExcel(dr.ItemArray.Select(s => s.ToString()).ToArray());
             }
         }
 
-        public static void ImportTable(this DataTable table, bool header)
+        public static void ImportTabletoExcel(this DataTable table, bool header)
         {
             cExcel.Range rng = ws.UsedRange;
             int rowindex = rng.EntireRow.Count;
@@ -114,12 +120,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
 
         public static void SaveAndExit(this string filename, bool show)
         {
-            app.Visible = show;
             if (File.Exists(filename))
                 app.DisplayAlerts = false;
             wb.SaveAs(filename, cExcel.XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, false, false, cExcel.XlSaveAsAccessMode.xlNoChange, cExcel.XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
-            wb.Close();
-            app.Quit();
+            app.Visible = show;
+            if (!show)
+            {
+                wb.Close();
+                app.Quit();
+            }
         }
     }
 }

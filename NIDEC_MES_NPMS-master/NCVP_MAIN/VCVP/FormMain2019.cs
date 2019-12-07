@@ -38,32 +38,32 @@ namespace Com.Nidec.Mes.VCVP
         #region MAIN MENU
         private void SystemMaster_btn_Click(object sender, EventArgs e)
         {
-            MainMaster_grt.Visible = true;
             MainMaster_grt.SelectedTab = SystemMaster_tab;
+            MainMaster_grt.Visible = true;
         }
 
         private void LocalMaster_btn_Click(object sender, EventArgs e)
         {
-            MainMaster_grt.Visible = true;
             MainMaster_grt.SelectedTab = LocalMaster_tab;
+            MainMaster_grt.Visible = true;
         }
 
         private void NCVP_btn_Click(object sender, EventArgs e)
         {
-            MainMaster_grt.Visible = true;
             MainMaster_grt.SelectedTab = NCVC_tab;
+            MainMaster_grt.Visible = true;
         }
 
         private void NCVC_btn_Click(object sender, EventArgs e)
         {
-            MainMaster_grt.Visible = true;
             MainMaster_grt.SelectedTab = NCVC_tab;
+            MainMaster_grt.Visible = true;
         }
 
         private void NSTV_btn_Click(object sender, EventArgs e)
         {
-            MainMaster_grt.Visible = true;
             MainMaster_grt.SelectedTab = NSTV_tab;
+            MainMaster_grt.Visible = true;
         }
 
         private void ChangePass_btn_Click(object sender, EventArgs e)
@@ -143,8 +143,17 @@ namespace Com.Nidec.Mes.VCVP
             assfrm.ShowDialog();
             this.Show();
         }
+
+        private void AccountManager_btn_Click(object sender, EventArgs e)
+        {
+            AccountManager2019Form accfrm = new AccountManager2019Form();
+            this.Hide();
+            accfrm.ShowDialog();
+            this.Show();
+        }
         #endregion
 
+<<<<<<< HEAD
         private void btnwh_Click(object sender, EventArgs e)
         {
             WareHouseForm whfrm = new WareHouseForm();
@@ -152,5 +161,7 @@ namespace Com.Nidec.Mes.VCVP
             whfrm.ShowDialog();
             this.Show();
         }
+=======
+>>>>>>> 7697ef042b98549788b08687dea0f0a9aeb7b4bb
     }
 }
