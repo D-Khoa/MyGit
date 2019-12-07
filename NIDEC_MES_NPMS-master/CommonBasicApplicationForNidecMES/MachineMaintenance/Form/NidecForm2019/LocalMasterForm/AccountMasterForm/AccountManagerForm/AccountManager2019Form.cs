@@ -173,18 +173,23 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
         {
             dgvAccountData.DataSource = Vo.table;
             dgvAccountData.AutoResizeColumnHeadersHeight();
+            dgvAccountData.Columns["Acquisition Cost"].DefaultCellStyle.Format = "0.00##";
+            dgvAccountData.Columns["Monthly Depr"].DefaultCellStyle.Format = "0.00##";
+            dgvAccountData.Columns["Current Depr"].DefaultCellStyle.Format = "0.00##";
+            dgvAccountData.Columns["Accum Depr"].DefaultCellStyle.Format = "0.00##";
+            dgvAccountData.Columns["Net Value"].DefaultCellStyle.Format = "0.00##";
             dgvAccountData.Refresh();
             tsRowCounter.Text = Vo.table.Rows.Count + " rows";
+            CounterCost();
         }
 
         private void CounterCost()
         {
-            InvertoryTimeVo maxInvertory = (InvertoryTimeVo)DefaultCbmInvoker.Invoke(new GetInvertoryTimeMaxCbm(), new InvertoryTimeVo());
-            int totalMachine = (int)Vo.table.Compute("sum(Qty)", "");
-            int invertoryMachine = (int)Vo.table.Compute("sum(Qty)", "");
-            int totalMachine = (int)Vo.table.Compute("sum(Qty)", "Qty > 0");
-            int totalMachine = (int)Vo.table.Compute("sum(Qty)", "Qty > 0");
-
+            //InvertoryTimeVo maxInvertory = (InvertoryTimeVo)DefaultCbmInvoker.Invoke(new GetInvertoryTimeMaxCbm(), new InvertoryTimeVo());
+            object totalMachine = Vo.table.Compute("sum(Qty) - 1", "");
+            object invertoryMachine = Vo.table.Compute("sum(Qty)", "");
+            dgvAccCounter.Rows.Add(inventoried, totalMachine);
+            dgvAccCounter.Refresh();
         }
 
         private void Renew()

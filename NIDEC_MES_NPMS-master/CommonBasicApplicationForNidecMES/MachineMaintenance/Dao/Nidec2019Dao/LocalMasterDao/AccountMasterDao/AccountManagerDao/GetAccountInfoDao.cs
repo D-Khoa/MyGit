@@ -21,7 +21,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
             sql.Append("b.asset_life as \"Life\", b.acquistion_date as \"Acquisition Date\", a.depreciation_start as \"Depreciation Start\", a.depreciation_end as \"Depreciation End\", ");
             sql.Append("b.acquistion_cost as \"Acquisition Cost\", a.monthly_depreciation as \"Monthly Depr\", a.current_depreciation as \"Current Depr\", a.accum_depreciation_now as \"Accum Depr\", a.net_value as \"Net Value\", ");
             sql.Append("a.registration_user_cd as \"Reg User\", a.registration_date_time as \"Reg Date\", a.comment_data as \"Comment\", ");
-            sql.Append("h.invertory_time_name as \"Invertory Time\", b.asset_invoice as \"Invoice\", i.factory_name as \"Factory\", b.label_status as \"Label\" ");
+            sql.Append("h.invertory_time_name as \"Inventory Time\", b.asset_invoice as \"Invoice\", i.factory_name as \"Factory\", b.label_status as \"Label\" ");
             sql.Append("from t_account_main a left join m_asset b on a.asset_id = b.asset_id ");
             sql.Append("left join m_unit c on a.unit_id = c.unit_id ");
             sql.Append("left join m_rank d on a.rank_id = d.rank_id ");

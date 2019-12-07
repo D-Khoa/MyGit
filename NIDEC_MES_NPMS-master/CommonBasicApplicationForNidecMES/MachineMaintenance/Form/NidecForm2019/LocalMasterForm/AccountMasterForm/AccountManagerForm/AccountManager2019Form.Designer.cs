@@ -39,7 +39,7 @@
             System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Rank");
             System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Section");
             System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Now Location");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Invertory Time");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Inventory Time");
             System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Valid");
             System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Expired");
             System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Net Value", new System.Windows.Forms.TreeNode[] {
@@ -80,6 +80,8 @@
             this.sttStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsRowCounter = new System.Windows.Forms.ToolStripStatusLabel();
+            this.inventoried = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_machine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccountData)).BeginInit();
             this.grt_Option.SuspendLayout();
             this.tab_Search.SuspendLayout();
@@ -203,7 +205,7 @@
             treeNode8.Name = "location_cd";
             treeNode8.Text = "Now Location";
             treeNode9.Name = "invertory_time_cd";
-            treeNode9.Text = "Invertory Time";
+            treeNode9.Text = "Inventory Time";
             treeNode10.Name = "valid";
             treeNode10.Text = "Valid";
             treeNode11.Name = "expired";
@@ -356,6 +358,9 @@
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAccCounter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvAccCounter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAccCounter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.inventoried,
+            this.total_machine});
             this.dgvAccCounter.ControlId = null;
             this.dgvAccCounter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAccCounter.Location = new System.Drawing.Point(3, 3);
@@ -523,6 +528,16 @@
             this.tsRowCounter.Size = new System.Drawing.Size(36, 17);
             this.tsRowCounter.Text = "None";
             // 
+            // inventoried
+            // 
+            this.inventoried.HeaderText = "Inventoried(Qty)";
+            this.inventoried.Name = "inventoried";
+            // 
+            // total_machine
+            // 
+            this.total_machine.HeaderText = "Total Machine(Qty)";
+            this.total_machine.Name = "total_machine";
+            // 
             // AccountManager2019Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -591,5 +606,7 @@
         private Framework.TreeViewCommon trvOther;
         private Framework.DataGridViewCommon dgvAccountDep;
         private Framework.DataGridViewCommon dgvRankDep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inventoried;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total_machine;
     }
 }
