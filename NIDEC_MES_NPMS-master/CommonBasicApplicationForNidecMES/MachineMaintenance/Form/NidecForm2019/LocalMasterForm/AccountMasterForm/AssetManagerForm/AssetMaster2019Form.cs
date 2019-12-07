@@ -201,5 +201,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             grbInfo.Location = new Point((this.Width / 2) - (grbInfo.Width / 2), grbInfo.Location.Y);
             grbButtons.Location = new Point((this.Width / 2) - (grbButtons.Width / 2), grbButtons.Location.Y);
         }
+
+        private void cmbLife_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

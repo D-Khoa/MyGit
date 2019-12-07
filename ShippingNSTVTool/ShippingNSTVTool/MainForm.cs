@@ -39,7 +39,7 @@ namespace ShippingNSTVTool
                 }
             }
             else
-                throw new Exception("Lenght barcode wrong!");
+                throw new Exception("Length barcode wrong!");
         }
         //Check customer asset
         private bool checkcustomer()
@@ -94,16 +94,6 @@ namespace ShippingNSTVTool
         #endregion
 
         #region DATATABLE SETTING
-        //Create columns for table
-        private void CreateTable()
-        {
-            dt.Columns.Add("Barcode");
-            dt.Columns.Add("Model");
-            dt.Columns.Add("Line");
-            dt.Columns.Add("Lot");
-            dt.Columns.Add("checkdate");
-        }
-
         private void GetTable(bool searchFlag)
         {
             dt.Clear();

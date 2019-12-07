@@ -473,5 +473,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.WareH
             Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common.Excel_Class exportexcel = new Common.Excel_Class();
             exportexcel.exportexcel(ref warehouse_main_dgv, linksave_txt.Text, this.Text);
         }
+
+        private void warehouse_main_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

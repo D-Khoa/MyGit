@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Invoice_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.asset_Code_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.full_asset_Code_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
@@ -104,6 +104,7 @@
             this.Rank_Dep_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.depreciation_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.exportexcel1_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.account_depreciation_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
             this.col_account_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_acquisition_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -135,7 +136,6 @@
             this.colNetValuecount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInventorycount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coltotalcount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.exportexcel1_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.setting_gbc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.account_main_dgv)).BeginInit();
             this.groupBoxCommon1.SuspendLayout();
@@ -221,7 +221,7 @@
             this.asset_type_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.asset_type_lbl.Location = new System.Drawing.Point(276, 147);
             this.asset_type_lbl.Name = "asset_type_lbl";
-            this.asset_type_lbl.Size = new System.Drawing.Size(69, 15);
+            this.asset_type_lbl.Size = new System.Drawing.Size(70, 15);
             this.asset_type_lbl.TabIndex = 70;
             this.asset_type_lbl.Text = "Asset Type:";
             // 
@@ -367,7 +367,7 @@
             this.full_asset_code_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.full_asset_code_lbl.Location = new System.Drawing.Point(12, 117);
             this.full_asset_code_lbl.Name = "full_asset_code_lbl";
-            this.full_asset_code_lbl.Size = new System.Drawing.Size(93, 15);
+            this.full_asset_code_lbl.Size = new System.Drawing.Size(94, 15);
             this.full_asset_code_lbl.TabIndex = 59;
             this.full_asset_code_lbl.Text = "Full Asset Code";
             // 
@@ -416,14 +416,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.account_main_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.account_main_dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.account_main_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.account_main_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.account_main_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colAcountMainId,
             this.colInvertoryId,
@@ -457,24 +457,24 @@
             this.colAssetInvoice,
             this.colAssetPo});
             this.account_main_dgv.ControlId = null;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.account_main_dgv.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.account_main_dgv.DefaultCellStyle = dataGridViewCellStyle7;
             this.account_main_dgv.Location = new System.Drawing.Point(0, 295);
             this.account_main_dgv.Name = "account_main_dgv";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.account_main_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.account_main_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.account_main_dgv.Size = new System.Drawing.Size(1264, 404);
             this.account_main_dgv.TabIndex = 75;
             // 
@@ -568,7 +568,7 @@
             this.colAssetType.DataPropertyName = "AssetType";
             this.colAssetType.HeaderText = "Asset Type";
             this.colAssetType.Name = "colAssetType";
-            this.colAssetType.Width = 91;
+            this.colAssetType.Width = 92;
             // 
             // coluserlocationname
             // 
@@ -650,8 +650,8 @@
             // colAcquisitionCost
             // 
             this.colAcquisitionCost.DataPropertyName = "AcquisitionCost";
-            dataGridViewCellStyle21.Format = "#,###0.###";
-            this.colAcquisitionCost.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle2.Format = "#,###0.###";
+            this.colAcquisitionCost.DefaultCellStyle = dataGridViewCellStyle2;
             this.colAcquisitionCost.HeaderText = "Acquisition Cost ($)";
             this.colAcquisitionCost.Name = "colAcquisitionCost";
             this.colAcquisitionCost.Width = 139;
@@ -659,8 +659,8 @@
             // colCurrentDepreciation
             // 
             this.colCurrentDepreciation.DataPropertyName = "CurrentDepreciation";
-            dataGridViewCellStyle22.Format = "#,###0.###";
-            this.colCurrentDepreciation.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle3.Format = "#,###0.###";
+            this.colCurrentDepreciation.DefaultCellStyle = dataGridViewCellStyle3;
             this.colCurrentDepreciation.HeaderText = "Current Depreciation ($)";
             this.colCurrentDepreciation.Name = "colCurrentDepreciation";
             this.colCurrentDepreciation.Width = 164;
@@ -668,8 +668,8 @@
             // colMonthlyDepreciation
             // 
             this.colMonthlyDepreciation.DataPropertyName = "MonthlyDepreciation";
-            dataGridViewCellStyle23.Format = "#,###0.###";
-            this.colMonthlyDepreciation.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle4.Format = "#,###0.###";
+            this.colMonthlyDepreciation.DefaultCellStyle = dataGridViewCellStyle4;
             this.colMonthlyDepreciation.HeaderText = "Monthly Depreciation ($)";
             this.colMonthlyDepreciation.Name = "colMonthlyDepreciation";
             this.colMonthlyDepreciation.Width = 164;
@@ -677,8 +677,8 @@
             // colAccumDepreciation
             // 
             this.colAccumDepreciation.DataPropertyName = "AccumDepreciation";
-            dataGridViewCellStyle24.Format = "#,###0.###";
-            this.colAccumDepreciation.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle5.Format = "#,###0.###";
+            this.colAccumDepreciation.DefaultCellStyle = dataGridViewCellStyle5;
             this.colAccumDepreciation.HeaderText = "Accum Depreciation ($)";
             this.colAccumDepreciation.Name = "colAccumDepreciation";
             this.colAccumDepreciation.Width = 160;
@@ -686,11 +686,11 @@
             // colNetValue
             // 
             this.colNetValue.DataPropertyName = "NetValue";
-            dataGridViewCellStyle25.Format = "#,###0.###";
-            this.colNetValue.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle6.Format = "#,###0.###";
+            this.colNetValue.DefaultCellStyle = dataGridViewCellStyle6;
             this.colNetValue.HeaderText = "Net Value ($)";
             this.colNetValue.Name = "colNetValue";
-            this.colNetValue.Width = 102;
+            this.colNetValue.Width = 103;
             // 
             // colAssetInvoice
             // 
@@ -760,6 +760,20 @@
             this.groupBoxCommon2.TabIndex = 76;
             this.groupBoxCommon2.TabStop = false;
             // 
+            // exportexcel1_btn
+            // 
+            this.exportexcel1_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.exportexcel1_btn.ControlId = null;
+            this.exportexcel1_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.exportexcel1_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.exportexcel1_btn.Location = new System.Drawing.Point(220, 42);
+            this.exportexcel1_btn.Name = "exportexcel1_btn";
+            this.exportexcel1_btn.Size = new System.Drawing.Size(82, 22);
+            this.exportexcel1_btn.TabIndex = 59;
+            this.exportexcel1_btn.Text = "Export Excel";
+            this.exportexcel1_btn.UseVisualStyleBackColor = false;
+            this.exportexcel1_btn.Click += new System.EventHandler(this.exportexcel1_btn_Click);
+            // 
             // account_depreciation_dgv
             // 
             this.account_depreciation_dgv.AllowUserToAddRows = false;
@@ -767,14 +781,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.account_depreciation_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.account_depreciation_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.account_depreciation_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.account_depreciation_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.account_depreciation_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_account_name,
@@ -784,24 +798,24 @@
             this.col_accum_depreciation,
             this.col_netbook});
             this.account_depreciation_dgv.ControlId = null;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.account_depreciation_dgv.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.account_depreciation_dgv.DefaultCellStyle = dataGridViewCellStyle10;
             this.account_depreciation_dgv.Location = new System.Drawing.Point(0, 295);
             this.account_depreciation_dgv.Name = "account_depreciation_dgv";
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.account_depreciation_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.account_depreciation_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.account_depreciation_dgv.Size = new System.Drawing.Size(1264, 404);
             this.account_depreciation_dgv.TabIndex = 77;
             // 
@@ -962,7 +976,7 @@
             this.netvalue_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.netvalue_lbl.Location = new System.Drawing.Point(537, 181);
             this.netvalue_lbl.Name = "netvalue_lbl";
-            this.netvalue_lbl.Size = new System.Drawing.Size(62, 15);
+            this.netvalue_lbl.Size = new System.Drawing.Size(63, 15);
             this.netvalue_lbl.TabIndex = 88;
             this.netvalue_lbl.Text = "Net Value:";
             // 
@@ -1029,14 +1043,14 @@
             // counter_dgv
             // 
             this.counter_dgv.AllowUserToAddRows = false;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.counter_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.counter_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.counter_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.counter_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colAcquisitionCostCount,
@@ -1047,65 +1061,65 @@
             this.colInventorycount,
             this.coltotalcount});
             this.counter_dgv.ControlId = null;
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.counter_dgv.DefaultCellStyle = dataGridViewCellStyle37;
-            this.counter_dgv.Location = new System.Drawing.Point(899, 209);
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.counter_dgv.DefaultCellStyle = dataGridViewCellStyle18;
+            this.counter_dgv.Location = new System.Drawing.Point(885, 209);
             this.counter_dgv.Name = "counter_dgv";
             this.counter_dgv.ReadOnly = true;
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.counter_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.counter_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.counter_dgv.RowHeadersVisible = false;
             this.counter_dgv.Size = new System.Drawing.Size(362, 64);
             this.counter_dgv.TabIndex = 93;
             // 
             // colAcquisitionCostCount
             // 
-            dataGridViewCellStyle32.Format = "#,###0.###";
-            this.colAcquisitionCostCount.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle13.Format = "#,###0.###";
+            this.colAcquisitionCostCount.DefaultCellStyle = dataGridViewCellStyle13;
             this.colAcquisitionCostCount.HeaderText = "AcquisitionCost($)";
             this.colAcquisitionCostCount.Name = "colAcquisitionCostCount";
             this.colAcquisitionCostCount.ReadOnly = true;
             // 
             // colCurrentDepreciationcount
             // 
-            dataGridViewCellStyle33.Format = "#,###0.###";
-            this.colCurrentDepreciationcount.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle14.Format = "#,###0.###";
+            this.colCurrentDepreciationcount.DefaultCellStyle = dataGridViewCellStyle14;
             this.colCurrentDepreciationcount.HeaderText = "CurrentDepr($)";
             this.colCurrentDepreciationcount.Name = "colCurrentDepreciationcount";
             this.colCurrentDepreciationcount.ReadOnly = true;
             // 
             // colMonthlyDepreciationcount
             // 
-            dataGridViewCellStyle34.Format = "#,###0.###";
-            this.colMonthlyDepreciationcount.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle15.Format = "#,###0.###";
+            this.colMonthlyDepreciationcount.DefaultCellStyle = dataGridViewCellStyle15;
             this.colMonthlyDepreciationcount.HeaderText = "MonthlyDepr($)";
             this.colMonthlyDepreciationcount.Name = "colMonthlyDepreciationcount";
             this.colMonthlyDepreciationcount.ReadOnly = true;
             // 
             // colAccumDepreciationcount
             // 
-            dataGridViewCellStyle35.Format = "#,###0.###";
-            this.colAccumDepreciationcount.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle16.Format = "#,###0.###";
+            this.colAccumDepreciationcount.DefaultCellStyle = dataGridViewCellStyle16;
             this.colAccumDepreciationcount.HeaderText = "AccumDepr($)";
             this.colAccumDepreciationcount.Name = "colAccumDepreciationcount";
             this.colAccumDepreciationcount.ReadOnly = true;
             // 
             // colNetValuecount
             // 
-            dataGridViewCellStyle36.Format = "#,###0.###";
-            this.colNetValuecount.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle17.Format = "#,###0.###";
+            this.colNetValuecount.DefaultCellStyle = dataGridViewCellStyle17;
             this.colNetValuecount.HeaderText = "NetValue($)";
             this.colNetValuecount.Name = "colNetValuecount";
             this.colNetValuecount.ReadOnly = true;
@@ -1121,20 +1135,6 @@
             this.coltotalcount.HeaderText = "MachineTotal(qty)";
             this.coltotalcount.Name = "coltotalcount";
             this.coltotalcount.ReadOnly = true;
-            // 
-            // exportexcel1_btn
-            // 
-            this.exportexcel1_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.exportexcel1_btn.ControlId = null;
-            this.exportexcel1_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.exportexcel1_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.exportexcel1_btn.Location = new System.Drawing.Point(220, 42);
-            this.exportexcel1_btn.Name = "exportexcel1_btn";
-            this.exportexcel1_btn.Size = new System.Drawing.Size(82, 22);
-            this.exportexcel1_btn.TabIndex = 59;
-            this.exportexcel1_btn.Text = "Export Excel";
-            this.exportexcel1_btn.UseVisualStyleBackColor = false;
-            this.exportexcel1_btn.Click += new System.EventHandler(this.exportexcel1_btn_Click);
             // 
             // AccountMainForm
             // 
