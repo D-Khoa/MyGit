@@ -196,7 +196,9 @@
     <Compile Include="Cbm\GA1ModelCbm\UpdateGA1ModelNoiseCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AccountCodeCbm\GetAccountCodeCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AccountLocationCbm\GetAccountLocationCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AccountManagerCbm\GetAccDeprCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AccountManagerCbm\GetAccountInfoCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AccountManagerCbm\GetRankDeprCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\AddAssetCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\AssetMaster2019Cbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\DeleteAssetCbm.cs" />
@@ -504,7 +506,9 @@
     <Compile Include="Dao\AccountWhDao\RankMasterDao\UpdateRankDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AccountCodeDao\GetAccountCodeDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AccountLocationDao\GetAccountLocationDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AccountManagerDao\GetAccDeprDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AccountManagerDao\GetAccountInfoDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AccountManagerDao\GetRankDeprDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\AddAssetDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\AssetMaster2019Dao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\DeleteAssetDao.cs" />
@@ -1084,6 +1088,12 @@
     <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AccountManagerForm\AccountManager2019Form.Designer.cs">
       <DependentUpon>AccountManager2019Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AccountManagerForm\UpdateAccountInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AccountManagerForm\UpdateAccountInfoForm.Designer.cs">
+      <DependentUpon>UpdateAccountInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AssetManagerForm\AssetMaster2019Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1396,6 +1406,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AccountManagerForm\AccountManager2019Form.resx">
       <DependentUpon>AccountManager2019Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AccountManagerForm\UpdateAccountInfoForm.resx">
+      <DependentUpon>UpdateAccountInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AssetManagerForm\AssetMaster2019Form.resx">
       <DependentUpon>AssetMaster2019Form.cs</DependentUpon>

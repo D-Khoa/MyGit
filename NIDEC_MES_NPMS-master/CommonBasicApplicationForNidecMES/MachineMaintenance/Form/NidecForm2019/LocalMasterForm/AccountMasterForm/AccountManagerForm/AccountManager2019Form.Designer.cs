@@ -51,8 +51,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvAccountData = new Com.Nidec.Mes.Framework.DataGridViewCommon();
             this.grt_Option = new Com.Nidec.Mes.Framework.TabControlCommon();
             this.tab_Search = new System.Windows.Forms.TabPage();
@@ -63,10 +69,16 @@
             this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.txtAssetCode = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.tab_depreciation = new System.Windows.Forms.TabPage();
-            this.dgvAccountDep = new Com.Nidec.Mes.Framework.DataGridViewCommon();
-            this.dgvRankDep = new Com.Nidec.Mes.Framework.DataGridViewCommon();
+            this.dgvDeprCalc = new Com.Nidec.Mes.Framework.DataGridViewCommon();
             this.tab_TotalCost = new System.Windows.Forms.TabPage();
             this.dgvAccCounter = new Com.Nidec.Mes.Framework.DataGridViewCommon();
+            this.aquisition_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.month_depr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curr_depr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accum_depr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.net_value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inventoried = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_machine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlButtons1 = new Com.Nidec.Mes.Framework.PanelCommon();
             this.btnClear = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.btnExport = new Com.Nidec.Mes.Framework.ButtonCommon();
@@ -74,20 +86,18 @@
             this.btnAdd = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.btnSearch = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.pnlButtons2 = new Com.Nidec.Mes.Framework.PanelCommon();
+            this.btnRankDepr = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.btnTransferAsset = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.btnDepreciation = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.btnAccDepr = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.btnClose = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.sttStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsRowCounter = new System.Windows.Forms.ToolStripStatusLabel();
-            this.inventoried = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_machine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccountData)).BeginInit();
             this.grt_Option.SuspendLayout();
             this.tab_Search.SuspendLayout();
             this.tab_depreciation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAccountDep)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRankDep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeprCalc)).BeginInit();
             this.tab_TotalCost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccCounter)).BeginInit();
             this.pnlButtons1.SuspendLayout();
@@ -97,6 +107,7 @@
             // 
             // dgvAccountData
             // 
+            this.dgvAccountData.AllowUserToAddRows = false;
             this.dgvAccountData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -118,7 +129,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAccountData.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvAccountData.Location = new System.Drawing.Point(0, 325);
+            this.dgvAccountData.Location = new System.Drawing.Point(0, 355);
             this.dgvAccountData.Name = "dgvAccountData";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
@@ -128,7 +139,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAccountData.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvAccountData.Size = new System.Drawing.Size(835, 183);
+            this.dgvAccountData.Size = new System.Drawing.Size(835, 153);
             this.dgvAccountData.TabIndex = 21;
             this.dgvAccountData.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvAccountData_CellFormatting);
             // 
@@ -144,7 +155,7 @@
             this.grt_Option.Location = new System.Drawing.Point(0, 110);
             this.grt_Option.Name = "grt_Option";
             this.grt_Option.SelectedIndex = 0;
-            this.grt_Option.Size = new System.Drawing.Size(839, 157);
+            this.grt_Option.Size = new System.Drawing.Size(839, 187);
             this.grt_Option.TabIndex = 22;
             // 
             // tab_Search
@@ -159,7 +170,7 @@
             this.tab_Search.Location = new System.Drawing.Point(4, 24);
             this.tab_Search.Name = "tab_Search";
             this.tab_Search.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Search.Size = new System.Drawing.Size(831, 129);
+            this.tab_Search.Size = new System.Drawing.Size(831, 159);
             this.tab_Search.TabIndex = 0;
             this.tab_Search.Text = "Search";
             // 
@@ -184,7 +195,7 @@
             treeNode2,
             treeNode3,
             treeNode4});
-            this.trvAsset.Size = new System.Drawing.Size(294, 123);
+            this.trvAsset.Size = new System.Drawing.Size(294, 153);
             this.trvAsset.TabIndex = 4;
             this.trvAsset.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.trvAsset_AfterCheck);
             // 
@@ -225,7 +236,7 @@
             treeNode12,
             treeNode13,
             treeNode14});
-            this.trvOther.Size = new System.Drawing.Size(254, 123);
+            this.trvOther.Size = new System.Drawing.Size(254, 153);
             this.trvOther.TabIndex = 10;
             this.trvOther.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.trvOther_AfterCheck);
             // 
@@ -275,8 +286,7 @@
             // tab_depreciation
             // 
             this.tab_depreciation.BackColor = System.Drawing.SystemColors.Control;
-            this.tab_depreciation.Controls.Add(this.dgvAccountDep);
-            this.tab_depreciation.Controls.Add(this.dgvRankDep);
+            this.tab_depreciation.Controls.Add(this.dgvDeprCalc);
             this.tab_depreciation.Location = new System.Drawing.Point(4, 24);
             this.tab_depreciation.Name = "tab_depreciation";
             this.tab_depreciation.Padding = new System.Windows.Forms.Padding(3);
@@ -284,8 +294,10 @@
             this.tab_depreciation.TabIndex = 1;
             this.tab_depreciation.Text = "Depreciation";
             // 
-            // dgvAccountDep
+            // dgvDeprCalc
             // 
+            this.dgvDeprCalc.AllowUserToAddRows = false;
+            this.dgvDeprCalc.AllowUserToDeleteRows = false;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -293,12 +305,13 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAccountDep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvAccountDep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAccountDep.ControlId = null;
-            this.dgvAccountDep.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dgvAccountDep.Location = new System.Drawing.Point(410, 3);
-            this.dgvAccountDep.Name = "dgvAccountDep";
+            this.dgvDeprCalc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDeprCalc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDeprCalc.ControlId = null;
+            this.dgvDeprCalc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDeprCalc.Location = new System.Drawing.Point(3, 3);
+            this.dgvDeprCalc.Name = "dgvDeprCalc";
+            this.dgvDeprCalc.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -306,35 +319,9 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAccountDep.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvAccountDep.Size = new System.Drawing.Size(418, 123);
-            this.dgvAccountDep.TabIndex = 1;
-            // 
-            // dgvRankDep
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRankDep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvRankDep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRankDep.ControlId = null;
-            this.dgvRankDep.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dgvRankDep.Location = new System.Drawing.Point(3, 3);
-            this.dgvRankDep.Name = "dgvRankDep";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRankDep.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvRankDep.Size = new System.Drawing.Size(407, 123);
-            this.dgvRankDep.TabIndex = 0;
+            this.dgvDeprCalc.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvDeprCalc.Size = new System.Drawing.Size(825, 123);
+            this.dgvDeprCalc.TabIndex = 0;
             // 
             // tab_TotalCost
             // 
@@ -349,32 +336,108 @@
             // 
             // dgvAccCounter
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAccCounter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvAccCounter.AllowUserToAddRows = false;
+            this.dgvAccCounter.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dgvAccCounter.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAccCounter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvAccCounter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAccCounter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.aquisition_cost,
+            this.month_depr,
+            this.curr_depr,
+            this.accum_depr,
+            this.net_value,
             this.inventoried,
             this.total_machine});
             this.dgvAccCounter.ControlId = null;
             this.dgvAccCounter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAccCounter.Location = new System.Drawing.Point(3, 3);
             this.dgvAccCounter.Name = "dgvAccCounter";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAccCounter.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvAccCounter.ReadOnly = true;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAccCounter.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvAccCounter.Size = new System.Drawing.Size(825, 123);
             this.dgvAccCounter.TabIndex = 0;
+            // 
+            // aquisition_cost
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N3";
+            dataGridViewCellStyle8.NullValue = null;
+            this.aquisition_cost.DefaultCellStyle = dataGridViewCellStyle8;
+            this.aquisition_cost.HeaderText = "Aquisition Cost ($)";
+            this.aquisition_cost.Name = "aquisition_cost";
+            this.aquisition_cost.ReadOnly = true;
+            // 
+            // month_depr
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "N3";
+            dataGridViewCellStyle9.NullValue = null;
+            this.month_depr.DefaultCellStyle = dataGridViewCellStyle9;
+            this.month_depr.HeaderText = "Monthly Depreception ($)";
+            this.month_depr.Name = "month_depr";
+            this.month_depr.ReadOnly = true;
+            // 
+            // curr_depr
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "N3";
+            dataGridViewCellStyle10.NullValue = null;
+            this.curr_depr.DefaultCellStyle = dataGridViewCellStyle10;
+            this.curr_depr.HeaderText = "Current Depreception ($)";
+            this.curr_depr.Name = "curr_depr";
+            this.curr_depr.ReadOnly = true;
+            // 
+            // accum_depr
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Format = "N3";
+            dataGridViewCellStyle11.NullValue = null;
+            this.accum_depr.DefaultCellStyle = dataGridViewCellStyle11;
+            this.accum_depr.HeaderText = "Accum Depreception ($)";
+            this.accum_depr.Name = "accum_depr";
+            this.accum_depr.ReadOnly = true;
+            // 
+            // net_value
+            // 
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Format = "N3";
+            dataGridViewCellStyle12.NullValue = null;
+            this.net_value.DefaultCellStyle = dataGridViewCellStyle12;
+            this.net_value.HeaderText = "Netbooks ($)";
+            this.net_value.Name = "net_value";
+            this.net_value.ReadOnly = true;
+            // 
+            // inventoried
+            // 
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.inventoried.DefaultCellStyle = dataGridViewCellStyle13;
+            this.inventoried.HeaderText = "Inventoried(Qty)";
+            this.inventoried.Name = "inventoried";
+            this.inventoried.ReadOnly = true;
+            // 
+            // total_machine
+            // 
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.total_machine.DefaultCellStyle = dataGridViewCellStyle14;
+            this.total_machine.HeaderText = "Total Machine(Qty)";
+            this.total_machine.Name = "total_machine";
+            this.total_machine.ReadOnly = true;
             // 
             // pnlButtons1
             // 
@@ -385,7 +448,7 @@
             this.pnlButtons1.Controls.Add(this.btnAdd);
             this.pnlButtons1.Controls.Add(this.btnSearch);
             this.pnlButtons1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlButtons1.Location = new System.Drawing.Point(4, 270);
+            this.pnlButtons1.Location = new System.Drawing.Point(4, 300);
             this.pnlButtons1.Name = "pnlButtons1";
             this.pnlButtons1.Size = new System.Drawing.Size(465, 49);
             this.pnlButtons1.TabIndex = 23;
@@ -458,20 +521,34 @@
             // pnlButtons2
             // 
             this.pnlButtons2.ControlId = null;
+            this.pnlButtons2.Controls.Add(this.btnRankDepr);
             this.pnlButtons2.Controls.Add(this.btnTransferAsset);
-            this.pnlButtons2.Controls.Add(this.btnDepreciation);
+            this.pnlButtons2.Controls.Add(this.btnAccDepr);
             this.pnlButtons2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlButtons2.Location = new System.Drawing.Point(475, 270);
+            this.pnlButtons2.Location = new System.Drawing.Point(475, 300);
             this.pnlButtons2.Name = "pnlButtons2";
-            this.pnlButtons2.Size = new System.Drawing.Size(187, 49);
+            this.pnlButtons2.Size = new System.Drawing.Size(268, 49);
             this.pnlButtons2.TabIndex = 24;
+            // 
+            // btnRankDepr
+            // 
+            this.btnRankDepr.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRankDepr.ControlId = null;
+            this.btnRankDepr.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnRankDepr.Location = new System.Drawing.Point(91, 4);
+            this.btnRankDepr.Name = "btnRankDepr";
+            this.btnRankDepr.Size = new System.Drawing.Size(86, 40);
+            this.btnRankDepr.TabIndex = 3;
+            this.btnRankDepr.Text = "Rank Depr";
+            this.btnRankDepr.UseVisualStyleBackColor = false;
+            this.btnRankDepr.Click += new System.EventHandler(this.btnRankDepr_Click);
             // 
             // btnTransferAsset
             // 
             this.btnTransferAsset.BackColor = System.Drawing.SystemColors.Control;
             this.btnTransferAsset.ControlId = null;
             this.btnTransferAsset.Font = new System.Drawing.Font("Arial", 9F);
-            this.btnTransferAsset.Location = new System.Drawing.Point(95, 3);
+            this.btnTransferAsset.Location = new System.Drawing.Point(179, 3);
             this.btnTransferAsset.Name = "btnTransferAsset";
             this.btnTransferAsset.Size = new System.Drawing.Size(86, 40);
             this.btnTransferAsset.TabIndex = 2;
@@ -479,25 +556,25 @@
             this.btnTransferAsset.UseVisualStyleBackColor = false;
             this.btnTransferAsset.Click += new System.EventHandler(this.btnTransferAsset_Click);
             // 
-            // btnDepreciation
+            // btnAccDepr
             // 
-            this.btnDepreciation.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDepreciation.ControlId = null;
-            this.btnDepreciation.Font = new System.Drawing.Font("Arial", 9F);
-            this.btnDepreciation.Location = new System.Drawing.Point(3, 4);
-            this.btnDepreciation.Name = "btnDepreciation";
-            this.btnDepreciation.Size = new System.Drawing.Size(86, 40);
-            this.btnDepreciation.TabIndex = 0;
-            this.btnDepreciation.Text = "Depreciation";
-            this.btnDepreciation.UseVisualStyleBackColor = false;
-            this.btnDepreciation.Click += new System.EventHandler(this.btnDepreciation_Click);
+            this.btnAccDepr.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAccDepr.ControlId = null;
+            this.btnAccDepr.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnAccDepr.Location = new System.Drawing.Point(3, 4);
+            this.btnAccDepr.Name = "btnAccDepr";
+            this.btnAccDepr.Size = new System.Drawing.Size(86, 40);
+            this.btnAccDepr.TabIndex = 0;
+            this.btnAccDepr.Text = "Account Depr";
+            this.btnAccDepr.UseVisualStyleBackColor = false;
+            this.btnAccDepr.Click += new System.EventHandler(this.btnAccDepr_Click);
             // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.ControlId = null;
             this.btnClose.Font = new System.Drawing.Font("Arial", 9F);
-            this.btnClose.Location = new System.Drawing.Point(668, 274);
+            this.btnClose.Location = new System.Drawing.Point(746, 303);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(86, 40);
             this.btnClose.TabIndex = 25;
@@ -528,16 +605,6 @@
             this.tsRowCounter.Size = new System.Drawing.Size(36, 17);
             this.tsRowCounter.Text = "None";
             // 
-            // inventoried
-            // 
-            this.inventoried.HeaderText = "Inventoried(Qty)";
-            this.inventoried.Name = "inventoried";
-            // 
-            // total_machine
-            // 
-            this.total_machine.HeaderText = "Total Machine(Qty)";
-            this.total_machine.Name = "total_machine";
-            // 
             // AccountManager2019Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -564,8 +631,7 @@
             this.tab_Search.ResumeLayout(false);
             this.tab_Search.PerformLayout();
             this.tab_depreciation.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAccountDep)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRankDep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeprCalc)).EndInit();
             this.tab_TotalCost.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccCounter)).EndInit();
             this.pnlButtons1.ResumeLayout(false);
@@ -595,7 +661,7 @@
         private Framework.ButtonCommon btnSearch;
         private Framework.PanelCommon pnlButtons2;
         private Framework.ButtonCommon btnExport;
-        private Framework.ButtonCommon btnDepreciation;
+        private Framework.ButtonCommon btnAccDepr;
         private System.Windows.Forms.TabPage tab_TotalCost;
         private Framework.DataGridViewCommon dgvAccCounter;
         private Framework.ButtonCommon btnTransferAsset;
@@ -604,9 +670,14 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel tsRowCounter;
         private Framework.TreeViewCommon trvOther;
-        private Framework.DataGridViewCommon dgvAccountDep;
-        private Framework.DataGridViewCommon dgvRankDep;
+        private Framework.DataGridViewCommon dgvDeprCalc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aquisition_cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn month_depr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curr_depr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn accum_depr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn net_value;
         private System.Windows.Forms.DataGridViewTextBoxColumn inventoried;
         private System.Windows.Forms.DataGridViewTextBoxColumn total_machine;
+        private Framework.ButtonCommon btnRankDepr;
     }
 }

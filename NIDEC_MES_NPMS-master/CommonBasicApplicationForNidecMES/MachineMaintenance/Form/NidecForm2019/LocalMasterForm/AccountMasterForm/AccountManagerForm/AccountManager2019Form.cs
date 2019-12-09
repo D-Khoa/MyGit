@@ -153,9 +153,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             }
         }
 
-        private void btnDepreciation_Click(object sender, EventArgs e)
+        private void btnAccDepr_Click(object sender, EventArgs e)
         {
+            AccountManagerVo accDepr = (AccountManagerVo)DefaultCbmInvoker.Invoke(new GetAccDeprCbm(), new AccountManagerVo());
+            UpdateDeprGrid(accDepr);
+        }
 
+        private void btnRankDepr_Click(object sender, EventArgs e)
+        {
+            AccountManagerVo rankDepr = (AccountManagerVo)DefaultCbmInvoker.Invoke(new GetRankDeprCbm(), new AccountManagerVo());
+            UpdateDeprGrid(rankDepr);
         }
 
         private void btnTransferAsset_Click(object sender, EventArgs e)
@@ -173,33 +180,92 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
         {
             dgvAccountData.DataSource = Vo.table;
             dgvAccountData.AutoResizeColumnHeadersHeight();
-            dgvAccountData.Columns["Acquisition Cost"].DefaultCellStyle.Format = "0.00##";
-            dgvAccountData.Columns["Monthly Depr"].DefaultCellStyle.Format = "0.00##";
-            dgvAccountData.Columns["Current Depr"].DefaultCellStyle.Format = "0.00##";
-            dgvAccountData.Columns["Accum Depr"].DefaultCellStyle.Format = "0.00##";
-            dgvAccountData.Columns["Net Value"].DefaultCellStyle.Format = "0.00##";
+            dgvAccountData.Columns["Acquisition_Cost"].DefaultCellStyle.Format = "N3";
+            dgvAccountData.Columns["Monthly_Depr"].DefaultCellStyle.Format = "N3";
+            dgvAccountData.Columns["Current_Depr"].DefaultCellStyle.Format = "N3";
+            dgvAccountData.Columns["Accum_Depr"].DefaultCellStyle.Format = "N3";
+            dgvAccountData.Columns["Net_Value"].DefaultCellStyle.Format = "N3";
+            dgvAccountData.Columns["Acquisition_Cost"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvAccountData.Columns["Monthly_Depr"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvAccountData.Columns["Current_Depr"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvAccountData.Columns["Accum_Depr"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvAccountData.Columns["Net_Value"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvAccountData.Refresh();
             tsRowCounter.Text = Vo.table.Rows.Count + " rows";
             CounterCost();
         }
 
+        private void UpdateDeprGrid(AccountManagerVo inVo)
+        {
+            if (inVo.table.Rows.Count > 0)
+            {
+                dgvDeprCalc.DataSource = inVo.table;
+                dgvDeprCalc.Columns["acquistion_cost"].DefaultCellStyle.Format = "N3";
+                dgvDeprCalc.Columns["monthly_depreciation"].DefaultCellStyle.Format = "N3";
+                dgvDeprCalc.Columns["current_depreciation"].DefaultCellStyle.Format = "N3";
+                dgvDeprCalc.Columns["accum_depreciation_now"].DefaultCellStyle.Format = "N3";
+                dgvDeprCalc.Columns["net_value"].DefaultCellStyle.Format = "N3";
+                dgvDeprCalc.Columns["acquistion_cost"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvDeprCalc.Columns["monthly_depreciation"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvDeprCalc.Columns["current_depreciation"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvDeprCalc.Columns["accum_depreciation_now"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvDeprCalc.Columns["net_value"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvDeprCalc.Columns["acquistion_cost"].HeaderText = "Acquisition Cost ($)";
+                dgvDeprCalc.Columns["monthly_depreciation"].HeaderText = "Monthly Depreception ($)";
+                dgvDeprCalc.Columns["current_depreciation"].HeaderText = "Current Depreception ($)";
+                dgvDeprCalc.Columns["accum_depreciation_now"].HeaderText = "Accum Depreception ($)";
+                dgvDeprCalc.Columns["net_value"].HeaderText = "Netbooks ($)";
+                try
+                {
+                    dgvDeprCalc.Columns["account_code_name"].HeaderText = "Account Code Name";
+                }
+                catch
+                {
+                    dgvDeprCalc.Columns["rank_name"].HeaderText = "Rank Name";
+                }
+                dgvDeprCalc.Refresh();
+                grt_Option.SelectedTab = tab_depreciation;
+            }
+        }
+
         private void CounterCost()
         {
             InvertoryTimeVo maxInvertory = (InvertoryTimeVo)DefaultCbmInvoker.Invoke(new GetInvertoryTimeMaxCbm(), new InvertoryTimeVo());
-            
-            object totalMachine = Vo.table.Compute("sum(Qty) - 1", "");
-            object invertoryMachine = Vo.table.Compute("sum(Qty)", "");
-            dgvAccCounter.Rows.Add(inventoried, totalMachine);
+            object totalMachine = Vo.table.Compute("sum(Qty)", "");
+            int inventoried = 0;
+            double aqui_cost = 0;
+            double month_depr = 0;
+            double curr_depr = 0;
+            double accum_depr = 0;
+            double net_value = 0;
+            foreach (DataGridViewRow dr in dgvAccountData.Rows)
+            {
+                if (dr != null)
+                {
+                    if (dr.Cells["Inventory_Time"].Value.ToString() == maxInvertory.invertory_time_name)
+                    {
+                        inventoried += int.Parse(dr.Cells["Qty"].Value.ToString());
+                    }
+                    aqui_cost += double.Parse(dr.Cells["Acquisition_Cost"].Value.ToString());
+                    month_depr += double.Parse(dr.Cells["Monthly_Depr"].Value.ToString());
+                    curr_depr += double.Parse(dr.Cells["Current_Depr"].Value.ToString());
+                    accum_depr += double.Parse(dr.Cells["Accum_Depr"].Value.ToString());
+                    net_value += double.Parse(dr.Cells["Net_Value"].Value.ToString());
+                }
+            }
+            dgvAccCounter.Rows.Clear();
+            dgvAccCounter.Rows.Add(aqui_cost, month_depr, curr_depr, accum_depr, net_value, inventoried, totalMachine);
             dgvAccCounter.Refresh();
+            grt_Option.SelectedTab = tab_TotalCost;
         }
 
         private void Renew()
         {
+            grt_Option.SelectedTab = tab_Search;
             Vo = new AccountManagerVo();
             dgvAccountData.DataSource = null;
-            dgvAccCounter.DataSource = null;
-            dgvAccountDep.DataSource = null;
-            dgvRankDep.DataSource = null;
+            dgvAccCounter.Rows.Clear();
+            dgvDeprCalc.DataSource = null;
             foreach (TreeNode root in trvAsset.Nodes)
                 root.Checked = false;
             foreach (TreeNode root in trvOther.Nodes)
@@ -286,5 +352,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
         private void dgvAccountData_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
         }
+
     }
 }

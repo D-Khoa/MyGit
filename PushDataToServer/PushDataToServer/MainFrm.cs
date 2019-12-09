@@ -13,7 +13,6 @@ namespace PushDataToServer
         OpenFileDialog chooseFolder;
         List<string> setString;
         string[] filePath;
-        string fromfolder, tofolder, tempfolder;
         string settingfile;
         string path;
         int c;
@@ -22,7 +21,7 @@ namespace PushDataToServer
         {
             InitializeComponent();
             setString = new List<string>();
-            settingfile = @"D:\PushData\ini.txt";
+            settingfile = @"D:\ini.txt";
         }
 
         private void MainFrm_Load(object sender, EventArgs e)
@@ -34,9 +33,6 @@ namespace PushDataToServer
             txtFrom.Text = setString[0].Remove(0, 14);
             txtTo.Text = setString[1].Remove(0, 12);
             txtTemp.Text = setString[2].Remove(0, 14);
-            fromfolder = txtFrom.Text;
-            tofolder = txtTo.Text;
-            tempfolder = txtTemp.Text;
         }
 
         private void btnBTemp_Click(object sender, EventArgs e)
@@ -81,9 +77,9 @@ namespace PushDataToServer
                 if (btnStop.Enabled)
                     e.Cancel = true;
                 setString.Clear();
-                setString.Add("From Folder = " + fromfolder);
-                setString.Add("To Folder = " + tofolder);
-                setString.Add("Temp Folder = " + tempfolder);
+                setString.Add("From Folder = " + txtFrom.Text);
+                setString.Add("To Folder = " + txtTo.Text);
+                setString.Add("Temp Folder = " + txtTemp.Text);
                 if (!Directory.Exists(Path.GetDirectoryName(settingfile)))
                     Directory.CreateDirectory(Path.GetDirectoryName(settingfile));
                 File.WriteAllLines(settingfile, setString);
@@ -156,7 +152,7 @@ namespace PushDataToServer
 
         private void EditAndSendFile()
         {
-            filePath = Directory.GetFiles(fromfolder, "*.LA20_517ALA201NO1");
+            filePath = Directory.GetFiles(txtFrom.Text, "*.LA20_517ALA201NO1");
             if (filePath != null)
             {
                 foreach (string file in filePath)
@@ -164,9 +160,9 @@ namespace PushDataToServer
                     path = Path.GetFileName(file);
                     string dataText = File.ReadAllText(file);
                     dataText = dataText.Replace("", Environment.NewLine);
-                    File.WriteAllText(tofolder + "\\" + path, dataText);
+                    File.WriteAllText(txtTo.Text + "\\" + path, dataText);
                     if (!string.IsNullOrEmpty(txtTemp.Text))
-                        File.Move(file, tempfolder + "\\" + path);
+                        File.Move(file, txtTemp.Text + "\\" + path);
                 }
             }
         }
