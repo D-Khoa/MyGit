@@ -139,8 +139,10 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAccountData.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAccountData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect;
             this.dgvAccountData.Size = new System.Drawing.Size(835, 153);
             this.dgvAccountData.TabIndex = 21;
+            this.dgvAccountData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccountData_CellClick);
             this.dgvAccountData.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvAccountData_CellFormatting);
             // 
             // grt_Option
@@ -196,7 +198,7 @@
             treeNode3,
             treeNode4});
             this.trvAsset.Size = new System.Drawing.Size(294, 153);
-            this.trvAsset.TabIndex = 4;
+            this.trvAsset.TabIndex = 3;
             this.trvAsset.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.trvAsset_AfterCheck);
             // 
             // trvOther
@@ -237,7 +239,7 @@
             treeNode13,
             treeNode14});
             this.trvOther.Size = new System.Drawing.Size(254, 153);
-            this.trvOther.TabIndex = 10;
+            this.trvOther.TabIndex = 4;
             this.trvOther.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.trvOther_AfterCheck);
             // 
             // labelCommon2
@@ -259,7 +261,7 @@
             this.txtAssetName.Location = new System.Drawing.Point(83, 39);
             this.txtAssetName.Name = "txtAssetName";
             this.txtAssetName.Size = new System.Drawing.Size(187, 21);
-            this.txtAssetName.TabIndex = 8;
+            this.txtAssetName.TabIndex = 2;
             // 
             // labelCommon1
             // 
@@ -290,7 +292,7 @@
             this.tab_depreciation.Location = new System.Drawing.Point(4, 24);
             this.tab_depreciation.Name = "tab_depreciation";
             this.tab_depreciation.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_depreciation.Size = new System.Drawing.Size(831, 129);
+            this.tab_depreciation.Size = new System.Drawing.Size(831, 159);
             this.tab_depreciation.TabIndex = 1;
             this.tab_depreciation.Text = "Depreciation";
             // 
@@ -320,7 +322,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDeprCalc.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvDeprCalc.Size = new System.Drawing.Size(825, 123);
+            this.dgvDeprCalc.Size = new System.Drawing.Size(825, 153);
             this.dgvDeprCalc.TabIndex = 0;
             // 
             // tab_TotalCost
@@ -329,7 +331,7 @@
             this.tab_TotalCost.Location = new System.Drawing.Point(4, 24);
             this.tab_TotalCost.Name = "tab_TotalCost";
             this.tab_TotalCost.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_TotalCost.Size = new System.Drawing.Size(831, 129);
+            this.tab_TotalCost.Size = new System.Drawing.Size(831, 159);
             this.tab_TotalCost.TabIndex = 2;
             this.tab_TotalCost.Text = "Total Cost";
             this.tab_TotalCost.UseVisualStyleBackColor = true;
@@ -370,7 +372,7 @@
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAccCounter.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.dgvAccCounter.Size = new System.Drawing.Size(825, 123);
+            this.dgvAccCounter.Size = new System.Drawing.Size(825, 153);
             this.dgvAccCounter.TabIndex = 0;
             // 
             // aquisition_cost
@@ -461,7 +463,7 @@
             this.btnClear.Location = new System.Drawing.Point(372, 3);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(86, 40);
-            this.btnClear.TabIndex = 3;
+            this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -474,7 +476,7 @@
             this.btnExport.Location = new System.Drawing.Point(280, 3);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(86, 40);
-            this.btnExport.TabIndex = 1;
+            this.btnExport.TabIndex = 8;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = false;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
@@ -483,11 +485,12 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.SystemColors.Control;
             this.btnUpdate.ControlId = null;
+            this.btnUpdate.Enabled = false;
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 9F);
             this.btnUpdate.Location = new System.Drawing.Point(187, 3);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(86, 40);
-            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -500,7 +503,7 @@
             this.btnAdd.Location = new System.Drawing.Point(95, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 40);
-            this.btnAdd.TabIndex = 1;
+            this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -513,7 +516,7 @@
             this.btnSearch.Location = new System.Drawing.Point(3, 3);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(86, 40);
-            this.btnSearch.TabIndex = 0;
+            this.btnSearch.TabIndex = 5;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -538,7 +541,7 @@
             this.btnRankDepr.Location = new System.Drawing.Point(91, 4);
             this.btnRankDepr.Name = "btnRankDepr";
             this.btnRankDepr.Size = new System.Drawing.Size(86, 40);
-            this.btnRankDepr.TabIndex = 3;
+            this.btnRankDepr.TabIndex = 11;
             this.btnRankDepr.Text = "Rank Depr";
             this.btnRankDepr.UseVisualStyleBackColor = false;
             this.btnRankDepr.Click += new System.EventHandler(this.btnRankDepr_Click);
@@ -551,7 +554,7 @@
             this.btnTransferAsset.Location = new System.Drawing.Point(179, 3);
             this.btnTransferAsset.Name = "btnTransferAsset";
             this.btnTransferAsset.Size = new System.Drawing.Size(86, 40);
-            this.btnTransferAsset.TabIndex = 2;
+            this.btnTransferAsset.TabIndex = 12;
             this.btnTransferAsset.Text = "Transfer Asset";
             this.btnTransferAsset.UseVisualStyleBackColor = false;
             this.btnTransferAsset.Click += new System.EventHandler(this.btnTransferAsset_Click);
@@ -564,7 +567,7 @@
             this.btnAccDepr.Location = new System.Drawing.Point(3, 4);
             this.btnAccDepr.Name = "btnAccDepr";
             this.btnAccDepr.Size = new System.Drawing.Size(86, 40);
-            this.btnAccDepr.TabIndex = 0;
+            this.btnAccDepr.TabIndex = 10;
             this.btnAccDepr.Text = "Account Depr";
             this.btnAccDepr.UseVisualStyleBackColor = false;
             this.btnAccDepr.Click += new System.EventHandler(this.btnAccDepr_Click);
@@ -577,7 +580,7 @@
             this.btnClose.Location = new System.Drawing.Point(746, 303);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(86, 40);
-            this.btnClose.TabIndex = 25;
+            this.btnClose.TabIndex = 13;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);

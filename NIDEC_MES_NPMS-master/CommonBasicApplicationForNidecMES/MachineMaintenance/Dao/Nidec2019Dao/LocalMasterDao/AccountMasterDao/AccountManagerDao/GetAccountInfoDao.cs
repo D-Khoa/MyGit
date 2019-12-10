@@ -17,7 +17,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
             sql.Append("select b.asset_cd as \"Asset_Code\", b.asset_no as \"Asset_No\", b.asset_name as \"Asset_Name\", b.asset_model as \"Asset_Model\", b.asset_serial as \"Asset_Serial\", b.asset_supplier as \"Asset_Supplier\", ");
             sql.Append("b.asset_type as \"Asset_Type\", a.qty as \"Qty\", c.unit_name as \"Unit\", e.account_code_name as \"Account_Code\", d.rank_name as \"Rank\", ");
-            sql.Append("f.account_location_cd as \"Section Code\", f.account_location_name as \"Section Name\", g.location_cd as \"Now Location\", ");
+            sql.Append("f.account_location_cd as \"Section_Code\", f.account_location_name as \"Section_Name\", g.location_cd as \"Now Location\", ");
             sql.Append("b.asset_life as \"Life\", b.acquistion_date as \"Acquisition_Date\", a.depreciation_start as \"Depreciation_Start\", a.depreciation_end as \"Depreciation_End\", ");
             sql.Append("b.acquistion_cost as \"Acquisition_Cost\", a.monthly_depreciation as \"Monthly_Depr\", a.current_depreciation as \"Current_Depr\", a.accum_depreciation_now as \"Accum_Depr\", a.net_value as \"Net_Value\", ");
             sql.Append("j.user_location_name as \"User_Location\", a.comment_data as \"Comment\", a.registration_date_time as \"Reg_Date\", a.registration_user_cd as \"Reg_User\", ");

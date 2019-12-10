@@ -6,7 +6,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo.Nidec2019Vo
 {
     public class AssetMaster2019Vo : ValueObject
     {
+        public int asset_id { get; set; }
         public string asset_cd { get; set; }
+        public int asset_no { get; set; }
         public string asset_name { get; set; }
         public string asset_life { get; set; }
         public string asset_type { get; set; }

@@ -28,44 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelCommon2 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.textBoxCommon2 = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.txtQty = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.labelCommon3 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.labelCommon4 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.comboBoxCommon1 = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.comboBoxCommon2 = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.comboBoxCommon3 = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.cmbUnit = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.cmbAccountCode = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.cmbSection = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.labelCommon5 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.comboBoxCommon4 = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.cmbRank = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.labelCommon6 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.labelCommon7 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.textBoxCommon3 = new Com.Nidec.Mes.Framework.TextBoxCommon();
-            this.dateTimePickerCommon1 = new Com.Nidec.Mes.Framework.DateTimePickerCommon();
+            this.txtComment = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.dtpDeprStart = new Com.Nidec.Mes.Framework.DateTimePickerCommon();
             this.labelCommon8 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.labelCommon9 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.dateTimePickerCommon2 = new Com.Nidec.Mes.Framework.DateTimePickerCommon();
+            this.dtpDeprEnd = new Com.Nidec.Mes.Framework.DateTimePickerCommon();
             this.labelCommon10 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.textBoxCommon4 = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.txtUserCode = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.groupBoxCommon1 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
             this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.textBoxCommon1 = new Com.Nidec.Mes.Framework.TextBoxCommon();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtAssetCode = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.panelCommon1 = new Com.Nidec.Mes.Framework.PanelCommon();
+            this.btnCancel = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.btnApply = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.pnlAddAccount = new Com.Nidec.Mes.Framework.PanelCommon();
+            this.dgvAddAccount = new Com.Nidec.Mes.Framework.DataGridViewCommon();
+            this.panelCommon3 = new Com.Nidec.Mes.Framework.PanelCommon();
+            this.btnOK = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.btnDelete = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.btnClose = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.btnImport = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.lbUserLocation = new Com.Nidec.Mes.Framework.LabelCommon();
             this.labelCommon11 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.cmbAssetNo = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.cmbLocation = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.labelCommon12 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.lb_CurrDepr = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.lb_MonthDepr = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.labelCommon15 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.lb_AquiCost = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.lb_AccumDepr = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.labelCommon14 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.lb_NetValue = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.labelCommon16 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
-            this.labelCommon13 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.labelCommon17 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.groupBoxCommon1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBoxCommon2.SuspendLayout();
+            this.panelCommon1.SuspendLayout();
+            this.pnlAddAccount.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddAccount)).BeginInit();
+            this.panelCommon3.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelCommon2
@@ -73,28 +78,28 @@
             this.labelCommon2.AutoSize = true;
             this.labelCommon2.ControlId = null;
             this.labelCommon2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon2.Location = new System.Drawing.Point(65, 71);
+            this.labelCommon2.Location = new System.Drawing.Point(186, 85);
             this.labelCommon2.Name = "labelCommon2";
             this.labelCommon2.Size = new System.Drawing.Size(24, 15);
             this.labelCommon2.TabIndex = 5;
             this.labelCommon2.Text = "Qty";
             // 
-            // textBoxCommon2
+            // txtQty
             // 
-            this.textBoxCommon2.ControlId = null;
-            this.textBoxCommon2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCommon2.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.textBoxCommon2.Location = new System.Drawing.Point(95, 68);
-            this.textBoxCommon2.Name = "textBoxCommon2";
-            this.textBoxCommon2.Size = new System.Drawing.Size(187, 21);
-            this.textBoxCommon2.TabIndex = 4;
+            this.txtQty.ControlId = null;
+            this.txtQty.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQty.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
+            this.txtQty.Location = new System.Drawing.Point(216, 82);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(66, 21);
+            this.txtQty.TabIndex = 4;
             // 
             // labelCommon3
             // 
             this.labelCommon3.AutoSize = true;
             this.labelCommon3.ControlId = null;
             this.labelCommon3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon3.Location = new System.Drawing.Point(60, 98);
+            this.labelCommon3.Location = new System.Drawing.Point(60, 112);
             this.labelCommon3.Name = "labelCommon3";
             this.labelCommon3.Size = new System.Drawing.Size(29, 15);
             this.labelCommon3.TabIndex = 7;
@@ -105,69 +110,69 @@
             this.labelCommon4.AutoSize = true;
             this.labelCommon4.ControlId = null;
             this.labelCommon4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon4.Location = new System.Drawing.Point(6, 127);
+            this.labelCommon4.Location = new System.Drawing.Point(6, 195);
             this.labelCommon4.Name = "labelCommon4";
             this.labelCommon4.Size = new System.Drawing.Size(83, 15);
             this.labelCommon4.TabIndex = 9;
             this.labelCommon4.Text = "Account Code";
             // 
-            // comboBoxCommon1
+            // cmbUnit
             // 
-            this.comboBoxCommon1.ControlId = null;
-            this.comboBoxCommon1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxCommon1.FormattingEnabled = true;
-            this.comboBoxCommon1.Location = new System.Drawing.Point(95, 95);
-            this.comboBoxCommon1.Name = "comboBoxCommon1";
-            this.comboBoxCommon1.Size = new System.Drawing.Size(187, 23);
-            this.comboBoxCommon1.TabIndex = 10;
+            this.cmbUnit.ControlId = null;
+            this.cmbUnit.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbUnit.FormattingEnabled = true;
+            this.cmbUnit.Location = new System.Drawing.Point(95, 109);
+            this.cmbUnit.Name = "cmbUnit";
+            this.cmbUnit.Size = new System.Drawing.Size(187, 23);
+            this.cmbUnit.TabIndex = 10;
             // 
-            // comboBoxCommon2
+            // cmbAccountCode
             // 
-            this.comboBoxCommon2.ControlId = null;
-            this.comboBoxCommon2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxCommon2.FormattingEnabled = true;
-            this.comboBoxCommon2.Location = new System.Drawing.Point(95, 124);
-            this.comboBoxCommon2.Name = "comboBoxCommon2";
-            this.comboBoxCommon2.Size = new System.Drawing.Size(187, 23);
-            this.comboBoxCommon2.TabIndex = 11;
+            this.cmbAccountCode.ControlId = null;
+            this.cmbAccountCode.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAccountCode.FormattingEnabled = true;
+            this.cmbAccountCode.Location = new System.Drawing.Point(95, 192);
+            this.cmbAccountCode.Name = "cmbAccountCode";
+            this.cmbAccountCode.Size = new System.Drawing.Size(187, 23);
+            this.cmbAccountCode.TabIndex = 11;
             // 
-            // comboBoxCommon3
+            // cmbSection
             // 
-            this.comboBoxCommon3.ControlId = null;
-            this.comboBoxCommon3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxCommon3.FormattingEnabled = true;
-            this.comboBoxCommon3.Location = new System.Drawing.Point(95, 182);
-            this.comboBoxCommon3.Name = "comboBoxCommon3";
-            this.comboBoxCommon3.Size = new System.Drawing.Size(187, 23);
-            this.comboBoxCommon3.TabIndex = 13;
+            this.cmbSection.ControlId = null;
+            this.cmbSection.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSection.FormattingEnabled = true;
+            this.cmbSection.Location = new System.Drawing.Point(95, 250);
+            this.cmbSection.Name = "cmbSection";
+            this.cmbSection.Size = new System.Drawing.Size(187, 23);
+            this.cmbSection.TabIndex = 13;
             // 
             // labelCommon5
             // 
             this.labelCommon5.AutoSize = true;
             this.labelCommon5.ControlId = null;
             this.labelCommon5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon5.Location = new System.Drawing.Point(41, 185);
+            this.labelCommon5.Location = new System.Drawing.Point(41, 253);
             this.labelCommon5.Name = "labelCommon5";
             this.labelCommon5.Size = new System.Drawing.Size(48, 15);
             this.labelCommon5.TabIndex = 12;
             this.labelCommon5.Text = "Section";
             // 
-            // comboBoxCommon4
+            // cmbRank
             // 
-            this.comboBoxCommon4.ControlId = null;
-            this.comboBoxCommon4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxCommon4.FormattingEnabled = true;
-            this.comboBoxCommon4.Location = new System.Drawing.Point(95, 153);
-            this.comboBoxCommon4.Name = "comboBoxCommon4";
-            this.comboBoxCommon4.Size = new System.Drawing.Size(187, 23);
-            this.comboBoxCommon4.TabIndex = 15;
+            this.cmbRank.ControlId = null;
+            this.cmbRank.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRank.FormattingEnabled = true;
+            this.cmbRank.Location = new System.Drawing.Point(95, 221);
+            this.cmbRank.Name = "cmbRank";
+            this.cmbRank.Size = new System.Drawing.Size(187, 23);
+            this.cmbRank.TabIndex = 15;
             // 
             // labelCommon6
             // 
             this.labelCommon6.AutoSize = true;
             this.labelCommon6.ControlId = null;
             this.labelCommon6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon6.Location = new System.Drawing.Point(53, 156);
+            this.labelCommon6.Location = new System.Drawing.Point(53, 224);
             this.labelCommon6.Name = "labelCommon6";
             this.labelCommon6.Size = new System.Drawing.Size(36, 15);
             this.labelCommon6.TabIndex = 14;
@@ -178,41 +183,41 @@
             this.labelCommon7.AutoSize = true;
             this.labelCommon7.ControlId = null;
             this.labelCommon7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon7.Location = new System.Drawing.Point(27, 214);
+            this.labelCommon7.Location = new System.Drawing.Point(27, 311);
             this.labelCommon7.Name = "labelCommon7";
             this.labelCommon7.Size = new System.Drawing.Size(62, 15);
             this.labelCommon7.TabIndex = 17;
             this.labelCommon7.Text = "Comment";
             // 
-            // textBoxCommon3
+            // txtComment
             // 
-            this.textBoxCommon3.ControlId = null;
-            this.textBoxCommon3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCommon3.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.textBoxCommon3.Location = new System.Drawing.Point(95, 211);
-            this.textBoxCommon3.Multiline = true;
-            this.textBoxCommon3.Name = "textBoxCommon3";
-            this.textBoxCommon3.Size = new System.Drawing.Size(187, 78);
-            this.textBoxCommon3.TabIndex = 16;
+            this.txtComment.ControlId = null;
+            this.txtComment.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComment.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
+            this.txtComment.Location = new System.Drawing.Point(95, 308);
+            this.txtComment.Multiline = true;
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size(187, 78);
+            this.txtComment.TabIndex = 16;
             // 
-            // dateTimePickerCommon1
+            // dtpDeprStart
             // 
-            this.dateTimePickerCommon1.BackColor = System.Drawing.SystemColors.Control;
-            this.dateTimePickerCommon1.ControlId = null;
-            this.dateTimePickerCommon1.DisplayFormat = Com.Nidec.Mes.Framework.DateTimePickerCommon.DisplayFormatList.ShortDatePattern;
-            this.dateTimePickerCommon1.Font = new System.Drawing.Font("Arial", 9F);
-            this.dateTimePickerCommon1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerCommon1.Location = new System.Drawing.Point(403, 11);
-            this.dateTimePickerCommon1.Name = "dateTimePickerCommon1";
-            this.dateTimePickerCommon1.Size = new System.Drawing.Size(124, 21);
-            this.dateTimePickerCommon1.TabIndex = 18;
+            this.dtpDeprStart.BackColor = System.Drawing.SystemColors.Control;
+            this.dtpDeprStart.ControlId = null;
+            this.dtpDeprStart.DisplayFormat = Com.Nidec.Mes.Framework.DateTimePickerCommon.DisplayFormatList.ShortDatePattern;
+            this.dtpDeprStart.Font = new System.Drawing.Font("Arial", 9F);
+            this.dtpDeprStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDeprStart.Location = new System.Drawing.Point(121, 138);
+            this.dtpDeprStart.Name = "dtpDeprStart";
+            this.dtpDeprStart.Size = new System.Drawing.Size(161, 21);
+            this.dtpDeprStart.TabIndex = 18;
             // 
             // labelCommon8
             // 
             this.labelCommon8.AutoSize = true;
             this.labelCommon8.ControlId = null;
             this.labelCommon8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon8.Location = new System.Drawing.Point(288, 14);
+            this.labelCommon8.Location = new System.Drawing.Point(6, 143);
             this.labelCommon8.Name = "labelCommon8";
             this.labelCommon8.Size = new System.Drawing.Size(109, 15);
             this.labelCommon8.TabIndex = 19;
@@ -223,23 +228,23 @@
             this.labelCommon9.AutoSize = true;
             this.labelCommon9.ControlId = null;
             this.labelCommon9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon9.Location = new System.Drawing.Point(291, 41);
+            this.labelCommon9.Location = new System.Drawing.Point(6, 170);
             this.labelCommon9.Name = "labelCommon9";
             this.labelCommon9.Size = new System.Drawing.Size(106, 15);
             this.labelCommon9.TabIndex = 21;
             this.labelCommon9.Text = "Depreception End";
             // 
-            // dateTimePickerCommon2
+            // dtpDeprEnd
             // 
-            this.dateTimePickerCommon2.BackColor = System.Drawing.SystemColors.Control;
-            this.dateTimePickerCommon2.ControlId = null;
-            this.dateTimePickerCommon2.DisplayFormat = Com.Nidec.Mes.Framework.DateTimePickerCommon.DisplayFormatList.ShortDatePattern;
-            this.dateTimePickerCommon2.Font = new System.Drawing.Font("Arial", 9F);
-            this.dateTimePickerCommon2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerCommon2.Location = new System.Drawing.Point(403, 38);
-            this.dateTimePickerCommon2.Name = "dateTimePickerCommon2";
-            this.dateTimePickerCommon2.Size = new System.Drawing.Size(124, 21);
-            this.dateTimePickerCommon2.TabIndex = 20;
+            this.dtpDeprEnd.BackColor = System.Drawing.SystemColors.Control;
+            this.dtpDeprEnd.ControlId = null;
+            this.dtpDeprEnd.DisplayFormat = Com.Nidec.Mes.Framework.DateTimePickerCommon.DisplayFormatList.ShortDatePattern;
+            this.dtpDeprEnd.Font = new System.Drawing.Font("Arial", 9F);
+            this.dtpDeprEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDeprEnd.Location = new System.Drawing.Point(121, 165);
+            this.dtpDeprEnd.Name = "dtpDeprEnd";
+            this.dtpDeprEnd.Size = new System.Drawing.Size(161, 21);
+            this.dtpDeprEnd.TabIndex = 20;
             // 
             // labelCommon10
             // 
@@ -252,45 +257,49 @@
             this.labelCommon10.TabIndex = 23;
             this.labelCommon10.Text = "User Code";
             // 
-            // textBoxCommon4
+            // txtUserCode
             // 
-            this.textBoxCommon4.ControlId = null;
-            this.textBoxCommon4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCommon4.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.textBoxCommon4.Location = new System.Drawing.Point(95, 38);
-            this.textBoxCommon4.Name = "textBoxCommon4";
-            this.textBoxCommon4.Size = new System.Drawing.Size(187, 21);
-            this.textBoxCommon4.TabIndex = 22;
+            this.txtUserCode.ControlId = null;
+            this.txtUserCode.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserCode.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
+            this.txtUserCode.Location = new System.Drawing.Point(95, 38);
+            this.txtUserCode.Name = "txtUserCode";
+            this.txtUserCode.Size = new System.Drawing.Size(187, 21);
+            this.txtUserCode.TabIndex = 22;
+            this.txtUserCode.TextChanged += new System.EventHandler(this.txtUserCode_TextChanged);
             // 
             // groupBoxCommon1
             // 
             this.groupBoxCommon1.ControlId = null;
-            this.groupBoxCommon1.Controls.Add(this.groupBoxCommon2);
-            this.groupBoxCommon1.Controls.Add(this.groupBox1);
+            this.groupBoxCommon1.Controls.Add(this.cmbLocation);
+            this.groupBoxCommon1.Controls.Add(this.labelCommon12);
+            this.groupBoxCommon1.Controls.Add(this.cmbAssetNo);
+            this.groupBoxCommon1.Controls.Add(this.labelCommon11);
+            this.groupBoxCommon1.Controls.Add(this.lbUserLocation);
             this.groupBoxCommon1.Controls.Add(this.labelCommon1);
-            this.groupBoxCommon1.Controls.Add(this.textBoxCommon4);
+            this.groupBoxCommon1.Controls.Add(this.txtUserCode);
             this.groupBoxCommon1.Controls.Add(this.labelCommon10);
-            this.groupBoxCommon1.Controls.Add(this.textBoxCommon1);
-            this.groupBoxCommon1.Controls.Add(this.textBoxCommon2);
-            this.groupBoxCommon1.Controls.Add(this.textBoxCommon3);
+            this.groupBoxCommon1.Controls.Add(this.txtAssetCode);
+            this.groupBoxCommon1.Controls.Add(this.txtQty);
+            this.groupBoxCommon1.Controls.Add(this.txtComment);
             this.groupBoxCommon1.Controls.Add(this.labelCommon7);
             this.groupBoxCommon1.Controls.Add(this.labelCommon9);
             this.groupBoxCommon1.Controls.Add(this.labelCommon2);
-            this.groupBoxCommon1.Controls.Add(this.dateTimePickerCommon2);
-            this.groupBoxCommon1.Controls.Add(this.comboBoxCommon1);
-            this.groupBoxCommon1.Controls.Add(this.dateTimePickerCommon1);
+            this.groupBoxCommon1.Controls.Add(this.dtpDeprEnd);
+            this.groupBoxCommon1.Controls.Add(this.cmbUnit);
+            this.groupBoxCommon1.Controls.Add(this.dtpDeprStart);
             this.groupBoxCommon1.Controls.Add(this.labelCommon8);
             this.groupBoxCommon1.Controls.Add(this.labelCommon3);
-            this.groupBoxCommon1.Controls.Add(this.comboBoxCommon2);
+            this.groupBoxCommon1.Controls.Add(this.cmbAccountCode);
             this.groupBoxCommon1.Controls.Add(this.labelCommon4);
-            this.groupBoxCommon1.Controls.Add(this.comboBoxCommon3);
+            this.groupBoxCommon1.Controls.Add(this.cmbSection);
             this.groupBoxCommon1.Controls.Add(this.labelCommon6);
-            this.groupBoxCommon1.Controls.Add(this.comboBoxCommon4);
+            this.groupBoxCommon1.Controls.Add(this.cmbRank);
             this.groupBoxCommon1.Controls.Add(this.labelCommon5);
             this.groupBoxCommon1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxCommon1.Location = new System.Drawing.Point(0, 113);
             this.groupBoxCommon1.Name = "groupBoxCommon1";
-            this.groupBoxCommon1.Size = new System.Drawing.Size(539, 299);
+            this.groupBoxCommon1.Size = new System.Drawing.Size(295, 396);
             this.groupBoxCommon1.TabIndex = 24;
             this.groupBoxCommon1.TabStop = false;
             // 
@@ -305,235 +314,276 @@
             this.labelCommon1.TabIndex = 5;
             this.labelCommon1.Text = "Asset Code";
             // 
-            // textBoxCommon1
+            // txtAssetCode
             // 
-            this.textBoxCommon1.ControlId = null;
-            this.textBoxCommon1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCommon1.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.textBoxCommon1.Location = new System.Drawing.Point(95, 11);
-            this.textBoxCommon1.Name = "textBoxCommon1";
-            this.textBoxCommon1.Size = new System.Drawing.Size(187, 21);
-            this.textBoxCommon1.TabIndex = 4;
+            this.txtAssetCode.ControlId = null;
+            this.txtAssetCode.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAssetCode.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
+            this.txtAssetCode.Location = new System.Drawing.Point(95, 11);
+            this.txtAssetCode.Name = "txtAssetCode";
+            this.txtAssetCode.Size = new System.Drawing.Size(187, 21);
+            this.txtAssetCode.TabIndex = 4;
+            this.txtAssetCode.TextChanged += new System.EventHandler(this.txtAssetCode_TextChanged);
             // 
-            // groupBox1
+            // panelCommon1
             // 
-            this.groupBox1.Controls.Add(this.lb_NetValue);
-            this.groupBox1.Controls.Add(this.labelCommon16);
-            this.groupBox1.Controls.Add(this.lb_AccumDepr);
-            this.groupBox1.Controls.Add(this.labelCommon14);
-            this.groupBox1.Controls.Add(this.lb_AquiCost);
-            this.groupBox1.Controls.Add(this.labelCommon15);
-            this.groupBox1.Controls.Add(this.lb_MonthDepr);
-            this.groupBox1.Controls.Add(this.lb_CurrDepr);
-            this.groupBox1.Controls.Add(this.labelCommon12);
-            this.groupBox1.Controls.Add(this.labelCommon11);
-            this.groupBox1.Location = new System.Drawing.Point(294, 138);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(233, 151);
-            this.groupBox1.TabIndex = 24;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cost Value";
+            this.panelCommon1.ControlId = null;
+            this.panelCommon1.Controls.Add(this.btnCancel);
+            this.panelCommon1.Controls.Add(this.btnApply);
+            this.panelCommon1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelCommon1.Location = new System.Drawing.Point(0, 515);
+            this.panelCommon1.Name = "panelCommon1";
+            this.panelCommon1.Size = new System.Drawing.Size(295, 44);
+            this.panelCommon1.TabIndex = 25;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCancel.ControlId = null;
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnCancel.Location = new System.Drawing.Point(165, 5);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(80, 33);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnApply
+            // 
+            this.btnApply.BackColor = System.Drawing.SystemColors.Control;
+            this.btnApply.ControlId = null;
+            this.btnApply.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnApply.Location = new System.Drawing.Point(44, 5);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(80, 33);
+            this.btnApply.TabIndex = 0;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = false;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
+            // pnlAddAccount
+            // 
+            this.pnlAddAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlAddAccount.ControlId = null;
+            this.pnlAddAccount.Controls.Add(this.dgvAddAccount);
+            this.pnlAddAccount.Controls.Add(this.panelCommon3);
+            this.pnlAddAccount.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlAddAccount.Location = new System.Drawing.Point(301, 113);
+            this.pnlAddAccount.Name = "pnlAddAccount";
+            this.pnlAddAccount.Size = new System.Drawing.Size(534, 446);
+            this.pnlAddAccount.TabIndex = 26;
+            this.pnlAddAccount.Visible = false;
+            // 
+            // dgvAddAccount
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAddAccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAddAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAddAccount.ControlId = null;
+            this.dgvAddAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAddAccount.Location = new System.Drawing.Point(0, 0);
+            this.dgvAddAccount.Name = "dgvAddAccount";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAddAccount.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvAddAccount.Size = new System.Drawing.Size(534, 402);
+            this.dgvAddAccount.TabIndex = 1;
+            // 
+            // panelCommon3
+            // 
+            this.panelCommon3.ControlId = null;
+            this.panelCommon3.Controls.Add(this.btnOK);
+            this.panelCommon3.Controls.Add(this.btnDelete);
+            this.panelCommon3.Controls.Add(this.btnClose);
+            this.panelCommon3.Controls.Add(this.btnImport);
+            this.panelCommon3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelCommon3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelCommon3.Location = new System.Drawing.Point(0, 402);
+            this.panelCommon3.Name = "panelCommon3";
+            this.panelCommon3.Size = new System.Drawing.Size(534, 44);
+            this.panelCommon3.TabIndex = 0;
+            // 
+            // btnOK
+            // 
+            this.btnOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnOK.ControlId = null;
+            this.btnOK.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnOK.Location = new System.Drawing.Point(32, 5);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(80, 33);
+            this.btnOK.TabIndex = 4;
+            this.btnOK.Text = "Add";
+            this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDelete.ControlId = null;
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnDelete.Location = new System.Drawing.Point(254, 4);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(80, 33);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.SystemColors.Control;
+            this.btnClose.ControlId = null;
+            this.btnClose.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnClose.Location = new System.Drawing.Point(365, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(80, 33);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnImport
+            // 
+            this.btnImport.BackColor = System.Drawing.SystemColors.Control;
+            this.btnImport.ControlId = null;
+            this.btnImport.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnImport.Location = new System.Drawing.Point(143, 5);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(80, 33);
+            this.btnImport.TabIndex = 1;
+            this.btnImport.Text = "Import";
+            this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // lbUserLocation
+            // 
+            this.lbUserLocation.AutoSize = true;
+            this.lbUserLocation.ControlId = null;
+            this.lbUserLocation.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUserLocation.Location = new System.Drawing.Point(92, 62);
+            this.lbUserLocation.Name = "lbUserLocation";
+            this.lbUserLocation.Size = new System.Drawing.Size(37, 15);
+            this.lbUserLocation.TabIndex = 24;
+            this.lbUserLocation.Text = "None";
             // 
             // labelCommon11
             // 
             this.labelCommon11.AutoSize = true;
             this.labelCommon11.ControlId = null;
             this.labelCommon11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon11.Location = new System.Drawing.Point(6, 21);
+            this.labelCommon11.Location = new System.Drawing.Point(66, 85);
             this.labelCommon11.Name = "labelCommon11";
-            this.labelCommon11.Size = new System.Drawing.Size(96, 15);
-            this.labelCommon11.TabIndex = 0;
-            this.labelCommon11.Text = "Aquisition Cost :";
+            this.labelCommon11.Size = new System.Drawing.Size(23, 15);
+            this.labelCommon11.TabIndex = 26;
+            this.labelCommon11.Text = "No";
+            // 
+            // cmbAssetNo
+            // 
+            this.cmbAssetNo.ControlId = null;
+            this.cmbAssetNo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAssetNo.FormattingEnabled = true;
+            this.cmbAssetNo.Location = new System.Drawing.Point(95, 80);
+            this.cmbAssetNo.Name = "cmbAssetNo";
+            this.cmbAssetNo.Size = new System.Drawing.Size(85, 23);
+            this.cmbAssetNo.TabIndex = 27;
+            // 
+            // cmbLocation
+            // 
+            this.cmbLocation.ControlId = null;
+            this.cmbLocation.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLocation.FormattingEnabled = true;
+            this.cmbLocation.Location = new System.Drawing.Point(95, 279);
+            this.cmbLocation.Name = "cmbLocation";
+            this.cmbLocation.Size = new System.Drawing.Size(187, 23);
+            this.cmbLocation.TabIndex = 29;
             // 
             // labelCommon12
             // 
             this.labelCommon12.AutoSize = true;
             this.labelCommon12.ControlId = null;
             this.labelCommon12.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon12.Location = new System.Drawing.Point(18, 79);
+            this.labelCommon12.Location = new System.Drawing.Point(35, 282);
             this.labelCommon12.Name = "labelCommon12";
-            this.labelCommon12.Size = new System.Drawing.Size(84, 15);
-            this.labelCommon12.TabIndex = 1;
-            this.labelCommon12.Text = "Current Depr :";
-            // 
-            // lb_CurrDepr
-            // 
-            this.lb_CurrDepr.AutoSize = true;
-            this.lb_CurrDepr.ControlId = null;
-            this.lb_CurrDepr.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_CurrDepr.Location = new System.Drawing.Point(108, 79);
-            this.lb_CurrDepr.Name = "lb_CurrDepr";
-            this.lb_CurrDepr.Size = new System.Drawing.Size(37, 15);
-            this.lb_CurrDepr.TabIndex = 2;
-            this.lb_CurrDepr.Text = "None";
-            // 
-            // lb_MonthDepr
-            // 
-            this.lb_MonthDepr.AutoSize = true;
-            this.lb_MonthDepr.ControlId = null;
-            this.lb_MonthDepr.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_MonthDepr.Location = new System.Drawing.Point(108, 50);
-            this.lb_MonthDepr.Name = "lb_MonthDepr";
-            this.lb_MonthDepr.Size = new System.Drawing.Size(37, 15);
-            this.lb_MonthDepr.TabIndex = 3;
-            this.lb_MonthDepr.Text = "None";
-            // 
-            // labelCommon15
-            // 
-            this.labelCommon15.AutoSize = true;
-            this.labelCommon15.ControlId = null;
-            this.labelCommon15.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon15.Location = new System.Drawing.Point(18, 50);
-            this.labelCommon15.Name = "labelCommon15";
-            this.labelCommon15.Size = new System.Drawing.Size(84, 15);
-            this.labelCommon15.TabIndex = 4;
-            this.labelCommon15.Text = "Monthly Depr :";
-            // 
-            // lb_AquiCost
-            // 
-            this.lb_AquiCost.AutoSize = true;
-            this.lb_AquiCost.ControlId = null;
-            this.lb_AquiCost.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_AquiCost.Location = new System.Drawing.Point(108, 21);
-            this.lb_AquiCost.Name = "lb_AquiCost";
-            this.lb_AquiCost.Size = new System.Drawing.Size(37, 15);
-            this.lb_AquiCost.TabIndex = 5;
-            this.lb_AquiCost.Text = "None";
-            // 
-            // lb_AccumDepr
-            // 
-            this.lb_AccumDepr.AutoSize = true;
-            this.lb_AccumDepr.ControlId = null;
-            this.lb_AccumDepr.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_AccumDepr.Location = new System.Drawing.Point(108, 108);
-            this.lb_AccumDepr.Name = "lb_AccumDepr";
-            this.lb_AccumDepr.Size = new System.Drawing.Size(37, 15);
-            this.lb_AccumDepr.TabIndex = 7;
-            this.lb_AccumDepr.Text = "None";
-            // 
-            // labelCommon14
-            // 
-            this.labelCommon14.AutoSize = true;
-            this.labelCommon14.ControlId = null;
-            this.labelCommon14.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon14.Location = new System.Drawing.Point(22, 108);
-            this.labelCommon14.Name = "labelCommon14";
-            this.labelCommon14.Size = new System.Drawing.Size(80, 15);
-            this.labelCommon14.TabIndex = 6;
-            this.labelCommon14.Text = "Accum Depr :";
-            // 
-            // lb_NetValue
-            // 
-            this.lb_NetValue.AutoSize = true;
-            this.lb_NetValue.ControlId = null;
-            this.lb_NetValue.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_NetValue.Location = new System.Drawing.Point(108, 132);
-            this.lb_NetValue.Name = "lb_NetValue";
-            this.lb_NetValue.Size = new System.Drawing.Size(37, 15);
-            this.lb_NetValue.TabIndex = 9;
-            this.lb_NetValue.Text = "None";
-            // 
-            // labelCommon16
-            // 
-            this.labelCommon16.AutoSize = true;
-            this.labelCommon16.ControlId = null;
-            this.labelCommon16.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon16.Location = new System.Drawing.Point(36, 132);
-            this.labelCommon16.Name = "labelCommon16";
-            this.labelCommon16.Size = new System.Drawing.Size(65, 15);
-            this.labelCommon16.TabIndex = 8;
-            this.labelCommon16.Text = "Net Value :";
-            // 
-            // groupBoxCommon2
-            // 
-            this.groupBoxCommon2.ControlId = null;
-            this.groupBoxCommon2.Controls.Add(this.labelCommon17);
-            this.groupBoxCommon2.Controls.Add(this.labelCommon13);
-            this.groupBoxCommon2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxCommon2.Location = new System.Drawing.Point(294, 65);
-            this.groupBoxCommon2.Name = "groupBoxCommon2";
-            this.groupBoxCommon2.Size = new System.Drawing.Size(233, 67);
-            this.groupBoxCommon2.TabIndex = 25;
-            this.groupBoxCommon2.TabStop = false;
-            this.groupBoxCommon2.Text = "Register User";
-            // 
-            // labelCommon13
-            // 
-            this.labelCommon13.AutoSize = true;
-            this.labelCommon13.ControlId = null;
-            this.labelCommon13.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon13.Location = new System.Drawing.Point(68, 26);
-            this.labelCommon13.Name = "labelCommon13";
-            this.labelCommon13.Size = new System.Drawing.Size(96, 15);
-            this.labelCommon13.TabIndex = 1;
-            this.labelCommon13.Text = "Aquisition Cost :";
-            // 
-            // labelCommon17
-            // 
-            this.labelCommon17.AutoSize = true;
-            this.labelCommon17.ControlId = null;
-            this.labelCommon17.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon17.Location = new System.Drawing.Point(98, 26);
-            this.labelCommon17.Name = "labelCommon17";
-            this.labelCommon17.Size = new System.Drawing.Size(37, 15);
-            this.labelCommon17.TabIndex = 6;
-            this.labelCommon17.Text = "None";
+            this.labelCommon12.Size = new System.Drawing.Size(54, 15);
+            this.labelCommon12.TabIndex = 28;
+            this.labelCommon12.Text = "Location";
             // 
             // UpdateAccountInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 456);
+            this.ClientSize = new System.Drawing.Size(838, 564);
+            this.Controls.Add(this.pnlAddAccount);
+            this.Controls.Add(this.panelCommon1);
             this.Controls.Add(this.groupBoxCommon1);
             this.Name = "UpdateAccountInfoForm";
             this.Text = "UpdateAccountInfoForm";
             this.TitleText = "FormCommon";
+            this.Load += new System.EventHandler(this.UpdateAccountInfoForm_Load);
             this.Controls.SetChildIndex(this.groupBoxCommon1, 0);
+            this.Controls.SetChildIndex(this.panelCommon1, 0);
+            this.Controls.SetChildIndex(this.pnlAddAccount, 0);
             this.groupBoxCommon1.ResumeLayout(false);
             this.groupBoxCommon1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBoxCommon2.ResumeLayout(false);
-            this.groupBoxCommon2.PerformLayout();
+            this.panelCommon1.ResumeLayout(false);
+            this.pnlAddAccount.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddAccount)).EndInit();
+            this.panelCommon3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private Framework.LabelCommon labelCommon2;
-        private Framework.TextBoxCommon textBoxCommon2;
+        private Framework.TextBoxCommon txtQty;
         private Framework.LabelCommon labelCommon3;
         private Framework.LabelCommon labelCommon4;
-        private Framework.ComboBoxCommon comboBoxCommon1;
-        private Framework.ComboBoxCommon comboBoxCommon2;
-        private Framework.ComboBoxCommon comboBoxCommon3;
+        private Framework.ComboBoxCommon cmbUnit;
+        private Framework.ComboBoxCommon cmbAccountCode;
+        private Framework.ComboBoxCommon cmbSection;
         private Framework.LabelCommon labelCommon5;
-        private Framework.ComboBoxCommon comboBoxCommon4;
+        private Framework.ComboBoxCommon cmbRank;
         private Framework.LabelCommon labelCommon6;
         private Framework.LabelCommon labelCommon7;
-        private Framework.TextBoxCommon textBoxCommon3;
-        private Framework.DateTimePickerCommon dateTimePickerCommon1;
+        private Framework.TextBoxCommon txtComment;
+        private Framework.DateTimePickerCommon dtpDeprStart;
         private Framework.LabelCommon labelCommon8;
         private Framework.LabelCommon labelCommon9;
-        private Framework.DateTimePickerCommon dateTimePickerCommon2;
+        private Framework.DateTimePickerCommon dtpDeprEnd;
         private Framework.LabelCommon labelCommon10;
-        private Framework.TextBoxCommon textBoxCommon4;
+        private Framework.TextBoxCommon txtUserCode;
         private Framework.GroupBoxCommon groupBoxCommon1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private Framework.LabelCommon lb_AquiCost;
-        private Framework.LabelCommon labelCommon15;
-        private Framework.LabelCommon lb_MonthDepr;
-        private Framework.LabelCommon lb_CurrDepr;
-        private Framework.LabelCommon labelCommon12;
-        private Framework.LabelCommon labelCommon11;
         private Framework.LabelCommon labelCommon1;
-        private Framework.TextBoxCommon textBoxCommon1;
-        private Framework.GroupBoxCommon groupBoxCommon2;
-        private Framework.LabelCommon labelCommon17;
-        private Framework.LabelCommon labelCommon13;
-        private Framework.LabelCommon lb_NetValue;
-        private Framework.LabelCommon labelCommon16;
-        private Framework.LabelCommon lb_AccumDepr;
-        private Framework.LabelCommon labelCommon14;
+        private Framework.TextBoxCommon txtAssetCode;
+        private Framework.PanelCommon panelCommon1;
+        private Framework.ButtonCommon btnCancel;
+        private Framework.ButtonCommon btnApply;
+        private Framework.PanelCommon pnlAddAccount;
+        private Framework.DataGridViewCommon dgvAddAccount;
+        private Framework.PanelCommon panelCommon3;
+        private Framework.ButtonCommon btnOK;
+        private Framework.ButtonCommon btnDelete;
+        private Framework.ButtonCommon btnClose;
+        private Framework.ButtonCommon btnImport;
+        private Framework.LabelCommon lbUserLocation;
+        private Framework.LabelCommon labelCommon11;
+        private Framework.ComboBoxCommon cmbAssetNo;
+        private Framework.ComboBoxCommon cmbLocation;
+        private Framework.LabelCommon labelCommon12;
     }
 }

@@ -19,6 +19,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
     public partial class AccountManager2019Form : FormCommonNCVP
     {
         AccountManagerVo Vo = new AccountManagerVo();
+        AccountInfoVo upVo = new AccountInfoVo();
 
         public AccountManager2019Form()
         {
@@ -128,7 +129,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            UpdateAccountInfoForm upFrm = new UpdateAccountInfoForm();
+            upFrm.ShowDialog();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -353,5 +355,28 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
         {
         }
 
+        private void dgvAccountData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnUpdate.Enabled = true;
+            DataGridViewRow dr = dgvAccountData.Rows[e.RowIndex];
+            upVo.asset_cd = dr.Cells["Asset_Code"].Value.ToString();
+            upVo.asset_no = (int)dr.Cells["Asset_No"].Value;
+            upVo.qty = (int)dr.Cells["Qty"].Value;
+            upVo.unit_name = dr.Cells["Unit"].Value.ToString();
+            upVo.asset_cd = dr.Cells["Account_Code"].Value.ToString();
+            upVo.asset_cd = dr.Cells["Rank"].Value.ToString();
+            upVo.asset_cd = dr.Cells["Section_Name"].Value.ToString();
+            upVo.asset_cd = dr.Cells["Depreciation_Start"].Value.ToString();
+            upVo.asset_cd = dr.Cells["Depreciation_End"].Value.ToString();
+            upVo.asset_cd = dr.Cells["Acquisition_Cost"].Value.ToString();
+            upVo.asset_cd = dr.Cells["Acquisition_Cost"].Value.ToString();
+            upVo.asset_cd = dr.Cells["Acquisition_Cost"].Value.ToString();
+            upVo.asset_cd = dr.Cells["Acquisition_Cost"].Value.ToString();
+            upVo.asset_cd = dr.Cells["Acquisition_Cost"].Value.ToString();
+            upVo.asset_cd = dr.Cells["Acquisition_Cost"].Value.ToString();
+            upVo.asset_cd = dr.Cells["Acquisition_Cost"].Value.ToString();
+
+
+        }
     }
 }
