@@ -9,12 +9,18 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
     {
         public override ValueObject Execute(TransactionContext trxContext, ValueObject vo)
         {
+            RankInfoVo inVo = (RankInfoVo)vo;
             ValueObjectList<RankInfoVo> voList = new ValueObjectList<RankInfoVo>();
             StringBuilder sql = new StringBuilder();
             //CREATE SQL ADAPTER AND PARAMETER LIST
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append("select rank_id, rank_cd, rank_name from m_rank order by rank_id");
+            sql.Append("select rank_id, rank_cd, rank_name from m_rank where 1=1 ");
+            if (!string.IsNullOrEmpty(inVo.rank_cd))
+                sql.Append("and rank_cd='").Append(inVo.rank_cd).Append("' ");
+            if (!string.IsNullOrEmpty(inVo.rank_name))
+                sql.Append("and rank_name='").Append(inVo.rank_name).Append("' ");
+            sql.Append("order by rank_id");
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
             sql.Clear();
             //EXECUTE READER FROM COMMAND

@@ -9,12 +9,17 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
     {
         public override ValueObject Execute(TransactionContext trxContext, ValueObject vo)
         {
+            AccountLocationVo inVo = (AccountLocationVo)vo;
             ValueObjectList<AccountLocationVo> voList = new ValueObjectList<AccountLocationVo>();
             StringBuilder sql = new StringBuilder();
             //CREATE SQL ADAPTER AND PARAMETER LIST
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append("select account_location_id, account_location_cd, account_location_name from m_account_location ");
+            sql.Append("select account_location_id,account_location_cd,account_location_name from m_account_location where 1=1 ");
+            if (!string.IsNullOrEmpty(inVo.account_location_cd))
+                sql.Append("and account_location_cd='").Append(inVo.account_location_cd).Append("' ");
+            if (!string.IsNullOrEmpty(inVo.account_location_name))
+                sql.Append("and account_location_name='").Append(inVo.account_location_name).Append("' ");
             sql.Append("order by account_location_id");
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
             sql.Clear();

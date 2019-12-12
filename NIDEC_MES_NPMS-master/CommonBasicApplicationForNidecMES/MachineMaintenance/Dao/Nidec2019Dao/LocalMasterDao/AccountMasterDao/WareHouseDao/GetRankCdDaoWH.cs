@@ -23,7 +23,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
             {
                 WareHouseVo outVo = new WareHouseVo
                 {
-                    rank = datareader["rank_cd"].ToString(),
+                    rank_cd = datareader["rank_cd"].ToString(),
                 };
                 voList.add(outVo);
             }

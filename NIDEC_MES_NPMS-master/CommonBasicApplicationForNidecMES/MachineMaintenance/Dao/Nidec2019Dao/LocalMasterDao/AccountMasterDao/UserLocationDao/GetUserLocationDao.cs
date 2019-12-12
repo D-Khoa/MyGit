@@ -5,25 +5,33 @@ using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo.Nidec2019Vo;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
 {
-  public  class GetInventoryTimeDaoWH: AbstractDataAccessObject
+    public class GetUserLocationDao : AbstractDataAccessObject
     {
         public override ValueObject Execute(TransactionContext trxContext, ValueObject vo)
         {
-            ValueObjectList<WareHouseVo> voList = new ValueObjectList<WareHouseVo>();
+            UserLocationVo inVo = (UserLocationVo)vo;
+            ValueObjectList<UserLocationVo> voList = new ValueObjectList<UserLocationVo>();
             StringBuilder sql = new StringBuilder();
             //CREATE SQL ADAPTER AND PARAMETER LIST
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append("select distinct invertory_time_cd from m_invertory_time order by invertory_time_cd");
+            sql.Append("select user_location_id, user_location_cd, user_location_name from m_user_location where 1=1 ");
+            if (!string.IsNullOrEmpty(inVo.user_location_cd))
+                sql.Append("and user_location_cd ='").Append(inVo.user_location_cd).Append("' ");
+            if (!string.IsNullOrEmpty(inVo.user_location_name))
+                sql.Append("and user_location_name ='").Append(inVo.user_location_name).Append("' ");
+            sql.Append("order by user_location_id");
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
             sql.Clear();
             //EXECUTE READER FROM COMMAND
             IDataReader datareader = sqlCommandAdapter.ExecuteReader(trxContext, sqlParameter);
             while (datareader.Read())
             {
-                WareHouseVo outVo = new WareHouseVo
+                UserLocationVo outVo = new UserLocationVo
                 {
-                    invertory_time_cd = datareader["invertory_time_cd"].ToString(),
+                    user_location_id = (int)datareader["user_location_id"],
+                    user_location_cd = datareader["user_location_cd"].ToString(),
+                    user_location_name = datareader["user_location_name"].ToString()
                 };
                 voList.add(outVo);
             }

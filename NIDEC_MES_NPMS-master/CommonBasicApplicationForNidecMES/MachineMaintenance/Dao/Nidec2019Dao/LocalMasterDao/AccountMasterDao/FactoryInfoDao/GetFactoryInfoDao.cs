@@ -9,12 +9,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
     {
         public override ValueObject Execute(TransactionContext trxContext, ValueObject vo)
         {
+            FactoryInfoVo inVo = (FactoryInfoVo)vo;
             ValueObjectList<FactoryInfoVo> voList = new ValueObjectList<FactoryInfoVo>();
             StringBuilder sql = new StringBuilder();
             //CREATE SQL ADAPTER AND PARAMETER LIST
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append("select distinct factory_cd, factory_name from m_factory order by factory_cd");
+            sql.Append("select distinct factory_cd, factory_name from m_factory where 1=1 ");
+            if(!string.IsNullOrEmpty(inVo.factory_name))
+            sql.Append("and factory_name='").Append(inVo.factory_name).Append("' ");
+            sql.Append("order by factory_cd");
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
             sql.Clear();
             //EXECUTE READER FROM COMMAND

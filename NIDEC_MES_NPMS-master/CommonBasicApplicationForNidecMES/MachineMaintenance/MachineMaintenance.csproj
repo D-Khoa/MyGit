@@ -196,7 +196,11 @@
     <Compile Include="Cbm\GA1ModelCbm\UpdateGA1ModelNoiseCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AccountCodeCbm\GetAccountCodeCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AccountLocationCbm\GetAccountLocationCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AccountManagerCbm\GetAccDeprCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AccountManagerCbm\GetAccountInfoCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AccountManagerCbm\GetRankDeprCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AccountManagerCbm\SearchAccountCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AccountManagerCbm\UpdateAccountInfoCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\AddAssetCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\AssetMaster2019Cbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\DeleteAssetCbm.cs" />
@@ -204,6 +208,7 @@
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\GetAssetLifeCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\GetAssetTypeCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\AssetManagerCbm\UpdateAssetCbm.cs" />
+    <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\UserLocationCbm\GetUserLocationCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\WareHouseCbm\GetAssetNameWHCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\WareHouseCbm\GetAssetTypeWHCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\WareHouseCbm\GetInventoryTimeWHCbm.cs" />
@@ -504,7 +509,11 @@
     <Compile Include="Dao\AccountWhDao\RankMasterDao\UpdateRankDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AccountCodeDao\GetAccountCodeDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AccountLocationDao\GetAccountLocationDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AccountManagerDao\GetAccDeprDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AccountManagerDao\GetAccountInfoDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AccountManagerDao\SearchAccountDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AccountManagerDao\GetRankDeprDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AccountManagerDao\UpdateAccountInfoDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\AddAssetDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\AssetMaster2019Dao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\DeleteAssetDao.cs" />
@@ -512,6 +521,7 @@
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\GetAssetLifeDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\GetAssetTypeDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\AssetManagerDao\UpdateAssetDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\UserLocationDao\GetUserLocationDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\WareHouseDao\GetAssetNameDaoWH.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\WareHouseDao\GetAssetTypeDaoWH.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\WareHouseDao\GetInventoryTimeDaoWH.cs" />
@@ -523,7 +533,7 @@
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\FactoryInfoDao\GetFactoryInfoDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\InvertoryInfoDao\GetInvertoryTimeDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\InvertoryInfoDao\GetInvertoryTimeMaxDao.cs" />
-    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\UnitInfoDao\LocationInfoDao\GetLocationInfoDao.cs" />
+    <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\LocationInfoDao\GetLocationInfoDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\RankInfoDao\GetRankInfoDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\UnitInfoDao\GetUnitInfoDao.cs" />
     <Compile Include="Dao\OvenBarcodeDao\OvenBarcodeDao\GetBarcodeOvenDao.cs" />
@@ -1084,6 +1094,12 @@
     <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AccountManagerForm\AccountManager2019Form.Designer.cs">
       <DependentUpon>AccountManager2019Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AccountManagerForm\UpdateAccountInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AccountManagerForm\UpdateAccountInfoForm.Designer.cs">
+      <DependentUpon>UpdateAccountInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AssetManagerForm\AssetMaster2019Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1132,6 +1148,7 @@
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\AccountManagerVo\AccountManagerVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\AssetManagerVo\AssetInfoVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\AssetManagerVo\AssetMaster2019Vo.cs" />
+    <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\UserLocationVo\UserLocationVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\WareHouseVo\WareHouseVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\FactoryInfoVo\FactoryInfoVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\InvertoryInfoVo\InvertoryTimeVo.cs" />
@@ -1397,6 +1414,9 @@
     <EmbeddedResource Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AccountManagerForm\AccountManager2019Form.resx">
       <DependentUpon>AccountManager2019Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AccountManagerForm\UpdateAccountInfoForm.resx">
+      <DependentUpon>UpdateAccountInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AssetManagerForm\AssetMaster2019Form.resx">
       <DependentUpon>AssetMaster2019Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -1479,6 +1499,7 @@
   <ItemGroup>
     <Folder Include="bin\" />
     <Folder Include="Form\NidecForm2019\LocalMasterForm\NewFolder1\" />
+    <Folder Include="Form\NidecForm2019\TTBForm\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

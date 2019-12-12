@@ -21,6 +21,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo.Nidec2019Vo
         public string list_unit { get; set; }
         public string asset_cd { get; set; }
         public string asset_name { get; set; }
+        public int account_main_id { get; set; }
         public bool value_expired { get; set; }
         public bool value_valid { get; set; }
         public DataTable table { get; set; }
