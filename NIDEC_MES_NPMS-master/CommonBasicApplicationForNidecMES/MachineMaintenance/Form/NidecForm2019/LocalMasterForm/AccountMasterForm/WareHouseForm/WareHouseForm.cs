@@ -8,35 +8,27 @@ using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo.Nidec2019Vo;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
 {
-    public partial class WareHouseForm  :  FormCommonNCVP
+    public partial class WareHouseForm : FormCommonNCVP
     {
         WareHouseVo vo = new WareHouseVo();
 
         public WareHouseForm()
         {
             InitializeComponent();
-       
+
         }
 
         private void WareHouseForm_Load(object sender, EventArgs e)
         {
-            AcceptButton = btnSearch;
-            {
-                account_depreciation_dgv.DefaultCellStyle.Font = new Font("Arial", 9);
-                account_depreciation_dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
-                warehouse_main_dgv.DefaultCellStyle.Font = new Font("Arial", 9);
-                warehouse_main_dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
-            }
-
-            ValueObjectList<WareHouseVo> assetName = 
-                (ValueObjectList<WareHouseVo>)DefaultCbmInvoker.Invoke(new GetAssetNameWHCbm(), new WareHouseVo());
+            ValueObjectList<WareHouseVo> assetName =
+      (ValueObjectList<WareHouseVo>)DefaultCbmInvoker.Invoke(new GetAssetNameWHCbm(), new WareHouseVo());
             cmbAssetName.DisplayMember = "asset_name";
             cmbAssetName.DataSource = assetName.GetList();
             cmbAssetName.Text = null;
 
             ValueObjectList<WareHouseVo> rankCode =
                 (ValueObjectList<WareHouseVo>)DefaultCbmInvoker.Invoke(new GetRankCdWHCbm(), new WareHouseVo());
-            cmbRankCode.DisplayMember = "rank_cd";
+            cmbRankCode.DisplayMember = "rank";
             cmbRankCode.DataSource = rankCode.GetList();
             cmbRankCode.Text = null;
 
@@ -48,13 +40,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
 
             ValueObjectList<WareHouseVo> inventoryTime =
          (ValueObjectList<WareHouseVo>)DefaultCbmInvoker.Invoke(new GetInventoryTimeWHCbm(), new WareHouseVo());
-            cmbInventory.DisplayMember = "invertory_time_cd";
+            cmbInventory.DisplayMember = "inventory_times";
             cmbInventory.DataSource = inventoryTime.GetList();
             cmbInventory.Text = null;
 
             ValueObjectList<WareHouseVo> invoice =
         (ValueObjectList<WareHouseVo>)DefaultCbmInvoker.Invoke(new GetInvoiceWHCbm(), new WareHouseVo());
-            cmbInvoiceNo.DisplayMember = "asset_invoice";
+            cmbInvoiceNo.DisplayMember = "invoice";
             cmbInvoiceNo.DataSource = invoice.GetList();
             cmbInvoiceNo.Text = null;
 
@@ -66,87 +58,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
 
             ValueObjectList<WareHouseVo> locationcd =
                   (ValueObjectList<WareHouseVo>)DefaultCbmInvoker.Invoke(new GetLocationWHCbm(), new WareHouseVo());
-            cmbLocation.DisplayMember = "location_cd";
+            cmbLocation.DisplayMember = "location";
             cmbLocation.DataSource = locationcd.GetList();
             cmbLocation.Text = null;
 
         }
 
-        public void trimcode()
-        {
-            if (txtAssetCode.TextLength >= 10)
-            {
-                // asset_Code_txt.Text = full_asset_Code_txt.Text.Substring(0, 10);
-                string str = txtAssetCode.Text;
-                string[] arrListStr = str.Split(',');
-                txtAssetCode.Text = arrListStr[0];
-                txtAssetCode.Enabled = false;
-            }
-            else
-            {
-                txtAssetCode.Enabled = true;
-                txtAssetCode.Text = "";
-            }
-        }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            account_depreciation_dgv.Visible = false;
-            warehouse_main_dgv.Visible = true;
             GridBind();
             txtAssetCode.Text = "";
-
-        }
-
-        private void GridBind()
-        {
-            try
-            {
-                WareHouseVo whvos = new WareHouseVo()
-                {
-                    asset_type = cmbAssetType.Text,
-                    asset_cd = txtAssetCode.Text,
-                    asset_model = txtAssetModel.Text,
-                    asset_name = cmbAssetName.Text,
-                    rank_cd = cmbRankCode.Text,
-                    location_cd = cmbLocation.Text,
-                    net_value = cmbNetValue.Text,
-                    asset_invoice = cmbInvoiceNo.Text,
-                    label_status = cmbLabelStatus.Text,
-                    invertory_time_cd = cmbInventory.Text,
-
-                };
-                ValueObjectList<WareHouseVo> whData = (ValueObjectList<WareHouseVo>)DefaultCbmInvoker.Invoke(new SearchWareHouseCbm(), whvos);
-                //if (checkdata())
-                //{
-                //    if (select_search_cbm.Text == "Search History")
-                //    {
-                //        ValueObjectList<WareHouseMainVo> listvo = (ValueObjectList<WareHouseMainVo>)DefaultCbmInvoker.Invoke(new SearchWareHouseMainCbm(), whvos);
-                //        warehouse_main_dgv.DataSource = listvo.GetList();
-                //    }
-                //    else if (select_search_cbm.Text == "Search List")
-                //    {
-                //        ValueObjectList<WareHouseMainVo> listvo = (ValueObjectList<WareHouseMainVo>)DefaultCbmInvoker.Invoke(new SearchListWareHouseMainCbm(), whvos);
-                //        warehouse_main_dgv.DataSource = listvo.GetList();
-                //        foreach (DataGridViewRow dr in warehouse_main_dgv.Rows)
-                //        {
-                //            string after = (string)dr.Cells["colafterlocation"].Value;
-                //            string nowloc = (string)dr.Cells["colnowlocation"].Value;
-                //            if (after != nowloc)
-                //            {
-                //                dr.DefaultCellStyle.ForeColor = Color.Blue;
-                //            }
-                //        }
-                //        invertory_alarm();
-                //        counter();
-                //    }
-                //    //   calculator();
-                //}
-            }
-            catch (Framework.ApplicationException exception)
-            {
-                popUpMessage.ApplicationError(exception.GetMessageData(), Text);
-                logger.Error(exception.GetMessageData());
-            }
         }
         bool checkdata()
         {
@@ -159,7 +80,38 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             }
             return true;
         }
-
+        private void GridBind()
+        {
+            try
+            {
+                WareHouseVo whvos = new WareHouseVo()
+                {
+                    asset_code = txtAssetCode.Text,
+                    asset_name = cmbAssetName.Text,
+                    asset_model = txtAssetModel.Text,
+                    asset_type = cmbAssetType.Text,
+                    rank = cmbRankCode.Text,
+                    invoice = cmbInvoiceNo.Text,
+                    location = cmbLocation.Text,
+                    label_status = cmbLabelStatus.Text,
+                    net_value = cmbNetValue.Text,
+                    inventory_times= cmbInventory.Text,
+                    
+                };
+                if (checkdata())
+                {
+                    WareHouseVo listvo = (WareHouseVo)DefaultCbmInvoker.Invoke(new SearchWareHouseCbm(), whvos);
+                    dgvAccountData.DataSource = listvo.table;
+                    //    calculator();
+                    // ReviewStatusLable();
+                }
+            }
+            catch (Framework.ApplicationException exception)
+            {
+                popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                logger.Error(exception.GetMessageData());
+            }
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
@@ -172,9 +124,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            renew();
+        }
+        public void renew ()
+        {
+            vo = new WareHouseVo();
+            dgvAccountData.DataSource = null;
 
         }
-
         private void btnTransferAsset_Click(object sender, EventArgs e)
         {
 
@@ -193,11 +150,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
         private void btnExportExcel_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void txtAssetCode_TextChanged(object sender, EventArgs e)
-        {
-            trimcode();
         }
     }
 }

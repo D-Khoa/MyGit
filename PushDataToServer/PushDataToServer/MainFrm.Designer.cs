@@ -52,6 +52,7 @@
             this.txtFrom.Name = "txtFrom";
             this.txtFrom.Size = new System.Drawing.Size(224, 20);
             this.txtFrom.TabIndex = 0;
+//            this.txtFrom.TextChanged += new System.EventHandler(this.txtFrom_TextChanged);
             // 
             // btnPush
             // 

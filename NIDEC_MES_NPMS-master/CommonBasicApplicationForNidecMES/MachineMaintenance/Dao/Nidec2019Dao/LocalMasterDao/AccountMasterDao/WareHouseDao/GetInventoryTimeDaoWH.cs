@@ -23,7 +23,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
             {
                 WareHouseVo outVo = new WareHouseVo
                 {
-                    invertory_time_cd = datareader["invertory_time_cd"].ToString(),
+                    inventory_times = datareader["invertory_time_cd"].ToString(),
                 };
                 voList.add(outVo);
             }

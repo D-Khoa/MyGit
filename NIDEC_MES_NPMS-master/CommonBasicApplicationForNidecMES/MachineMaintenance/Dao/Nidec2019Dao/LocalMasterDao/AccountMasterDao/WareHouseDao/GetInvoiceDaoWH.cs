@@ -23,7 +23,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
             {
                 WareHouseVo outVo = new WareHouseVo
                 {
-                    asset_invoice = datareader["asset_invoice"].ToString(),
+                    invoice = datareader["asset_invoice"].ToString(),
                 };
                 voList.add(outVo);
             }
