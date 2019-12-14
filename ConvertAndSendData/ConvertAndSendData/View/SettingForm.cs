@@ -13,32 +13,39 @@ namespace ConvertAndSendData.View
 {
     public partial class SettingForm : Form
     {
-        TfSQL SQL = new TfSQL();
-        public string Model { get; set; }
-        public List<string> listTemp = new List<string>();
+        public string Model
+        {
+            get { return lbModel.Text; }
+            set { lbModel.Text = value; }
+        }
         public List<string> listprocess { get; set; }
+        public List<string> listTemp { get; set; }
 
-        public SettingForm(string getmodel)
+        public SettingForm()
         {
             listprocess = new List<string>();
+            listTemp = new List<string>();
             InitializeComponent();
-            Model = getmodel;
         }
 
         private void SettingForm_Load(object sender, EventArgs e)
         {
-            string cmd = "select distinct process from processtbl where model = '" + Model + "' order by process";
-            SQL.getListString(cmd, ref listTemp);
             foreach (string item in listTemp)
             {
                 lsbBefore.Items.Add(item);
             }
+            foreach(string item in listprocess)
+            {
+                lsbAfter.Items.Add(item);
+            }
+            lsbAfter.Refresh();
             lsbBefore.Refresh();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             listprocess.Add(lsbBefore.SelectedItem.ToString());
+            listTemp.Remove(lsbBefore.SelectedItem.ToString());
             lsbAfter.Items.Add(lsbBefore.SelectedItem);
             lsbBefore.Items.Remove(lsbBefore.SelectedItem);
             if (lsbBefore.Items.Count > 0)
@@ -48,6 +55,7 @@ namespace ConvertAndSendData.View
         private void btnRemove_Click(object sender, EventArgs e)
         {
             listprocess.Remove(lsbAfter.SelectedItem.ToString());
+            listTemp.Add(lsbAfter.SelectedItem.ToString());
             lsbBefore.Items.Add(lsbAfter.SelectedItem);
             lsbAfter.Items.Remove(lsbAfter.SelectedItem);
             if (lsbAfter.Items.Count > 0)

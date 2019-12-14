@@ -1,21 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ConvertAndSendData.View
 {
     public partial class InspectCell : UserControl
     {
-        public string input { get; set; }
-        public string output { get; set; }
-        public string yeild { get; set; }
+        public string model
+        {
+            get { return lbmodel.Text; }
+            set { lbmodel.Text = value; }
+        }
+        public double input
+        {
+            get { return double.Parse(lbInput.Text); }
+            set { lbInput.Text = value.ToString(); }
+        }
+        public double output
+        {
+            get { return double.Parse(lbOutput.Text); }
+            set { lbOutput.Text = value.ToString(); }
+        }
+        public double yeild
+        {
+            get { return double.Parse(lbYeild.Text); }
+            set { lbYeild.Text = value.ToString(); }
+        }
+
+        public Color color
+        {
+            get { return pnlInfo.BackColor; }
+            set { pnlInfo.BackColor = value; }
+        }
 
         public InspectCell()
         {
@@ -25,9 +40,9 @@ namespace ConvertAndSendData.View
         private void InspectCell_Paint(object sender, PaintEventArgs e)
         {
             lbInspectName.Text = this.Name;
-            lbInput.Text = this.input;
-            lbOutput.Text = this.output;
-            lbYeild.Text = this.yeild;
+            lbInput.Text = input.ToString();
+            lbOutput.Text = output.ToString();
+            lbYeild.Text = yeild.ToString();
         }
     }
 }

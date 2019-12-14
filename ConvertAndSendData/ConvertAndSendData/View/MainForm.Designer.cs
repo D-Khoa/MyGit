@@ -213,6 +213,11 @@
             this.numCounter.Size = new System.Drawing.Size(77, 20);
             this.numCounter.TabIndex = 10;
             this.numCounter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numCounter.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // btnStop
             // 
@@ -299,6 +304,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Name = "MainForm";
             this.Text = "Convert And Send Data";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

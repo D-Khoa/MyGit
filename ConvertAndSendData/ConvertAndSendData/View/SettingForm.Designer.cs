@@ -35,12 +35,14 @@
             this.lsbAfter = new System.Windows.Forms.ListBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbModel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnOK.Location = new System.Drawing.Point(57, 293);
+            this.btnOK.Location = new System.Drawing.Point(57, 274);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 0;
@@ -51,7 +53,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 21);
+            this.label1.Location = new System.Drawing.Point(7, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 13);
             this.label1.TabIndex = 1;
@@ -61,7 +63,7 @@
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(219, 293);
+            this.btnCancel.Location = new System.Drawing.Point(219, 274);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
@@ -74,9 +76,9 @@
             this.lsbBefore.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lsbBefore.FormattingEnabled = true;
-            this.lsbBefore.Location = new System.Drawing.Point(12, 53);
+            this.lsbBefore.Location = new System.Drawing.Point(10, 69);
             this.lsbBefore.Name = "lsbBefore";
-            this.lsbBefore.Size = new System.Drawing.Size(120, 225);
+            this.lsbBefore.Size = new System.Drawing.Size(120, 199);
             this.lsbBefore.TabIndex = 4;
             this.lsbBefore.SelectedIndexChanged += new System.EventHandler(this.lsbBefore_SelectedIndexChanged);
             // 
@@ -85,9 +87,9 @@
             this.lsbAfter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lsbAfter.FormattingEnabled = true;
-            this.lsbAfter.Location = new System.Drawing.Point(219, 53);
+            this.lsbAfter.Location = new System.Drawing.Point(217, 69);
             this.lsbAfter.Name = "lsbAfter";
-            this.lsbAfter.Size = new System.Drawing.Size(126, 225);
+            this.lsbAfter.Size = new System.Drawing.Size(126, 199);
             this.lsbAfter.TabIndex = 5;
             this.lsbAfter.SelectedIndexChanged += new System.EventHandler(this.lsbAfter_SelectedIndexChanged);
             // 
@@ -96,7 +98,7 @@
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.Enabled = false;
-            this.btnAdd.Location = new System.Drawing.Point(138, 137);
+            this.btnAdd.Location = new System.Drawing.Point(136, 69);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 6;
@@ -109,7 +111,7 @@
             this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemove.Enabled = false;
-            this.btnRemove.Location = new System.Drawing.Point(138, 166);
+            this.btnRemove.Location = new System.Drawing.Point(136, 98);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 23);
             this.btnRemove.TabIndex = 7;
@@ -117,13 +119,33 @@
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Model :";
+            // 
+            // lbModel
+            // 
+            this.lbModel.AutoSize = true;
+            this.lbModel.Location = new System.Drawing.Point(55, 20);
+            this.lbModel.Name = "lbModel";
+            this.lbModel.Size = new System.Drawing.Size(33, 13);
+            this.lbModel.TabIndex = 9;
+            this.lbModel.Text = "None";
+            // 
             // SettingForm
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(357, 326);
+            this.ClientSize = new System.Drawing.Size(357, 309);
+            this.Controls.Add(this.lbModel);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lsbAfter);
@@ -149,5 +171,7 @@
         private System.Windows.Forms.ListBox lsbAfter;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbModel;
     }
 }
