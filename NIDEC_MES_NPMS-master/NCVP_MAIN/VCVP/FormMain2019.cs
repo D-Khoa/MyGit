@@ -1,21 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using Com.Nidec.Mes.Framework;
 using Com.Nidec.Mes.Framework.Login;
 using Com.Nidec.Mes.GlobalMasterMaintenance;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.Rank;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.Units;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.Asset;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.WareHouse;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.UserLocation;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.InventoryForm;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.AccountMainForm;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.AccountCodeForm;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.AccountLocationForm;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AccountWhForm.DetailPositionForm;
-using Com.Nidec.Mes.Framework;
-using System.Collections.Generic;
 
 namespace Com.Nidec.Mes.VCVP
 {
@@ -30,9 +18,6 @@ namespace Com.Nidec.Mes.VCVP
         private void FormMain2019_Load(object sender, EventArgs e)
         {
             MainMaster_grt.Visible = false;
-            List<string> list = UserData.GetUserData().ControlList;
-            string a = SystemMaster_btn.ControlId;
-            InvokeAuthorityControl(MasterMaintance_grb.Controls);
         }
 
         #region MAIN MENU

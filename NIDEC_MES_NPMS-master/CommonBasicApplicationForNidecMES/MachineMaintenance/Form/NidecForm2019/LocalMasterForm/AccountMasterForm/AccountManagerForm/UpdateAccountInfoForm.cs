@@ -7,9 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Com.Nidec.Mes.Framework;
+using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm.Nidec2019Cbm;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo.Nidec2019Vo;
-using Com.Nidec.Mes.Framework;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
 {
@@ -121,10 +122,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (pnlAddAccount.Visible)
-            {
-
-            }
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -134,7 +131,21 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-
+            DataTable dt = new DataTable();
+            OpenFileDialog openF = new OpenFileDialog();
+            openF.Filter = "Excel Documents (*.xlsx)|*.xlsx|Excel 97-2003 Documents (*.xls)|*.xls|All Files (*.*)|*.*";
+            if (openF.ShowDialog() == DialogResult.OK)
+            {
+                if (openF.FileName.OpenExcelWorkBook())
+                {
+                    dt.ImportExcelToTable(true);
+                }
+            }
+            foreach (DataRow dr in dt.Rows)
+            {
+                dgvAddAccount.Rows.Add(dr);
+            }
+            dgvAddAccount.Refresh();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

@@ -175,7 +175,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
                 {
                     if (openF.FileName.OpenExcelWorkBook())
                     {
-                        dataImport.ImportTabletoExcel(true);
+                        dataImport.ImportExcelToTable(true);
                     }
                 }
                 foreach (DataRow dr in dataImport.Rows)

@@ -36,6 +36,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
                 voList.add(outVo);
             }
             datareader.Close();
+            base.CloseConnection(trxContext);
             return voList;
         }
     }

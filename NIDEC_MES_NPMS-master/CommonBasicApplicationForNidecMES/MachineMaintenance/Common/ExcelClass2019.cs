@@ -96,7 +96,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
             }
         }
 
-        public static void ImportTabletoExcel(this DataTable table, bool header)
+        public static void ImportExcelToTable(this DataTable table, bool header)
         {
             cExcel.Range rng = ws.UsedRange;
             int rowindex = rng.EntireRow.Count;

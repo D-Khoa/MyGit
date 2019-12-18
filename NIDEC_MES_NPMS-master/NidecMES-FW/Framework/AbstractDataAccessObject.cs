@@ -22,13 +22,17 @@ namespace Com.Nidec.Mes.Framework
         /// <returns></returns>
         protected DbCommandAdaptor GetDbCommandAdaptor(TransactionContext trxContext, String sqlText)
         {
-            
-//            if (trxContext == null) throw new SystemException(new NullReferenceException());
+            //            if (trxContext == null) throw new SystemException(new NullReferenceException());
             IDbConnection dbConnection = trxContext.DbConnection;
             DbCommandAdaptor dbCommandAdapter = new DefaultNpgCommandAdaptor(sqlText, dbConnection);
-
-
             return dbCommandAdapter;
+        }
+
+        protected void CloseConnection(TransactionContext trxContext)
+        {
+            IDbConnection dbConnection = trxContext.DbConnection;
+            dbConnection.Close();
+            dbConnection.Dispose();
         }
 
         protected Type ConvertDBNull<Type>(IDataReader dr, String columName)
