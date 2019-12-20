@@ -74,7 +74,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
 
         public void trimcode()
         {
-            if (txtAssetCode.TextLength >= 10)
+            if (txtAssetCode.TextLength >= 7)
             {
                 // asset_Code_txt.Text = full_asset_Code_txt.Text.Substring(0, 10);
                 string str = txtAssetCode.Text;

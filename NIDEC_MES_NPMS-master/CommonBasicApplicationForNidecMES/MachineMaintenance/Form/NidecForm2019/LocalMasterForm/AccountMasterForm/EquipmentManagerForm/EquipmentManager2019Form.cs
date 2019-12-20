@@ -10,17 +10,17 @@ using System.Windows.Forms;
 using Com.Nidec.Mes.Framework;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo.Nidec2019Vo;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm.Nidec2019Cbm;
 
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
 {
-    public partial class AccountManager2019Form : FormCommonNCVP
+    public partial class EquipmentManager2019Form : FormCommonNCVP
     {
-        AccountManagerVo Vo = new AccountManagerVo();
+        EquipmentManagerVo Vo = new EquipmentManagerVo();
+        EquipmentInfoVo infoVo = new EquipmentInfoVo();
 
-        public AccountManager2019Form()
+        public EquipmentManager2019Form()
         {
             InitializeComponent();
         }
@@ -110,6 +110,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
                 trvOther.Nodes["unit_cd"].Nodes.Add(nodename);
             }
             #endregion
+
+            ValueObjectList<DetailPositionVo> detailVo =
+                (ValueObjectList<DetailPositionVo>)DefaultCbmInvoker.Invoke(new GetDetailPositionCbm(), new DetailPositionVo());
+            cmbDetailPosition.DataSource = detailVo.GetList();
+            cmbDetailPosition.Text = null;
         }
 
         #region BUTTONS
@@ -119,7 +124,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             CheckTreeView(trvOther, true);
             Vo.asset_cd = txtAssetCode.Text;
             Vo.asset_name = txtAssetName.Text;
-            Vo = (AccountManagerVo)DefaultCbmInvoker.Invoke(new SearchAccountCbm(), Vo);
+            Vo = (EquipmentManagerVo)DefaultCbmInvoker.Invoke(new SearchAccountCbm(), Vo);
             UpdateGrid();
         }
 
@@ -231,6 +236,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             }
         }
 
+        /// <summary>
+        /// Sum cost data of equipments
+        /// </summary>
         private void CounterCost()
         {
             InvertoryTimeVo maxInvertory = (InvertoryTimeVo)DefaultCbmInvoker.Invoke(new GetInvertoryTimeMaxCbm(), new InvertoryTimeVo());
@@ -262,10 +270,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             grt_Option.SelectedTab = tab_TotalCost;
         }
 
+        /// <summary>
+        /// Renew form before data processing
+        /// </summary>
         private void Renew()
         {
             grt_Option.SelectedTab = tab_Search;
-            Vo = new AccountManagerVo();
+            Vo = new EquipmentManagerVo();
             dgvAccountData.DataSource = null;
             dgvAccCounter.Rows.Clear();
             dgvDeprCalc.DataSource = null;
@@ -275,6 +286,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
                 root.Checked = false;
         }
 
+        /// <summary>
+        /// Get only asset code in QR code
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtAssetCode_TextChanged(object sender, EventArgs e)
         {
             if (txtAssetCode.Text.Length > 10)
@@ -283,6 +299,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             }
         }
 
+        /// <summary>
+        /// Setup and get nodes list from treeview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         #region TREEVIEW CHECKBOX
         private void trvAsset_AfterCheck(object sender, TreeViewEventArgs e)
         {
@@ -294,6 +315,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             Nodes_Check(e.Node, e.Node.Checked);
         }
 
+        /// <summary>
+        /// Check nodes when root checked
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="check"></param>
         private void Nodes_Check(TreeNode root, bool check)
         {
             foreach (TreeNode node in root.Nodes)
@@ -303,6 +329,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             }
         }
 
+        /// <summary>
+        /// Add node into list for sql command
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
         private string CheckList(TreeNode root, bool name)
         {
             string list = "'0'";
@@ -316,6 +348,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             return list;
         }
 
+        /// <summary>
+        /// Check trview on form for get node list
+        /// </summary>
+        /// <param name="tree"></param>
+        /// <param name="name"></param>
         private void CheckTreeView(TreeView tree, bool name)
         {
             Vo.value_expired = false;
@@ -352,10 +389,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
         }
         #endregion
 
-        private void dgvAccountData_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-        }
-
+        /// <summary>
+        /// Get info of equipment is selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvAccountData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnUpdate.Enabled = true;
@@ -363,6 +401,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             Vo.account_main_id = (int)dr.Cells["Account_ID"].Value;
         }
 
+        /// <summary>
+        /// Open update form for edit equipment is selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvAccountData_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             UpdateAccountInfoForm upFrm = new UpdateAccountInfoForm(Vo.account_main_id);
