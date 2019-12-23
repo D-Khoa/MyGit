@@ -184,6 +184,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
         }
         #endregion
 
+        /// <summary>
+        /// Update dgvAccountData
+        /// </summary>
         private void UpdateGrid()
         {
             dgvAccountData.DataSource = Vo.table;
@@ -203,6 +206,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NidecForm2019
             CounterCost();
         }
 
+        /// <summary>
+        /// Update depreciation
+        /// </summary>
+        /// <param name="inVo"></param>
         private void UpdateDeprGrid(AccountManagerVo inVo)
         {
             if (inVo.table.Rows.Count > 0)
