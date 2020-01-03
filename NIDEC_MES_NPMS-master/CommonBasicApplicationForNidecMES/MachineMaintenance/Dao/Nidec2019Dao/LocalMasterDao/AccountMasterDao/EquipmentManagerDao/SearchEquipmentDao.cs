@@ -90,15 +90,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
             {
                 sql.Append("and c.unit_id in (").Append(inVo.list_unit).Append(") ");
             }
-            if (!string.IsNullOrEmpty(inVo.asset_cd))
-            {
-                sql.Append("and b.asset_cd like '%").Append(inVo.asset_cd).Append("%' ");
-            }
-            if (!string.IsNullOrEmpty(inVo.asset_name))
-            {
-                sql.Append("and b.asset_name like '%").Append(inVo.asset_name).Append("%' ");
-                sqlParameter.AddParameterString("asset_name", inVo.asset_name);
-            }
             if (inVo.value_expired)
                 sql.Append("and a.net_value <= '0' ");
             if (inVo.value_valid)
@@ -110,11 +101,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao.Nidec2019Dao
             IDataReader datareader = sqlCommandAdapter.ExecuteReader(trxContext, sqlParameter);
             dt.Load(datareader);
             datareader.Close();
-            EquipmentInfoVo outVo = new EquipmentInfoVo
-            {
-                table = dt
-            };
-            return outVo;
+            return inVo;
         }
     }
 }

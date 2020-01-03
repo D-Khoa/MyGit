@@ -17,7 +17,7 @@ namespace DKMES
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ChangeEnterKey());
+            Application.Run(new MainMenuForm());
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Get_PQM_Data
         {
             Storage sto = Storage.getStorage();
             string database = sto.name;
-            strConnection = @"Server=192.168.145.12; Port=5432;"
+            strConnection = @"Server=192.168.193.2; Port=5432;"
                           + "User Id=pqm; Password=dbuser;"
                           + "Database=" + database + "; CommandTimeout=100; Timeout=100;";
         }

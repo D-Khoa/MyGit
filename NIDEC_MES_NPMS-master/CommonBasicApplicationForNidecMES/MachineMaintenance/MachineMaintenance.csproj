@@ -142,6 +142,8 @@
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\LocationInfoDao\GetLocationInfoDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\RankInfoDao\GetRankInfoDao.cs" />
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\UnitInfoDao\GetUnitInfoDao.cs" />
+    <Compile Include="Dao\Nidec2020Dao\AccountCodeDao\GetAccountCodeDao.cs" />
+    <Compile Include="Dao\Nidec2020Dao\AccountLocationDao\GetAccountLocationDao.cs" />
     <Compile Include="Form\FormCommonNCVP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +216,19 @@
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\LocationInfoVo\LocationInfoVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\RankInfoVo\RankInfoVo.cs" />
     <Compile Include="Vo\Nidec2019Vo\LocalMasterVo\AccountMasterVo\UnitInfoVo\UnitInfoVo.cs" />
+    <Compile Include="Vo\Nidec2020Vo\AccountCodeVo\AccountCodeVo.cs" />
+    <Compile Include="Vo\Nidec2020Vo\AccountLocationVo\AccountLocationVo.cs" />
+    <Compile Include="Vo\Nidec2020Vo\AccountWHVo\AccountWHVo.cs" />
+    <Compile Include="Vo\Nidec2020Vo\AssetVo\AssetVo.cs" />
+    <Compile Include="Vo\Nidec2020Vo\BuildingVo\BuildingVo.cs" />
+    <Compile Include="Vo\Nidec2020Vo\DetailPositionVo\DetailPositionVo.cs" />
+    <Compile Include="Vo\Nidec2020Vo\FactoryVo\FactoryVo.cs" />
+    <Compile Include="Vo\Nidec2020Vo\InventoryEquipmentsVo\InventoryEquipmentsVo.cs" />
+    <Compile Include="Vo\Nidec2020Vo\InventoryTimeVo\InventoryTimeVo.cs" />
+    <Compile Include="Vo\Nidec2020Vo\LocationVo\LocationVo.cs" />
+    <Compile Include="Vo\Nidec2020Vo\RankVo\RankVo.cs" />
+    <Compile Include="Vo\Nidec2020Vo\UnitVo\UnitVo.cs" />
+    <Compile Include="Vo\Nidec2020Vo\UserLocationVo\UserLocationVo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\AccountManagerForm\AccountManager2019Form.resx">
@@ -306,6 +321,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="Dao\Nidec2020Dao\AccountWHDao\" />
+    <Folder Include="Dao\Nidec2020Dao\AssetDao\" />
+    <Folder Include="Dao\Nidec2020Dao\BuildingDao\" />
+    <Folder Include="Dao\Nidec2020Dao\DetailPositionDao\" />
+    <Folder Include="Dao\Nidec2020Dao\FactoryDao\" />
+    <Folder Include="Dao\Nidec2020Dao\InventoryEquipmentsDao\" />
+    <Folder Include="Dao\Nidec2020Dao\InventoryTimeDao\" />
+    <Folder Include="Dao\Nidec2020Dao\LocationDao\" />
+    <Folder Include="Dao\Nidec2020Dao\RankDao\" />
+    <Folder Include="Dao\Nidec2020Dao\UnitDao\" />
+    <Folder Include="Dao\Nidec2020Dao\UserLocationDao\" />
     <Folder Include="Form\NidecForm2019\LocalMasterForm\NewFolder1\" />
     <Folder Include="Form\NidecForm2019\TTBForm\" />
   </ItemGroup>
