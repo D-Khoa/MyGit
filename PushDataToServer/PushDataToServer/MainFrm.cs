@@ -157,6 +157,8 @@ namespace PushDataToServer
 
         private void EditAndSendFile()
         {
+            fromfolder = @"C:\Users\mt-fa29\Desktop\New folder";
+            tofolder = @"\\192.168.193.1\car$";
             filePath = Directory.GetFiles(fromfolder, "*.LA20_517ALA201NO1");
             if (filePath != null)
             {
