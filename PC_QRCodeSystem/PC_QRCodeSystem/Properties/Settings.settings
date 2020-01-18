@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PC_QRCodeSystem.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CONNECTSTRING_MES" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Server=192.168.145.12;Port=5432;UserId=mes;Password=dbuser;Database=mesdb;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

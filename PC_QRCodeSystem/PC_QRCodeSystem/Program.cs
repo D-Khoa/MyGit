@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DKMES.FormSys;
 
-namespace DKMES
+namespace PC_QRCodeSystem
 {
     static class Program
     {
@@ -17,7 +13,7 @@ namespace DKMES
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CameraTestForm());
+            Application.Run(new Login());
         }
     }
 }

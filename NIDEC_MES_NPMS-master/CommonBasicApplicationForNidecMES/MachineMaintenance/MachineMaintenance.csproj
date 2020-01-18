@@ -106,6 +106,19 @@
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\LocationInfoCbm\GetLocationInfoCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\RankInfoCbm\GetRankInfoCbm.cs" />
     <Compile Include="Cbm\Nidec2019Cbm\LocalMasterCbm\AccountMasterCbm\UnitInfoCbm\GetUnitInfoCbm.cs" />
+    <Compile Include="Cbm\Nidec2020Cbm\AccountCodeCbm\GetAccountCodeCbm.cs" />
+    <Compile Include="Cbm\Nidec2020Cbm\AccountLocationCbm\GetAccountLocationCbm.cs" />
+    <Compile Include="Cbm\Nidec2020Cbm\AccountWHCbm\GetAccountWHCbm.cs" />
+    <Compile Include="Cbm\Nidec2020Cbm\AssetCbm\GetAssetCbm.cs" />
+    <Compile Include="Cbm\Nidec2020Cbm\BuildingCbm\GetBuildingCbm.cs" />
+    <Compile Include="Cbm\Nidec2020Cbm\DetailPositionCbm\GetDetailPositionCbm.cs" />
+    <Compile Include="Cbm\Nidec2020Cbm\FactoryCbm\GetFactoryCbm.cs" />
+    <Compile Include="Cbm\Nidec2020Cbm\InventoryEquipmentsCbm\GetInventoryEquipmentsCbm.cs" />
+    <Compile Include="Cbm\Nidec2020Cbm\InventoryTimeCbm\GetInventoryTimeCbm.cs" />
+    <Compile Include="Cbm\Nidec2020Cbm\LocationCbm\GetLocationCbm.cs" />
+    <Compile Include="Cbm\Nidec2020Cbm\RankCbm\GetRankCbm.cs" />
+    <Compile Include="Cbm\Nidec2020Cbm\UnitCbm\GetUnitCbm.cs" />
+    <Compile Include="Cbm\Nidec2020Cbm\UserLocationCbm\GetUserLocationCbm.cs" />
     <Compile Include="Common\CSVUtility.cs" />
     <Compile Include="Common\ExcelClass2019.cs" />
     <Compile Include="Common\LinQ_Class.cs" />
@@ -144,6 +157,17 @@
     <Compile Include="Dao\Nidec2019Dao\LocalMasterDao\AccountMasterDao\UnitInfoDao\GetUnitInfoDao.cs" />
     <Compile Include="Dao\Nidec2020Dao\AccountCodeDao\GetAccountCodeDao.cs" />
     <Compile Include="Dao\Nidec2020Dao\AccountLocationDao\GetAccountLocationDao.cs" />
+    <Compile Include="Dao\Nidec2020Dao\AccountWHDao\GetAccountWHDao.cs" />
+    <Compile Include="Dao\Nidec2020Dao\AssetDao\GetAssetDao.cs" />
+    <Compile Include="Dao\Nidec2020Dao\BuildingDao\GetBuildingDao.cs" />
+    <Compile Include="Dao\Nidec2020Dao\DetailPositionDao\GetDetailPositionDao.cs" />
+    <Compile Include="Dao\Nidec2020Dao\FactoryDao\GetFactoryDao.cs" />
+    <Compile Include="Dao\Nidec2020Dao\InventoryEquipmentsDao\GetInventoryEquipmentsDao.cs" />
+    <Compile Include="Dao\Nidec2020Dao\InventoryTimeDao\GetInventoryTimeDao.cs" />
+    <Compile Include="Dao\Nidec2020Dao\LocationDao\GetLocationDao.cs" />
+    <Compile Include="Dao\Nidec2020Dao\RankDao\GetRankDao.cs" />
+    <Compile Include="Dao\Nidec2020Dao\UnitDao\GetUnitDao.cs" />
+    <Compile Include="Dao\Nidec2020Dao\UserLocationDao\GetUserLocationDao.cs" />
     <Compile Include="Form\FormCommonNCVP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +209,12 @@
     </Compile>
     <Compile Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\WareHouseForm\WareHouseForm.Designer.cs">
       <DependentUpon>WareHouseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\NidecForm2020\LocalMasterForm\AssetManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\NidecForm2020\LocalMasterForm\AssetManagementForm.Designer.cs">
+      <DependentUpon>AssetManagementForm.cs</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
@@ -248,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\NidecForm2019\LocalMasterForm\AccountMasterForm\WareHouseForm\WareHouseForm.resx">
       <DependentUpon>WareHouseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\NidecForm2020\LocalMasterForm\AssetManagementForm.resx">
+      <DependentUpon>AssetManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -321,19 +354,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
-    <Folder Include="Dao\Nidec2020Dao\AccountWHDao\" />
-    <Folder Include="Dao\Nidec2020Dao\AssetDao\" />
-    <Folder Include="Dao\Nidec2020Dao\BuildingDao\" />
-    <Folder Include="Dao\Nidec2020Dao\DetailPositionDao\" />
-    <Folder Include="Dao\Nidec2020Dao\FactoryDao\" />
-    <Folder Include="Dao\Nidec2020Dao\InventoryEquipmentsDao\" />
-    <Folder Include="Dao\Nidec2020Dao\InventoryTimeDao\" />
-    <Folder Include="Dao\Nidec2020Dao\LocationDao\" />
-    <Folder Include="Dao\Nidec2020Dao\RankDao\" />
-    <Folder Include="Dao\Nidec2020Dao\UnitDao\" />
-    <Folder Include="Dao\Nidec2020Dao\UserLocationDao\" />
-    <Folder Include="Form\NidecForm2019\LocalMasterForm\NewFolder1\" />
-    <Folder Include="Form\NidecForm2019\TTBForm\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
