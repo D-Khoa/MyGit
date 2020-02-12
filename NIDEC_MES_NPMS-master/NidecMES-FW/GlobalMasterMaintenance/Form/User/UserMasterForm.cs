@@ -47,7 +47,6 @@ namespace Com.Nidec.Mes.GlobalMasterMaintenance
 
         #endregion
 
-
         #region Constructor
 
         /// <summary>
