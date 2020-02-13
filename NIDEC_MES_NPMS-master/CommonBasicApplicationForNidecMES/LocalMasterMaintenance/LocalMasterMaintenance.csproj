@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -40,6 +55,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\FW\NidecMES\Dll\Framework.dll</HintPath>
     </Reference>
+    <Reference Include="GlobalMasterMaintenance, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\FW\NidecMES\Dll\GlobalMasterMaintenance.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\FW\NidecMES\Dll\log4net.dll</HintPath>
@@ -61,14 +80,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form\FormCommonNCVP2020.cs">
+    <Compile Include="Form\FormCommonNCVP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FormCommonNCVP2020.Designer.cs">
-      <DependentUpon>FormCommonNCVP2020.cs</DependentUpon>
+    <Compile Include="Form\FormCommonNCVP.Designer.cs">
+      <DependentUpon>FormCommonNCVP.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vo\DepartmentVo\m_department_Vo.cs" />
+    <Compile Include="Vo\FactoryVo\m_factory_Vo.cs" />
+    <Compile Include="Vo\Language\m_country_language_Vo.cs" />
+    <Compile Include="Vo\RoleManagementVo\m_authority_control_Vo.cs" />
+    <Compile Include="Vo\UserManagementVo\m_login_password_Vo.cs" />
+    <Compile Include="Vo\UserManagementVo\m_mes_user_Vo.cs" />
+    <Compile Include="Vo\UserPositionVo\m_user_position_Vo.cs" />
+    <EmbeddedResource Include="Form\FormCommonNCVP.resx">
+      <DependentUpon>FormCommonNCVP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -95,7 +124,6 @@
   <ItemGroup>
     <Folder Include="Cbm\" />
     <Folder Include="Dao\" />
-    <Folder Include="Vo\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FormIcon.ico" />
@@ -108,6 +136,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\NIDEC_Logo_small_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
