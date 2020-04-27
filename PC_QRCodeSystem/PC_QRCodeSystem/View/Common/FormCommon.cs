@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PC_QRCodeSystem.Model;
 
@@ -13,6 +8,7 @@ namespace PC_QRCodeSystem
 {
     public partial class FormCommon : Form
     {
+        #region ALL OPTION FIELDS
         /// <summary>
         /// Get tittle of form
         /// </summary>
@@ -29,6 +25,15 @@ namespace PC_QRCodeSystem
         {
             get { return lbName.Text; }
             set { lbName.Text = value; }
+        }
+
+        /// <summary>
+        /// Get user position
+        /// </summary>
+        public string position
+        {
+            get { return lbPosition.Text; }
+            set { lbPosition.Text = value; }
         }
 
         /// <summary>
@@ -57,22 +62,26 @@ namespace PC_QRCodeSystem
         public FormCommon()
         {
             InitializeComponent();
+            listper = new List<string>();
+            timerFormLoad.Enabled = true;
         }
 
         private void FormCommon_Load(object sender, EventArgs e)
         {
-            name = UserData.username;
+            tittle = this.Text;
             dept = UserData.dept;
+            name = UserData.username;
+            position = UserData.position;
             logintime = UserData.logintime;
             listper = UserData.role_permision;
-            tittle = this.Text;
             this.Text = tittle + "-QRCode System";
+            lbOnlineTime.Text = TimeSpan.FromSeconds(UserData.onTime).ToString();
+            SettingItem settingItem = new SettingItem();
+            settingItem.LoadSetting();
         }
+        #endregion
 
-        /// <summary>
-        /// Check permision of controls
-        /// </summary>
-        /// <param name="controls"></param>
+        #region BUTTONS EVENT
         public void CheckPermision(Control.ControlCollection controls)
         {
             if (UserData.role_permision != null)
@@ -87,47 +96,48 @@ namespace PC_QRCodeSystem
             }
         }
 
-        /// <summary>
-        /// When form have been shown, check premision
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            ChangePasswordForm cpfrm = new ChangePasswordForm();
+            cpfrm.ShowDialog();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            if (CustomMessageBox.Question("Are you sure to log-out?") == DialogResult.Yes)
+            {
+                m_login_password mlog = new m_login_password();
+                UserData.isOnline = mlog.LogIO(UserData.usercode, false);
+            }
+        }
+
+        private void btnCloseForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+
+        #region SUB EVENT
         private void FormCommon_Shown(object sender, EventArgs e)
         {
             FormCommon frm = (FormCommon)sender;
             CheckPermision(frm.Controls);
         }
 
-        /// <summary>
-        /// Set log out button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnLogOut_Click(object sender, EventArgs e)
+        private void timerFormLoad_Tick(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure to exit?", "Noice", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                GetData gdata = new GetData();
-                gdata.LogOut();
-                foreach (Form frm in Application.OpenForms)
-                {
-                    if (frm.GetType().BaseType == typeof(FormCommon))
-                    {
-                        frm.Close();
-                    }
-                }
-            }
+            if (!UserData.isOnline && !string.IsNullOrEmpty(UserData.usercode)) this.Close();
+            lbOnlineTime.Text = TimeSpan.FromSeconds(UserData.onTime).ToString();
         }
 
-        /// <summary>
-        /// Set change password button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnChangePassword_Click(object sender, EventArgs e)
+        private void FormCommon_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ChangePasswordForm cpfrm = new ChangePasswordForm();
-            cpfrm.ShowDialog();
+            if (UserData.isOnline)
+            {
+                if (CustomMessageBox.Question("Are you want to close?") == DialogResult.No)
+                    e.Cancel = true;
+            }
         }
+        #endregion
     }
 }

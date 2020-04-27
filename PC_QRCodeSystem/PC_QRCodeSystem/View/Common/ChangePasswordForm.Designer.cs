@@ -49,6 +49,7 @@
             this.txtConfirmPass.Size = new System.Drawing.Size(180, 20);
             this.txtConfirmPass.TabIndex = 2;
             this.txtConfirmPass.UseSystemPasswordChar = true;
+            this.txtConfirmPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtConfirmPass_KeyDown);
             // 
             // txtNewPass
             // 

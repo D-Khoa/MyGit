@@ -272,7 +272,7 @@
             this.grbButtons.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbButtons.Location = new System.Drawing.Point(0, 207);
             this.grbButtons.Name = "grbButtons";
-            this.grbButtons.Size = new System.Drawing.Size(822, 151);
+            this.grbButtons.Size = new System.Drawing.Size(822, 59);
             this.grbButtons.TabIndex = 21;
             this.grbButtons.TabStop = false;
             // 
@@ -389,7 +389,7 @@
             this.dgvAssetGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAssetGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAssetGrid.EnableHeadersVisualStyles = false;
-            this.dgvAssetGrid.Location = new System.Drawing.Point(0, 358);
+            this.dgvAssetGrid.Location = new System.Drawing.Point(0, 266);
             this.dgvAssetGrid.MultiSelect = false;
             this.dgvAssetGrid.Name = "dgvAssetGrid";
             this.dgvAssetGrid.ReadOnly = true;
@@ -403,7 +403,7 @@
             this.dgvAssetGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAssetGrid.RowHeadersVisible = false;
             this.dgvAssetGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAssetGrid.Size = new System.Drawing.Size(822, 127);
+            this.dgvAssetGrid.Size = new System.Drawing.Size(822, 219);
             this.dgvAssetGrid.TabIndex = 29;
             // 
             // AssetManagementForm
@@ -415,7 +415,7 @@
             this.Controls.Add(this.grbButtons);
             this.Controls.Add(this.grbInfo);
             this.Name = "AssetManagementForm";
-            this.Text = "AssetManagementForm";
+            this.Text = "Asset Management";
             this.TitleText = "FormCommon";
             this.Controls.SetChildIndex(this.grbInfo, 0);
             this.Controls.SetChildIndex(this.grbButtons, 0);

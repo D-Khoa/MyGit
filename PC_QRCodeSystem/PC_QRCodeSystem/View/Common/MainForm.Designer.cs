@@ -54,7 +54,7 @@
             this.btnClient.Size = new System.Drawing.Size(145, 127);
             this.btnClient.TabIndex = 1;
             this.btnClient.Tag = "pc_request";
-            this.btnClient.Text = "Production";
+            this.btnClient.Text = "Request";
             this.btnClient.UseVisualStyleBackColor = true;
             this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
             // 

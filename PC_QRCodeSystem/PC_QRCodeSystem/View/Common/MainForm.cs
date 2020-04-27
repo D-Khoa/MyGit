@@ -50,7 +50,7 @@ namespace PC_QRCodeSystem
         /// <param name="e"></param>
         private void btnClient_Click(object sender, EventArgs e)
         {
-            RequestForm rqFrm = new RequestForm();
+            PRODForm rqFrm = new PRODForm();
             this.Hide();
             rqFrm.ShowDialog();
             this.Close();
